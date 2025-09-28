@@ -3,93 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Das Group - Innovation & Excellence</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Das Group LLC</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-6">
-                <div class="flex items-center">
-                    <h1 class="text-2xl font-bold text-gray-900">Das Group</h1>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#about" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#services" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Services</a>
-                        <a href="#contact" class="text-gray-500 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
-                    </div>
-                </div>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>Das Group LLC</h1>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-        <div class="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6">Innovation Meets Excellence</h2>
-                <p class="text-xl md:text-2xl mb-8 text-blue-100">Transforming ideas into reality with cutting-edge solutions</p>
-                <button class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-                    Get Started
-                </button>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Welcome to Das Group LLC</h2>
+                <p>Your trusted partner for business solutions</p>
+                <a href="#contact" class="btn">Get Started</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">About Das Group</h3>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    We are a forward-thinking organization dedicated to delivering innovative solutions
-                    that drive success and create lasting impact in today's dynamic business landscape.
-                </p>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>Das Group LLC is a leading company dedicated to providing exceptional services and solutions to our clients. We pride ourselves on our commitment to excellence and customer satisfaction.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="bg-gray-100 py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Our Services</h3>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-3">Consulting</h4>
-                    <p class="text-gray-600">Strategic guidance and expert consultation to help your business thrive.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-3">Technology</h4>
-                    <p class="text-gray-600">Cutting-edge technology solutions tailored to your specific needs.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold mb-3">Innovation</h4>
-                    <p class="text-gray-600">Creative approaches to complex challenges with innovative solutions.</p>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3>Consulting</h3>
+                        <p>Expert business consulting services to help your company grow and succeed.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Technology</h3>
+                        <p>Cutting-edge technology solutions tailored to your business needs.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Support</h3>
+                        <p>Ongoing support and maintenance to ensure your systems run smoothly.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h3>
-            <p class="text-lg text-gray-600 mb-8">Ready to start your journey with us?</p>
-            <button class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
-                Contact Us
-            </button>
-        </div>
-    </section>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Ready to work with us? Get in touch today!</p>
+                <div class="contact-info">
+                    <p>Email: info@dasgroupllc.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Das Group. All rights reserved.</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Das Group LLC. All rights reserved.</p>
         </div>
     </footer>
 
