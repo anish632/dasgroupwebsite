@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BulkGenie AI - App Demo</title>
+  <meta name="description" content="See BulkGenie AI in action: bulk-generate product descriptions, SEO titles, meta descriptions & alt text with AI.">
+  <meta property="og:title" content="BulkGenie AI - App Demo">
+  <meta property="og:description" content="AI-powered bulk content generator for Shopify products. See the app in action.">
+  <meta property="og:image" content="01-product-selector.svg">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    .demo-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .demo-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .demo-logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #7C3AED, #3B82F6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .demo-logo-text {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #7C3AED, #3B82F6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .demo-tagline {
+      font-size: 18px;
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* Slideshow */
+    .slideshow {
+      position: relative;
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #222;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+
+    .slide-viewport {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Caption overlay */
+    .slide-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.9));
+      padding: 60px 32px 24px;
+    }
+
+    .slide-caption h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .slide-caption p {
+      font-size: 14px;
+      color: #9ca3af;
+    }
+
+    /* Progress bar */
+    .progress-bar {
+      height: 3px;
+      background: #222;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7C3AED, #3B82F6);
+      width: 0%;
+      transition: width 0.3s linear;
+    }
+
+    .progress-fill.animating {
+      transition: width 5s linear;
+      width: 100%;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #0d0d0d;
+    }
+
+    .controls-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-control {
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      transition: background 0.2s;
+      font-size: 18px;
+    }
+
+    .btn-control:hover {
+      background: #1f1f1f;
+    }
+
+    .slide-counter {
+      font-size: 13px;
+      color: #6b7280;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Dot indicators */
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: #7C3AED;
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* Feature highlights below */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .feature-card {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .feature-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #7C3AED, #3B82F6);
+      color: #fff;
+      padding: 14px 40px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.3);
+    }
+
+    .cta-note {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 12px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      color: #333;
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .demo-container {
+        padding: 24px 16px 40px;
+      }
+      .slide-caption h3 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <div class="demo-header">
+      <div class="demo-logo">
+        <div class="demo-logo-icon">&#10024;</div>
+        <div class="demo-logo-text">BulkGenie AI</div>
+      </div>
+      <p class="demo-tagline">
+        Bulk-generate product descriptions, SEO titles, meta descriptions &amp; image alt text with AI. See every feature in action.
+      </p>
+    </div>
+
+    <div class="slideshow">
+      <div class="slide-viewport">
+        <div class="slide active" data-index="0">
+          <img src="01-product-selector.svg" alt="Product Selector" loading="eager">
+          <div class="slide-caption">
+            <h3>Select Products &amp; Choose Fields</h3>
+            <p>Pick individual products or bulk-select hundreds. Smart filters find products missing descriptions, SEO titles, or alt text.</p>
+          </div>
+        </div>
+        <div class="slide" data-index="1">
+          <img src="02-review-grid.svg" alt="Review Grid" loading="lazy">
+          <div class="slide-caption">
+            <h3>Spreadsheet-Style Review</h3>
+            <p>See all AI-generated content side by side. Approve, reject, or regenerate per product before anything goes live.</p>
+          </div>
+        </div>
+        <div class="slide" data-index="2">
+          <img src="03-inline-editing.svg" alt="Inline Editing" loading="lazy">
+          <div class="slide-caption">
+            <h3>Inline Editing with Character Counts</h3>
+            <p>Click any cell to edit. Live character counters keep SEO titles under 70 and meta descriptions under 160 characters.</p>
+          </div>
+        </div>
+        <div class="slide" data-index="3">
+          <img src="04-brand-voice-settings.svg" alt="Brand Voice Settings" loading="lazy">
+          <div class="slide-caption">
+            <h3>Train Your Brand Voice</h3>
+            <p>Describe your tone or let the AI learn from your best existing descriptions. Configure AI provider and language preferences.</p>
+          </div>
+        </div>
+        <div class="slide" data-index="4">
+          <img src="05-dashboard.svg" alt="Dashboard" loading="lazy">
+          <div class="slide-caption">
+            <h3>Dashboard Overview</h3>
+            <p>Track monthly usage, remaining quota, current plan, and all recent generation jobs at a glance.</p>
+          </div>
+        </div>
+        <div class="slide" data-index="5">
+          <img src="06-billing-plans.svg" alt="Billing Plans" loading="lazy">
+          <div class="slide-caption">
+            <h3>Simple, Transparent Pricing</h3>
+            <p>Four plans from Free to Scale. Upgrade or downgrade anytime directly in your Shopify admin.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div class="controls">
+        <div class="controls-left">
+          <button class="btn-control" id="btnPrev" title="Previous">&#9664;</button>
+          <button class="btn-control" id="btnPlayPause" title="Play/Pause">&#10074;&#10074;</button>
+          <button class="btn-control" id="btnNext" title="Next">&#9654;</button>
+          <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">6</span></span>
+        </div>
+        <div class="dots" id="dots"></div>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">&#9889;</div>
+        <div class="feature-title">Bulk Generation</div>
+        <div class="feature-desc">Process hundreds of products in a single job. No more copy-pasting one product at a time.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#9733;</div>
+        <div class="feature-title">SEO-Optimized</div>
+        <div class="feature-desc">Titles under 70 chars, meta descriptions under 160. Primary keywords placed naturally for search rankings.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128259;</div>
+        <div class="feature-title">Full Undo Support</div>
+        <div class="feature-desc">Every change is reversible. Original content is backed up before any publish. Revert with one click.</div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <a href="https://apps.shopify.com/" class="cta-btn">Install BulkGenie AI</a>
+      <p class="cta-note">Free plan included &middot; No credit card required &middot; 10 products/month free</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2026 Das Group LLC &middot; <a href="/apps/privacy/" style="color: #555;">Privacy Policy</a>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const progressFill = document.getElementById('progressFill');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    const currentSlideEl = document.getElementById('currentSlide');
+    const dotsContainer = document.getElementById('dots');
+    const totalSlides = slides.length;
+    const SLIDE_DURATION = 5000;
+
+    let currentIndex = 0;
+    let isPlaying = true;
+    let timer = null;
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateUI() {
+      slides.forEach((s, i) => s.classList.toggle('active', i === currentIndex));
+      dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+      currentSlideEl.textContent = currentIndex + 1;
+    }
+
+    function resetProgress() {
+      progressFill.classList.remove('animating');
+      progressFill.style.width = '0%';
+      void progressFill.offsetWidth;
+      if (isPlaying) {
+        progressFill.classList.add('animating');
+      }
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateUI();
+      resetProgress();
+      if (isPlaying) startTimer();
+    }
+
+    function nextSlide() {
+      goToSlide((currentIndex + 1) % totalSlides);
+    }
+
+    function prevSlide() {
+      goToSlide((currentIndex - 1 + totalSlides) % totalSlides);
+    }
+
+    function startTimer() {
+      clearTimeout(timer);
+      timer = setTimeout(nextSlide, SLIDE_DURATION);
+    }
+
+    function togglePlay() {
+      isPlaying = !isPlaying;
+      btnPlayPause.innerHTML = isPlaying ? '&#10074;&#10074;' : '&#9654;';
+      if (isPlaying) {
+        resetProgress();
+        startTimer();
+      } else {
+        clearTimeout(timer);
+        progressFill.classList.remove('animating');
+      }
+    }
+
+    btnPrev.addEventListener('click', prevSlide);
+    btnNext.addEventListener('click', nextSlide);
+    btnPlayPause.addEventListener('click', togglePlay);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === ' ') { e.preventDefault(); togglePlay(); }
+    });
+
+    resetProgress();
+    startTimer();
+  </script>
+</body>
+</html>
