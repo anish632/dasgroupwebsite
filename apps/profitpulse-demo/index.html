@@ -63,7 +63,42 @@
       line-height: 1.5;
     }
 
+    /* Video section */
+    .video-section {
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #FFD700;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      background: #111;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #222;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
     /* Slideshow */
+    .slideshow-section {
+      margin-bottom: 48px;
+    }
+
     .slideshow {
       position: relative;
       background: #111;
@@ -98,7 +133,6 @@
       display: block;
     }
 
-    /* Caption overlay */
     .slide-caption {
       position: absolute;
       bottom: 0;
@@ -119,7 +153,6 @@
       color: #9ca3af;
     }
 
-    /* Progress bar */
     .progress-bar {
       height: 3px;
       background: #222;
@@ -137,7 +170,6 @@
       width: 100%;
     }
 
-    /* Controls */
     .controls {
       display: flex;
       align-items: center;
@@ -177,7 +209,6 @@
       font-variant-numeric: tabular-nums;
     }
 
-    /* Dot indicators */
     .dots {
       display: flex;
       gap: 6px;
@@ -200,7 +231,7 @@
       border-radius: 4px;
     }
 
-    /* Feature highlights below */
+    /* Features */
     .features {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -293,78 +324,79 @@
       </p>
     </div>
 
-    <div class="slideshow">
-      <div class="slide-viewport">
-        <div class="slide active" data-index="0">
-          <img src="01-dashboard-overview.png" alt="Dashboard Overview" loading="eager">
-          <div class="slide-caption">
-            <h3>Real-Time Profit Dashboard</h3>
-            <p>See revenue, COGS, net profit, and margins at a glance with live trend charts and AI insights.</p>
-          </div>
-        </div>
-        <div class="slide" data-index="1">
-          <img src="02-onboarding-wizard.png" alt="Onboarding Wizard" loading="lazy">
-          <div class="slide-caption">
-            <h3>60-Second Setup</h3>
-            <p>Guided onboarding walks you through entering costs and setting profit targets in under a minute.</p>
-          </div>
-        </div>
-        <div class="slide" data-index="2">
-          <img src="03-action-items.png" alt="AI Action Items" loading="lazy">
-          <div class="slide-caption">
-            <h3>AI-Powered Action Items</h3>
-            <p>Prioritized recommendations tell you exactly what to fix: missing costs, negative margins, pricing optimization.</p>
-          </div>
-        </div>
-        <div class="slide" data-index="3">
-          <img src="04-orders-table.png" alt="Orders Table" loading="lazy">
-          <div class="slide-caption">
-            <h3>Per-Order Profit Breakdown</h3>
-            <p>Every order shows revenue, COGS, shipping, fees, and net profit. Negative margin orders are flagged instantly.</p>
-          </div>
-        </div>
-        <div class="slide" data-index="4">
-          <img src="05-products-page.png" alt="Products Page" loading="lazy">
-          <div class="slide-caption">
-            <h3>Product Cost & Margin Manager</h3>
-            <p>Enter costs per product and see margins instantly. Products missing costs are highlighted for action.</p>
-          </div>
-        </div>
-        <div class="slide" data-index="5">
-          <img src="06-pricing-plans.png" alt="Pricing Plans" loading="lazy">
-          <div class="slide-caption">
-            <h3>Flexible Pricing</h3>
-            <p>Choose flat-rate Standard or Performance pricing that only charges when your profit increases.</p>
-          </div>
-        </div>
-        <div class="slide" data-index="6">
-          <img src="07-settings.png" alt="Settings" loading="lazy">
-          <div class="slide-caption">
-            <h3>Fully Configurable</h3>
-            <p>Set profit targets, toggle alerts, enable AI insights, and manage billing all in one place.</p>
-          </div>
-        </div>
-        <div class="slide" data-index="7">
-          <img src="08-dark-mode.png" alt="Dark Mode" loading="lazy">
-          <div class="slide-caption">
-            <h3>Native Dark Mode</h3>
-            <p>Beautiful dark theme that follows your Shopify admin preference. Easy on the eyes, day and night.</p>
-          </div>
-        </div>
+    <!-- Video Demo -->
+    <div class="video-section">
+      <div class="section-label">App Walkthrough</div>
+      <div class="video-wrapper">
+        <video controls loop muted playsinline preload="metadata" poster="01-dashboard-overview.png">
+          <source src="demo-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
+    </div>
 
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-
-      <div class="controls">
-        <div class="controls-left">
-          <button class="btn-control" id="btnPrev" title="Previous">&#9664;</button>
-          <button class="btn-control" id="btnPlayPause" title="Play/Pause">&#10074;&#10074;</button>
-          <button class="btn-control" id="btnNext" title="Next">&#9654;</button>
-          <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">8</span></span>
+    <!-- Screenshot Slideshow -->
+    <div class="slideshow-section">
+      <div class="section-label">Screenshots</div>
+      <div class="slideshow">
+        <div class="slide-viewport">
+          <div class="slide active" data-index="0">
+            <img src="01-dashboard-overview.png" alt="Dashboard with goal tracking and AI insights" loading="eager">
+            <div class="slide-caption">
+              <h3>Profit Dashboard</h3>
+              <p>Track goals, view AI insights, and monitor key metrics across all orders at a glance.</p>
+            </div>
+          </div>
+          <div class="slide" data-index="1">
+            <img src="02-dashboard-trend.png" alt="Weekly performance trend chart" loading="lazy">
+            <div class="slide-caption">
+              <h3>Performance Trends</h3>
+              <p>Weekly trend chart shows how your margins are tracking over the last 30 days.</p>
+            </div>
+          </div>
+          <div class="slide" data-index="2">
+            <img src="03-orders-table.png" alt="Order-level margin breakdown and tracking" loading="lazy">
+            <div class="slide-caption">
+              <h3>Per-Order Breakdown</h3>
+              <p>Every order shows revenue, COGS, shipping, fees, and net margin in one table.</p>
+            </div>
+          </div>
+          <div class="slide" data-index="3">
+            <img src="04-products-page.png" alt="Product cost tracking and margin analysis" loading="lazy">
+            <div class="slide-caption">
+              <h3>Product Cost Manager</h3>
+              <p>Enter costs per product variant and see margins calculated instantly.</p>
+            </div>
+          </div>
+          <div class="slide" data-index="4">
+            <img src="05-products-catalog.png" alt="Bulk product cost management" loading="lazy">
+            <div class="slide-caption">
+              <h3>Full Catalog View</h3>
+              <p>Manage costs across your entire product catalog with bulk editing support.</p>
+            </div>
+          </div>
+          <div class="slide" data-index="5">
+            <img src="06-settings.png" alt="App settings and configuration options" loading="lazy">
+            <div class="slide-caption">
+              <h3>Settings &amp; Configuration</h3>
+              <p>Set margin targets, configure alerts, enable AI insights, and customize cost calculations.</p>
+            </div>
+          </div>
         </div>
-        <div class="dots" id="dots"></div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="controls">
+          <div class="controls-left">
+            <button class="btn-control" id="btnPrev" title="Previous">&#9664;</button>
+            <button class="btn-control" id="btnPlayPause" title="Play/Pause">&#10074;&#10074;</button>
+            <button class="btn-control" id="btnNext" title="Next">&#9654;</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">6</span></span>
+          </div>
+          <div class="dots" id="dots"></div>
+        </div>
       </div>
     </div>
 
@@ -382,7 +414,7 @@
       <div class="feature-card">
         <div class="feature-icon">&#128200;</div>
         <div class="feature-title">Actionable Insights</div>
-        <div class="feature-desc">Get specific recommendations: fix missing costs, optimize pricing, and eliminate negative margins.</div>
+        <div class="feature-desc">Get specific recommendations: fix missing costs, optimize margins, and improve performance.</div>
       </div>
     </div>
 
@@ -411,7 +443,6 @@
     let isPlaying = true;
     let timer = null;
 
-    // Create dots
     for (let i = 0; i < totalSlides; i++) {
       const dot = document.createElement('button');
       dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -428,7 +459,6 @@
     function resetProgress() {
       progressFill.classList.remove('animating');
       progressFill.style.width = '0%';
-      // Force reflow
       void progressFill.offsetWidth;
       if (isPlaying) {
         progressFill.classList.add('animating');
@@ -471,14 +501,12 @@
     btnNext.addEventListener('click', nextSlide);
     btnPlayPause.addEventListener('click', togglePlay);
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') prevSlide();
       if (e.key === 'ArrowRight') nextSlide();
       if (e.key === ' ') { e.preventDefault(); togglePlay(); }
     });
 
-    // Start auto-play
     resetProgress();
     startTimer();
   </script>
