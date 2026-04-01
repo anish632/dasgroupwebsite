@@ -3,28 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Das Group</title>
+    <title>Das Group LLC — Privacy-First Apps for iPhone</title>
+    <meta name="description" content="Das Group LLC builds privacy-first apps for iPhone. Fasting timer, receipt scanner, document scanner, and more. On-device AI, no cloud, no tracking.">
+    <link rel="canonical" href="https://dasgroupllc.com/">
+    <meta property="og:title" content="Das Group LLC — Privacy-First Apps for iPhone">
+    <meta property="og:description" content="Privacy-first apps for iPhone. Fasting timer, receipt scanner, document scanner, and more. On-device AI processing.">
+    <meta property="og:url" content="https://dasgroupllc.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Das Group LLC">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
     </style>
+
+    <!-- Schema.org: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Das Group LLC",
+        "url": "https://dasgroupllc.com",
+        "email": "support@dasgroupllc.com",
+        "description": "Das Group LLC builds privacy-first apps for iPhone with on-device AI processing. No cloud, no tracking, no accounts required."
+    }
+    </script>
 </head>
 <body class="bg-white">
-    <main class="min-h-screen w-full flex flex-col items-center justify-center antialiased">
-        <div class="text-center px-4">
-            <!-- Logo -->
-            <h1 class="text-7xl sm:text-8xl md:text-9xl font-bold tracking-tight text-[#2f364a]">
+    <main class="min-h-screen w-full antialiased">
+        <!-- Hero -->
+        <section class="flex flex-col items-center justify-center py-32 px-4">
+            <h1 class="text-7xl sm:text-8xl md:text-9xl font-bold tracking-tight text-[#2f364a] text-center">
                 Das Group
             </h1>
-            <!-- Email -->
-            <p class="mt-8 text-base sm:text-lg md:text-xl text-slate-600 tracking-wide">
-                <a href="mailto:support@dasgroupllc.com" class="hover:text-[#2f364a] transition-colors duration-300 ease-in-out">
-                    support@dasgroupllc.com
-                </a>
+            <p class="mt-6 text-lg text-slate-500 text-center max-w-md">
+                Privacy-first apps for iPhone. On-device AI. No cloud. No tracking.
             </p>
-        </div>
+            <a href="mailto:support@dasgroupllc.com" class="mt-4 text-base text-slate-600 hover:text-[#2f364a] transition-colors duration-300">
+                support@dasgroupllc.com
+            </a>
+        </section>
+
+        <!-- Apps -->
+        <section class="max-w-4xl mx-auto px-4 pb-24">
+            <h2 class="text-2xl font-bold text-center text-gray-900 mb-12">Our Apps</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="/apps/trackfasts/" class="group block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition text-center">
+                    <div class="text-5xl mb-4">⏱️</div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition mb-2">TrackFasts</h3>
+                    <p class="text-gray-600 text-sm">Intermittent fasting timer with 4+ protocols, streak tracking, and Apple Watch support.</p>
+                    <span class="inline-block mt-4 text-sm font-medium text-indigo-600">Learn more →</span>
+                </a>
+                <a href="/apps/receipts/" class="group block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition text-center">
+                    <div class="text-5xl mb-4">🧾</div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition mb-2">Scan Receipts</h3>
+                    <p class="text-gray-600 text-sm">AI receipt scanner with 91% accuracy, automatic tax categories, and spending insights.</p>
+                    <span class="inline-block mt-4 text-sm font-medium text-emerald-600">Learn more →</span>
+                </a>
+                <a href="/apps/quickscan/" class="group block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition text-center">
+                    <div class="text-5xl mb-4">📄</div>
+                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition mb-2">QuickScan</h3>
+                    <p class="text-gray-600 text-sm">AI document scanner — IDs, receipts, contracts to PDF in 3 seconds. 5 free scans/month.</p>
+                    <span class="inline-block mt-4 text-sm font-medium text-blue-600">Learn more →</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-gray-100 py-8 text-center text-sm text-gray-400">
+            <p>© 2026 Das Group LLC. All rights reserved.</p>
+            <div class="mt-2 flex gap-4 justify-center">
+                <a href="/apps/privacy/" class="hover:text-gray-600 transition">Privacy</a>
+                <a href="/apps/terms/" class="hover:text-gray-600 transition">Terms</a>
+            </div>
+        </footer>
     </main>
 </body>
 </html>
