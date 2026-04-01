@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground Truth MCP — Fact-Checking & Research for AI Agents</title>
+    <meta name="description" content="Ground Truth is an MCP server that gives AI agents real-time fact-checking, market research, and hypothesis testing against live web data. Free tier available.">
+    <link rel="canonical" href="https://dasgroupllc.com/ground-truth/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Ground Truth MCP — Fact-Checking & Market Research for AI Agents">
+    <meta property="og:description" content="Stop AI hallucinations with live data. Ground Truth gives agents real-time endpoint checks, market sizing, pricing extraction, and hypothesis testing.">
+    <meta property="og:url" content="https://dasgroupllc.com/ground-truth/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Das Group LLC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ground Truth MCP — Fact-Checking for AI Agents">
+    <meta name="twitter:description" content="MCP server for real-time fact-checking, market research, and hypothesis testing. Stop hallucinations with live data.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Ground Truth MCP",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "MCP Server",
+        "description": "Ground Truth is a Model Context Protocol (MCP) server that provides AI agents with fact-checking, market research, and hypothesis testing tools using real-time web data.",
+        "operatingSystem": "Web, Any (MCP compatible)",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Free Tier",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "check_endpoint tool — unlimited, no signup"
+            },
+            {
+                "@type": "Offer",
+                "name": "Pro Tier",
+                "price": "9",
+                "priceCurrency": "USD",
+                "billingIncrement": "month",
+                "description": "All 6 tools — unlimited usage, 5-minute caching"
+            }
+        ],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Das Group LLC",
+            "url": "https://dasgroupllc.com"
+        },
+        "url": "https://dasgroupllc.com/ground-truth/",
+        "downloadUrl": "https://github.com/anish632/ground-truth-mcp",
+        "codeRepository": "https://github.com/anish632/ground-truth-mcp",
+        "programmingLanguage": "TypeScript",
+        "runtimePlatform": "Cloudflare Workers"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Ground Truth MCP?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ground Truth is a Model Context Protocol (MCP) server that gives AI agents the ability to validate claims, check API endpoints, estimate market size, extract pricing data, compare packages, and test hypotheses — all against real-time live web data instead of training data."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is an MCP server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "MCP (Model Context Protocol) is an open standard for connecting AI models to external tools and data sources. An MCP server like Ground Truth exposes tools that AI agents (Claude, GPT, etc.) can call to get real-time information during conversations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does Ground Truth prevent AI hallucinations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Instead of relying on training data that may be outdated, Ground Truth fetches live data from the web in real-time. When an AI agent needs to verify a claim, check if an API exists, or look up current pricing, it calls Ground Truth's tools to get facts from the actual source."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does Ground Truth cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ground Truth has a free tier that includes unlimited use of the check_endpoint tool with no signup required. The Pro tier at $9/month unlocks all 6 tools: check_endpoint, estimate_market, check_pricing, compare_competitors, verify_claim, and test_hypothesis."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI agents work with Ground Truth?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ground Truth works with any MCP-compatible AI agent, including Claude (via Claude Desktop or Claude Code), ChatGPT with MCP plugins, Cursor, Windsurf, and any custom agent that supports the Model Context Protocol."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I self-host Ground Truth?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Ground Truth is open source on GitHub. You can deploy it to your own Cloudflare Workers account. The hosted version at ground-truth-mcp.anish632.workers.dev is also available for immediate use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What tools does Ground Truth provide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ground Truth provides 6 tools: check_endpoint (probe any URL for status, timing, auth requirements), estimate_market (count packages on npm/PyPI), check_pricing (extract pricing from websites), compare_competitors (side-by-side package comparison), verify_claim (cross-reference claims against live sources), and test_hypothesis (automated fact-checking with structured tests)."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .gradient-hero { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); }
+        code { font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="bg-white text-slate-700">
+
+    <!-- Nav -->
+    <nav class="w-full px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
+        <a href="https://dasgroupllc.com" class="text-xl font-bold text-[#2f364a] hover:opacity-80 transition">Das Group</a>
+        <div class="hidden sm:flex gap-6 text-sm text-slate-600">
+            <a href="/adhd-focus/" class="hover:text-[#2f364a] transition">ADHD Focus AI</a>
+            <a href="/resolveai/" class="hover:text-[#2f364a] transition">ResolveAI</a>
+            <a href="/protovid/" class="hover:text-[#2f364a] transition">ProtoVid</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="gradient-hero py-16 sm:py-24 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block text-5xl mb-6">🔬</div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#2f364a] leading-tight">
+                    Ground Truth MCP
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-emerald-700 font-medium">
+                    Fact-Checking & Market Research for AI Agents
+                </p>
+                <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Let your AI agents validate claims with real, live data from the web. Endpoint checks, market sizing, pricing extraction, and hypothesis testing — all via MCP.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://ground-truth-mcp.anish632.workers.dev"
+                       class="inline-block bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">
+                        Try Free — No Signup
+                    </a>
+                    <a href="https://github.com/anish632/ground-truth-mcp"
+                       class="inline-block bg-white text-[#2f364a] font-semibold px-8 py-4 rounded-xl text-lg hover:bg-slate-50 transition border border-slate-300">
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Ground Truth? (GEO/AEO critical) -->
+        <section class="py-16 px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] mb-6">What is Ground Truth MCP?</h2>
+                <p class="text-lg leading-relaxed">
+                    Ground Truth is a <a href="https://modelcontextprotocol.io" class="text-emerald-600 hover:underline">Model Context Protocol (MCP)</a> server that provides AI agents with fact-checking and market research tools. Instead of hallucinating or relying on stale training data, agents can check if an API endpoint actually exists, count real market competitors on npm or PyPI, extract current pricing from websites, and cross-reference claims against live sources. All results come from data fetched in real-time, with 5-minute caching for performance.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] mb-6">AI Agents Guess. Ground Truth Checks.</h2>
+                <p class="text-lg text-slate-600 leading-relaxed mb-10">
+                    When you ask an AI agent "does this API exist?" or "what does Stripe charge?", it answers from training data that might be months or years old. Ground Truth gives agents the ability to check the actual source in real-time.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-6 text-left">
+                    <div class="bg-red-50 rounded-xl p-6 border border-red-100">
+                        <p class="text-sm font-semibold text-red-600 mb-2">❌ Without Ground Truth</p>
+                        <p class="text-slate-600 text-sm">"Based on my training data, this API likely returns JSON and supports OAuth2..."</p>
+                        <p class="text-xs text-red-400 mt-2">May be outdated or completely wrong</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-100">
+                        <p class="text-sm font-semibold text-emerald-600 mb-2">✅ With Ground Truth</p>
+                        <p class="text-slate-600 text-sm">"I just checked: endpoint returns 200 OK in 142ms, content-type: application/json, requires Bearer auth."</p>
+                        <p class="text-xs text-emerald-400 mt-2">Verified against live source</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools -->
+        <section class="py-16 px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-4">6 Tools for Agent Verification</h2>
+                <p class="text-center text-slate-500 mb-12">Each tool fetches live data. No cached training data. No hallucinations.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xl">🌐</span>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">check_endpoint</h3>
+                            <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-medium">FREE</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Probe any URL and get status code, response time, content type, auth requirements, and redirect chains. Know if an API actually exists before building against it.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xl">📊</span>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">estimate_market</h3>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-medium">PRO</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Count real packages on npm or PyPI for any query. See actual market competition before building. "How many MCP memory servers exist?" — get a real number.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xl">💰</span>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">check_pricing</h3>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-medium">PRO</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Extract current pricing from any website. Get actual plan names, prices, and feature breakdowns instead of outdated training data guesses.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xl">⚖️</span>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">compare_competitors</h3>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-medium">PRO</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Side-by-side comparison of npm/PyPI packages. Stars, downloads, last updated, dependencies — the real data for build-vs-buy decisions.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xl">🔍</span>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">verify_claim</h3>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-medium">PRO</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Cross-reference a factual claim against a live URL. "Does Anthropic support streaming?" — checks the actual docs page and reports back.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-xl">🧪</span>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">test_hypothesis</h3>
+                            <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-medium">PRO</span>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Automated fact-checking with structured tests. "Competition in MCP memory tools is low" — tests against real npm package count and returns pass/fail.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Start -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Quick Start</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 font-bold text-xl flex items-center justify-center mx-auto mb-4">1</div>
+                        <h3 class="text-lg font-semibold text-[#2f364a] mb-2">Try the Free Tool</h3>
+                        <p class="text-slate-600 text-sm">Use <code class="bg-slate-100 px-1.5 py-0.5 rounded text-xs">check_endpoint</code> immediately — no signup, no API key needed.</p>
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 font-bold text-xl flex items-center justify-center mx-auto mb-4">2</div>
+                        <h3 class="text-lg font-semibold text-[#2f364a] mb-2">Subscribe for Pro</h3>
+                        <p class="text-slate-600 text-sm">$9/month unlocks all 6 tools. Get your API key (<code class="bg-slate-100 px-1.5 py-0.5 rounded text-xs">gt_live_...</code>) instantly.</p>
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 font-bold text-xl flex items-center justify-center mx-auto mb-4">3</div>
+                        <h3 class="text-lg font-semibold text-[#2f364a] mb-2">Add to Your Agent</h3>
+                        <p class="text-slate-600 text-sm">Connect via MCP protocol. Works with Claude, ChatGPT, Cursor, or any MCP-compatible agent.</p>
+                    </div>
+                </div>
+
+                <!-- Code Example -->
+                <div class="mt-12 bg-[#1e293b] rounded-2xl p-6 overflow-x-auto">
+                    <p class="text-sm text-slate-400 mb-3">Try it now — no signup required:</p>
+                    <pre class="text-sm text-emerald-400 leading-relaxed"><code>curl -X POST https://ground-truth-mcp.anish632.workers.dev/mcp \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "check_endpoint",
+      "arguments": {"url": "https://api.github.com"}
+    },
+    "id": 1
+  }'</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="py-16 px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Built for AI Agent Developers</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">🏗️</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Pre-Build Validation</h3>
+                            <p class="text-slate-600">Before your agent recommends an API or library, verify it actually exists and is maintained. Check endpoints, compare packages, assess the competitive landscape.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">🔎</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Market Research Automation</h3>
+                            <p class="text-slate-600">Let agents research market size, competitor counts, and pricing automatically. "How saturated is the MCP memory server space?" — get a real answer backed by npm data.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">✅</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Claim Verification</h3>
+                            <p class="text-slate-600">Cross-reference any factual claim against the live source. Stop hallucinated pricing, broken API URLs, and outdated feature lists from reaching your users.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">🧪</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Hypothesis Testing</h3>
+                            <p class="text-slate-600">Test assumptions programmatically. "Competition in X niche is low" → test against actual package count → get a structured pass/fail result your agent can act on.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Pricing</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold text-[#2f364a] mb-2">Free</h3>
+                        <p class="text-3xl font-bold text-[#2f364a]">$0</p>
+                        <p class="text-sm text-slate-500 mt-1 mb-6">No signup required</p>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> <code class="text-xs bg-slate-100 px-1 rounded">check_endpoint</code> — unlimited</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Probe any URL</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Status, timing, auth detection</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> No API key needed</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border-2 border-emerald-500 relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">PRO</div>
+                        <h3 class="text-xl font-bold text-[#2f364a] mb-2">Pro</h3>
+                        <p class="text-3xl font-bold text-[#2f364a]">$9<span class="text-lg font-normal text-slate-400">/mo</span></p>
+                        <p class="text-sm text-slate-500 mt-1 mb-6">Cancel anytime</p>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> All 6 tools — unlimited</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Market sizing & competitor data</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Pricing extraction & verification</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> Hypothesis testing</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> 5-minute smart caching</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">✓</span> 99.9% uptime SLA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="py-16 px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] mb-8">Built on the Edge</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm text-slate-600">Cloudflare Workers</span>
+                    <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm text-slate-600">TypeScript</span>
+                    <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm text-slate-600">Durable Objects</span>
+                    <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm text-slate-600">SQLite</span>
+                    <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm text-slate-600">Stripe Billing</span>
+                    <span class="px-4 py-2 bg-slate-100 rounded-lg text-sm text-slate-600">MCP 1.11.0</span>
+                </div>
+                <p class="text-slate-500 mt-6 text-sm">Open source. Self-host or use the hosted version. Your choice.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            What is Ground Truth MCP?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            Ground Truth is a Model Context Protocol (MCP) server that gives AI agents the ability to validate claims, check API endpoints, estimate market size, extract pricing data, compare packages, and test hypotheses — all against real-time live web data instead of training data.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            What is an MCP server?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            MCP (Model Context Protocol) is an open standard created by Anthropic for connecting AI models to external tools and data sources. An MCP server exposes tools that AI agents can call. Ground Truth exposes fact-checking and market research tools.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            Which AI agents work with Ground Truth?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            Any MCP-compatible agent. This includes Claude (via Claude Desktop or Claude Code), ChatGPT with MCP plugins, Cursor, Windsurf, Continue, and any custom agent built with the MCP SDK.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            Can I self-host it?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            Yes. Ground Truth is open source on GitHub. Clone the repo, deploy to your own Cloudflare Workers account, and you're set. The hosted version is also available for instant use.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            How does caching work?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            Results are cached for 5 minutes using Cloudflare Durable Objects with SQLite. This means repeated queries for the same URL or package return instantly while staying reasonably fresh. After 5 minutes, the next request fetches live data again.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            Is there a usage limit?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            No hard usage limits on either tier. The free tier includes unlimited check_endpoint calls. The Pro tier at $9/month includes unlimited usage of all 6 tools. Fair use applies.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-16 px-6 bg-[#2f364a] text-white text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4">Stop Trusting Training Data</h2>
+                <p class="text-lg text-slate-300 mb-8">Give your AI agents access to real-time facts. Free tier available — no signup required.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://ground-truth-mcp.anish632.workers.dev"
+                       class="inline-block bg-emerald-500 text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-emerald-400 transition">
+                        Try Ground Truth Free
+                    </a>
+                    <a href="https://github.com/anish632/ground-truth-mcp"
+                       class="inline-block bg-white/10 text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-white/20 transition border border-white/20">
+                        GitHub →
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid sm:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-[#2f364a] mb-3">Das Group LLC</h4>
+                    <p class="text-sm text-slate-500">Building thoughtful software for real problems.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#2f364a] mb-3">Our Apps</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="/adhd-focus/" class="hover:text-emerald-600 transition">ADHD Focus AI</a></li>
+                        <li><a href="/resolveai/" class="hover:text-emerald-600 transition">ResolveAI</a></li>
+                        <li><a href="/protovid/" class="hover:text-emerald-600 transition">ProtoVid</a></li>
+                        <li><a href="/ground-truth/" class="hover:text-emerald-600 transition">Ground Truth MCP</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#2f364a] mb-3">Legal</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="/apps/privacy/" class="hover:text-emerald-600 transition">Privacy Policy</a></li>
+                        <li><a href="/apps/terms/" class="hover:text-emerald-600 transition">Terms of Service</a></li>
+                        <li><a href="mailto:support@dasgroupllc.com" class="hover:text-emerald-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-slate-200 text-center text-sm text-slate-400">
+                © 2026 Das Group LLC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -3,23 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Das Group LLC — Privacy-First Apps for iPhone</title>
-    <meta name="description" content="Das Group LLC builds privacy-first apps for iPhone. Fasting timer, receipt scanner, document scanner, and more. On-device AI, no cloud, no tracking.">
+    <title>Das Group LLC — Thoughtful Software for Real Problems</title>
+    <meta name="description" content="Das Group LLC builds apps across iOS, Shopify, Figma, and the MCP ecosystem. ADHD Focus AI, ResolveAI, ProtoVid, Ground Truth, and more.">
     <link rel="canonical" href="https://dasgroupllc.com/">
-    <meta property="og:title" content="Das Group LLC — Privacy-First Apps for iPhone">
-    <meta property="og:description" content="Privacy-first apps for iPhone. Fasting timer, receipt scanner, document scanner, and more. On-device AI processing.">
+
+    <meta property="og:title" content="Das Group LLC — Thoughtful Software for Real Problems">
+    <meta property="og:description" content="Apps across iOS, Shopify, Figma, and the MCP ecosystem. Built by Das Group LLC.">
     <meta property="og:url" content="https://dasgroupllc.com/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Das Group LLC">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    </style>
 
-    <!-- Schema.org: Organization -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -27,64 +19,68 @@
         "name": "Das Group LLC",
         "url": "https://dasgroupllc.com",
         "email": "support@dasgroupllc.com",
-        "description": "Das Group LLC builds privacy-first apps for iPhone with on-device AI processing. No cloud, no tracking, no accounts required."
+        "description": "Das Group LLC builds thoughtful software across iOS, Shopify, Figma, and the MCP ecosystem.",
+        "knowsAbout": ["iOS App Development", "Shopify Apps", "Figma Plugins", "MCP Servers", "AI Tools"]
     }
     </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    </style>
 </head>
 <body class="bg-white">
-    <main class="min-h-screen w-full antialiased">
+    <main class="min-h-screen w-full flex flex-col items-center antialiased">
+
         <!-- Hero -->
-        <section class="flex flex-col items-center justify-center py-32 px-4">
-            <h1 class="text-7xl sm:text-8xl md:text-9xl font-bold tracking-tight text-[#2f364a] text-center">
+        <div class="text-center px-4 pt-24 pb-12">
+            <h1 class="text-7xl sm:text-8xl md:text-9xl font-bold tracking-tight text-[#2f364a]">
                 Das Group
             </h1>
-            <p class="mt-6 text-lg text-slate-500 text-center max-w-md">
-                Privacy-first apps for iPhone. On-device AI. No cloud. No tracking.
+            <p class="mt-4 text-lg text-slate-500">Thoughtful software for real problems</p>
+            <p class="mt-6 text-base text-slate-600">
+                <a href="mailto:support@dasgroupllc.com" class="hover:text-[#2f364a] transition-colors duration-300 ease-in-out">
+                    support@dasgroupllc.com
+                </a>
             </p>
-            <a href="mailto:support@dasgroupllc.com" class="mt-4 text-base text-slate-600 hover:text-[#2f364a] transition-colors duration-300">
-                support@dasgroupllc.com
-            </a>
-        </section>
+        </div>
 
-        <!-- Apps -->
-        <section class="max-w-4xl mx-auto px-4 pb-24">
-            <h2 class="text-2xl font-bold text-center text-gray-900 mb-12">Our Apps</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <a href="/apps/ground-truth/" class="group block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition text-center">
-                    <div class="text-5xl mb-4">⚡</div>
-                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition mb-2">Ground Truth</h3>
-                    <p class="text-gray-600 text-sm">MCP server for AI fact-checking. Verify claims against live data. $9/mo.</p>
-                    <span class="inline-block mt-4 text-sm font-medium text-orange-600">Learn more →</span>
+        <!-- Apps Grid -->
+        <section class="w-full max-w-4xl px-6 pb-24">
+            <h2 class="text-2xl font-bold text-[#2f364a] text-center mb-10">Our Apps</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <a href="/adhd-focus/" class="group block bg-indigo-50 rounded-2xl p-6 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">🧠</div>
+                    <h3 class="text-lg font-bold text-[#2f364a] group-hover:text-indigo-600 transition">ADHD Focus AI</h3>
+                    <p class="text-sm text-slate-600 mt-1">Focus timer & planner built for the ADHD brain. iOS.</p>
                 </a>
-                <a href="/apps/trackfasts/" class="group block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition text-center">
-                    <div class="text-5xl mb-4">⏱️</div>
-                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition mb-2">TrackFasts</h3>
-                    <p class="text-gray-600 text-sm">Intermittent fasting timer with 4+ protocols, streak tracking, and Apple Watch support.</p>
-                    <span class="inline-block mt-4 text-sm font-medium text-indigo-600">Learn more →</span>
+                <a href="/resolveai/" class="group block bg-sky-50 rounded-2xl p-6 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">🤖</div>
+                    <h3 class="text-lg font-bold text-[#2f364a] group-hover:text-sky-600 transition">ResolveAI</h3>
+                    <p class="text-sm text-slate-600 mt-1">AI support employee for Shopify & Zendesk. From $49/mo.</p>
                 </a>
-                <a href="/apps/receipts/" class="group block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition text-center">
-                    <div class="text-5xl mb-4">🧾</div>
-                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition mb-2">Scan Receipts</h3>
-                    <p class="text-gray-600 text-sm">AI receipt scanner with 91% accuracy, automatic tax categories, and spending insights.</p>
-                    <span class="inline-block mt-4 text-sm font-medium text-emerald-600">Learn more →</span>
+                <a href="/protovid/" class="group block bg-purple-50 rounded-2xl p-6 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">🎬</div>
+                    <h3 class="text-lg font-bold text-[#2f364a] group-hover:text-purple-600 transition">ProtoVid</h3>
+                    <p class="text-sm text-slate-600 mt-1">Export Figma prototypes as MP4 & GIF video.</p>
                 </a>
-                <a href="/apps/quickscan/" class="group block bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition text-center">
-                    <div class="text-5xl mb-4">📄</div>
-                    <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition mb-2">QuickScan</h3>
-                    <p class="text-gray-600 text-sm">AI document scanner — IDs, receipts, contracts to PDF in 3 seconds. 5 free scans/month.</p>
-                    <span class="inline-block mt-4 text-sm font-medium text-blue-600">Learn more →</span>
+                <a href="/ground-truth/" class="group block bg-emerald-50 rounded-2xl p-6 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">🔬</div>
+                    <h3 class="text-lg font-bold text-[#2f364a] group-hover:text-emerald-600 transition">Ground Truth MCP</h3>
+                    <p class="text-sm text-slate-600 mt-1">Fact-checking & market research for AI agents.</p>
                 </a>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="border-t border-gray-100 py-8 text-center text-sm text-gray-400">
-            <p>© 2026 Das Group LLC. All rights reserved.</p>
-            <div class="mt-2 flex gap-4 justify-center">
-                <a href="/apps/privacy/" class="hover:text-gray-600 transition">Privacy</a>
-                <a href="/apps/terms/" class="hover:text-gray-600 transition">Terms</a>
-            </div>
-        </footer>
     </main>
+
+    <footer class="py-8 px-6 border-t border-slate-100 text-center text-sm text-slate-400">
+        <div class="flex justify-center gap-6 mb-4">
+            <a href="/apps/privacy/" class="hover:text-slate-600 transition">Privacy</a>
+            <a href="/apps/terms/" class="hover:text-slate-600 transition">Terms</a>
+            <a href="mailto:support@dasgroupllc.com" class="hover:text-slate-600 transition">Contact</a>
+        </div>
+        © 2026 Das Group LLC. All rights reserved.
+    </footer>
 </body>
 </html>

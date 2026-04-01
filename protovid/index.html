@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtoVid — Export Figma Prototypes as MP4 & GIF Video</title>
+    <meta name="description" content="ProtoVid is a Figma plugin that exports your prototype flows as high-quality MP4 and GIF videos. Up to 4K resolution. Free to start.">
+    <link rel="canonical" href="https://dasgroupllc.com/protovid/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ProtoVid — Export Figma Prototypes as MP4 & GIF Video">
+    <meta property="og:description" content="Turn your Figma prototypes into shareable MP4 and GIF videos. Perfect for stakeholder presentations and documentation.">
+    <meta property="og:url" content="https://dasgroupllc.com/protovid/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Das Group LLC">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ProtoVid — Export Figma Prototypes as MP4 & GIF Video">
+    <meta name="twitter:description" content="Turn your Figma prototypes into shareable MP4 and GIF videos. Up to 4K, 60fps.">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ProtoVid",
+        "applicationCategory": "DesignApplication",
+        "applicationSubCategory": "Figma Plugin",
+        "description": "ProtoVid is a Figma plugin that exports prototype flows as high-quality MP4 and GIF videos for stakeholder presentations, documentation, and sharing design flows.",
+        "operatingSystem": "Web (Figma Desktop)",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Free",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "3 exports, 720p, MP4 only, watermark"
+            },
+            {
+                "@type": "Offer",
+                "name": "Premium",
+                "price": "12",
+                "priceCurrency": "USD",
+                "billingIncrement": "month",
+                "description": "Unlimited exports, up to 4K, MP4 + GIF, no watermark"
+            }
+        ],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Das Group LLC",
+            "url": "https://dasgroupllc.com"
+        },
+        "url": "https://dasgroupllc.com/protovid/",
+        "downloadUrl": "https://www.figma.com/community/plugin/protovid"
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is ProtoVid?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ProtoVid is a Figma plugin that exports your prototype flows as high-quality MP4 and GIF videos. It automatically detects your prototype interactions and records the full flow, so you can share design work without live demos."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I export a Figma prototype as a video?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Install ProtoVid from the Figma Community, open a file with prototype interactions, run the plugin, choose your export settings (resolution, format, frame rate), and click Export Video. The plugin records your entire prototype flow automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What video formats does ProtoVid support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ProtoVid exports in MP4 (available on free and premium) and GIF (premium only). MP4 is ideal for presentations and documentation. GIF is great for quick sharing in Slack, email, or design specs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What resolutions can I export in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Free users can export at 720p. Premium users ($12/month) can export at 720p, 1080p, or 4K resolution, with 30fps or 60fps frame rates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is ProtoVid free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ProtoVid has a free tier that includes 3 total exports at 720p in MP4 format with a watermark. The Premium plan at $12/month unlocks unlimited exports, up to 4K resolution, GIF format, and removes the watermark."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        .gradient-hero { background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #e9d5ff 100%); }
+    </style>
+</head>
+<body class="bg-white text-slate-700">
+
+    <!-- Nav -->
+    <nav class="w-full px-6 py-4 flex items-center justify-between max-w-6xl mx-auto">
+        <a href="https://dasgroupllc.com" class="text-xl font-bold text-[#2f364a] hover:opacity-80 transition">Das Group</a>
+        <div class="hidden sm:flex gap-6 text-sm text-slate-600">
+            <a href="/adhd-focus/" class="hover:text-[#2f364a] transition">ADHD Focus AI</a>
+            <a href="/resolveai/" class="hover:text-[#2f364a] transition">ResolveAI</a>
+            <a href="/ground-truth/" class="hover:text-[#2f364a] transition">Ground Truth</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="gradient-hero py-16 sm:py-24 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block text-5xl mb-6">🎬</div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-[#2f364a] leading-tight">
+                    ProtoVid
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-purple-700 font-medium">
+                    Export Figma Prototypes as MP4 & GIF Video
+                </p>
+                <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Stop scheduling live demos. Turn your Figma prototype flows into shareable videos in seconds — up to 4K resolution, with optional cursor animation.
+                </p>
+                <div class="mt-8">
+                    <a href="https://www.figma.com/community/plugin/protovid"
+                       class="inline-block bg-purple-600 text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-purple-700 transition shadow-lg shadow-purple-200">
+                        Install Free in Figma
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is ProtoVid? -->
+        <section class="py-16 px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] mb-6">What is ProtoVid?</h2>
+                <p class="text-lg leading-relaxed">
+                    ProtoVid is a Figma plugin that exports your prototype flows as high-quality MP4 and GIF videos. It automatically detects prototype interactions in your file, records the full flow, and outputs a video you can share with stakeholders, include in documentation, or drop into a Slack channel — no live demo required.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Show Your Work Without a Meeting</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="text-3xl mb-4">🔍</div>
+                        <h3 class="text-xl font-semibold text-[#2f364a] mb-3">Auto Flow Detection</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            ProtoVid scans your Figma file and detects all prototype interactions automatically. No manual screen-by-screen recording.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="text-3xl mb-4">📐</div>
+                        <h3 class="text-xl font-semibold text-[#2f364a] mb-3">Up to 4K Resolution</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Export in 720p, 1080p, or 4K. Choose 30fps or 60fps. Your prototypes look crisp on any screen.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="text-3xl mb-4">🎞️</div>
+                        <h3 class="text-xl font-semibold text-[#2f364a] mb-3">MP4 & GIF Export</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            MP4 for presentations and Loom-style walkthroughs. GIF for quick sharing in Slack, Notion, or email threads.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="text-3xl mb-4">🖱️</div>
+                        <h3 class="text-xl font-semibold text-[#2f364a] mb-3">Cursor Animation</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Optional animated cursor shows the interaction flow, making it clear where users tap and what triggers transitions.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="text-3xl mb-4">⚡</div>
+                        <h3 class="text-xl font-semibold text-[#2f364a] mb-3">Fast Export</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Generate videos in seconds, not minutes. No screen recording software, no post-editing, no re-takes.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="text-3xl mb-4">💾</div>
+                        <h3 class="text-xl font-semibold text-[#2f364a] mb-3">Persistent Settings</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Your license key and export preferences are saved across sessions. Set it once, export anytime.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-16 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Three Clicks to a Video</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-600 font-bold text-xl flex items-center justify-center mx-auto mb-4">1</div>
+                        <h3 class="text-lg font-semibold text-[#2f364a] mb-2">Open Your Prototype</h3>
+                        <p class="text-slate-600">Open any Figma file with prototype interactions and run ProtoVid from the plugins menu.</p>
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-600 font-bold text-xl flex items-center justify-center mx-auto mb-4">2</div>
+                        <h3 class="text-lg font-semibold text-[#2f364a] mb-2">Pick Your Settings</h3>
+                        <p class="text-slate-600">Choose resolution, frame rate, format (MP4 or GIF), and whether to include cursor animation.</p>
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-full bg-purple-100 text-purple-600 font-bold text-xl flex items-center justify-center mx-auto mb-4">3</div>
+                        <h3 class="text-lg font-semibold text-[#2f364a] mb-2">Export & Share</h3>
+                        <p class="text-slate-600">Click Export Video. Download your file and share it anywhere — Slack, email, Notion, Jira.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Simple Pricing</h2>
+                <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                        <h3 class="text-xl font-bold text-[#2f364a] mb-2">Free</h3>
+                        <p class="text-3xl font-bold text-[#2f364a]">$0</p>
+                        <p class="text-sm text-slate-500 mt-1 mb-6">Try it out</p>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="text-purple-500">✓</span> 3 total exports</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-500">✓</span> 720p resolution</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-500">✓</span> MP4 format</li>
+                            <li class="flex items-start gap-2"><span class="text-slate-300">—</span> <span class="text-slate-400">Watermark included</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border-2 border-purple-500 relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">PREMIUM</div>
+                        <h3 class="text-xl font-bold text-[#2f364a] mb-2">Premium</h3>
+                        <p class="text-3xl font-bold text-[#2f364a]">$12<span class="text-lg font-normal text-slate-400">/mo</span></p>
+                        <p class="text-sm text-slate-500 mt-1 mb-6">For teams and pros</p>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li class="flex items-start gap-2"><span class="text-purple-500">✓</span> Unlimited exports</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-500">✓</span> Up to 4K resolution</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-500">✓</span> MP4 + GIF formats</li>
+                            <li class="flex items-start gap-2"><span class="text-purple-500">✓</span> No watermark</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="py-16 px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Perfect For</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📊</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Stakeholder Reviews</h3>
+                            <p class="text-slate-600">Send a video instead of scheduling another meeting. Stakeholders watch on their own time and leave async feedback.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">📝</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Design Documentation</h3>
+                            <p class="text-slate-600">Embed prototype videos in Confluence, Notion, or your design system docs. Way clearer than static screenshots.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">🤝</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Developer Handoff</h3>
+                            <p class="text-slate-600">Show engineers exactly how interactions should work. A 10-second video is worth 1,000 words in a Jira ticket.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="text-2xl">🎨</span>
+                        <div>
+                            <h3 class="text-lg font-semibold text-[#2f364a]">Portfolio & Dribbble</h3>
+                            <p class="text-slate-600">Showcase your interaction design work with polished video exports. Looks great on Dribbble, Behance, or your portfolio site.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-16 px-6 bg-slate-50">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-[#2f364a] text-center mb-12">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            What is ProtoVid?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            ProtoVid is a Figma plugin that exports your prototype flows as high-quality MP4 and GIF videos. It automatically detects prototype interactions and records the full flow.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            How do I export a Figma prototype as a video?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            Install ProtoVid from the Figma Community, open a file with prototype interactions, run the plugin from the Plugins menu, choose your settings, and click Export Video.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            What video formats does ProtoVid support?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            MP4 is available on both free and premium tiers. GIF export is a premium feature. MP4 is ideal for presentations; GIF is perfect for quick sharing in chat or docs.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            What resolutions are available?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            Free users export at 720p. Premium users can choose 720p, 1080p, or 4K, with 30fps or 60fps frame rates.
+                        </div>
+                    </details>
+                    <details class="group border border-slate-200 rounded-xl bg-white">
+                        <summary class="flex items-center justify-between cursor-pointer p-6 text-lg font-medium text-[#2f364a]">
+                            Does ProtoVid work with Figma's free plan?
+                            <span class="text-slate-400 group-open:rotate-45 transition-transform text-2xl">+</span>
+                        </summary>
+                        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                            Yes. ProtoVid works with any Figma plan — Free, Professional, Organization, or Enterprise. The plugin's free and premium tiers are separate from your Figma subscription.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-16 px-6 bg-[#2f364a] text-white text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-4">Stop Recording Your Screen</h2>
+                <p class="text-lg text-slate-300 mb-8">Install ProtoVid free and export your first prototype video in under a minute.</p>
+                <a href="https://www.figma.com/community/plugin/protovid"
+                   class="inline-block bg-purple-500 text-white font-semibold px-8 py-4 rounded-xl text-lg hover:bg-purple-400 transition">
+                    Install ProtoVid in Figma
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid sm:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-[#2f364a] mb-3">Das Group LLC</h4>
+                    <p class="text-sm text-slate-500">Building thoughtful software for real problems.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#2f364a] mb-3">Our Apps</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="/adhd-focus/" class="hover:text-purple-600 transition">ADHD Focus AI</a></li>
+                        <li><a href="/resolveai/" class="hover:text-purple-600 transition">ResolveAI</a></li>
+                        <li><a href="/protovid/" class="hover:text-purple-600 transition">ProtoVid</a></li>
+                        <li><a href="/ground-truth/" class="hover:text-purple-600 transition">Ground Truth MCP</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-[#2f364a] mb-3">Legal</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="/apps/privacy/" class="hover:text-purple-600 transition">Privacy Policy</a></li>
+                        <li><a href="/apps/terms/" class="hover:text-purple-600 transition">Terms of Service</a></li>
+                        <li><a href="mailto:support@dasgroupllc.com" class="hover:text-purple-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-slate-200 text-center text-sm text-slate-400">
+                © 2026 Das Group LLC. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
