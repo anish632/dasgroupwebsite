@@ -2,52 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://dasgroupllc.com/</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://dasgroupllc.com/adhd-focus/</loc>
+        <loc>https://dasgroupllc.com/apps/trackwell/</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://dasgroupllc.com/resolveai/</loc>
+        <loc>https://dasgroupllc.com/apps/crossfit-timer/</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://dasgroupllc.com/protovid/</loc>
+        <loc>https://dasgroupllc.com/apps/quickscan/</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://dasgroupllc.com/ground-truth/</loc>
+        <loc>https://dasgroupllc.com/apps/voicejournal/</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/photo-converter/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/receipts/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/strongher/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/lifegarden/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/copecalm/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/trackfasts/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/adhdfocus/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/be-ridiculous/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/invoices/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://dasgroupllc.com/apps/affirmdaily/</loc>
+        <lastmod>2026-04-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://dasgroupllc.com/apps/privacy/</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://dasgroupllc.com/apps/terms/</loc>
+        <lastmod>2026-04-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://dasgroupllc.com/apps/bulkgenie-demo/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://dasgroupllc.com/apps/profitpulse-demo/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://dasgroupllc.com/apps/supplycontext-demo/</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
     </url>
 </urlset>
