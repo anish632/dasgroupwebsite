@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThoughtLint for Obsidian | Local-first reasoning review for notes</title>
+    <meta name="description" content="ThoughtLint for Obsidian scores notes, flags weak reasoning, and helps improve claims, conclusions, and action plans without sending notes off device by default.">
+    <link rel="canonical" href="https://dasgroupllc.com/apps/thoughtlint/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ThoughtLint for Obsidian | Local-first reasoning review">
+    <meta property="og:description" content="Obsidian plugin for weak-claim detection, missing conclusions, action-item extraction, and optional AI or Ground Truth enrichment.">
+    <meta property="og:url" content="https://dasgroupllc.com/apps/thoughtlint/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Das Group LLC">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ThoughtLint for Obsidian",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Obsidian",
+        "description": "ThoughtLint is an Obsidian plugin that scores notes, flags weak reasoning, extracts decisions and action items, and offers optional AI or Ground Truth enrichment behind explicit user confirmation.",
+        "url": "https://dasgroupllc.com/apps/thoughtlint/",
+        "provider": {
+            "@type": "Organization",
+            "name": "Das Group LLC",
+            "url": "https://dasgroupllc.com/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is ThoughtLint for Obsidian?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ThoughtLint for Obsidian is a local-first plugin that reviews the active note for weak reasoning, vague claims, missing conclusions, and incomplete action plans."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does ThoughtLint send my notes to the cloud by default?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Deterministic analysis stays local by default, while optional AI enrichment and Ground Truth verification require explicit user setup and confirmation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who is ThoughtLint for?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ThoughtLint is useful for people working in research notes, specs, decisions, strategy documents, and meeting notes inside Obsidian."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does ThoughtLint help improve?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ThoughtLint helps improve unsupported claims, vague language, missing conclusions, extracted decisions, and action items that are not concrete enough yet."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
+    <style>
+        :root {
+            --accent: #0f766e;
+            --accent-strong: #115e59;
+            --accent-soft: rgba(15, 118, 110, 0.12);
+            --hero-start: #ecfdf5;
+            --hero-end: #eff6ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="shell topbar">
+            <a class="brand" href="/">Das Group LLC</a>
+            <nav class="topnav" aria-label="Primary">
+                <a href="/apps/specbot/">SpecBot</a>
+                <a href="/apps/ground-truth/">Ground Truth</a>
+                <a href="/apps/citeclear/">CiteClear</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page shell">
+        <section class="hero">
+            <div class="hero-panel">
+                <div class="hero-grid">
+                    <div>
+                        <p class="eyebrow">Obsidian Plugin</p>
+                        <h1>ThoughtLint for Obsidian</h1>
+                        <p class="lead">ThoughtLint for Obsidian is a local-first reasoning review plugin that helps catch weak claims, vague language, missing conclusions, and incomplete action plans before rough thinking becomes bad work.</p>
+                        <p class="body-copy">This page keeps the product simple: clear problem, clear audience, privacy posture, optional enrichment, and a single canonical destination for anyone evaluating the plugin.</p>
+                        <div class="actions">
+                            <a class="button primary" href="mailto:support@dasgroupllc.com?subject=ThoughtLint%20for%20Obsidian">Request plugin access</a>
+                        </div>
+                        <ul class="mini-list">
+                            <li>Deterministic analysis stays local by default.</li>
+                            <li>Optional AI and Ground Truth workflows require explicit user confirmation.</li>
+                            <li>Useful for research notes, specs, strategy, and decision documents.</li>
+                        </ul>
+                    </div>
+                    <aside class="hero-aside">
+                        <h2>Inside Obsidian</h2>
+                        <ul class="meta-list">
+                            <li>
+                                <span class="meta-label">Primary platform</span>
+                                Obsidian Markdown notes
+                            </li>
+                            <li>
+                                <span class="meta-label">Core jobs</span>
+                                Note scoring, weak-claim detection, decision and action-item extraction
+                            </li>
+                            <li>
+                                <span class="meta-label">Privacy stance</span>
+                                Local-first defaults with optional external integrations
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Weak reasoning signals</h3>
+                    <p>ThoughtLint looks for unsupported claims, vague language, and reasoning gaps that make a note sound more finished than it really is.</p>
+                </article>
+                <article class="card">
+                    <h3>Missing conclusions and next steps</h3>
+                    <p>It helps surface when a note has evidence or discussion but no clear conclusion, no extracted decision, or no usable action plan.</p>
+                </article>
+                <article class="card">
+                    <h3>Optional enrichment layers</h3>
+                    <p>Users can optionally add AI-compatible enrichment or Ground Truth verification, but those flows stay separate from the local-first default.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="steps">
+                <article class="step">
+                    <span class="step-index">01</span>
+                    <div>
+                        <strong>Analyze the active note</strong>
+                        <p>The plugin reviews the current Markdown note and generates issue lists, scores, and extracted structure directly in Obsidian.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">02</span>
+                    <div>
+                        <strong>Review the reasoning gaps</strong>
+                        <p>Users can see weak claims, missing conclusions, and action items that are not yet concrete enough to trust.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">03</span>
+                    <div>
+                        <strong>Decide whether to enrich externally</strong>
+                        <p>Optional AI and Ground Truth integrations stay opt-in, which preserves the product's local-first posture.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">FAQ</span>
+                    <h2>Direct questions from Obsidian users</h2>
+                </div>
+            </div>
+            <div class="faq">
+                <details open>
+                    <summary>What is ThoughtLint for Obsidian?</summary>
+                    <p>It is a note-review plugin for Obsidian that looks for weak reasoning patterns before they turn into bad drafts, weak specs, or poor decisions.</p>
+                </details>
+                <details>
+                    <summary>Does it send my note data away by default?</summary>
+                    <p>No. Local analysis is the default. External integrations require setup and an explicit user decision to use them.</p>
+                </details>
+                <details>
+                    <summary>Who should use it?</summary>
+                    <p>People writing research notes, specs, strategy docs, meeting notes, and decisions in Obsidian are the clearest fit.</p>
+                </details>
+                <details>
+                    <summary>Why mention Ground Truth on this page?</summary>
+                    <p>Because claim verification is an optional extension of the workflow, not the core product. The core story is still local-first reasoning review inside Obsidian.</p>
+                </details>
+            </div>
+            <div class="cta-band">
+                <span class="section-label">CTA</span>
+                <h2>Keep the plugin page simple and privacy-first</h2>
+                <p>This page is the canonical landing page for ThoughtLint and intentionally avoids turning the plugin into a larger SEO content tree before traction exists.</p>
+                <div class="actions">
+                    <a class="button secondary" href="mailto:support@dasgroupllc.com?subject=ThoughtLint%20for%20Obsidian">Request plugin access</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div class="app-links">
+                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
+                <a class="pill-link" href="/apps/resolveai-zendesk/">ResolveAI Zendesk</a>
+                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
+                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
+                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
+                <a class="pill-link" href="/apps/thoughtlint/">ThoughtLint</a>
+                <a class="pill-link" href="/apps/courtfile/">CourtFile</a>
+                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
+            </div>
+            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>

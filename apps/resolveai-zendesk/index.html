@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResolveAI for Zendesk | AI ticket resolution inside Zendesk</title>
+    <meta name="description" content="ResolveAI for Zendesk reviews new tickets, searches help-center context, drafts replies, and escalates low-confidence cases inside Zendesk.">
+    <link rel="canonical" href="https://dasgroupllc.com/apps/resolveai-zendesk/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ResolveAI for Zendesk | AI support inside Zendesk">
+    <meta property="og:description" content="AI ticket resolution for Zendesk with trigger setup, help-center search, public replies, and transparent escalation.">
+    <meta property="og:url" content="https://dasgroupllc.com/apps/resolveai-zendesk/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Das Group LLC">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ResolveAI for Zendesk",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "ResolveAI for Zendesk reviews tickets, searches help center and ticket history, posts responses back into Zendesk, and escalates low-confidence edge cases to human teams.",
+        "url": "https://dasgroupllc.com/apps/resolveai-zendesk/",
+        "provider": {
+            "@type": "Organization",
+            "name": "Das Group LLC",
+            "url": "https://dasgroupllc.com/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does ResolveAI for Zendesk do?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ResolveAI for Zendesk reviews new tickets, searches ticket and help-center context, drafts or posts replies, and escalates cases that should stay with a human team."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does it fit into Zendesk?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The app is designed around a Zendesk trigger, webhook processing, and a sidebar app so the agent team can see confidence, tools used, and outcome context inside Zendesk."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can it search the Zendesk help center?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. ResolveAI can search help-center articles as part of its response workflow so replies align with existing support content."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When does ResolveAI for Zendesk escalate a ticket?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tickets can be escalated when confidence is low, when a case needs human judgment, or when the workflow should hand the issue to a human group rather than auto-resolve it."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
+    <style>
+        :root {
+            --accent: #2563eb;
+            --accent-strong: #1d4ed8;
+            --accent-soft: rgba(37, 99, 235, 0.12);
+            --hero-start: #eff6ff;
+            --hero-end: #eef2ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="shell topbar">
+            <a class="brand" href="/">Das Group LLC</a>
+            <nav class="topnav" aria-label="Primary">
+                <a href="/apps/resolveai-shopify/">ResolveAI for Shopify</a>
+                <a href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
+                <a href="/apps/specbot/">SpecBot</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page shell">
+        <section class="hero">
+            <div class="hero-panel">
+                <div class="hero-grid">
+                    <div>
+                        <p class="eyebrow">Zendesk App</p>
+                        <h1>ResolveAI for Zendesk</h1>
+                        <p class="lead">ResolveAI for Zendesk is an AI ticket resolution app that reviews incoming tickets, searches support context, posts customer-ready replies, and keeps humans focused on the cases that need judgment.</p>
+                        <p class="body-copy">This is the canonical page for the Zendesk version of ResolveAI. The copy is intentionally focused on what the app does inside Zendesk, what the support team can expect, and how the agent workflow stays visible instead of opaque.</p>
+                        <div class="actions">
+                            <a class="button primary" href="mailto:support@dasgroupllc.com?subject=ResolveAI%20for%20Zendesk%20demo">Request a Zendesk demo</a>
+                            <a class="button secondary" href="https://resolveai-zendesk.dasgroupllc.com/" rel="noopener">Open product page</a>
+                        </div>
+                        <ul class="mini-list">
+                            <li>Designed around Zendesk triggers, webhooks, and agent-side visibility.</li>
+                            <li>Uses ticket history, requester context, and help-center content in the response flow.</li>
+                            <li>Shows confidence and tool usage in the sidebar instead of hiding the reasoning trail.</li>
+                        </ul>
+                    </div>
+                    <aside class="hero-aside">
+                        <h2>Inside Zendesk</h2>
+                        <ul class="meta-list">
+                            <li>
+                                <span class="meta-label">Primary channel</span>
+                                Zendesk ticket queue plus sidebar app
+                            </li>
+                            <li>
+                                <span class="meta-label">Core jobs</span>
+                                Triage, context gathering, customer reply, escalation
+                            </li>
+                            <li>
+                                <span class="meta-label">Setup story</span>
+                                Trigger plus webhook plus sidebar visibility for support teams
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">What It Does</span>
+                    <h2>Built for the way Zendesk teams already work</h2>
+                </div>
+                <p class="section-copy">The product pitch is simple: read the ticket, look up the right context, respond when the answer is clear, and surface the rest to the human queue with more structure.</p>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Ticket-aware response flow</h3>
+                    <p>ResolveAI can inspect ticket details and prior comments before drafting a reply, so it behaves more like a support operator than a generic text generator.</p>
+                </article>
+                <article class="card">
+                    <h3>Help-center search</h3>
+                    <p>Support content in Zendesk Help Center can be pulled into the response flow, which keeps answers aligned with the team's own published guidance.</p>
+                </article>
+                <article class="card">
+                    <h3>Sidebar transparency</h3>
+                    <p>Agents can see confidence, tools used, and the outcome context inside the Zendesk UI instead of guessing what the AI actually did.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Demo Clarity</span>
+                    <h2>What a marketplace evaluator should understand quickly</h2>
+                </div>
+                <p class="section-copy">The Zendesk page should answer four things fast: where the app sits, how it responds, how agents review it, and what happens when the app should not act alone.</p>
+            </div>
+            <div class="steps">
+                <article class="step">
+                    <span class="step-index">01</span>
+                    <div>
+                        <strong>A new ticket triggers the workflow</strong>
+                        <p>The app can start from a Zendesk trigger and send the ticket payload through the ResolveAI backend for analysis.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">02</span>
+                    <div>
+                        <strong>ResolveAI checks context before replying</strong>
+                        <p>It can look up ticket history, requester details, and help-center content before deciding whether a customer-ready answer is available.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">03</span>
+                    <div>
+                        <strong>Agents still see the reasoning trail</strong>
+                        <p>The sidebar app is there so a human can review confidence, tools used, and outcome context rather than treating the workflow as a black box.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="gallery" style="margin-top: 1rem;">
+                <article class="placeholder">
+                    <strong>Ticket detail placeholder</strong>
+                    <p>Use this spot for the Zendesk ticket view that kicks off the workflow.</p>
+                </article>
+                <article class="placeholder">
+                    <strong>Agent sidebar placeholder</strong>
+                    <p>Use this spot for confidence, tools used, and outcome notes shown to the human team.</p>
+                </article>
+                <article class="placeholder">
+                    <strong>Setup screen placeholder</strong>
+                    <p>Use this spot for webhook and trigger setup or the admin configuration view.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">FAQ</span>
+                    <h2>Direct answers for Zendesk teams</h2>
+                </div>
+            </div>
+            <div class="faq">
+                <details open>
+                    <summary>What does ResolveAI for Zendesk do?</summary>
+                    <p>It helps support teams respond to common Zendesk tickets faster by combining ticket context, help-center search, and agent-visible escalation paths.</p>
+                </details>
+                <details>
+                    <summary>Does it work entirely inside Zendesk?</summary>
+                    <p>The workflow is built around Zendesk triggers, ticket data, and a sidebar app, so the support team sees the automation in the system they already use.</p>
+                </details>
+                <details>
+                    <summary>Can agents review what the AI did?</summary>
+                    <p>Yes. The sidebar app is meant to expose confidence and tool usage so a human does not have to trust an invisible workflow.</p>
+                </details>
+                <details>
+                    <summary>When should a ticket still go to a human?</summary>
+                    <p>Cases that are ambiguous, risky, or low confidence should be escalated rather than auto-resolved, which keeps human judgment in the loop where it matters.</p>
+                </details>
+            </div>
+            <div class="cta-band">
+                <span class="section-label">CTA</span>
+                <h2>Use this as the canonical Zendesk landing page</h2>
+                <p>For the current validation cycle, this is the one page that should represent ResolveAI for Zendesk in search, sharing, and marketplace conversations.</p>
+                <div class="actions">
+                    <a class="button secondary" href="mailto:support@dasgroupllc.com?subject=ResolveAI%20for%20Zendesk%20demo">Request a demo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div class="app-links">
+                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
+                <a class="pill-link" href="/apps/resolveai-zendesk/">ResolveAI Zendesk</a>
+                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
+                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
+                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
+                <a class="pill-link" href="/apps/thoughtlint/">ThoughtLint</a>
+                <a class="pill-link" href="/apps/courtfile/">CourtFile</a>
+                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
+            </div>
+            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpecBot for Linear | Spec quality gate before engineering handoff</title>
+    <meta name="description" content="SpecBot for Linear scores issue quality, flags missing context, and improves acceptance criteria before developers or coding agents start work.">
+    <link rel="canonical" href="https://dasgroupllc.com/apps/specbot/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SpecBot for Linear | Spec quality gate">
+    <meta property="og:description" content="Linear issue review with completeness scoring, acceptance-criteria help, and configurable quality gates before work starts.">
+    <meta property="og:url" content="https://dasgroupllc.com/apps/specbot/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Das Group LLC">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "SpecBot for Linear",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "description": "SpecBot for Linear reviews issues for completeness, scores spec quality, suggests missing acceptance criteria, and helps teams block low-quality handoffs before engineering work starts.",
+        "url": "https://dasgroupllc.com/apps/specbot/",
+        "provider": {
+            "@type": "Organization",
+            "name": "Das Group LLC",
+            "url": "https://dasgroupllc.com/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is SpecBot for Linear?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SpecBot for Linear is a spec quality gate that reviews issues for completeness, scores them, flags missing context, and suggests improvements before developers or coding agents start work."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does SpecBot score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SpecBot scores issue quality across problem clarity, expected behavior, acceptance criteria, edge cases, dependencies, technical context, reproduction steps, and scope or priority clarity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can SpecBot change issues automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SpecBot can be positioned as comment-only, auto-enrich, or issue-flagging depending on how the team wants to use the quality gate in Linear."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who is SpecBot for?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "SpecBot is for product, engineering, and AI-assisted teams that want cleaner issue handoff before a human or coding agent starts implementation."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
+    <style>
+        :root {
+            --accent: #7c3aed;
+            --accent-strong: #6d28d9;
+            --accent-soft: rgba(124, 58, 237, 0.12);
+            --hero-start: #f5f3ff;
+            --hero-end: #eef2ff;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="shell topbar">
+            <a class="brand" href="/">Das Group LLC</a>
+            <nav class="topnav" aria-label="Primary">
+                <a href="/apps/ground-truth/">Ground Truth</a>
+                <a href="/apps/thoughtlint/">ThoughtLint</a>
+                <a href="/apps/courtfile/">CourtFile</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page shell">
+        <section class="hero">
+            <div class="hero-panel">
+                <div class="hero-grid">
+                    <div>
+                        <p class="eyebrow">Linear Workflow</p>
+                        <h1>SpecBot for Linear</h1>
+                        <p class="lead">SpecBot for Linear is a spec quality gate that reviews every issue for completeness, flags missing context, and improves handoff quality before a developer or coding agent touches the ticket.</p>
+                        <p class="body-copy">This page is deliberately explanatory rather than hype-heavy. It should help someone searching for Linear spec review, ticket quality gates, or AI-ready issue hygiene understand the product in one pass.</p>
+                        <div class="actions">
+                            <a class="button primary" href="mailto:support@dasgroupllc.com?subject=SpecBot%20for%20Linear%20pilot">Request a pilot</a>
+                        </div>
+                        <ul class="mini-list">
+                            <li>Scores issues for clarity, scope, acceptance criteria, and missing context.</li>
+                            <li>Supports comment-only, auto-enrich, or issue-flagging modes.</li>
+                            <li>Useful before human engineering handoff and before AI coding workflows.</li>
+                        </ul>
+                    </div>
+                    <aside class="hero-aside">
+                        <h2>Inside Linear</h2>
+                        <ul class="meta-list">
+                            <li>
+                                <span class="meta-label">Primary platform</span>
+                                Linear issues, comments, and team workflow
+                            </li>
+                            <li>
+                                <span class="meta-label">Core jobs</span>
+                                Spec review, quality scoring, issue improvement
+                            </li>
+                            <li>
+                                <span class="meta-label">Why it matters</span>
+                                Cleaner issue handoff means less rework before engineering starts
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">What It Checks</span>
+                    <h2>Issue quality in a format product and engineering teams can act on</h2>
+                </div>
+                <p class="section-copy">The aim is to catch weak specs before they become slow implementation, churn, or avoidable back-and-forth between product and engineering.</p>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Problem and expected behavior</h3>
+                    <p>SpecBot checks whether the issue explains the user problem and the behavior the team should deliver, not just a vague task label.</p>
+                </article>
+                <article class="card">
+                    <h3>Acceptance criteria and edge cases</h3>
+                    <p>It flags missing acceptance criteria, unclear done states, and obvious edge-case gaps that would otherwise show up mid-implementation.</p>
+                </article>
+                <article class="card">
+                    <h3>Technical context and dependencies</h3>
+                    <p>SpecBot helps surface whether the issue has enough context for engineering to start without immediately asking follow-up questions.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">How It Works</span>
+                    <h2>Linear-native quality gating</h2>
+                </div>
+            </div>
+            <div class="steps">
+                <article class="step">
+                    <span class="step-index">01</span>
+                    <div>
+                        <strong>A Linear issue enters review</strong>
+                        <p>The issue reaches the webhook path or queue where SpecBot can assess spec quality before the engineering handoff happens.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">02</span>
+                    <div>
+                        <strong>SpecBot scores and diagnoses the issue</strong>
+                        <p>It looks for missing context, missing acceptance criteria, edge-case gaps, and the next action required before the issue is implementation-ready.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">03</span>
+                    <div>
+                        <strong>The team decides how strict the gate should be</strong>
+                        <p>Teams can treat it as a suggestion engine, a comment-only reviewer, or a stricter gate that flags issues below a threshold.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="card-grid">
+                <article class="card">
+                    <h3>For product teams</h3>
+                    <p>Use SpecBot to catch vague tickets before they hit sprint work and become a chain of clarifying comments.</p>
+                </article>
+                <article class="card">
+                    <h3>For engineering leads</h3>
+                    <p>Use it as an intake quality layer so engineers start from cleaner, better-scoped issues.</p>
+                </article>
+                <article class="card">
+                    <h3>For AI coding workflows</h3>
+                    <p>Use it to improve the spec quality feeding automated implementation so the agent starts from a stronger source issue.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">FAQ</span>
+                    <h2>Questions teams ask before trying a spec gate</h2>
+                </div>
+            </div>
+            <div class="faq">
+                <details open>
+                    <summary>What is SpecBot for Linear?</summary>
+                    <p>It is a quality gate for Linear issues that helps teams assess whether a ticket is actually ready for engineering handoff.</p>
+                </details>
+                <details>
+                    <summary>What does the score represent?</summary>
+                    <p>The score is a shorthand for issue completeness across clarity, acceptance criteria, context, dependencies, edge cases, and related signal.</p>
+                </details>
+                <details>
+                    <summary>Can it work without automatically changing issues?</summary>
+                    <p>Yes. The product can be used as a comment-only reviewer or suggestion layer instead of an auto-editing bot.</p>
+                </details>
+                <details>
+                    <summary>Why does this matter for AI coding agents too?</summary>
+                    <p>Because automation still needs clear specs. Better issue input usually means less drift, fewer assumptions, and fewer corrective iterations later.</p>
+                </details>
+            </div>
+            <div class="cta-band">
+                <span class="section-label">CTA</span>
+                <h2>Keep one clear SpecBot page while the product validates</h2>
+                <p>This page is meant to explain the product simply and canonically until usage signals justify deeper SEO expansion.</p>
+                <div class="actions">
+                    <a class="button secondary" href="mailto:support@dasgroupllc.com?subject=SpecBot%20for%20Linear%20pilot">Request a pilot</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div class="app-links">
+                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
+                <a class="pill-link" href="/apps/resolveai-zendesk/">ResolveAI Zendesk</a>
+                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
+                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
+                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
+                <a class="pill-link" href="/apps/thoughtlint/">ThoughtLint</a>
+                <a class="pill-link" href="/apps/courtfile/">CourtFile</a>
+                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
+            </div>
+            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
+        </div>
+    </footer>
+</body>
+</html>
