@@ -3,106 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Das Group LLC | Focused AI products and validation apps</title>
-    <meta name="description" content="Das Group LLC builds focused AI products for support, developer workflows, research, and legal operations. Explore the current canonical product pages.">
+    <title>Das Group</title>
+    <meta name="description" content="Das Group support contact.">
     <link rel="canonical" href="https://dasgroupllc.com/">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Das Group LLC | Focused AI products">
-    <meta property="og:description" content="Current canonical product pages for Das Group LLC across support, developer workflows, research, and legal operations.">
+    <meta property="og:title" content="Das Group">
+    <meta property="og:description" content="Das Group support contact.">
     <meta property="og:url" content="https://dasgroupllc.com/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Das Group LLC">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
     <style>
         :root {
-            --accent: #2563eb;
-            --accent-strong: #1d4ed8;
-            --accent-soft: rgba(37, 99, 235, 0.12);
-            --hero-start: #eff6ff;
-            --hero-end: #eef2ff;
+            color-scheme: light;
+            --bg: #f7f7f5;
+            --fg: #111111;
+            --muted: #4b4b47;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        main {
+            display: grid;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .wordmark {
+            margin: 0;
+            font-size: clamp(2.75rem, 8vw, 5.5rem);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .support {
+            color: var(--muted);
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            text-decoration: none;
+        }
+
+        .support:hover,
+        .support:focus-visible {
+            color: var(--fg);
         }
     </style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="shell topbar">
-            <a class="brand" href="/">Das Group LLC</a>
-            <nav class="topnav" aria-label="Primary">
-                <a href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
-                <a href="/apps/ground-truth/">Ground Truth</a>
-                <a href="/apps/citeclear/">CiteClear</a>
-            </nav>
-        </div>
-    </header>
-    <main class="page shell">
-        <section class="hero">
-            <div class="home-panel">
-                <p class="eyebrow">Current Build Cycle</p>
-                <h1>Focused product pages, one canonical destination per app.</h1>
-                <p class="lead">Das Group LLC builds AI products for support, developer workflows, research, and legal operations. The current website strategy is intentionally lean: one clean landing page per priority app instead of broad programmatic expansion.</p>
-                <p class="body-copy">Use the cards below to reach the canonical product pages for the apps currently being prioritized.</p>
-                <div class="home-grid">
-                    <a class="home-card" href="/apps/resolveai-shopify/">
-                        <strong>ResolveAI for Shopify</strong>
-                        <p>AI support for order questions, returns, refunds, and product help inside Shopify.</p>
-                        <span>Shopify support workflow</span>
-                    </a>
-                    <a class="home-card" href="/apps/resolveai-zendesk/">
-                        <strong>ResolveAI for Zendesk</strong>
-                        <p>AI ticket resolution with Zendesk triggers, help-center search, and agent-visible escalation.</p>
-                        <span>Zendesk support workflow</span>
-                    </a>
-                    <a class="home-card" href="/apps/profitpulse-ai-shopify/">
-                        <strong>ProfitPulse AI for Shopify</strong>
-                        <p>Margin visibility, low-profit alerts, and product-level profit guidance for merchants.</p>
-                        <span>Shopify merchant workflow</span>
-                    </a>
-                    <a class="home-card" href="/apps/specbot/">
-                        <strong>SpecBot for Linear</strong>
-                        <p>Spec quality scoring and issue improvement before engineering handoff begins.</p>
-                        <span>Developer workflow</span>
-                    </a>
-                    <a class="home-card" href="/apps/ground-truth/">
-                        <strong>Ground Truth</strong>
-                        <p>Live verification tools for AI agents through a lightweight MCP server.</p>
-                        <span>MCP / Glama workflow</span>
-                    </a>
-                    <a class="home-card" href="/apps/thoughtlint/">
-                        <strong>ThoughtLint for Obsidian</strong>
-                        <p>Local-first reasoning review for notes, claims, conclusions, and action plans.</p>
-                        <span>Obsidian plugin</span>
-                    </a>
-                    <a class="home-card" href="/apps/courtfile/">
-                        <strong>CourtFile</strong>
-                        <p>Unified court filing API direction for legal software teams in validation.</p>
-                        <span>Legal-tech API</span>
-                    </a>
-                    <a class="home-card" href="/apps/citeclear/">
-                        <strong>CiteClear</strong>
-                        <p>Citation verification and source review with local preflight before optional AI review.</p>
-                        <span>Research and legal writing</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+    <main>
+        <h1 class="wordmark">Das Group</h1>
+        <a class="support" href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a>
     </main>
-    <footer class="footer">
-        <div class="shell footer-grid">
-            <div class="app-links">
-                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
-                <a class="pill-link" href="/apps/resolveai-zendesk/">ResolveAI Zendesk</a>
-                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
-                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
-                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
-                <a class="pill-link" href="/apps/thoughtlint/">ThoughtLint</a>
-                <a class="pill-link" href="/apps/courtfile/">CourtFile</a>
-                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
-            </div>
-            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
-        </div>
-    </footer>
 </body>
 </html>

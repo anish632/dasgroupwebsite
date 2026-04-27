@@ -81,6 +81,345 @@
             --hero-start: #eff6ff;
             --hero-end: #eef2ff;
         }
+
+        .hero-grid-proof,
+        .roi-layout,
+        .proof-workspace {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .hero-grid-proof {
+            grid-template-columns: minmax(0, 1.15fr) minmax(340px, 1fr);
+            align-items: stretch;
+        }
+
+        .trust-line {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin: 0.5rem 0 0;
+            padding: 0.7rem 0.95rem;
+            border: 1px solid rgba(37, 99, 235, 0.18);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.82);
+            color: var(--accent-strong);
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .hero-proof {
+            display: grid;
+            gap: 1rem;
+            padding: 1.35rem;
+        }
+
+        .hero-proof h2 {
+            font-size: clamp(1.65rem, 2vw, 2.2rem);
+        }
+
+        .proof-surface {
+            min-height: 380px;
+        }
+
+        .proof-placeholder,
+        .asset-frame {
+            height: 100%;
+        }
+
+        .proof-placeholder {
+            display: grid;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 1.2rem;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.96)),
+                linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(59, 130, 246, 0.06));
+        }
+
+        .proof-placeholder-banner {
+            padding: 0.8rem 0.95rem;
+            border: 1px dashed rgba(37, 99, 235, 0.28);
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--accent-strong);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .proof-workspace {
+            grid-template-columns: minmax(0, 1.15fr) minmax(235px, 0.95fr);
+            align-items: stretch;
+        }
+
+        .proof-ticket,
+        .proof-sidebar {
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 1.1rem;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+        }
+
+        .proof-ticket {
+            display: grid;
+            gap: 0.9rem;
+            padding: 1rem;
+        }
+
+        .ticket-chip,
+        .sidebar-chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.12);
+            color: var(--accent-strong);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .proof-ticket strong,
+        .decision-value,
+        .ticket-audit strong {
+            font-family: "Space Grotesk", "Segoe UI", sans-serif;
+            letter-spacing: -0.04em;
+        }
+
+        .ticket-summary {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .ticket-thread {
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .ticket-line {
+            height: 0.7rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(148, 163, 184, 0.22), rgba(37, 99, 235, 0.12));
+        }
+
+        .ticket-line.long {
+            width: 94%;
+        }
+
+        .ticket-line.medium {
+            width: 76%;
+        }
+
+        .ticket-line.short {
+            width: 58%;
+        }
+
+        .ticket-audit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding-top: 0.95rem;
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .proof-sidebar {
+            display: grid;
+            gap: 0.2rem;
+            padding: 1rem;
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.96));
+            color: #f8fafc;
+        }
+
+        .proof-sidebar-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.35rem;
+        }
+
+        .proof-sidebar .sidebar-chip {
+            background: rgba(59, 130, 246, 0.2);
+            color: #bfdbfe;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(34, 197, 94, 0.16);
+            color: #bbf7d0;
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .decision-list {
+            display: grid;
+            gap: 0.1rem;
+        }
+
+        .decision-row {
+            padding: 0.78rem 0;
+            border-top: 1px solid rgba(148, 163, 184, 0.16);
+        }
+
+        .decision-row:first-child {
+            border-top: 0;
+        }
+
+        .decision-label {
+            display: block;
+            margin-bottom: 0.2rem;
+            color: rgba(226, 232, 240, 0.72);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .decision-value {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.35;
+        }
+
+        .asset-frame iframe,
+        .asset-frame video,
+        .asset-frame img {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border: 0;
+            border-radius: 1.2rem;
+            background: #0f172a;
+            object-fit: cover;
+        }
+
+        .roi-layout {
+            grid-template-columns: minmax(0, 1.05fr) minmax(310px, 0.95fr);
+            align-items: start;
+        }
+
+        .calculator-card,
+        .results-card {
+            padding: 1.35rem;
+            border: 1px solid var(--line);
+            border-radius: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: var(--shadow);
+        }
+
+        .preset-row {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin: 0 0 1rem;
+        }
+
+        .preset-button {
+            appearance: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.78);
+            color: var(--ink);
+            cursor: pointer;
+            font: inherit;
+            font-weight: 800;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+        }
+
+        .preset-button:hover,
+        .preset-button:focus-visible {
+            transform: translateY(-1px);
+        }
+
+        .preset-button[aria-pressed="true"] {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 16px 30px rgba(37, 99, 235, 0.22);
+        }
+
+        .calculator-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .field-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        .field {
+            display: grid;
+            gap: 0.4rem;
+        }
+
+        .field label {
+            font-weight: 800;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            border-radius: 1rem;
+            background: #ffffff;
+            color: var(--ink);
+            font: inherit;
+        }
+
+        .field input:focus-visible,
+        .preset-button:focus-visible {
+            outline: 2px solid rgba(37, 99, 235, 0.3);
+            outline-offset: 2px;
+        }
+
+        .field small,
+        .calculator-note,
+        .results-note {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .results-card .metrics {
+            margin-top: 1rem;
+        }
+
+        .metric span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .cta-band .button.primary {
+            background: #ffffff;
+            color: var(--accent-strong);
+            box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);
+        }
+
+        @media (max-width: 920px) {
+            .hero-grid-proof,
+            .roi-layout,
+            .proof-workspace {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,39 +436,144 @@
     <main class="page shell">
         <section class="hero">
             <div class="hero-panel">
-                <div class="hero-grid">
+                <div class="hero-grid hero-grid-proof">
                     <div>
                         <p class="eyebrow">Zendesk App</p>
                         <h1>ResolveAI for Zendesk</h1>
-                        <p class="lead">ResolveAI for Zendesk is an AI ticket resolution app that reviews incoming tickets, searches support context, posts customer-ready replies, and keeps humans focused on the cases that need judgment.</p>
-                        <p class="body-copy">This is the canonical page for the Zendesk version of ResolveAI. The copy is intentionally focused on what the app does inside Zendesk, what the support team can expect, and how the agent workflow stays visible instead of opaque.</p>
+                        <p class="lead">ResolveAI for Zendesk reviews incoming tickets, applies policy-aware automation, enforces refund thresholds, and escalates edge cases before your queue backs up.</p>
+                        <p class="body-copy">This Zendesk landing page now leads with how the product actually behaves: read the ticket, check the right context, resolve what fits your rules, and keep a visible audit trail when a human should step in.</p>
                         <div class="actions">
-                            <a class="button primary" href="mailto:support@dasgroupllc.com?subject=ResolveAI%20for%20Zendesk%20demo">Request a Zendesk demo</a>
-                            <a class="button secondary" href="https://resolveai-zendesk.dasgroupllc.com/" rel="noopener">Open product page</a>
+                            <a class="button primary" href="https://www.zendesk.com/marketplace/apps/support/1221998/resolveai/?queryID=7aaa951115a1962b8110679ef2ecbd2f" rel="noopener">View Zendesk listing</a>
+                            <a class="button secondary" id="hero-demo-cta" href="#demo-proof">Watch 90-second demo</a>
                         </div>
+                        <p class="trust-line">Policy-aware. Refund thresholds enforced. Edge cases escalated.</p>
                         <ul class="mini-list">
                             <li>Designed around Zendesk triggers, webhooks, and agent-side visibility.</li>
                             <li>Uses ticket history, requester context, and help-center content in the response flow.</li>
-                            <li>Shows confidence and tool usage in the sidebar instead of hiding the reasoning trail.</li>
+                            <li>Shows confidence, policy checks, and outcome context in the sidebar instead of hiding the reasoning trail.</li>
                         </ul>
                     </div>
-                    <aside class="hero-aside">
-                        <h2>Inside Zendesk</h2>
-                        <ul class="meta-list">
-                            <li>
-                                <span class="meta-label">Primary channel</span>
-                                Zendesk ticket queue plus sidebar app
-                            </li>
-                            <li>
-                                <span class="meta-label">Core jobs</span>
-                                Triage, context gathering, customer reply, escalation
-                            </li>
-                            <li>
-                                <span class="meta-label">Setup story</span>
-                                Trigger plus webhook plus sidebar visibility for support teams
-                            </li>
-                        </ul>
+                    <aside class="hero-aside hero-proof" id="demo-proof">
+                        <div>
+                            <span class="section-label">Product Proof</span>
+                            <h2>See ResolveAI resolve a Zendesk ticket</h2>
+                            <p class="body-copy">Watch ResolveAI analyze a ticket, apply your policy, enforce refund thresholds, and resolve or escalate with a clear audit trail.</p>
+                        </div>
+                        <!-- Zendesk Marketplace listing screenshots should be real PNG screenshots sized 1024x768 when preparing app listing assets. -->
+                        <div class="proof-surface" id="demo-proof-media">
+                            <div class="proof-placeholder">
+                                <div class="proof-placeholder-banner">Demo asset pending — replace with Zendesk ticket resolution screenshot or 90-second Loom.</div>
+                                <div class="proof-workspace" aria-hidden="true">
+                                    <div class="proof-ticket">
+                                        <span class="ticket-chip">Zendesk ticket</span>
+                                        <strong>Duplicate shipment refund request</strong>
+                                        <p class="ticket-summary">Customer says one package was refused after a duplicate shipment. ResolveAI checks policy, confirms the refund amount stays under the configured threshold, and closes the loop.</p>
+                                        <div class="ticket-thread">
+                                            <span class="ticket-line long"></span>
+                                            <span class="ticket-line medium"></span>
+                                            <span class="ticket-line long"></span>
+                                            <span class="ticket-line short"></span>
+                                        </div>
+                                        <div class="ticket-audit">
+                                            <span>Audit trail ready</span>
+                                            <strong>Policy + guardrails checked</strong>
+                                        </div>
+                                    </div>
+                                    <div class="proof-sidebar">
+                                        <div class="proof-sidebar-top">
+                                            <span class="sidebar-chip">ResolveAI sidebar</span>
+                                            <span class="status-pill">Resolved automatically</span>
+                                        </div>
+                                        <div class="decision-list">
+                                            <div class="decision-row">
+                                                <span class="decision-label">Confidence</span>
+                                                <span class="decision-value">92%</span>
+                                            </div>
+                                            <div class="decision-row">
+                                                <span class="decision-label">Recommended action</span>
+                                                <span class="decision-value">Refund $48.50</span>
+                                            </div>
+                                            <div class="decision-row">
+                                                <span class="decision-label">Policy applied</span>
+                                                <span class="decision-value">Returns within 30 days</span>
+                                            </div>
+                                            <div class="decision-row">
+                                                <span class="decision-label">Guardrail</span>
+                                                <span class="decision-value">Below refund threshold</span>
+                                            </div>
+                                            <div class="decision-row">
+                                                <span class="decision-label">Status</span>
+                                                <span class="decision-value">Resolved automatically</span>
+                                            </div>
+                                            <div class="decision-row">
+                                                <span class="decision-label">Escalation</span>
+                                                <span class="decision-value">Not required</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="roi-calculator">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">ROI Calculator</span>
+                    <h2>See what automated ticket resolution can save</h2>
+                </div>
+                <p class="section-copy">Example: a team with 500 tickets/month can save about $2.5k/month at 35% automation.</p>
+            </div>
+            <div class="roi-layout" data-roi-calculator>
+                <div class="calculator-card">
+                    <p class="calculator-note">Use one of the presets to start, then adjust the assumptions for your queue.</p>
+                    <div class="preset-row" role="group" aria-label="ROI calculator presets">
+                        <button class="preset-button" type="button" data-preset="startup" aria-pressed="false">Startup</button>
+                        <button class="preset-button" type="button" data-preset="smb" aria-pressed="true">SMB</button>
+                        <button class="preset-button" type="button" data-preset="growth" aria-pressed="false">Growth</button>
+                    </div>
+                    <form class="calculator-form">
+                        <div class="field-grid">
+                            <div class="field">
+                                <label for="monthly-tickets">Monthly tickets</label>
+                                <input id="monthly-tickets" name="monthlyTickets" type="number" min="0" step="1" value="500" inputmode="numeric">
+                            </div>
+                            <div class="field">
+                                <label for="cost-per-ticket">Fully-loaded cost per ticket</label>
+                                <input id="cost-per-ticket" name="costPerTicket" type="number" min="0" step="0.01" value="15" inputmode="decimal">
+                                <small>$15/ticket is a conservative fully-loaded SMB support cost estimate. Adjust it for your team.</small>
+                            </div>
+                            <div class="field">
+                                <label for="automation-rate">Automation rate (%)</label>
+                                <input id="automation-rate" name="automationRate" type="number" min="0" max="100" step="1" value="35" inputmode="numeric">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="results-card" aria-live="polite">
+                    <span class="section-label">Estimated Monthly Impact</span>
+                    <p class="results-note">Pricing uses a Starter-plan assumption of $0.49 per automated resolution.</p>
+                    <div class="metrics">
+                        <article class="metric">
+                            <strong id="automated-tickets-output">175</strong>
+                            <span>Automated tickets</span>
+                        </article>
+                        <article class="metric">
+                            <strong id="labor-cost-output">$2,625</strong>
+                            <span>Monthly labor cost avoided</span>
+                        </article>
+                        <article class="metric">
+                            <strong id="resolveai-cost-output">$85.75</strong>
+                            <span>Estimated ResolveAI cost</span>
+                        </article>
+                        <article class="metric">
+                            <strong id="net-savings-output">$2,539.25</strong>
+                            <span>Estimated net savings</span>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -189,18 +633,18 @@
                     </div>
                 </article>
             </div>
-            <div class="gallery" style="margin-top: 1rem;">
-                <article class="placeholder">
-                    <strong>Ticket detail placeholder</strong>
-                    <p>Use this spot for the Zendesk ticket view that kicks off the workflow.</p>
+            <div class="card-grid" style="margin-top: 1rem;">
+                <article class="card">
+                    <strong>Policy-aware resolution</strong>
+                    <p>Keep the proof story focused on what buyers care about: which policy was applied, whether the refund stayed under threshold, and why the action was allowed.</p>
                 </article>
-                <article class="placeholder">
-                    <strong>Agent sidebar placeholder</strong>
-                    <p>Use this spot for confidence, tools used, and outcome notes shown to the human team.</p>
+                <article class="card">
+                    <strong>Agent-visible audit trail</strong>
+                    <p>The sidebar should show confidence, action taken, and escalation logic so a support lead can understand the decision without digging through backend logs.</p>
                 </article>
-                <article class="placeholder">
-                    <strong>Setup screen placeholder</strong>
-                    <p>Use this spot for webhook and trigger setup or the admin configuration view.</p>
+                <article class="card">
+                    <strong>Escalation when judgment matters</strong>
+                    <p>Low-confidence, high-value, or out-of-policy tickets should be routed back to the queue with context instead of pretending every ticket should auto-resolve.</p>
                 </article>
             </div>
         </section>
@@ -231,11 +675,12 @@
                 </details>
             </div>
             <div class="cta-band">
-                <span class="section-label">CTA</span>
-                <h2>Use this as the canonical Zendesk landing page</h2>
-                <p>For the current validation cycle, this is the one page that should represent ResolveAI for Zendesk in search, sharing, and marketplace conversations.</p>
+                <span class="section-label">Next Step</span>
+                <h2>Show the workflow, then let buyers install with confidence</h2>
+                <p>This page should make the Zendesk value proposition obvious fast: what gets resolved automatically, which guardrails stay enforced, and where a human still steps in.</p>
                 <div class="actions">
-                    <a class="button secondary" href="mailto:support@dasgroupllc.com?subject=ResolveAI%20for%20Zendesk%20demo">Request a demo</a>
+                    <a class="button primary" href="https://www.zendesk.com/marketplace/apps/support/1221998/resolveai/?queryID=7aaa951115a1962b8110679ef2ecbd2f" rel="noopener">View Zendesk listing</a>
+                    <a class="button secondary" id="band-demo-cta" href="#demo-proof">Watch 90-second demo</a>
                 </div>
             </div>
         </section>
@@ -255,5 +700,268 @@
             <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
         </div>
     </footer>
+    <script>
+        const PRICE_PER_RESOLUTION = 0.49;
+        const DEMO_VIDEO_URL = "";
+        const DEMO_SCREENSHOT_URL = "/apps/resolveai-zendesk/demo.png";
+        const DEMO_SECTION_ID = "demo-proof";
+
+        const ROI_PRESETS = {
+            startup: {
+                monthlyTickets: 200,
+                costPerTicket: 12,
+                automationRate: 25
+            },
+            smb: {
+                monthlyTickets: 500,
+                costPerTicket: 15,
+                automationRate: 35
+            },
+            growth: {
+                monthlyTickets: 1000,
+                costPerTicket: 18,
+                automationRate: 40
+            }
+        };
+
+        function formatCurrency(value) {
+            const roundedValue = Math.round(value * 100) / 100;
+            const hasCents = Math.abs(roundedValue % 1) > 0.001;
+
+            return roundedValue.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+                minimumFractionDigits: hasCents ? 2 : 0,
+                maximumFractionDigits: 2
+            });
+        }
+
+        function formatWholeNumber(value) {
+            return Math.round(value).toLocaleString("en-US");
+        }
+
+        function renderProofPlaceholder(container) {
+            container.innerHTML = `
+                <div class="proof-placeholder">
+                    <div class="proof-placeholder-banner">Demo asset pending — replace with Zendesk ticket resolution screenshot or 90-second Loom.</div>
+                    <div class="proof-workspace" aria-hidden="true">
+                        <div class="proof-ticket">
+                            <span class="ticket-chip">Zendesk ticket</span>
+                            <strong>Duplicate shipment refund request</strong>
+                            <p class="ticket-summary">Customer says one package was refused after a duplicate shipment. ResolveAI checks policy, confirms the refund amount stays under the configured threshold, and closes the loop.</p>
+                            <div class="ticket-thread">
+                                <span class="ticket-line long"></span>
+                                <span class="ticket-line medium"></span>
+                                <span class="ticket-line long"></span>
+                                <span class="ticket-line short"></span>
+                            </div>
+                            <div class="ticket-audit">
+                                <span>Audit trail ready</span>
+                                <strong>Policy + guardrails checked</strong>
+                            </div>
+                        </div>
+                        <div class="proof-sidebar">
+                            <div class="proof-sidebar-top">
+                                <span class="sidebar-chip">ResolveAI sidebar</span>
+                                <span class="status-pill">Resolved automatically</span>
+                            </div>
+                            <div class="decision-list">
+                                <div class="decision-row">
+                                    <span class="decision-label">Confidence</span>
+                                    <span class="decision-value">92%</span>
+                                </div>
+                                <div class="decision-row">
+                                    <span class="decision-label">Recommended action</span>
+                                    <span class="decision-value">Refund $48.50</span>
+                                </div>
+                                <div class="decision-row">
+                                    <span class="decision-label">Policy applied</span>
+                                    <span class="decision-value">Returns within 30 days</span>
+                                </div>
+                                <div class="decision-row">
+                                    <span class="decision-label">Guardrail</span>
+                                    <span class="decision-value">Below refund threshold</span>
+                                </div>
+                                <div class="decision-row">
+                                    <span class="decision-label">Status</span>
+                                    <span class="decision-value">Resolved automatically</span>
+                                </div>
+                                <div class="decision-row">
+                                    <span class="decision-label">Escalation</span>
+                                    <span class="decision-value">Not required</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function normalizeLoomUrl(url) {
+            if (!url.includes("loom.com")) {
+                return url;
+            }
+
+            return url.replace("/share/", "/embed/");
+        }
+
+        function isDirectVideo(url) {
+            return /\.(mp4|mov|webm)$/i.test(url);
+        }
+
+        function wireDemoCtas() {
+            const demoHref = DEMO_VIDEO_URL || `#${DEMO_SECTION_ID}`;
+
+            ["hero-demo-cta", "band-demo-cta"].forEach((id) => {
+                const link = document.getElementById(id);
+
+                if (!link) {
+                    return;
+                }
+
+                link.href = demoHref;
+
+                if (DEMO_VIDEO_URL) {
+                    link.target = "_blank";
+                    link.rel = "noopener";
+                } else {
+                    link.removeAttribute("target");
+                    link.removeAttribute("rel");
+                }
+            });
+        }
+
+        function renderDemoMedia() {
+            const container = document.getElementById("demo-proof-media");
+
+            if (!container) {
+                return;
+            }
+
+            wireDemoCtas();
+
+            if (DEMO_VIDEO_URL) {
+                const frame = document.createElement("div");
+                frame.className = "asset-frame";
+
+                if (isDirectVideo(DEMO_VIDEO_URL)) {
+                    const video = document.createElement("video");
+                    video.controls = true;
+                    video.playsInline = true;
+                    video.preload = "metadata";
+                    video.src = DEMO_VIDEO_URL;
+                    frame.appendChild(video);
+                } else {
+                    const iframe = document.createElement("iframe");
+                    iframe.src = normalizeLoomUrl(DEMO_VIDEO_URL);
+                    iframe.loading = "lazy";
+                    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+                    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+                    iframe.title = "ResolveAI for Zendesk demo";
+                    frame.appendChild(iframe);
+                }
+
+                container.innerHTML = "";
+                container.appendChild(frame);
+                return;
+            }
+
+            if (DEMO_SCREENSHOT_URL) {
+                const frame = document.createElement("div");
+                const image = document.createElement("img");
+                image.addEventListener("load", () => {
+                    frame.className = "asset-frame";
+                    container.innerHTML = "";
+                    frame.appendChild(image);
+                    container.appendChild(frame);
+                }, { once: true });
+                image.addEventListener("error", () => renderProofPlaceholder(container), { once: true });
+                image.alt = "ResolveAI for Zendesk ticket resolution screenshot";
+                image.loading = "eager";
+                image.src = DEMO_SCREENSHOT_URL;
+                return;
+            }
+
+            renderProofPlaceholder(container);
+        }
+
+        function initializeCalculator() {
+            const calculator = document.querySelector("[data-roi-calculator]");
+
+            if (!calculator) {
+                return;
+            }
+
+            const presetButtons = Array.from(calculator.querySelectorAll("[data-preset]"));
+            const monthlyTicketsInput = document.getElementById("monthly-tickets");
+            const costPerTicketInput = document.getElementById("cost-per-ticket");
+            const automationRateInput = document.getElementById("automation-rate");
+
+            const automatedTicketsOutput = document.getElementById("automated-tickets-output");
+            const laborCostOutput = document.getElementById("labor-cost-output");
+            const resolveAiCostOutput = document.getElementById("resolveai-cost-output");
+            const netSavingsOutput = document.getElementById("net-savings-output");
+
+            function readValues() {
+                return {
+                    monthlyTickets: Number(monthlyTicketsInput.value) || 0,
+                    costPerTicket: Number(costPerTicketInput.value) || 0,
+                    automationRate: Number(automationRateInput.value) || 0
+                };
+            }
+
+            function matchingPresetName(values) {
+                return Object.entries(ROI_PRESETS).find(([, preset]) =>
+                    preset.monthlyTickets === values.monthlyTickets &&
+                    preset.costPerTicket === values.costPerTicket &&
+                    preset.automationRate === values.automationRate
+                )?.[0] || null;
+            }
+
+            function setPresetState(activePreset) {
+                presetButtons.forEach((button) => {
+                    button.setAttribute("aria-pressed", String(button.dataset.preset === activePreset));
+                });
+            }
+
+            function renderResults() {
+                const values = readValues();
+                const automatedTickets = Math.round(values.monthlyTickets * (values.automationRate / 100));
+                const laborCostAvoided = automatedTickets * values.costPerTicket;
+                const resolveAiCost = automatedTickets * PRICE_PER_RESOLUTION;
+                const netSavings = laborCostAvoided - resolveAiCost;
+
+                automatedTicketsOutput.textContent = formatWholeNumber(automatedTickets);
+                laborCostOutput.textContent = formatCurrency(laborCostAvoided);
+                resolveAiCostOutput.textContent = formatCurrency(resolveAiCost);
+                netSavingsOutput.textContent = formatCurrency(netSavings);
+                setPresetState(matchingPresetName(values));
+            }
+
+            presetButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    const preset = ROI_PRESETS[button.dataset.preset];
+
+                    monthlyTicketsInput.value = preset.monthlyTickets;
+                    costPerTicketInput.value = preset.costPerTicket;
+                    automationRateInput.value = preset.automationRate;
+                    renderResults();
+                });
+            });
+
+            [monthlyTicketsInput, costPerTicketInput, automationRateInput].forEach((input) => {
+                input.addEventListener("input", renderResults);
+            });
+
+            const defaultPreset = ROI_PRESETS.smb;
+            monthlyTicketsInput.value = defaultPreset.monthlyTickets;
+            costPerTicketInput.value = defaultPreset.costPerTicket;
+            automationRateInput.value = defaultPreset.automationRate;
+            renderResults();
+        }
+
+        renderDemoMedia();
+        initializeCalculator();
+    </script>
 </body>
 </html>
