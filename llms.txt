@@ -1,0 +1,29 @@
+# DAS Group LLC
+
+> DAS Group LLC builds applied AI products for legal workflows, support operations, product execution, compliance work, commerce operations, and local-first knowledge work.
+
+## Primary pages
+
+- [Home](https://dasgroupllc.com/): Portfolio overview, product categories, and direct answers about the company.
+- [Portfolio full context](https://dasgroupllc.com/llms-full.txt): Expanded company and product context in one file.
+
+## Product index
+
+- [CourtFile](https://courtfile.dasgroupllc.com/): Court filing review workflows and matter-brief generation for litigation teams.
+- [CiteClear](https://citeclear.dasgroupllc.com/): Citation verification and source-quality review.
+- [SpecBot](https://specbot.dasgroupllc.com/): Linear issue quality gates for cleaner engineering handoff.
+- [ResolveAI for Shopify](https://resolveai.dasgroupllc.com/): Policy-aware autonomous support resolution for Shopify merchants.
+- [ResolveAI for Zendesk](https://resolveai-zendesk.dasgroupllc.com/): Outcome-based AI ticket resolution for Zendesk teams.
+- [ProfitPulse AI](https://profitpulse-ai.dasgroupllc.com/): Profit-leak detection and margin protection for Shopify stores.
+- [ThoughtLint](https://thoughtlint.dasgroupllc.com/): Local-first Obsidian plugin for reasoning review.
+- [ProtoVid](https://dasgroupllc.com/protovid/): Figma prototype export to MP4 and GIF.
+
+## Portfolio summary
+
+- DAS Group products are organized around concrete jobs rather than generic AI assistance.
+- Typical portfolio themes: grounded workflows, explicit guardrails, measurable outputs, and machine-readable product context.
+- Primary audiences: litigation teams, support teams, product and engineering teams, Shopify merchants, and knowledge workers.
+
+## Contact
+
+- Support: support@dasgroupllc.com

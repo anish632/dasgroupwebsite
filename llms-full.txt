@@ -1,0 +1,98 @@
+# DAS Group LLC
+
+Website: https://dasgroupllc.com/
+Support: support@dasgroupllc.com
+Last updated: 2026-04-29
+
+## What DAS Group LLC is
+
+DAS Group LLC is a portfolio of applied AI products built around specific workflows with clear inputs, outputs, and guardrails. The company focuses on products that help teams complete real work, review risky material, or reduce manual cleanup rather than simply generating text.
+
+## What DAS Group LLC builds
+
+The portfolio spans:
+
+- Legal workflow software
+- Citation and source-quality review
+- Support automation for Shopify and Zendesk
+- Product and engineering handoff tooling
+- Shopify operations and analytics
+- Local-first knowledge-work tools
+- Design workflow utilities
+
+## Portfolio approach
+
+The products generally follow four principles:
+
+1. Start with a concrete user job.
+2. Add explicit workflow guardrails, escalation rules, or deterministic checks where possible.
+3. Explain the product in answer-oriented language that works for search, partner review, and AI retrieval.
+4. Optimize toward measurable workflow outcomes such as resolved tickets, better specs, cleaner matter briefs, verified citations, or protected margin.
+
+## Product directory
+
+### CourtFile
+
+- URL: https://courtfile.dasgroupllc.com/
+- Category: Legal workflow / litigation operations
+- Summary: CourtFile helps litigation teams turn court filings into verified matter briefs with deadlines, timelines, parties, claims, and source-linked summaries.
+
+### CiteClear
+
+- URL: https://citeclear.dasgroupllc.com/
+- Category: Citation verification / source quality
+- Summary: CiteClear checks whether sources are real, relevant, current, and accurately represented before citations damage credibility.
+
+### SpecBot
+
+- URL: https://specbot.dasgroupllc.com/
+- Category: Product and engineering workflow
+- Summary: SpecBot reviews Linear issues for completeness, flags missing context, and improves issue quality before a developer or coding agent starts work.
+
+### ResolveAI for Shopify
+
+- URL: https://resolveai.dasgroupllc.com/
+- Category: Support automation / Shopify
+- Summary: ResolveAI for Shopify resolves order questions, returns, and refund workflows using policy-aware automation and escalation rules.
+
+### ResolveAI for Zendesk
+
+- URL: https://resolveai-zendesk.dasgroupllc.com/
+- Category: Support automation / Zendesk
+- Summary: ResolveAI for Zendesk emphasizes completed ticket resolution, knowledge-base grounding, and pricing tied to outcomes rather than generic AI activity.
+
+### ProfitPulse AI
+
+- URL: https://profitpulse-ai.dasgroupllc.com/
+- Category: Commerce analytics / margin protection
+- Summary: ProfitPulse AI helps merchants see true order-level profit after COGS, shipping, fees, and discounts, then detect profit leaks that need action.
+
+### ThoughtLint
+
+- URL: https://thoughtlint.dasgroupllc.com/
+- Category: Local-first knowledge work
+- Summary: ThoughtLint analyzes Obsidian notes for weak reasoning, unsupported claims, vague language, and missing next steps.
+
+### ProtoVid
+
+- URL: https://dasgroupllc.com/protovid/
+- Category: Design workflow
+- Summary: ProtoVid exports Figma prototypes as shareable MP4 and GIF videos without manual screen recording.
+
+## Fast answers
+
+### What does DAS Group LLC build?
+
+DAS Group LLC builds applied AI software for concrete workflows in legal review, support automation, product execution, citation quality, commerce operations, and local-first note analysis.
+
+### Who are DAS Group products for?
+
+The main users are litigation teams, support teams, product and engineering organizations, Shopify merchants, and knowledge workers with recurring high-friction tasks.
+
+### How is the portfolio different from generic AI tooling?
+
+The portfolio is positioned around grounded workflows, visible guardrails, and measurable outputs rather than broad “assistant” claims without operational context.
+
+### Why does DAS Group publish machine-readable context?
+
+Machine-readable summaries such as `llms.txt`, structured data, and answer-oriented content help search engines, partner reviewers, and AI agents understand the products more accurately.
