@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Product SEO Audit: 10-Point Checklist | BulkGenie AI</title>
+    <meta name="description" content="A 10-point Shopify product SEO audit checklist. Check title length, meta descriptions, image alt text, product handles, structured data, and more. Free sample audit table included.">
+    <link rel="canonical" href="https://dasgroupllc.com/shopify-product-seo-audit/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Shopify Product SEO Audit: 10-Point Checklist | BulkGenie AI">
+    <meta property="og:description" content="Audit every Shopify product page for missing meta descriptions, alt text, and structured data. Free 10-point checklist and sample audit table.">
+    <meta property="og:url" content="https://dasgroupllc.com/shopify-product-seo-audit/">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Das Group LLC">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Audit Shopify Product Pages for SEO",
+        "description": "A 10-point checklist for auditing Shopify product pages for search engine optimization, covering title length, meta descriptions, image alt text, handles, and structured data.",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Check product title length and keyword placement",
+                "text": "Product titles should be 50 to 70 characters. The primary keyword (e.g., product type) should appear in the first 30 characters. Avoid keyword stuffing — titles are also the H1 on the product page."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Verify meta description presence and length",
+                "text": "Every product should have a unique meta description between 120 and 160 characters. In Shopify, this is the 'Description' field under the SEO section at the bottom of the product editor."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Check image alt text on all product images",
+                "text": "Every product image should have descriptive alt text. Shopify exports this in the Image Alt Text column of the product CSV. Missing alt text is one of the most common SEO gaps in Shopify stores."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Review product URL handles",
+                "text": "The URL handle (slug) should be lowercase, hyphen-separated, and descriptive. Avoid Shopify's default handles that include numbers or are truncated. Example: /products/blue-wool-sweater not /products/sweater-1."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Check product description word count",
+                "text": "Product descriptions under 50 words give search engines little content to index. Aim for at least 150 words per product for meaningful pages. Descriptions also populate the product's body text."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 6,
+                "name": "Verify Shopify structured data output",
+                "text": "Shopify themes automatically output Product schema (JSON-LD) for product pages. Verify this is present using Google's Rich Results Test. Custom themes sometimes strip or break the structured data output."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 7,
+                "name": "Check canonical URL tags",
+                "text": "Shopify automatically adds canonical tags to product pages. Verify the canonical points to the primary product URL, not a collection or variant URL. Test using View Source or a browser SEO extension."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 8,
+                "name": "Review internal linking from collections",
+                "text": "Every product should be reachable from at least one collection page. Orphaned products (not linked from any collection) receive less crawl priority and fewer internal PageRank signals."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 9,
+                "name": "Check product image file sizes",
+                "text": "Large image files slow page load, which affects both Core Web Vitals and mobile experience. Product images should be under 200 KB where possible. Use WebP format where your theme supports it."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 10,
+                "name": "Verify mobile product page rendering",
+                "text": "Open each product on a mobile device or use Chrome DevTools mobile emulation. Check that images load correctly, the Add to Cart button is visible without scrolling, and text is readable without zooming."
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a Shopify product SEO audit?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A Shopify product SEO audit checks whether each product page is optimized for search engines. The 10 most important fields to audit are product title length and keyword placement, meta description presence and length, image alt text on all product images, product URL handle format, product description word count, structured data output, canonical URL tags, internal links from collections, product image file sizes, and mobile page rendering."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often should I audit Shopify products for SEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Audit new products before they go live. For existing catalogs, run a full audit quarterly or after any major theme change, since theme updates can affect structured data output and canonical tags. Image alt text gaps tend to accumulate gradually as new products are added without alt text."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Shopify auto-generate structured data for products?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Most Shopify themes automatically output Product schema in JSON-LD format on product pages. However, custom themes or themes with heavy modifications sometimes break the structured data output. Always verify using Google's Rich Results Test after theme changes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the most common SEO issue on Shopify product pages?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Missing image alt text is the most common SEO gap in Shopify stores. It accumulates silently as new products are added without completing the alt text field. The second most common issue is duplicate or missing meta descriptions, where multiple product variants share the same description or the field is left empty."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I audit SEO across 1,000 Shopify products efficiently?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Export your full product catalog as a CSV (Admin > Products > Export > All products). Open in a spreadsheet and check the SEO Title, Meta Description, and Image Alt Text columns for blank cells. Filter for blanks to see the gap across your entire catalog in a single view. BulkGenie AI automates this process and surfaces missing SEO fields across your full catalog."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
+    <style>
+        :root {
+            --accent: #16a34a;
+            --accent-strong: #15803d;
+            --accent-soft: rgba(22, 163, 74, 0.12);
+            --hero-start: #f0fdf4;
+            --hero-end: #ecfdf5;
+        }
+        .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: checklist; }
+        .checklist li { display: grid; grid-template-columns: 2rem 1fr; gap: 0.75rem; align-items: start; padding: 0.9rem 1.1rem; border: 1px solid var(--line); border-radius: 0.85rem; background: var(--surface); counter-increment: checklist; }
+        .checklist li::before { content: counter(checklist, decimal-leading-zero); font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 0.85rem; color: var(--accent-strong); background: var(--accent-soft); border-radius: 50%; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .table-wrap { overflow-x: auto; margin: 1rem 0; border-radius: 1.2rem; border: 1px solid var(--line); }
+        table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+        th { background: var(--accent-soft); color: var(--accent-strong); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.65rem 0.8rem; text-align: left; white-space: nowrap; }
+        td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        .pass { color: #16a34a; font-weight: 700; }
+        .fail { color: #dc2626; font-weight: 700; }
+        .warn { color: #ca8a04; font-weight: 700; }
+        .criteria { font-size: 0.82rem; color: var(--muted); font-style: italic; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="shell topbar">
+            <a class="brand" href="/">Das Group LLC</a>
+            <nav class="topnav" aria-label="Primary">
+                <a href="/shopify-missing-alt-text-checker/">Missing Alt Text Checker</a>
+                <a href="/how-to-find-negative-margin-orders-shopify/">Find Negative-Margin Orders</a>
+                <a href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
+            </nav>
+        </div>
+    </header>
+    <main class="page shell">
+        <section class="hero">
+            <div class="hero-panel">
+                <div class="hero-grid">
+                    <div>
+                        <p class="eyebrow">Shopify SEO Guide</p>
+                        <h1>Shopify Product SEO Audit Checklist</h1>
+                        <p class="lead">A Shopify product SEO audit checks whether each product page gives search engines and answer engines enough signal to rank and answer queries. The 10 most important fields to audit are listed below with pass criteria and a sample audit table.</p>
+                        <p class="body-copy">Missing image alt text and blank meta descriptions are the two most common gaps, and they accumulate silently as new products are added without completing those fields. This checklist covers all 10 points.</p>
+                        <div class="actions">
+                            <a class="button primary" href="/apps/bulkgenie-demo/" data-track="product_cta_click">See BulkGenie AI Demo</a>
+                            <a class="button secondary" href="#checklist">View the Checklist</a>
+                        </div>
+                    </div>
+                    <aside class="hero-aside">
+                        <h2>Quick facts</h2>
+                        <ul class="meta-list">
+                            <li><span class="meta-label">Most common gap</span>Missing image alt text, blank meta descriptions</li>
+                            <li><span class="meta-label">Native audit method</span>Export product CSV, check Image Alt Text and SEO Description columns for blanks</li>
+                            <li><span class="meta-label">Shopify structured data</span>Auto-generated by most themes via JSON-LD Product schema</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="checklist">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Checklist</span>
+                    <h2>10-point Shopify product SEO audit</h2>
+                </div>
+            </div>
+            <ol class="checklist">
+                <li>
+                    <div><strong>Product title length and keyword placement</strong><br>
+                    <span class="body-copy">50–70 characters. Primary keyword (product type) in first 30 characters. Titles are also the H1 on the product page.</span></div>
+                </li>
+                <li>
+                    <div><strong>Meta description presence and length</strong><br>
+                    <span class="body-copy">Every product needs a unique meta description of 120–160 characters. In Shopify: product editor → SEO section at the bottom → Meta description.</span></div>
+                </li>
+                <li>
+                    <div><strong>Image alt text on all product images</strong><br>
+                    <span class="body-copy">Every image should have descriptive alt text. Export the product CSV (Admin → Products → Export) and filter the Image Alt Text column for blanks to find gaps across your full catalog.</span></div>
+                </li>
+                <li>
+                    <div><strong>Product URL handle format</strong><br>
+                    <span class="body-copy">Handles should be lowercase, hyphen-separated, and descriptive. Avoid default handles with numbers (e.g., /products/sweater-1). Good example: /products/blue-wool-crew-neck-sweater.</span></div>
+                </li>
+                <li>
+                    <div><strong>Product description word count</strong><br>
+                    <span class="body-copy">Descriptions under 50 words give search engines little content to index. Aim for at least 150 words per product. Descriptions also serve as the page's body text for answer engines.</span></div>
+                </li>
+                <li>
+                    <div><strong>Structured data output (Product schema)</strong><br>
+                    <span class="body-copy">Most Shopify themes auto-output Product schema in JSON-LD. Verify using Google's Rich Results Test, especially after theme updates — custom themes can break structured data output silently.</span></div>
+                </li>
+                <li>
+                    <div><strong>Canonical URL tags</strong><br>
+                    <span class="body-copy">Shopify adds canonical tags automatically. Verify the canonical points to the primary product URL, not a collection or variant URL. Check via View Source on the product page.</span></div>
+                </li>
+                <li>
+                    <div><strong>Internal links from collections</strong><br>
+                    <span class="body-copy">Every product should be reachable from at least one collection. Orphaned products (not linked from any collection) receive less crawl priority.</span></div>
+                </li>
+                <li>
+                    <div><strong>Product image file sizes</strong><br>
+                    <span class="body-copy">Images should be under 200 KB where possible. Large images slow Core Web Vitals scores. Use WebP format where your Shopify theme supports it.</span></div>
+                </li>
+                <li>
+                    <div><strong>Mobile product page rendering</strong><br>
+                    <span class="body-copy">Open each product on mobile or use Chrome DevTools mobile emulation. Verify images load, the Add to Cart button is visible without scrolling, and text is readable without zooming.</span></div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section" id="sample-report">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Sample Audit Table</span>
+                    <h2>What a product SEO audit looks like across 5 products</h2>
+                </div>
+            </div>
+            <p class="body-copy">The table below uses fictional product data. Pass/Fail/Warn status is illustrative — your results will vary based on how your store and theme are configured.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Title (50–70 ch)</th>
+                            <th>Meta Desc.</th>
+                            <th>Alt Text</th>
+                            <th>Handle</th>
+                            <th>Desc. 150+ words</th>
+                            <th>Structured Data</th>
+                            <th>In Collection</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Blue Wool Crew Neck Sweater</td>
+                            <td class="pass">Pass (54 ch)</td>
+                            <td class="pass">Pass (142 ch)</td>
+                            <td class="pass">Pass (3/3 images)</td>
+                            <td class="pass">Pass</td>
+                            <td class="pass">Pass (210 words)</td>
+                            <td class="pass">Pass</td>
+                            <td class="pass">Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Leather Card Wallet — Brown</td>
+                            <td class="pass">Pass (48 ch)</td>
+                            <td class="fail">Fail (blank)</td>
+                            <td class="warn">Warn (1 of 4 missing)</td>
+                            <td class="pass">Pass</td>
+                            <td class="warn">Warn (80 words)</td>
+                            <td class="pass">Pass</td>
+                            <td class="pass">Pass</td>
+                        </tr>
+                        <tr>
+                            <td>SKU-00291</td>
+                            <td class="fail">Fail (title is SKU only)</td>
+                            <td class="fail">Fail (blank)</td>
+                            <td class="fail">Fail (all 5 missing)</td>
+                            <td class="fail">Fail (/products/00291)</td>
+                            <td class="fail">Fail (12 words)</td>
+                            <td class="pass">Pass</td>
+                            <td class="fail">Fail (orphan)</td>
+                        </tr>
+                        <tr>
+                            <td>Ceramic Pour-Over Coffee Dripper</td>
+                            <td class="pass">Pass (62 ch)</td>
+                            <td class="pass">Pass (158 ch)</td>
+                            <td class="pass">Pass (2/2 images)</td>
+                            <td class="pass">Pass</td>
+                            <td class="pass">Pass (340 words)</td>
+                            <td class="pass">Pass</td>
+                            <td class="pass">Pass</td>
+                        </tr>
+                        <tr>
+                            <td>Yoga Mat — Standard</td>
+                            <td class="warn">Warn (title generic)</td>
+                            <td class="pass">Pass (130 ch)</td>
+                            <td class="warn">Warn (2 of 6 missing)</td>
+                            <td class="pass">Pass</td>
+                            <td class="pass">Pass (175 words)</td>
+                            <td class="warn">Warn (verify after theme update)</td>
+                            <td class="pass">Pass</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="body-copy">In this example, SKU-00291 fails 6 of 8 checks — a common pattern for products imported via bulk upload that were never cleaned up. The Leather Card Wallet and Yoga Mat have partial gaps that are easy to fix with a targeted export-and-reimport workflow.</p>
+        </section>
+
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Related</span>
+                    <h2>Connected guides</h2>
+                </div>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3><a href="/shopify-missing-alt-text-checker/" style="text-decoration:none;color:inherit;">Find Missing Alt Text on Shopify Products</a></h3>
+                    <p>Step-by-step guide to finding every product image without alt text using the Shopify CSV export method.</p>
+                    <a href="/shopify-missing-alt-text-checker/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Read the guide →</a>
+                </article>
+                <article class="card">
+                    <h3><a href="/how-to-find-negative-margin-orders-shopify/" style="text-decoration:none;color:inherit;">Find Negative-Margin Orders in Shopify</a></h3>
+                    <p>The 7-step process for identifying orders where you lost money, with sample margin table.</p>
+                    <a href="/how-to-find-negative-margin-orders-shopify/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Read the guide →</a>
+                </article>
+                <article class="card">
+                    <h3><a href="/apps/bulkgenie-demo/" style="text-decoration:none;color:inherit;">BulkGenie AI for Shopify</a></h3>
+                    <p>Automates SEO field auditing across your full product catalog — surfaces missing alt text, blank meta descriptions, and weak titles at scale.</p>
+                    <a href="/apps/bulkgenie-demo/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">See the demo →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">FAQ</span>
+                    <h2>Questions about Shopify product SEO audits</h2>
+                </div>
+            </div>
+            <div class="faq">
+                <details open>
+                    <summary>What is a Shopify product SEO audit?</summary>
+                    <p>A product SEO audit checks whether each product page gives search engines and answer engines enough signal to rank and respond to queries. The 10 most important fields are product title, meta description, image alt text, URL handle, description length, structured data, canonical URL, internal links, image file size, and mobile rendering.</p>
+                </details>
+                <details>
+                    <summary>How often should I audit Shopify products for SEO?</summary>
+                    <p>Audit new products before they go live. For existing catalogs, run a full audit quarterly or after any major theme change — theme updates can affect structured data output and canonical tags silently. Alt text gaps tend to accumulate gradually as new products are added without completing the field.</p>
+                </details>
+                <details>
+                    <summary>Does Shopify auto-generate structured data for products?</summary>
+                    <p>Yes. Most Shopify themes automatically output Product schema in JSON-LD format on product pages. However, custom themes or heavily modified themes sometimes break the structured data output. Always verify using Google's Rich Results Test after theme changes.</p>
+                </details>
+                <details>
+                    <summary>What is the most common SEO issue on Shopify product pages?</summary>
+                    <p>Missing image alt text is the most common gap. It accumulates silently as new products are added without completing the alt text field. The second most common issue is missing or duplicate meta descriptions — multiple product variants sharing the same description, or the field left blank.</p>
+                </details>
+                <details>
+                    <summary>How do I audit SEO across 1,000 Shopify products efficiently?</summary>
+                    <p>Export your full product catalog as CSV (Admin → Products → Export → All products). Open in a spreadsheet and check the SEO Title, Meta Description, and Image Alt Text columns for blank cells. Filter for blanks to see the gap across your entire catalog at once. BulkGenie AI automates this process and surfaces missing SEO fields across your full catalog.</p>
+                </details>
+            </div>
+            <div class="cta-band">
+                <span class="section-label">Next Step</span>
+                <h2>Audit SEO fields across your full Shopify catalog.</h2>
+                <p>BulkGenie AI surfaces missing alt text, blank meta descriptions, and weak product titles across every product in your Shopify store.</p>
+                <div class="actions">
+                    <a class="button ghost" href="/apps/bulkgenie-demo/" data-track="product_cta_click">See BulkGenie AI Demo</a>
+                    <a class="button secondary" href="/shopify-missing-alt-text-checker/" data-track="product_cta_click">Find Missing Alt Text →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div class="app-links">
+                <a class="pill-link" href="/shopify-missing-alt-text-checker/">Missing Alt Text Checker</a>
+                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
+                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
+                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
+                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
+                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
+                <a class="pill-link" href="/how-to-find-negative-margin-orders-shopify/">Find Negative-Margin Orders</a>
+            </div>
+            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
+        </div>
+    </footer>
+    <script>
+    (function() {
+        function dasTrack(event, props) {
+            // Wire to your analytics provider:
+            // plausible(event, {props: props});
+            // gtag('event', event, props);
+        }
+        dasTrack('seo_page_view', {page: location.pathname});
+        document.querySelectorAll('[data-track]').forEach(function(el) {
+            el.addEventListener('click', function() {
+                dasTrack(el.dataset.track, {href: el.href, label: el.textContent.trim()});
+            });
+        });
+        var sample = document.getElementById('sample-report');
+        if (sample && 'IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) { dasTrack('sample_output_view', {page: location.pathname}); io.disconnect(); }
+            }, {threshold: 0.3});
+            io.observe(sample);
+        }
+    })();
+    </script>
+</body>
+</html>
