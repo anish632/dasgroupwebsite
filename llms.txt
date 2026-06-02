@@ -18,6 +18,25 @@
 - [ThoughtLint](https://thoughtlint.dasgroupllc.com/): Local-first Obsidian plugin for reasoning review.
 - [ProtoVid](https://dasgroupllc.com/protovid/): Figma prototype export to MP4 and GIF.
 
+## iOS apps (App Store)
+
+iPhone apps by DAS Group LLC. Each link is the canonical product page with a direct App Store download link.
+
+- [TrackWell Daily](https://dasgroupllc.com/apps/trackwell/): Simple nutrition tracker for water, protein, and vegetables. One-tap logging, no calorie counting or food databases.
+- [LifeGarden](https://dasgroupllc.com/apps/lifegarden/): Visual habit tracker where each habit grows into a living plant. Build streaks and daily routines; the plant wilts if you skip.
+- [VoiceJournal](https://dasgroupllc.com/apps/voicejournal/): Voice-first journaling app that transcribes what you say and detects your mood automatically, fully on-device.
+- [QuickScan](https://dasgroupllc.com/apps/quickscan/): Fast iPhone document scanner that turns any document into a clean PDF with OCR text extraction and signatures, offline.
+- [Scan Receipts](https://dasgroupllc.com/apps/receipts/): AI receipt scanner that reads merchant, date, total, and category from any receipt and exports tax-ready expense reports.
+- [Photo Converter](https://dasgroupllc.com/apps/photo-converter/): On-device photo format converter (HEIC, JPG, PNG, WebP) with one-tap AI background removal. No uploads.
+- [ADHDFocus](https://dasgroupllc.com/apps/adhdfocus/): ADHD focus timer that breaks overwhelming tasks into small starter steps and runs short Pomodoro sessions to help you start.
+- [AffirmDaily](https://dasgroupllc.com/apps/affirmdaily/): Daily affirmations app that matches one affirmation to your mood each morning using on-device AI.
+- [Mood Tracker (CopeCalm)](https://dasgroupllc.com/apps/copecalm/): Anxiety and panic relief toolkit with 60-second breathing exercises, grounding, and mood tracking. Works offline.
+- [StrongHer](https://dasgroupllc.com/apps/strongher/): Strength training app built for women, including workouts for postpartum, menopause, and pelvic-floor recovery.
+- [TrackFasts](https://dasgroupllc.com/apps/trackfasts/): Intermittent fasting timer focused on keeping your streak alive, with 16:8, 18:6, 20:4, and OMAD protocols.
+- [Be Ridiculous AI](https://dasgroupllc.com/apps/be-ridiculous/): AI activity generator that suggests something to do based on your mood, energy, and who you are with.
+- [WOD Timer Pro](https://dasgroupllc.com/apps/crossfit-timer/): Interval workout timer with AMRAP, EMOM, Tabata, and For Time modes, voice cues, and Apple Watch support.
+- [Invoices & Time Tracker](https://dasgroupllc.com/apps/invoices/): Invoice maker for freelancers and contractors to create and send professional PDF invoices in under a minute.
+
 ## Portfolio summary
 
 - DAS Group products are organized around concrete jobs rather than generic AI assistance.
