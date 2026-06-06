@@ -1,3 +1,4 @@
+/apps/ground-truth/mcp/* https://ground-truth-mcp.anishdasmail.workers.dev/mcp/:splat 200
 /resolveai /apps/resolveai-shopify/ 301
 /resolveai/ /apps/resolveai-shopify/ 301
 /resolveai/index.html /apps/resolveai-shopify/ 301
@@ -10,4 +11,3 @@
 /protovid /apps/protovid/ 301
 /protovid/ /apps/protovid/ 301
 /protovid/index.html /apps/protovid/ 301
-/apps/ground-truth/mcp/* https://ground-truth-mcp.anishdasmail.workers.dev/:splat 200
