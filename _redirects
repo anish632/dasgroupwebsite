@@ -1,4 +1,5 @@
-/apps/ground-truth/mcp/* https://ground-truth-mcp.anishdasmail.workers.dev/mcp/:splat 200
+/apps/ground-truth/mcp https://ground-truth-mcp.anishdasmail.workers.dev/mcp 200!
+/apps/ground-truth/mcp/* https://ground-truth-mcp.anishdasmail.workers.dev/mcp/:splat 200!
 /resolveai /apps/resolveai-shopify/ 301
 /resolveai/ /apps/resolveai-shopify/ 301
 /resolveai/index.html /apps/resolveai-shopify/ 301
