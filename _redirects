@@ -7,3 +7,7 @@
 /ground-truth /apps/ground-truth/ 301
 /ground-truth/ /apps/ground-truth/ 301
 /ground-truth/index.html /apps/ground-truth/ 301
+/protovid /apps/protovid/ 301
+/protovid/ /apps/protovid/ 301
+/protovid/index.html /apps/protovid/ 301
+/apps/ground-truth/mcp/* https://ground-truth-mcp.anishdasmail.workers.dev/:splat 200
