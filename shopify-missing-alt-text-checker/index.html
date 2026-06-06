@@ -13,398 +13,397 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Das Group LLC">
     <meta name="twitter:card" content="summary_large_image">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "How to Find Missing Alt Text on Shopify Products",
-        "description": "A step-by-step process for finding every Shopify product image with missing alt text using the product CSV export method.",
-        "step": [
-            {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Export the full product catalog as CSV",
-                "text": "In Shopify Admin, go to Products > Export > All products > Plain CSV file. This creates a spreadsheet with one row per product image and includes the Image Alt Text column."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Open the CSV in a spreadsheet",
-                "text": "Open the file in Google Sheets or Excel. The Image Alt Text column is typically column K but may vary. Search for 'Image Alt Text' in the header row to locate it."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Filter for blank Image Alt Text cells",
-                "text": "Apply a filter to the Image Alt Text column and select Blanks. Every row that appears is a product image missing alt text. Note the product Title and Image Src columns to identify which products need attention."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Count the gap",
-                "text": "Count the number of blank rows. A store with 500 products and an average of 3 images per product has up to 1,500 alt text fields to check. Seeing the total gap helps you prioritize — start with your top-traffic products."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 5,
-                "name": "Write descriptive alt text",
-                "text": "For each missing entry, write alt text following this pattern: [Product Name] – [Key Feature or Variant] – [Color/Material if relevant]. Example: Blue Wool Crew Neck Sweater – Front View – Navy. Keep it under 125 characters and avoid keyword stuffing."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 6,
-                "name": "Import the updated CSV back into Shopify",
-                "text": "Save the updated CSV. In Shopify Admin, go to Products > Import > upload the updated CSV. Shopify will update the alt text for matching product images without changing other product data."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 7,
-                "name": "Verify the alt text was applied",
-                "text": "Open one updated product in Shopify Admin, click on an image, and confirm the alt text field now shows your text. Re-export the product CSV and spot-check the Image Alt Text column to confirm the import applied correctly."
-            }
-        ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is alt text and why does it matter for Shopify SEO?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Alt text (alternative text) is a short description of an image that search engines read when they cannot interpret the image visually. On Shopify, alt text on product images helps Google understand what the product looks like, which can improve image search visibility. It is also required for web accessibility compliance under WCAG 2.1 guidelines."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I bulk-add alt text to Shopify product images?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Export your product catalog as CSV (Admin > Products > Export > All products), add alt text to the Image Alt Text column for each blank row, then re-import the CSV (Admin > Products > Import). Shopify updates alt text for matching images without overwriting other product data."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What should Shopify image alt text say?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Effective alt text follows this pattern: [Product Name] – [Key Feature or Variant] – [Color or Material if relevant]. Example: Blue Wool Crew Neck Sweater – Front View – Navy. Keep it under 125 characters, make it descriptive rather than keyword-stuffed, and focus on what a sighted user would see in the image."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does missing alt text hurt Shopify search rankings?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Missing alt text is primarily a missed opportunity rather than an active penalty. Images without alt text cannot rank in Google Image Search and provide no text signal for the surrounding product page. For large catalogs with hundreds of products, fixing alt text across all images can improve crawl quality and image search visibility."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I find missing alt text in Shopify without exporting a CSV?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Shopify's built-in admin does not have a bulk view of alt text status across all products. The CSV export method is the most practical native approach for stores with more than a few dozen products. BulkGenie AI automates the detection and surfacing of missing alt text across your full Shopify catalog."
-                }
-            }
-        ]
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
-    <style>
-        :root {
-            --accent: #16a34a;
-            --accent-strong: #15803d;
-            --accent-soft: rgba(22, 163, 74, 0.12);
-            --hero-start: #f0fdf4;
-            --hero-end: #ecfdf5;
-        }
-        .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: checklist; }
-        .checklist li { display: grid; grid-template-columns: 2rem 1fr; gap: 0.75rem; align-items: start; padding: 0.9rem 1.1rem; border: 1px solid var(--line); border-radius: 0.85rem; background: var(--surface); counter-increment: checklist; }
-        .checklist li::before { content: counter(checklist, decimal-leading-zero); font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 0.85rem; color: var(--accent-strong); background: var(--accent-soft); border-radius: 50%; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .table-wrap { overflow-x: auto; margin: 1rem 0; border-radius: 1.2rem; border: 1px solid var(--line); }
-        table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
-        th { background: var(--accent-soft); color: var(--accent-strong); font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.65rem 0.8rem; text-align: left; white-space: nowrap; }
-        td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-        tr:last-child td { border-bottom: none; }
-        .missing { color: #dc2626; font-weight: 700; font-style: italic; }
-        .present { color: #16a34a; }
-        td.mono { font-family: "IBM Plex Mono", monospace; font-size: 0.86rem; color: var(--muted); }
-        .callout-inline { padding: 0.9rem 1.1rem; border-radius: 0.85rem; border: 1px solid var(--accent-soft); background: var(--accent-soft); margin: 1rem 0; }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-        <div class="shell topbar">
-            <a class="brand" href="/">Das Group LLC</a>
-            <nav class="topnav" aria-label="Primary">
-                <a href="/shopify-product-seo-audit/">Product SEO Audit</a>
-                <a href="/how-to-find-negative-margin-orders-shopify/">Find Negative-Margin Orders</a>
-                <a href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
-            </nav>
-        </div>
-    </header>
-    <main class="page shell">
-        <section class="hero">
-            <div class="hero-panel">
-                <div class="hero-grid">
-                    <div>
-                        <p class="eyebrow">Shopify SEO Guide</p>
-                        <h1>How to Find Missing Alt Text on Shopify Products</h1>
-                        <p class="lead">In Shopify, missing image alt text is the most common SEO gap in large product catalogs. It accumulates silently as new products are added without completing the alt text field. The fastest native method is to export your product catalog as CSV and filter the Image Alt Text column for blank cells.</p>
-                        <p class="body-copy">A store with 500 products and 3 images per product has up to 1,500 alt text fields to check. The 7-step process below walks through the CSV export method, how to write good alt text, and how to re-import the fixes in bulk.</p>
-                        <div class="actions">
-                            <a class="button primary" href="https://apps.shopify.com/bulkgenie-ai" rel="noopener" data-track="marketplace_click">View on Shopify App Store</a>
-                            <a class="button secondary" href="#checklist">See the Steps</a>
-                        </div>
-                    </div>
-                    <aside class="hero-aside">
-                        <h2>Quick reference</h2>
-                        <ul class="meta-list">
-                            <li>
-                                <span class="meta-label">Export path</span>
-                                Admin → Products → Export → All products → Plain CSV
-                            </li>
-                            <li>
-                                <span class="meta-label">Column to check</span>
-                                "Image Alt Text" (search header row if column position varies)
-                            </li>
-                            <li>
-                                <span class="meta-label">Fix method</span>
-                                Add alt text to blank cells, re-import CSV via Admin → Products → Import
-                            </li>
-                        </ul>
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Why It Matters</span>
-                    <h2>What missing alt text costs your Shopify store</h2>
-                </div>
-            </div>
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Missed image search visibility</h3>
-                    <p>Images without alt text cannot rank in Google Image Search. For products where visual discovery matters — apparel, furniture, home decor — this is a direct traffic gap.</p>
-                </article>
-                <article class="card">
-                    <h3>Weaker product page signals</h3>
-                    <p>Alt text on product images contributes to the overall text signal of the product page. A page with five images and no alt text has fewer text tokens for search engines to index.</p>
-                </article>
-                <article class="card">
-                    <h3>Accessibility gap</h3>
-                    <p>Screen readers use alt text to describe images to visually impaired users. Missing alt text makes product images inaccessible to assistive technology, which may affect compliance with WCAG 2.1 guidelines.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="checklist">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Checklist</span>
-                    <h2>7 steps to find and fix missing alt text in Shopify</h2>
-                </div>
-            </div>
-            <ol class="checklist">
-                <li>
-                    <div><strong>Export the full product catalog as CSV</strong><br>
-                    <span class="body-copy">Admin → Products → Export → All products → Plain CSV file. This file has one row per product image and includes the Image Alt Text column.</span></div>
-                </li>
-                <li>
-                    <div><strong>Open in Google Sheets or Excel</strong><br>
-                    <span class="body-copy">Open the file. Search the header row for "Image Alt Text" to locate the column — its position can vary. Common column: K.</span></div>
-                </li>
-                <li>
-                    <div><strong>Filter for blank Image Alt Text cells</strong><br>
-                    <span class="body-copy">Apply a column filter to Image Alt Text → select Blanks. Every row that appears is a product image missing alt text. Note the Title and Image Src columns to identify which products need attention.</span></div>
-                </li>
-                <li>
-                    <div><strong>Count the gap and prioritize</strong><br>
-                    <span class="body-copy">Note the total number of blank rows. Start with your top-traffic or highest-revenue products. You do not need to fix every image in one session — batch by collection or category.</span></div>
-                </li>
-                <li>
-                    <div><strong>Write descriptive alt text for each blank cell</strong><br>
-                    <span class="body-copy">Use this pattern: [Product Name] – [Key Feature] – [Color/Material if relevant]. Example: <code>Blue Wool Crew Neck Sweater – Front View – Navy</code>. Keep under 125 characters. Avoid keyword stuffing.</span></div>
-                </li>
-                <li>
-                    <div><strong>Re-import the updated CSV</strong><br>
-                    <span class="body-copy">Admin → Products → Import → upload the updated CSV. Shopify updates alt text for matching product images without overwriting other product data.</span></div>
-                </li>
-                <li>
-                    <div><strong>Verify a sample of updated products</strong><br>
-                    <span class="body-copy">Open two or three updated products in Admin, click each image, and confirm the alt text field now shows your text. Re-export and spot-check the Image Alt Text column to confirm the import applied correctly.</span></div>
-                </li>
-            </ol>
-        </section>
-
-        <section class="section" id="sample-report">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Sample Output</span>
-                    <h2>What the CSV looks like before and after fixing alt text</h2>
-                </div>
-            </div>
-            <p class="body-copy">The table below shows a fictional before-and-after for five products. The "Before" rows reflect how common it is for bulk-imported products to have blank alt text across multiple images.</p>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Product Title</th>
-                            <th>Image Src (abbreviated)</th>
-                            <th>Alt Text (Before)</th>
-                            <th>Alt Text (After fix)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Blue Wool Crew Neck Sweater</td>
-                            <td class="mono">cdn.shopify.com/…/sweater-front.jpg</td>
-                            <td class="missing">— blank —</td>
-                            <td class="present">Blue Wool Crew Neck Sweater – Front View – Navy</td>
-                        </tr>
-                        <tr>
-                            <td>Blue Wool Crew Neck Sweater</td>
-                            <td class="mono">cdn.shopify.com/…/sweater-side.jpg</td>
-                            <td class="missing">— blank —</td>
-                            <td class="present">Blue Wool Crew Neck Sweater – Side View – Navy</td>
-                        </tr>
-                        <tr>
-                            <td>Leather Card Wallet</td>
-                            <td class="mono">cdn.shopify.com/…/wallet-open.jpg</td>
-                            <td class="present">Leather card wallet open</td>
-                            <td class="present">Leather Card Wallet – Open View – Brown</td>
-                        </tr>
-                        <tr>
-                            <td>Leather Card Wallet</td>
-                            <td class="mono">cdn.shopify.com/…/wallet-closed.jpg</td>
-                            <td class="missing">— blank —</td>
-                            <td class="present">Leather Card Wallet – Closed View – Brown</td>
-                        </tr>
-                        <tr>
-                            <td>Ceramic Pour-Over Dripper</td>
-                            <td class="mono">cdn.shopify.com/…/dripper-hero.jpg</td>
-                            <td class="missing">— blank —</td>
-                            <td class="present">Ceramic Pour-Over Coffee Dripper – White – Single Cup</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="callout-inline">
-                <strong>Pattern to avoid:</strong> Alt text like "image1", "product photo", or repeating the product handle verbatim provides low signal. Describe what is visually shown in each image, including angle, color, and use context where relevant.
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Related</span>
-                    <h2>Connected guides</h2>
-                </div>
-            </div>
-            <div class="card-grid">
-                <article class="card">
-                    <h3><a href="/shopify-product-seo-audit/" style="text-decoration:none;color:inherit;">Full Shopify Product SEO Audit</a></h3>
-                    <p>The 10-point checklist covering alt text plus meta descriptions, handles, structured data, and more.</p>
-                    <a href="/shopify-product-seo-audit/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Run the audit →</a>
-                </article>
-                <article class="card">
-                    <h3><a href="/how-to-find-negative-margin-orders-shopify/" style="text-decoration:none;color:inherit;">Find Negative-Margin Orders in Shopify</a></h3>
-                    <p>A 7-step process for finding orders where you lost money — covering discount drag, shipping overruns, and COGS gaps.</p>
-                    <a href="/how-to-find-negative-margin-orders-shopify/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Read the guide →</a>
-                </article>
-                <article class="card">
-                    <h3><a href="https://apps.shopify.com/bulkgenie-ai" rel="noopener" style="text-decoration:none;color:inherit;">BulkGenie AI for Shopify</a></h3>
-                    <p>Automates alt text detection across your full product catalog — no CSV export required. Surfaces missing SEO fields at scale.</p>
-                    <a href="https://apps.shopify.com/bulkgenie-ai" rel="noopener" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);" data-track="marketplace_click">View on Shopify App Store →</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="faq">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">FAQ</span>
-                    <h2>Questions about Shopify image alt text</h2>
-                </div>
-            </div>
-            <div class="faq">
-                <details open>
-                    <summary>What is alt text and why does it matter for Shopify SEO?</summary>
-                    <p>Alt text is a short description of an image that search engines read when they cannot visually interpret it. On Shopify, alt text on product images helps Google understand what the product looks like, which can improve image search visibility. It is also required for web accessibility under WCAG 2.1 guidelines.</p>
-                </details>
-                <details>
-                    <summary>How do I bulk-add alt text to Shopify product images?</summary>
-                    <p>Export your product catalog as CSV (Admin → Products → Export → All products), add alt text to the Image Alt Text column for each blank row, then re-import the CSV (Admin → Products → Import). Shopify updates alt text for matching images without overwriting other product data.</p>
-                </details>
-                <details>
-                    <summary>What should Shopify image alt text say?</summary>
-                    <p>Use this pattern: [Product Name] – [Key Feature or View Angle] – [Color/Material if relevant]. Example: Blue Wool Crew Neck Sweater – Front View – Navy. Keep it under 125 characters, make it descriptive, and avoid repeating the same phrase across all images for the same product.</p>
-                </details>
-                <details>
-                    <summary>Does missing alt text hurt Shopify search rankings?</summary>
-                    <p>Missing alt text is primarily a missed opportunity rather than an active penalty. Images without alt text cannot rank in Google Image Search and add no text signal to the surrounding product page. For large catalogs, fixing alt text across all images can improve crawl quality and image search visibility.</p>
-                </details>
-                <details>
-                    <summary>Can I find missing alt text in Shopify without exporting a CSV?</summary>
-                    <p>Shopify's built-in admin does not provide a bulk view of alt text status across all products. The CSV export method described on this page is the most practical native approach for stores with more than a few dozen products. BulkGenie AI automates the detection and surfacing of missing alt text across your full Shopify catalog without requiring a CSV export.</p>
-                </details>
-            </div>
-            <div class="cta-band">
-                <span class="section-label">Next Step</span>
-                <h2>Find missing alt text across your full Shopify catalog.</h2>
-                <p>BulkGenie AI surfaces missing image alt text, blank meta descriptions, and weak product titles across every product in your store.</p>
-                <div class="actions">
-                    <a class="button ghost" href="https://apps.shopify.com/bulkgenie-ai" rel="noopener" data-track="marketplace_click">View on Shopify App Store</a>
-                    <a class="button secondary" href="/shopify-product-seo-audit/" data-track="product_cta_click">Full SEO Audit Checklist →</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="shell footer-grid">
-            <div class="app-links">
-                <a class="pill-link" href="/shopify-product-seo-audit/">Product SEO Audit</a>
-                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
-                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
-                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
-                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
-                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
-                <a class="pill-link" href="/how-to-find-negative-margin-orders-shopify/">Find Negative-Margin Orders</a>
-            </div>
-            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
-        </div>
-    </footer>
     <script>
-    (function() {
-        function dasTrack(event, props) {
-            // Wire to your analytics provider:
-            // plausible(event, {props: props});
-            // gtag('event', event, props);
+/**
+ * Enhanced Website Analytics Tracking
+ * Replaces dasTrack() stubs with real Google Analytics 4 + Search Console integration
+ * 
+ * Features:
+ * - GA4 event tracking with custom parameters
+ * - SEO/AEO/GEO-specific event tracking
+ * - Cross-platform attribution (web to app)
+ * - Answer box appearance detection
+ * - Conversion funnel tracking
+ * - Geographic performance tracking
+ */
+
+(function() {
+    'use strict';
+
+    // Configuration
+    const CONFIG = {
+        GA4_MEASUREMENT_ID: 'G-KKKX3H7LLW', // Replace with your GA4 Measurement ID
+        DEBUG: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1',
+        SESSION_TIMEOUT: 30 * 60 * 1000, // 30 minutes
+        
+        // Target keywords for AEO tracking
+        TARGET_KEYWORDS: [
+            'how to find negative margin orders shopify',
+            'shopify margin leak calculator',
+            'shopify product seo audit',
+            'shopify missing alt text',
+            'figma prototype to mp4',
+            'convert photo format iphone',
+            'scan receipts iphone',
+            'verify ai generated citations',
+            'linear issue spec checker'
+        ],
+        
+        // Product mapping for attribution
+        PRODUCT_MAPPING: {
+            '/how-to-find-negative-margin-orders-shopify/': 'profitpulse-ai',
+            '/shopify-margin-leak-calculator/': 'profitpulse-ai',
+            '/shopify-product-seo-audit/': 'bulkgenie-ai', 
+            '/shopify-missing-alt-text-checker/': 'bulkgenie-ai',
+            '/figma-prototype-to-mp4/': 'protovid',
+            '/convert-photo-format-iphone/': 'photo-converter-ios',
+            '/scan-receipts-iphone/': 'receipt-scanner-ios',
+            '/verify-ai-generated-citations/': 'citeclear',
+            '/linear-issue-spec-checker/': 'specbot'
         }
-        dasTrack('seo_page_view', {page: location.pathname});
-        document.querySelectorAll('[data-track]').forEach(function(el) {
-            el.addEventListener('click', function() {
-                dasTrack(el.dataset.track, {href: el.href, label: el.textContent.trim()});
-            });
+    };
+
+    // Initialize Google Analytics 4
+    function initializeGA4() {
+        if (typeof gtag === 'undefined') {
+            // Load GA4 if not already present
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.GA4_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function() { dataLayer.push(arguments); }
+                
+                gtag('js', new Date());
+                gtag('config', CONFIG.GA4_MEASUREMENT_ID, {
+                    send_page_view: false, // We'll send manually with custom parameters
+                    anonymize_ip: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization_signals: false
+                });
+                
+                // Send initial page view with SEO context
+                sendPageView();
+            };
+        } else {
+            // GA4 already loaded, send initial page view
+            sendPageView();
+        }
+    }
+
+    // Session and user tracking
+    let sessionId = getOrCreateSessionId();
+    let userId = getOrCreateUserId();
+
+    function getOrCreateSessionId() {
+        let sessionId = sessionStorage.getItem('das_session_id');
+        const sessionTimestamp = sessionStorage.getItem('das_session_timestamp');
+        const now = Date.now();
+        
+        if (!sessionId || !sessionTimestamp || (now - parseInt(sessionTimestamp)) > CONFIG.SESSION_TIMEOUT) {
+            sessionId = 'das_' + now.toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            sessionStorage.setItem('das_session_id', sessionId);
+        }
+        
+        sessionStorage.setItem('das_session_timestamp', now.toString());
+        return sessionId;
+    }
+
+    function getOrCreateUserId() {
+        let userId = localStorage.getItem('das_user_id');
+        if (!userId) {
+            userId = 'user_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('das_user_id', userId);
+        }
+        return userId;
+    }
+
+    // Get referral and campaign information
+    function getAttributionData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        return {
+            utm_source: urlParams.get('utm_source') || document.referrer || null,
+            utm_medium: urlParams.get('utm_medium') || 'organic',
+            utm_campaign: urlParams.get('utm_campaign') || null,
+            utm_term: urlParams.get('utm_term') || null,
+            utm_content: urlParams.get('utm_content') || null,
+            referrer: document.referrer || null,
+            referrer_domain: document.referrer ? new URL(document.referrer).hostname : null
+        };
+    }
+
+    // Detect if page appeared in answer box (check referrer patterns and query params)
+    function detectAnswerBoxAppearance() {
+        const attribution = getAttributionData();
+        const queryParams = new URLSearchParams(window.location.search);
+        
+        // Check for Google SERP referrer patterns that might indicate answer box
+        if (attribution.referrer_domain && attribution.referrer_domain.includes('google')) {
+            const referrerUrl = new URL(document.referrer);
+            const query = referrerUrl.searchParams.get('q');
+            
+            // Check if the query matches our target keywords
+            if (query) {
+                for (const keyword of CONFIG.TARGET_KEYWORDS) {
+                    if (query.toLowerCase().includes(keyword.toLowerCase()) || 
+                        keyword.toLowerCase().includes(query.toLowerCase())) {
+                        return {
+                            detected: true,
+                            query: query,
+                            keyword_match: keyword,
+                            referrer: document.referrer
+                        };
+                    }
+                }
+            }
+        }
+        
+        return { detected: false };
+    }
+
+    // Get page context and product mapping
+    function getPageContext() {
+        const path = window.location.pathname;
+        const product = CONFIG.PRODUCT_MAPPING[path] || 'unknown';
+        
+        return {
+            page_path: path,
+            page_title: document.title,
+            page_product: product,
+            page_category: getPageCategory(path),
+            canonical_url: getCanonicalUrl()
+        };
+    }
+
+    function getPageCategory(path) {
+        if (path.includes('shopify')) return 'shopify-tools';
+        if (path.includes('figma')) return 'design-tools';
+        if (path.includes('iphone') || path.includes('ios')) return 'ios-apps';
+        if (path.includes('citation') || path.includes('legal')) return 'legal-tools';
+        if (path.includes('linear')) return 'dev-tools';
+        return 'general';
+    }
+
+    function getCanonicalUrl() {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        return canonical ? canonical.href : window.location.href;
+    }
+
+    // Enhanced tracking function that replaces dasTrack()
+    function enhancedTrack(eventName, eventParams = {}) {
+        if (CONFIG.DEBUG) {
+            console.log('[Enhanced Analytics]', eventName, eventParams);
+        }
+
+        const attribution = getAttributionData();
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        // Prepare GA4 event parameters
+        const ga4Params = {
+            // Custom parameters
+            session_id: sessionId,
+            user_id: userId,
+            page_product: pageContext.page_product,
+            page_category: pageContext.page_category,
+            
+            // Attribution
+            traffic_source: attribution.utm_source,
+            traffic_medium: attribution.utm_medium,
+            traffic_campaign: attribution.utm_campaign,
+            
+            // SEO/AEO specific
+            answer_box_detected: answerBox.detected,
+            search_query: answerBox.query || null,
+            keyword_match: answerBox.keyword_match || null,
+            
+            // Geographic (will be auto-detected by GA4)
+            ...eventParams
+        };
+
+        // Send to GA4
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, ga4Params);
+        }
+
+        // Send to custom endpoint if available (for additional processing)
+        sendToCustomEndpoint(eventName, ga4Params);
+    }
+
+    // Send enhanced page view with SEO context
+    function sendPageView() {
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        enhancedTrack('seo_page_view', {
+            page_title: pageContext.page_title,
+            page_location: window.location.href,
+            content_group1: pageContext.page_category,
+            content_group2: pageContext.page_product,
+            custom_parameter_1: answerBox.detected ? 'answer_box_entry' : 'organic_entry'
         });
-        var sample = document.getElementById('sample-report');
-        if (sample && 'IntersectionObserver' in window) {
-            var io = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting) { dasTrack('sample_output_view', {page: location.pathname}); io.disconnect(); }
-            }, {threshold: 0.3});
-            io.observe(sample);
+
+        // If answer box detected, send specific event
+        if (answerBox.detected) {
+            enhancedTrack('answer_box_appearance', {
+                search_query: answerBox.query,
+                keyword_match: answerBox.keyword_match,
+                page_product: pageContext.page_product
+            });
         }
-    })();
-    </script>
+    }
+
+    // Intersection Observer for viewport tracking
+    function trackElementVisibility(selector, eventName, additionalParams = {}) {
+        const elements = document.querySelectorAll(selector);
+        if (!elements.length || !('IntersectionObserver' in window)) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elementId = entry.target.id || entry.target.className || 'unknown';
+                    enhancedTrack(eventName, {
+                        element_id: elementId,
+                        visibility_percentage: Math.round(entry.intersectionRatio * 100),
+                        ...additionalParams
+                    });
+                    observer.unobserve(entry.target); // Track only once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    // Track scroll depth
+    function trackScrollDepth() {
+        let maxScroll = 0;
+        const milestones = [25, 50, 75, 90, 100];
+        const tracked = new Set();
+
+        function handleScroll() {
+            const scrollPercent = Math.round(
+                (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100
+            );
+            
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                milestones.forEach(milestone => {
+                    if (scrollPercent >= milestone && !tracked.has(milestone)) {
+                        tracked.add(milestone);
+                        enhancedTrack('scroll_depth', {
+                            scroll_percentage: milestone,
+                            page_product: getPageContext().page_product
+                        });
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // Send to custom analytics endpoint for additional processing
+    function sendToCustomEndpoint(eventName, params) {
+        // Optional: Send to your own analytics endpoint for cross-referencing with app data
+        if (window.location.hostname !== 'localhost') {
+            try {
+                fetch('/api/analytics', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: eventName,
+                        params: params,
+                        timestamp: new Date().toISOString(),
+                        user_agent: navigator.userAgent,
+                        screen_resolution: `${screen.width}x${screen.height}`
+                    })
+                }).catch(err => {
+                    if (CONFIG.DEBUG) console.log('Custom endpoint error:', err);
+                });
+            } catch (e) {
+                // Fail silently
+            }
+        }
+    }
+
+    // Replace the existing dasTrack function globally
+    window.dasTrack = enhancedTrack;
+
+    // Initialize enhanced tracking
+    function initialize() {
+        // Initialize GA4
+        initializeGA4();
+        
+        // Set up automatic tracking
+        trackScrollDepth();
+        
+        // Track sample output views
+        trackElementVisibility('.sample-output, .example-table', 'sample_output_view');
+        
+        // Track CTA visibility
+        trackElementVisibility('[data-track="product_cta_click"]', 'cta_visibility');
+        
+        // Enhanced click tracking
+        document.addEventListener('click', function(event) {
+            const element = event.target.closest('[data-track]');
+            if (element) {
+                const trackingEvent = element.getAttribute('data-track');
+                const productUrl = element.href || element.getAttribute('data-url');
+                
+                enhancedTrack(trackingEvent, {
+                    click_text: element.textContent.trim(),
+                    click_url: productUrl,
+                    element_type: element.tagName.toLowerCase(),
+                    page_product: getPageContext().page_product
+                });
+                
+                // For app store clicks, track as conversion
+                if (trackingEvent === 'app_store_click' || productUrl?.includes('apps.apple.com')) {
+                    enhancedTrack('organic_conversion', {
+                        conversion_type: 'app_store_click',
+                        target_app: getPageContext().page_product
+                    });
+                }
+            }
+        });
+
+        // Track exit intent
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(event) {
+            if (!exitIntentShown && event.clientY <= 0) {
+                exitIntentShown = true;
+                enhancedTrack('exit_intent', {
+                    time_on_page: Date.now() - performance.timeOrigin,
+                    scroll_depth: maxScroll || 0
+                });
+            }
+        });
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
+    // Export for manual use
+    window.EnhancedAnalytics = {
+        track: enhancedTrack,
+        trackPageView: sendPageView,
+        trackVisibility: trackElementVisibility,
+        getSessionId: () => sessionId,
+        getUserId: () => userId,
+        getPageContext: getPageContext,
+        detectAnswerBox: detectAnswerBoxAppearance
+    };
+
+})();
+</script>
 </body>
 </html>

@@ -13,425 +13,397 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Das Group LLC">
     <meta name="twitter:card" content="summary_large_image">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "How to Find Negative-Margin Orders in Shopify",
-        "description": "A step-by-step process for identifying Shopify orders where net revenue is less than the combined cost of goods sold, carrier shipping cost, and transaction fees.",
-        "step": [
-            {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Enter Cost per item for every product variant",
-                "text": "In Shopify Admin, open each product, edit each variant, and fill in the Cost per item field. This is required for the Profit by Product report to calculate margin."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Run the Profit by Product report",
-                "text": "Go to Analytics > Reports > Finances > Profit by Product. Set the date range to the last 30 to 90 days. Sort by Profit ascending to surface the lowest-margin products first."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Export the Orders CSV",
-                "text": "Go to Orders > Export > All orders for your date range, choose plain CSV format. This file includes subtotal, discount amount, refund amount, and shipping charged to the customer."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Add Net Revenue column",
-                "text": "In a spreadsheet, add a column: Net Revenue = Subtotal minus Discount Amount minus Refund Amount."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 5,
-                "name": "Add Total Cost column",
-                "text": "Add a column: Total Cost = COGS + Actual Carrier Shipping + Transaction Fee. Use your product cost records and shipping carrier invoices for accuracy."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 6,
-                "name": "Filter for Margin less than zero",
-                "text": "Add a Margin column: Net Revenue minus Total Cost. Filter or sort for values below zero. These rows are negative-margin orders."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 7,
-                "name": "Pivot by Discount Code",
-                "text": "Group the results by Discount Code to see which promo codes generate the most losses. Codes that appear most often in negative-margin rows are candidates for minimum order value restrictions."
-            }
-        ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is a negative-margin order in Shopify?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A negative-margin order is one where the net revenue (order total minus discounts and refunds) is less than the combined cost of goods sold, the actual carrier shipping cost, and payment processing fees. The store shipped the product and lost money on that transaction."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does Shopify show profit per order natively?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Shopify provides a Profit by Product report under Analytics > Reports > Finances, but it requires a Cost per item value for each product variant. It does not include actual carrier shipping cost or transaction fees in the per-order margin calculation by default."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What are the most common causes of negative-margin orders in Shopify?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The four most common causes are: stacked or aggressive discount codes that push the order price below cost; shipping overruns where the carrier cost exceeds the flat rate charged to the customer; outdated COGS where the Cost per item field was not updated after a supplier price increase; and high-value refunds where shipping and transaction fees are not recovered."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I prevent negative-margin orders in Shopify?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Common fixes include setting minimum order values on discount codes, using carrier-calculated shipping rates instead of flat rates for heavier products, reviewing and updating Cost per item fields quarterly, and monitoring margin by discount code on a weekly basis."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I automate detection of negative-margin orders in Shopify?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. ProfitPulse AI is a Shopify app that surfaces negative-margin orders and low-margin products automatically after you connect your store. It pulls order and product cost data from Shopify and flags orders where margin is at risk, removing the need for a manual CSV export and spreadsheet process."
-                }
-            }
-        ]
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
-    <style>
-        :root {
-            --accent: #ca8a04;
-            --accent-strong: #a16207;
-            --accent-soft: rgba(202, 138, 4, 0.14);
-            --hero-start: #fefce8;
-            --hero-end: #fff7ed;
-        }
-        .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: checklist; }
-        .checklist li { display: grid; grid-template-columns: 2rem 1fr; gap: 0.75rem; align-items: start; padding: 0.9rem 1.1rem; border: 1px solid var(--line); border-radius: 0.85rem; background: var(--surface); counter-increment: checklist; }
-        .checklist li::before { content: counter(checklist, decimal-leading-zero); font-family: "IBM Plex Mono", monospace; font-weight: 700; font-size: 0.85rem; color: var(--accent-strong); background: var(--accent-soft); border-radius: 50%; width: 2rem; height: 2rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .table-wrap { overflow-x: auto; margin: 1rem 0; border-radius: 1.2rem; border: 1px solid var(--line); }
-        table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-        th { background: var(--accent-soft); color: var(--accent-strong); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.7rem 0.9rem; text-align: left; white-space: nowrap; }
-        td { padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-        tr:last-child td { border-bottom: none; }
-        .neg { color: #dc2626; font-weight: 700; }
-        .pos { color: #16a34a; font-weight: 700; }
-        .warn { color: #ca8a04; font-weight: 700; }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-        <div class="shell topbar">
-            <a class="brand" href="/">Das Group LLC</a>
-            <nav class="topnav" aria-label="Primary">
-                <a href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
-                <a href="/shopify-margin-leak-calculator/">Margin Leak Calculator</a>
-                <a href="/shopify-product-seo-audit/">Product SEO Audit</a>
-            </nav>
-        </div>
-    </header>
-    <main class="page shell">
-        <section class="hero">
-            <div class="hero-panel">
-                <div class="hero-grid">
-                    <div>
-                        <p class="eyebrow">Shopify Margin Guide</p>
-                        <h1>How to Find Negative-Margin Orders in Shopify</h1>
-                        <p class="lead">A Shopify order has negative margin when net revenue falls below the combined cost of goods sold, carrier shipping, and transaction fees. Shopify does not flag these automatically — here is a 7-step process to find them.</p>
-                        <p class="body-copy">The fastest manual path: export your Orders CSV, add three calculated columns (net revenue, total cost, margin), and filter for rows below zero. A sample table and full checklist are below.</p>
-                        <div class="actions">
-                            <a class="button primary" href="https://apps.shopify.com/profit-pulse-ai" rel="noopener" data-track="marketplace_click">Find Them With ProfitPulse AI</a>
-                            <a class="button secondary" href="#checklist">See the Checklist</a>
-                        </div>
-                    </div>
-                    <aside class="hero-aside">
-                        <h2>Quick reference</h2>
-                        <ul class="meta-list">
-                            <li>
-                                <span class="meta-label">Formula</span>
-                                Margin = (Subtotal − Discounts − Refunds) − (COGS + Carrier Shipping + Fees)
-                            </li>
-                            <li>
-                                <span class="meta-label">Main causes</span>
-                                Discount codes, shipping overruns, stale COGS, unrecovered refunds
-                            </li>
-                            <li>
-                                <span class="meta-label">Native Shopify report</span>
-                                Profit by Product (requires Cost per item entered per variant)
-                            </li>
-                        </ul>
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Root Causes</span>
-                    <h2>Three things that make a Shopify order negative-margin</h2>
-                </div>
-            </div>
-            <div class="card-grid">
-                <article class="card">
-                    <h3>Discount drag</h3>
-                    <p>A discount code reduces the order total below break-even. Stacked codes — one automatic, one manual — are a common culprit that is easy to miss in Shopify's default reports.</p>
-                </article>
-                <article class="card">
-                    <h3>Shipping overrun</h3>
-                    <p>You charged the customer $5 flat shipping but the carrier billed $11.40. That $6.40 gap comes directly off margin. Flat-rate free-shipping offers on heavier products amplify this.</p>
-                </article>
-                <article class="card">
-                    <h3>Stale COGS</h3>
-                    <p>Your supplier raised prices six months ago. The Cost per item in Shopify was never updated. The Profit report shows higher margin than reality because the cost basis is outdated.</p>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="checklist">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Checklist</span>
-                    <h2>7-step process to find negative-margin orders</h2>
-                </div>
-            </div>
-            <ol class="checklist">
-                <li>
-                    <div><strong>Enter Cost per item for every product variant</strong><br>
-                    <span class="body-copy">Admin → Products → select product → Variants → Cost per item. Without this field populated, Shopify's Profit report cannot calculate margin.</span></div>
-                </li>
-                <li>
-                    <div><strong>Run Profit by Product report</strong><br>
-                    <span class="body-copy">Analytics → Reports → Finances → Profit by Product. Set date range to last 30–90 days. Sort by Profit ascending to see the lowest-margin products first.</span></div>
-                </li>
-                <li>
-                    <div><strong>Export the Orders CSV</strong><br>
-                    <span class="body-copy">Orders → Export → All orders → date range → Plain CSV. This includes subtotal, discount amount, refund amount, and shipping charged to the customer.</span></div>
-                </li>
-                <li>
-                    <div><strong>Add Net Revenue column</strong><br>
-                    <span class="body-copy">Formula: Subtotal − Discount Amount − Refund Amount. This is the amount you actually collected after all adjustments on that order.</span></div>
-                </li>
-                <li>
-                    <div><strong>Add Total Cost column</strong><br>
-                    <span class="body-copy">Formula: COGS + Actual Carrier Shipping + Transaction Fee. Use product cost records and your shipping carrier invoices. A typical Shopify Payments rate is 2.9% + $0.30 per transaction.</span></div>
-                </li>
-                <li>
-                    <div><strong>Filter for Margin &lt; 0</strong><br>
-                    <span class="body-copy">Add a Margin column: Net Revenue − Total Cost. Filter or sort for values below zero. Every row here is an order where you lost money.</span></div>
-                </li>
-                <li>
-                    <div><strong>Pivot by Discount Code</strong><br>
-                    <span class="body-copy">Group results by Discount Code to see which codes generate the most losses. Codes that appear most often in negative-margin rows are candidates for minimum order value restrictions or removal.</span></div>
-                </li>
-            </ol>
-        </section>
-
-        <section class="section" id="sample-report">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Sample Report</span>
-                    <h2>What negative-margin orders look like in a spreadsheet</h2>
-                </div>
-            </div>
-            <p class="body-copy">The table below uses fictional order data to illustrate the calculation. Actual numbers will differ based on your product costs, carrier rates, and payment processor.</p>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Order</th>
-                            <th>Subtotal</th>
-                            <th>Discount</th>
-                            <th>Net Revenue</th>
-                            <th>COGS</th>
-                            <th>Carrier Ship.</th>
-                            <th>Fees</th>
-                            <th>Total Cost</th>
-                            <th>Margin</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#1001</td>
-                            <td>$49.00</td>
-                            <td>—</td>
-                            <td>$49.00</td>
-                            <td>$14.00</td>
-                            <td>$7.20</td>
-                            <td>$1.72</td>
-                            <td>$22.92</td>
-                            <td class="pos">+$26.08</td>
-                        </tr>
-                        <tr>
-                            <td>#1002</td>
-                            <td>$49.00</td>
-                            <td>$24.50 (50%)</td>
-                            <td>$24.50</td>
-                            <td>$14.00</td>
-                            <td>$9.40</td>
-                            <td>$1.01</td>
-                            <td>$24.41</td>
-                            <td class="warn">+$0.09</td>
-                        </tr>
-                        <tr>
-                            <td>#1003</td>
-                            <td>$29.00</td>
-                            <td>$14.50 (50%)</td>
-                            <td>$14.50</td>
-                            <td>$14.00</td>
-                            <td>$8.80</td>
-                            <td>$0.74</td>
-                            <td>$23.54</td>
-                            <td class="neg">−$9.04</td>
-                        </tr>
-                        <tr>
-                            <td>#1004</td>
-                            <td>$49.00</td>
-                            <td>—</td>
-                            <td>$49.00</td>
-                            <td>$14.00</td>
-                            <td>$6.90</td>
-                            <td>$1.72</td>
-                            <td>$22.62</td>
-                            <td class="pos">+$26.38</td>
-                        </tr>
-                        <tr>
-                            <td>#1005</td>
-                            <td>$29.00</td>
-                            <td>$5.80 (20%)</td>
-                            <td>$23.20</td>
-                            <td>$14.00</td>
-                            <td>$11.20</td>
-                            <td>$0.97</td>
-                            <td>$26.17</td>
-                            <td class="neg">−$2.97</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="body-copy">In this example, 2 of 5 orders lost money. Order #1003 lost $9.04 because a 50% discount code was applied to a low-price SKU with a high shipping cost. Order #1005 lost $2.97 because the carrier charged $11.20 against a $5 flat shipping rate offered to the customer.</p>
-        </section>
-
-        <section class="section">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Related</span>
-                    <h2>Connected guides and tools</h2>
-                </div>
-            </div>
-            <div class="card-grid">
-                <article class="card">
-                    <h3><a href="/shopify-margin-leak-calculator/" style="text-decoration:none;color:inherit;">Shopify Margin Leak Calculator</a></h3>
-                    <p>Estimate your total annualized margin leak across discount drag, shipping overruns, and COGS gaps using a structured calculation framework.</p>
-                    <a href="/shopify-margin-leak-calculator/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Use the framework →</a>
-                </article>
-                <article class="card">
-                    <h3><a href="/shopify-product-seo-audit/" style="text-decoration:none;color:inherit;">Shopify Product SEO Audit</a></h3>
-                    <p>A 10-point checklist to audit every product page for missing meta descriptions, alt text, and structured data issues.</p>
-                    <a href="/shopify-product-seo-audit/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Run the audit →</a>
-                </article>
-                <article class="card">
-                    <h3><a href="/apps/profitpulse-ai-shopify/" style="text-decoration:none;color:inherit;">ProfitPulse AI for Shopify</a></h3>
-                    <p>The Shopify app that tracks profit by order, surfaces low-margin products, and flags discount drag — no spreadsheet required.</p>
-                    <a href="/apps/profitpulse-ai-shopify/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">See the app →</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="faq">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">FAQ</span>
-                    <h2>Common questions about Shopify negative-margin orders</h2>
-                </div>
-            </div>
-            <div class="faq">
-                <details open>
-                    <summary>What is a negative-margin order in Shopify?</summary>
-                    <p>A negative-margin order is one where net revenue (subtotal minus discounts and refunds) is less than the combined cost of goods sold, actual carrier shipping paid to the carrier, and payment processing fees. The store fulfilled the order at a net loss.</p>
-                </details>
-                <details>
-                    <summary>Does Shopify show profit per order natively?</summary>
-                    <p>Shopify's Profit by Product report (Analytics → Reports → Finances) calculates margin using Cost per item, but it does not include actual carrier shipping cost or transaction fees. For true per-order margin you need to combine the orders export with shipping and processor data outside of Shopify's standard UI.</p>
-                </details>
-                <details>
-                    <summary>What are the most common causes of negative-margin orders?</summary>
-                    <p>Discount codes that push order value below break-even, carrier shipping overruns on flat-rate or free-shipping offers, COGS fields not updated after supplier price increases, and high-value refunds where shipping and processing fees are not recovered.</p>
-                </details>
-                <details>
-                    <summary>How do I prevent negative-margin orders going forward?</summary>
-                    <p>Set minimum order values on discount codes, use carrier-calculated shipping rates on heavier products instead of flat rates, review and update Cost per item quarterly, and track margin by discount code on at least a weekly cadence.</p>
-                </details>
-                <details>
-                    <summary>Can I automate the detection of negative-margin orders?</summary>
-                    <p>Yes. ProfitPulse AI connects to your Shopify store and surfaces negative-margin orders and low-margin products automatically, without requiring a manual CSV export and spreadsheet process each time.</p>
-                </details>
-            </div>
-            <div class="cta-band">
-                <span class="section-label">Next Step</span>
-                <h2>Find negative-margin orders automatically.</h2>
-                <p>ProfitPulse AI connects to your Shopify store and flags orders and products where margin is at risk — no spreadsheet required.</p>
-                <div class="actions">
-                    <a class="button ghost" href="https://apps.shopify.com/profit-pulse-ai" rel="noopener" data-track="marketplace_click">View on Shopify App Store</a>
-                    <a class="button secondary" href="/apps/profitpulse-ai-shopify/" data-track="product_cta_click">Learn About ProfitPulse AI</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="shell footer-grid">
-            <div class="app-links">
-                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
-                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
-                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
-                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
-                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
-                <a class="pill-link" href="/shopify-margin-leak-calculator/">Margin Leak Calculator</a>
-                <a class="pill-link" href="/shopify-product-seo-audit/">Product SEO Audit</a>
-            </div>
-            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
-        </div>
-    </footer>
     <script>
-    (function() {
-        function dasTrack(event, props) {
-            // Wire to your analytics provider:
-            // plausible(event, {props: props});
-            // gtag('event', event, props);
+/**
+ * Enhanced Website Analytics Tracking
+ * Replaces dasTrack() stubs with real Google Analytics 4 + Search Console integration
+ * 
+ * Features:
+ * - GA4 event tracking with custom parameters
+ * - SEO/AEO/GEO-specific event tracking
+ * - Cross-platform attribution (web to app)
+ * - Answer box appearance detection
+ * - Conversion funnel tracking
+ * - Geographic performance tracking
+ */
+
+(function() {
+    'use strict';
+
+    // Configuration
+    const CONFIG = {
+        GA4_MEASUREMENT_ID: 'G-KKKX3H7LLW', // Replace with your GA4 Measurement ID
+        DEBUG: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1',
+        SESSION_TIMEOUT: 30 * 60 * 1000, // 30 minutes
+        
+        // Target keywords for AEO tracking
+        TARGET_KEYWORDS: [
+            'how to find negative margin orders shopify',
+            'shopify margin leak calculator',
+            'shopify product seo audit',
+            'shopify missing alt text',
+            'figma prototype to mp4',
+            'convert photo format iphone',
+            'scan receipts iphone',
+            'verify ai generated citations',
+            'linear issue spec checker'
+        ],
+        
+        // Product mapping for attribution
+        PRODUCT_MAPPING: {
+            '/how-to-find-negative-margin-orders-shopify/': 'profitpulse-ai',
+            '/shopify-margin-leak-calculator/': 'profitpulse-ai',
+            '/shopify-product-seo-audit/': 'bulkgenie-ai', 
+            '/shopify-missing-alt-text-checker/': 'bulkgenie-ai',
+            '/figma-prototype-to-mp4/': 'protovid',
+            '/convert-photo-format-iphone/': 'photo-converter-ios',
+            '/scan-receipts-iphone/': 'receipt-scanner-ios',
+            '/verify-ai-generated-citations/': 'citeclear',
+            '/linear-issue-spec-checker/': 'specbot'
         }
-        dasTrack('seo_page_view', {page: location.pathname});
-        document.querySelectorAll('[data-track]').forEach(function(el) {
-            el.addEventListener('click', function() {
-                dasTrack(el.dataset.track, {href: el.href, label: el.textContent.trim()});
-            });
+    };
+
+    // Initialize Google Analytics 4
+    function initializeGA4() {
+        if (typeof gtag === 'undefined') {
+            // Load GA4 if not already present
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.GA4_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function() { dataLayer.push(arguments); }
+                
+                gtag('js', new Date());
+                gtag('config', CONFIG.GA4_MEASUREMENT_ID, {
+                    send_page_view: false, // We'll send manually with custom parameters
+                    anonymize_ip: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization_signals: false
+                });
+                
+                // Send initial page view with SEO context
+                sendPageView();
+            };
+        } else {
+            // GA4 already loaded, send initial page view
+            sendPageView();
+        }
+    }
+
+    // Session and user tracking
+    let sessionId = getOrCreateSessionId();
+    let userId = getOrCreateUserId();
+
+    function getOrCreateSessionId() {
+        let sessionId = sessionStorage.getItem('das_session_id');
+        const sessionTimestamp = sessionStorage.getItem('das_session_timestamp');
+        const now = Date.now();
+        
+        if (!sessionId || !sessionTimestamp || (now - parseInt(sessionTimestamp)) > CONFIG.SESSION_TIMEOUT) {
+            sessionId = 'das_' + now.toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            sessionStorage.setItem('das_session_id', sessionId);
+        }
+        
+        sessionStorage.setItem('das_session_timestamp', now.toString());
+        return sessionId;
+    }
+
+    function getOrCreateUserId() {
+        let userId = localStorage.getItem('das_user_id');
+        if (!userId) {
+            userId = 'user_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('das_user_id', userId);
+        }
+        return userId;
+    }
+
+    // Get referral and campaign information
+    function getAttributionData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        return {
+            utm_source: urlParams.get('utm_source') || document.referrer || null,
+            utm_medium: urlParams.get('utm_medium') || 'organic',
+            utm_campaign: urlParams.get('utm_campaign') || null,
+            utm_term: urlParams.get('utm_term') || null,
+            utm_content: urlParams.get('utm_content') || null,
+            referrer: document.referrer || null,
+            referrer_domain: document.referrer ? new URL(document.referrer).hostname : null
+        };
+    }
+
+    // Detect if page appeared in answer box (check referrer patterns and query params)
+    function detectAnswerBoxAppearance() {
+        const attribution = getAttributionData();
+        const queryParams = new URLSearchParams(window.location.search);
+        
+        // Check for Google SERP referrer patterns that might indicate answer box
+        if (attribution.referrer_domain && attribution.referrer_domain.includes('google')) {
+            const referrerUrl = new URL(document.referrer);
+            const query = referrerUrl.searchParams.get('q');
+            
+            // Check if the query matches our target keywords
+            if (query) {
+                for (const keyword of CONFIG.TARGET_KEYWORDS) {
+                    if (query.toLowerCase().includes(keyword.toLowerCase()) || 
+                        keyword.toLowerCase().includes(query.toLowerCase())) {
+                        return {
+                            detected: true,
+                            query: query,
+                            keyword_match: keyword,
+                            referrer: document.referrer
+                        };
+                    }
+                }
+            }
+        }
+        
+        return { detected: false };
+    }
+
+    // Get page context and product mapping
+    function getPageContext() {
+        const path = window.location.pathname;
+        const product = CONFIG.PRODUCT_MAPPING[path] || 'unknown';
+        
+        return {
+            page_path: path,
+            page_title: document.title,
+            page_product: product,
+            page_category: getPageCategory(path),
+            canonical_url: getCanonicalUrl()
+        };
+    }
+
+    function getPageCategory(path) {
+        if (path.includes('shopify')) return 'shopify-tools';
+        if (path.includes('figma')) return 'design-tools';
+        if (path.includes('iphone') || path.includes('ios')) return 'ios-apps';
+        if (path.includes('citation') || path.includes('legal')) return 'legal-tools';
+        if (path.includes('linear')) return 'dev-tools';
+        return 'general';
+    }
+
+    function getCanonicalUrl() {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        return canonical ? canonical.href : window.location.href;
+    }
+
+    // Enhanced tracking function that replaces dasTrack()
+    function enhancedTrack(eventName, eventParams = {}) {
+        if (CONFIG.DEBUG) {
+            console.log('[Enhanced Analytics]', eventName, eventParams);
+        }
+
+        const attribution = getAttributionData();
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        // Prepare GA4 event parameters
+        const ga4Params = {
+            // Custom parameters
+            session_id: sessionId,
+            user_id: userId,
+            page_product: pageContext.page_product,
+            page_category: pageContext.page_category,
+            
+            // Attribution
+            traffic_source: attribution.utm_source,
+            traffic_medium: attribution.utm_medium,
+            traffic_campaign: attribution.utm_campaign,
+            
+            // SEO/AEO specific
+            answer_box_detected: answerBox.detected,
+            search_query: answerBox.query || null,
+            keyword_match: answerBox.keyword_match || null,
+            
+            // Geographic (will be auto-detected by GA4)
+            ...eventParams
+        };
+
+        // Send to GA4
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, ga4Params);
+        }
+
+        // Send to custom endpoint if available (for additional processing)
+        sendToCustomEndpoint(eventName, ga4Params);
+    }
+
+    // Send enhanced page view with SEO context
+    function sendPageView() {
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        enhancedTrack('seo_page_view', {
+            page_title: pageContext.page_title,
+            page_location: window.location.href,
+            content_group1: pageContext.page_category,
+            content_group2: pageContext.page_product,
+            custom_parameter_1: answerBox.detected ? 'answer_box_entry' : 'organic_entry'
         });
-        var sample = document.getElementById('sample-report');
-        if (sample && 'IntersectionObserver' in window) {
-            var io = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting) { dasTrack('sample_output_view', {page: location.pathname}); io.disconnect(); }
-            }, {threshold: 0.3});
-            io.observe(sample);
+
+        // If answer box detected, send specific event
+        if (answerBox.detected) {
+            enhancedTrack('answer_box_appearance', {
+                search_query: answerBox.query,
+                keyword_match: answerBox.keyword_match,
+                page_product: pageContext.page_product
+            });
         }
-    })();
-    </script>
+    }
+
+    // Intersection Observer for viewport tracking
+    function trackElementVisibility(selector, eventName, additionalParams = {}) {
+        const elements = document.querySelectorAll(selector);
+        if (!elements.length || !('IntersectionObserver' in window)) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elementId = entry.target.id || entry.target.className || 'unknown';
+                    enhancedTrack(eventName, {
+                        element_id: elementId,
+                        visibility_percentage: Math.round(entry.intersectionRatio * 100),
+                        ...additionalParams
+                    });
+                    observer.unobserve(entry.target); // Track only once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    // Track scroll depth
+    function trackScrollDepth() {
+        let maxScroll = 0;
+        const milestones = [25, 50, 75, 90, 100];
+        const tracked = new Set();
+
+        function handleScroll() {
+            const scrollPercent = Math.round(
+                (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100
+            );
+            
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                milestones.forEach(milestone => {
+                    if (scrollPercent >= milestone && !tracked.has(milestone)) {
+                        tracked.add(milestone);
+                        enhancedTrack('scroll_depth', {
+                            scroll_percentage: milestone,
+                            page_product: getPageContext().page_product
+                        });
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // Send to custom analytics endpoint for additional processing
+    function sendToCustomEndpoint(eventName, params) {
+        // Optional: Send to your own analytics endpoint for cross-referencing with app data
+        if (window.location.hostname !== 'localhost') {
+            try {
+                fetch('/api/analytics', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: eventName,
+                        params: params,
+                        timestamp: new Date().toISOString(),
+                        user_agent: navigator.userAgent,
+                        screen_resolution: `${screen.width}x${screen.height}`
+                    })
+                }).catch(err => {
+                    if (CONFIG.DEBUG) console.log('Custom endpoint error:', err);
+                });
+            } catch (e) {
+                // Fail silently
+            }
+        }
+    }
+
+    // Replace the existing dasTrack function globally
+    window.dasTrack = enhancedTrack;
+
+    // Initialize enhanced tracking
+    function initialize() {
+        // Initialize GA4
+        initializeGA4();
+        
+        // Set up automatic tracking
+        trackScrollDepth();
+        
+        // Track sample output views
+        trackElementVisibility('.sample-output, .example-table', 'sample_output_view');
+        
+        // Track CTA visibility
+        trackElementVisibility('[data-track="product_cta_click"]', 'cta_visibility');
+        
+        // Enhanced click tracking
+        document.addEventListener('click', function(event) {
+            const element = event.target.closest('[data-track]');
+            if (element) {
+                const trackingEvent = element.getAttribute('data-track');
+                const productUrl = element.href || element.getAttribute('data-url');
+                
+                enhancedTrack(trackingEvent, {
+                    click_text: element.textContent.trim(),
+                    click_url: productUrl,
+                    element_type: element.tagName.toLowerCase(),
+                    page_product: getPageContext().page_product
+                });
+                
+                // For app store clicks, track as conversion
+                if (trackingEvent === 'app_store_click' || productUrl?.includes('apps.apple.com')) {
+                    enhancedTrack('organic_conversion', {
+                        conversion_type: 'app_store_click',
+                        target_app: getPageContext().page_product
+                    });
+                }
+            }
+        });
+
+        // Track exit intent
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(event) {
+            if (!exitIntentShown && event.clientY <= 0) {
+                exitIntentShown = true;
+                enhancedTrack('exit_intent', {
+                    time_on_page: Date.now() - performance.timeOrigin,
+                    scroll_depth: maxScroll || 0
+                });
+            }
+        });
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
+    // Export for manual use
+    window.EnhancedAnalytics = {
+        track: enhancedTrack,
+        trackPageView: sendPageView,
+        trackVisibility: trackElementVisibility,
+        getSessionId: () => sessionId,
+        getUserId: () => userId,
+        getPageContext: getPageContext,
+        detectAnswerBox: detectAnswerBoxAppearance
+    };
+
+})();
+</script>
 </body>
 </html>

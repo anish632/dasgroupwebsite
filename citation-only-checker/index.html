@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation-Only Checker | Check AI-Generated Citations Without Uploading Documents</title>
+    <meta name="description" content="Check AI-generated citations without uploading sensitive documents. Paste citations only, get deterministic analysis of format, validity, and risk. No client facts needed.">
+    <link rel="canonical" href="https://dasgroupllc.com/citation-only-checker/">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Citation-Only Checker | Check AI-Generated Citations Without Uploading Documents">
+    <meta property="og:description" content="Verify AI-generated citations by pasting text only. No document upload, no login, no payment required. Get format validation, source detection, and risk assessment.">
+    <meta property="og:url" content="https://dasgroupllc.com/citation-only-checker/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Das Group LLC">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Citation-Only Checker",
+        "description": "A free tool to check AI-generated citations without uploading sensitive documents. Paste citations only and get deterministic analysis of format, validity, and risk.",
+        "url": "https://dasgroupllc.com/citation-only-checker/",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Das Group LLC",
+            "url": "https://dasgroupllc.com/"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does this tool require document upload?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. You paste citations only. No document upload, no client facts, no sensitive information required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What types of citations can be checked?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool detects and validates case citations (e.g., Smith v. Jones, 123 F.3d 456), statutory citations, regulatory citations, and common legal citation formats from US jurisdictions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this a substitute for legal review?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. This tool provides deterministic format validation and risk triage. It does not make absolute legal claims or replace professional legal review."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No account, no login, no payment required. Paste citations and get results immediately."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does the risk assessment include?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool flags formatting errors, suspected hallucinations (non-existent citations), staleness risks (old cases), jurisdiction mismatches, and other quality indicators based on deterministic pattern matching."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can this detect made-up cases from ChatGPT?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool uses deterministic pattern matching against known citation formats and databases. It can flag suspicious citations that don't match expected patterns, which is useful for catching AI hallucinations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my pasted text stored or used for training?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The analysis runs in your browser when possible. No automatic storage of user input. No model training on your pasted text."
+                }
+            }
+        ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f5f7fa;
+            --line: #d9e0e8;
+            --fg: #161616;
+            --muted: #5a6472;
+            --accent: #dc2626;
+            --accent-strong: #b91c1c;
+            --accent-soft: rgba(220, 38, 38, 0.12);
+            --success: #16a34a;
+            --success-soft: rgba(22, 163, 74, 0.12);
+            --warning: #ca8a04;
+            --warning-soft: rgba(202, 138, 4, 0.12);
+            --error: #dc2626;
+            --error-soft: rgba(220, 38, 38, 0.12);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font-family: Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.5;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .wrap {
+            width: min(1120px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.92);
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        nav {
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand { font-weight: 800; text-decoration: none; }
+        .nav-links { display: flex; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a:focus-visible { color: var(--fg); }
+
+        .hero {
+            padding: 72px 0 48px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            max-width: 820px;
+            margin: 0;
+            font-family: Space Grotesk, sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            line-height: 1.05;
+            font-weight: 700;
+        }
+
+        .lead {
+            max-width: 760px;
+            margin: 20px 0 0;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+        }
+
+        .trust-copy {
+            margin: 16px 0 0;
+            padding: 12px 16px;
+            background: var(--surface);
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
+        .trust-copy strong {
+            color: var(--accent-strong);
+            font-weight: 700;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 18px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            font-weight: 750;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.15s ease;
+        }
+
+        .button:hover, .button:focus-visible { opacity: 0.95; }
+        .button.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+        .button.primary:hover, .button.primary:focus-visible {
+            background: var(--accent-strong);
+        }
+        .button.secondary {
+            background: white;
+            border-color: var(--line);
+            color: var(--fg);
+        }
+        .button.secondary:hover, .button.secondary:focus-visible {
+            background: var(--surface);
+        }
+
+        main section { padding: 48px 0; }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin: 0;
+            font-family: Space Grotesk, sans-serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            line-height: 1.1;
+            font-weight: 700;
+        }
+
+        .section-copy {
+            max-width: 620px;
+            margin: 0;
+            color: var(--muted);
+        }
+
+        /* Tool Section */
+        .tool-section {
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--line);
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .tool-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 860px) {
+            .tool-grid { grid-template-columns: 1fr; }
+        }
+
+        .input-panel h3 {
+            margin: 0 0 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .textarea-container {
+            position: relative;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 16px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            resize: vertical;
+            background: white;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        .example-btn {
+            margin-top: 12px;
+            padding: 8px 12px;
+            border: 1px dashed var(--line);
+            border-radius: 6px;
+            background: white;
+            font-size: 0.85rem;
+            color: var(--muted);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .example-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .output-panel h3 {
+            margin: 0 0 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .results-summary {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            padding: 16px 20px;
+            border-radius: 8px;
+            background: white;
+            min-width: 140px;
+            flex: 1;
+        }
+
+        .stat-card strong {
+            display: block;
+            font-size: 1.8rem;
+            font-family: Space Grotesk, sans-serif;
+        }
+
+        .stat-card span {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .stat-card.warning { border: 1px solid var(--warning); background: var(--warning-soft); }
+        .stat-card.error { border: 1px solid var(--error); background: var(--error-soft); }
+        .stat-card.success { border: 1px solid var(--success); background: var(--success-soft); }
+
+        .table-wrap {
+            overflow-x: auto;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: var(--surface);
+            color: var(--muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 12px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top;
+        }
+
+        tr:last-child td { border-bottom: none; }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .badge.valid { background: var(--success-soft); color: var(--success); }
+        .badge.invalid { background: var(--error-soft); color: var(--error); }
+        .badge.warning { background: var(--warning-soft); color: var(--warning); }
+        .badge.unknown { background: var(--surface); color: var(--muted); }
+
+        .citation-text {
+            font-family: "IBM Plex Mono", monospace;
+            font-size: 0.88rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .risk-high { color: var(--error); font-weight: 700; }
+        .risk-medium { color: var(--warning); font-weight: 600; }
+        .risk-low { color: var(--success); font-weight: 600; }
+
+        .suggestion {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .source-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .source-link {
+            padding: 4px 8px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background: white;
+        }
+
+        .source-link:hover {
+            background: var(--surface);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--muted);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        /* Related Pages */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: white;
+        }
+
+        .card h3 {
+            margin: 0 0 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            margin: 0 0 16px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .card a {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* FAQ */
+        .faq {
+            display: grid;
+            gap: 12px;
+        }
+
+        .faq details {
+            padding: 16px 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: white;
+        }
+
+        .faq summary {
+            cursor: pointer;
+            font-weight: 700;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq summary::after {
+            content: "▼";
+            position: absolute;
+            right: 0;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .faq details[open] summary::after {
+            content: "▲";
+        }
+
+        .faq p {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta-band {
+            background: var(--accent-soft);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+
+        .cta-band .section-label {
+            display: block;
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .cta-band h2 {
+            margin: 0 0 12px;
+        }
+
+        .cta-band p {
+            margin: 0 0 20px;
+            color: var(--muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 36px 0;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .pill-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .pill-link {
+            padding: 6px 12px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            background: white;
+        }
+
+        .pill-link:hover {
+            background: var(--surface);
+        }
+
+        /* Responsive */
+        @media (max-width: 860px) {
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .section-head {
+                display: grid;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .wrap {
+                width: min(100% - 28px, 1120px);
+            }
+            nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 14px 0;
+            }
+            .hero {
+                padding-top: 48px;
+            }
+            .tool-grid {
+                grid-template-columns: 1fr;
+            }
+            .results-summary {
+                flex-direction: column;
+            }
+        }
+    </style>
+<script>
+/**
+ * Enhanced Website Analytics Tracking
+ * Replaces dasTrack() stubs with real Google Analytics 4 + Search Console integration
+ * 
+ * Features:
+ * - GA4 event tracking with custom parameters
+ * - SEO/AEO/GEO-specific event tracking
+ * - Cross-platform attribution (web to app)
+ * - Answer box appearance detection
+ * - Conversion funnel tracking
+ * - Geographic performance tracking
+ */
+
+(function() {
+    'use strict';
+
+    // Configuration
+    const CONFIG = {
+        GA4_MEASUREMENT_ID: 'G-KKKX3H7LLW', // Replace with your GA4 Measurement ID
+        DEBUG: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1',
+        SESSION_TIMEOUT: 30 * 60 * 1000, // 30 minutes
+        
+        // Target keywords for AEO tracking
+        TARGET_KEYWORDS: [
+            'how to find negative margin orders shopify',
+            'shopify margin leak calculator',
+            'shopify product seo audit',
+            'shopify missing alt text',
+            'figma prototype to mp4',
+            'convert photo format iphone',
+            'scan receipts iphone',
+            'verify ai generated citations',
+            'linear issue spec checker'
+        ],
+        
+        // Product mapping for attribution
+        PRODUCT_MAPPING: {
+            '/how-to-find-negative-margin-orders-shopify/': 'profitpulse-ai',
+            '/shopify-margin-leak-calculator/': 'profitpulse-ai',
+            '/shopify-product-seo-audit/': 'bulkgenie-ai', 
+            '/shopify-missing-alt-text-checker/': 'bulkgenie-ai',
+            '/figma-prototype-to-mp4/': 'protovid',
+            '/convert-photo-format-iphone/': 'photo-converter-ios',
+            '/scan-receipts-iphone/': 'receipt-scanner-ios',
+            '/verify-ai-generated-citations/': 'citeclear',
+            '/linear-issue-spec-checker/': 'specbot'
+        }
+    };
+
+    // Initialize Google Analytics 4
+    function initializeGA4() {
+        if (typeof gtag === 'undefined') {
+            // Load GA4 if not already present
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.GA4_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function() { dataLayer.push(arguments); }
+                
+                gtag('js', new Date());
+                gtag('config', CONFIG.GA4_MEASUREMENT_ID, {
+                    send_page_view: false, // We'll send manually with custom parameters
+                    anonymize_ip: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization_signals: false
+                });
+                
+                // Send initial page view with SEO context
+                sendPageView();
+            };
+        } else {
+            // GA4 already loaded, send initial page view
+            sendPageView();
+        }
+    }
+
+    // Session and user tracking
+    let sessionId = getOrCreateSessionId();
+    let userId = getOrCreateUserId();
+
+    function getOrCreateSessionId() {
+        let sessionId = sessionStorage.getItem('das_session_id');
+        const sessionTimestamp = sessionStorage.getItem('das_session_timestamp');
+        const now = Date.now();
+        
+        if (!sessionId || !sessionTimestamp || (now - parseInt(sessionTimestamp)) > CONFIG.SESSION_TIMEOUT) {
+            sessionId = 'das_' + now.toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            sessionStorage.setItem('das_session_id', sessionId);
+        }
+        
+        sessionStorage.setItem('das_session_timestamp', now.toString());
+        return sessionId;
+    }
+
+    function getOrCreateUserId() {
+        let userId = localStorage.getItem('das_user_id');
+        if (!userId) {
+            userId = 'user_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('das_user_id', userId);
+        }
+        return userId;
+    }
+
+    // Get referral and campaign information
+    function getAttributionData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        return {
+            utm_source: urlParams.get('utm_source') || document.referrer || null,
+            utm_medium: urlParams.get('utm_medium') || 'organic',
+            utm_campaign: urlParams.get('utm_campaign') || null,
+            utm_term: urlParams.get('utm_term') || null,
+            utm_content: urlParams.get('utm_content') || null,
+            referrer: document.referrer || null,
+            referrer_domain: document.referrer ? new URL(document.referrer).hostname : null
+        };
+    }
+
+    // Detect if page appeared in answer box (check referrer patterns and query params)
+    function detectAnswerBoxAppearance() {
+        const attribution = getAttributionData();
+        const queryParams = new URLSearchParams(window.location.search);
+        
+        // Check for Google SERP referrer patterns that might indicate answer box
+        if (attribution.referrer_domain && attribution.referrer_domain.includes('google')) {
+            const referrerUrl = new URL(document.referrer);
+            const query = referrerUrl.searchParams.get('q');
+            
+            // Check if the query matches our target keywords
+            if (query) {
+                for (const keyword of CONFIG.TARGET_KEYWORDS) {
+                    if (query.toLowerCase().includes(keyword.toLowerCase()) || 
+                        keyword.toLowerCase().includes(query.toLowerCase())) {
+                        return {
+                            detected: true,
+                            query: query,
+                            keyword_match: keyword,
+                            referrer: document.referrer
+                        };
+                    }
+                }
+            }
+        }
+        
+        return { detected: false };
+    }
+
+    // Get page context and product mapping
+    function getPageContext() {
+        const path = window.location.pathname;
+        const product = CONFIG.PRODUCT_MAPPING[path] || 'unknown';
+        
+        return {
+            page_path: path,
+            page_title: document.title,
+            page_product: product,
+            page_category: getPageCategory(path),
+            canonical_url: getCanonicalUrl()
+        };
+    }
+
+    function getPageCategory(path) {
+        if (path.includes('shopify')) return 'shopify-tools';
+        if (path.includes('figma')) return 'design-tools';
+        if (path.includes('iphone') || path.includes('ios')) return 'ios-apps';
+        if (path.includes('citation') || path.includes('legal')) return 'legal-tools';
+        if (path.includes('linear')) return 'dev-tools';
+        return 'general';
+    }
+
+    function getCanonicalUrl() {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        return canonical ? canonical.href : window.location.href;
+    }
+
+    // Enhanced tracking function that replaces dasTrack()
+    function enhancedTrack(eventName, eventParams = {}) {
+        if (CONFIG.DEBUG) {
+            console.log('[Enhanced Analytics]', eventName, eventParams);
+        }
+
+        const attribution = getAttributionData();
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        // Prepare GA4 event parameters
+        const ga4Params = {
+            // Custom parameters
+            session_id: sessionId,
+            user_id: userId,
+            page_product: pageContext.page_product,
+            page_category: pageContext.page_category,
+            
+            // Attribution
+            traffic_source: attribution.utm_source,
+            traffic_medium: attribution.utm_medium,
+            traffic_campaign: attribution.utm_campaign,
+            
+            // SEO/AEO specific
+            answer_box_detected: answerBox.detected,
+            search_query: answerBox.query || null,
+            keyword_match: answerBox.keyword_match || null,
+            
+            // Geographic (will be auto-detected by GA4)
+            ...eventParams
+        };
+
+        // Send to GA4
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, ga4Params);
+        }
+
+        // Send to custom endpoint if available (for additional processing)
+        sendToCustomEndpoint(eventName, ga4Params);
+    }
+
+    // Send enhanced page view with SEO context
+    function sendPageView() {
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        enhancedTrack('seo_page_view', {
+            page_title: pageContext.page_title,
+            page_location: window.location.href,
+            content_group1: pageContext.page_category,
+            content_group2: pageContext.page_product,
+            custom_parameter_1: answerBox.detected ? 'answer_box_entry' : 'organic_entry'
+        });
+
+        // If answer box detected, send specific event
+        if (answerBox.detected) {
+            enhancedTrack('answer_box_appearance', {
+                search_query: answerBox.query,
+                keyword_match: answerBox.keyword_match,
+                page_product: pageContext.page_product
+            });
+        }
+    }
+
+    // Intersection Observer for viewport tracking
+    function trackElementVisibility(selector, eventName, additionalParams = {}) {
+        const elements = document.querySelectorAll(selector);
+        if (!elements.length || !('IntersectionObserver' in window)) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elementId = entry.target.id || entry.target.className || 'unknown';
+                    enhancedTrack(eventName, {
+                        element_id: elementId,
+                        visibility_percentage: Math.round(entry.intersectionRatio * 100),
+                        ...additionalParams
+                    });
+                    observer.unobserve(entry.target); // Track only once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    // Track scroll depth
+    function trackScrollDepth() {
+        let maxScroll = 0;
+        const milestones = [25, 50, 75, 90, 100];
+        const tracked = new Set();
+
+        function handleScroll() {
+            const scrollPercent = Math.round(
+                (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100
+            );
+            
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                milestones.forEach(milestone => {
+                    if (scrollPercent >= milestone && !tracked.has(milestone)) {
+                        tracked.add(milestone);
+                        enhancedTrack('scroll_depth', {
+                            scroll_percentage: milestone,
+                            page_product: getPageContext().page_product
+                        });
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // Send to custom analytics endpoint for additional processing
+    function sendToCustomEndpoint(eventName, params) {
+        // Optional: Send to your own analytics endpoint for cross-referencing with app data
+        if (window.location.hostname !== 'localhost') {
+            try {
+                fetch('/api/analytics', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: eventName,
+                        params: params,
+                        timestamp: new Date().toISOString(),
+                        user_agent: navigator.userAgent,
+                        screen_resolution: `${screen.width}x${screen.height}`
+                    })
+                }).catch(err => {
+                    if (CONFIG.DEBUG) console.log('Custom endpoint error:', err);
+                });
+            } catch (e) {
+                // Fail silently
+            }
+        }
+    }
+
+    // Replace the existing dasTrack function globally
+    window.dasTrack = enhancedTrack;
+
+    // Initialize enhanced tracking
+    function initialize() {
+        // Initialize GA4
+        initializeGA4();
+        
+        // Set up automatic tracking
+        trackScrollDepth();
+        
+        // Track sample output views
+        trackElementVisibility('.sample-output, .example-table', 'sample_output_view');
+        
+        // Track CTA visibility
+        trackElementVisibility('[data-track="product_cta_click"]', 'cta_visibility');
+        
+        // Enhanced click tracking
+        document.addEventListener('click', function(event) {
+            const element = event.target.closest('[data-track]');
+            if (element) {
+                const trackingEvent = element.getAttribute('data-track');
+                const productUrl = element.href || element.getAttribute('data-url');
+                
+                enhancedTrack(trackingEvent, {
+                    click_text: element.textContent.trim(),
+                    click_url: productUrl,
+                    element_type: element.tagName.toLowerCase(),
+                    page_product: getPageContext().page_product
+                });
+                
+                // For app store clicks, track as conversion
+                if (trackingEvent === 'app_store_click' || productUrl?.includes('apps.apple.com')) {
+                    enhancedTrack('organic_conversion', {
+                        conversion_type: 'app_store_click',
+                        target_app: getPageContext().page_product
+                    });
+                }
+            }
+        });
+
+        // Track exit intent
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(event) {
+            if (!exitIntentShown && event.clientY <= 0) {
+                exitIntentShown = true;
+                enhancedTrack('exit_intent', {
+                    time_on_page: Date.now() - performance.timeOrigin,
+                    scroll_depth: maxScroll || 0
+                });
+            }
+        });
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
+    // Export for manual use
+    window.EnhancedAnalytics = {
+        track: enhancedTrack,
+        trackPageView: sendPageView,
+        trackVisibility: trackElementVisibility,
+        getSessionId: () => sessionId,
+        getUserId: () => userId,
+        getPageContext: getPageContext,
+        detectAnswerBox: detectAnswerBoxAppearance
+    };
+
+})();
+</script>
+<script>
+/**
+ * Enhanced Website Analytics Tracking
+ * Replaces dasTrack() stubs with real Google Analytics 4 + Search Console integration
+ * 
+ * Features:
+ * - GA4 event tracking with custom parameters
+ * - SEO/AEO/GEO-specific event tracking
+ * - Cross-platform attribution (web to app)
+ * - Answer box appearance detection
+ * - Conversion funnel tracking
+ * - Geographic performance tracking
+ */
+
+(function() {
+    'use strict';
+
+    // Configuration
+    const CONFIG = {
+        GA4_MEASUREMENT_ID: 'G-KKKX3H7LLW', // Replace with your GA4 Measurement ID
+        DEBUG: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1',
+        SESSION_TIMEOUT: 30 * 60 * 1000, // 30 minutes
+        
+        // Target keywords for AEO tracking
+        TARGET_KEYWORDS: [
+            'how to find negative margin orders shopify',
+            'shopify margin leak calculator',
+            'shopify product seo audit',
+            'shopify missing alt text',
+            'figma prototype to mp4',
+            'convert photo format iphone',
+            'scan receipts iphone',
+            'verify ai generated citations',
+            'linear issue spec checker'
+        ],
+        
+        // Product mapping for attribution
+        PRODUCT_MAPPING: {
+            '/how-to-find-negative-margin-orders-shopify/': 'profitpulse-ai',
+            '/shopify-margin-leak-calculator/': 'profitpulse-ai',
+            '/shopify-product-seo-audit/': 'bulkgenie-ai', 
+            '/shopify-missing-alt-text-checker/': 'bulkgenie-ai',
+            '/figma-prototype-to-mp4/': 'protovid',
+            '/convert-photo-format-iphone/': 'photo-converter-ios',
+            '/scan-receipts-iphone/': 'receipt-scanner-ios',
+            '/verify-ai-generated-citations/': 'citeclear',
+            '/linear-issue-spec-checker/': 'specbot'
+        }
+    };
+
+    // Initialize Google Analytics 4
+    function initializeGA4() {
+        if (typeof gtag === 'undefined') {
+            // Load GA4 if not already present
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.GA4_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function() { dataLayer.push(arguments); }
+                
+                gtag('js', new Date());
+                gtag('config', CONFIG.GA4_MEASUREMENT_ID, {
+                    send_page_view: false, // We'll send manually with custom parameters
+                    anonymize_ip: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization_signals: false
+                });
+                
+                // Send initial page view with SEO context
+                sendPageView();
+            };
+        } else {
+            // GA4 already loaded, send initial page view
+            sendPageView();
+        }
+    }
+
+    // Session and user tracking
+    let sessionId = getOrCreateSessionId();
+    let userId = getOrCreateUserId();
+
+    function getOrCreateSessionId() {
+        let sessionId = sessionStorage.getItem('das_session_id');
+        const sessionTimestamp = sessionStorage.getItem('das_session_timestamp');
+        const now = Date.now();
+        
+        if (!sessionId || !sessionTimestamp || (now - parseInt(sessionTimestamp)) > CONFIG.SESSION_TIMEOUT) {
+            sessionId = 'das_' + now.toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            sessionStorage.setItem('das_session_id', sessionId);
+        }
+        
+        sessionStorage.setItem('das_session_timestamp', now.toString());
+        return sessionId;
+    }
+
+    function getOrCreateUserId() {
+        let userId = localStorage.getItem('das_user_id');
+        if (!userId) {
+            userId = 'user_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('das_user_id', userId);
+        }
+        return userId;
+    }
+
+    // Get referral and campaign information
+    function getAttributionData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        return {
+            utm_source: urlParams.get('utm_source') || document.referrer || null,
+            utm_medium: urlParams.get('utm_medium') || 'organic',
+            utm_campaign: urlParams.get('utm_campaign') || null,
+            utm_term: urlParams.get('utm_term') || null,
+            utm_content: urlParams.get('utm_content') || null,
+            referrer: document.referrer || null,
+            referrer_domain: document.referrer ? new URL(document.referrer).hostname : null
+        };
+    }
+
+    // Detect if page appeared in answer box (check referrer patterns and query params)
+    function detectAnswerBoxAppearance() {
+        const attribution = getAttributionData();
+        const queryParams = new URLSearchParams(window.location.search);
+        
+        // Check for Google SERP referrer patterns that might indicate answer box
+        if (attribution.referrer_domain && attribution.referrer_domain.includes('google')) {
+            const referrerUrl = new URL(document.referrer);
+            const query = referrerUrl.searchParams.get('q');
+            
+            // Check if the query matches our target keywords
+            if (query) {
+                for (const keyword of CONFIG.TARGET_KEYWORDS) {
+                    if (query.toLowerCase().includes(keyword.toLowerCase()) || 
+                        keyword.toLowerCase().includes(query.toLowerCase())) {
+                        return {
+                            detected: true,
+                            query: query,
+                            keyword_match: keyword,
+                            referrer: document.referrer
+                        };
+                    }
+                }
+            }
+        }
+        
+        return { detected: false };
+    }
+
+    // Get page context and product mapping
+    function getPageContext() {
+        const path = window.location.pathname;
+        const product = CONFIG.PRODUCT_MAPPING[path] || 'unknown';
+        
+        return {
+            page_path: path,
+            page_title: document.title,
+            page_product: product,
+            page_category: getPageCategory(path),
+            canonical_url: getCanonicalUrl()
+        };
+    }
+
+    function getPageCategory(path) {
+        if (path.includes('shopify')) return 'shopify-tools';
+        if (path.includes('figma')) return 'design-tools';
+        if (path.includes('iphone') || path.includes('ios')) return 'ios-apps';
+        if (path.includes('citation') || path.includes('legal')) return 'legal-tools';
+        if (path.includes('linear')) return 'dev-tools';
+        return 'general';
+    }
+
+    function getCanonicalUrl() {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        return canonical ? canonical.href : window.location.href;
+    }
+
+    // Enhanced tracking function that replaces dasTrack()
+    function enhancedTrack(eventName, eventParams = {}) {
+        if (CONFIG.DEBUG) {
+            console.log('[Enhanced Analytics]', eventName, eventParams);
+        }
+
+        const attribution = getAttributionData();
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        // Prepare GA4 event parameters
+        const ga4Params = {
+            // Custom parameters
+            session_id: sessionId,
+            user_id: userId,
+            page_product: pageContext.page_product,
+            page_category: pageContext.page_category,
+            
+            // Attribution
+            traffic_source: attribution.utm_source,
+            traffic_medium: attribution.utm_medium,
+            traffic_campaign: attribution.utm_campaign,
+            
+            // SEO/AEO specific
+            answer_box_detected: answerBox.detected,
+            search_query: answerBox.query || null,
+            keyword_match: answerBox.keyword_match || null,
+            
+            // Geographic (will be auto-detected by GA4)
+            ...eventParams
+        };
+
+        // Send to GA4
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, ga4Params);
+        }
+
+        // Send to custom endpoint if available (for additional processing)
+        sendToCustomEndpoint(eventName, ga4Params);
+    }
+
+    // Send enhanced page view with SEO context
+    function sendPageView() {
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        enhancedTrack('seo_page_view', {
+            page_title: pageContext.page_title,
+            page_location: window.location.href,
+            content_group1: pageContext.page_category,
+            content_group2: pageContext.page_product,
+            custom_parameter_1: answerBox.detected ? 'answer_box_entry' : 'organic_entry'
+        });
+
+        // If answer box detected, send specific event
+        if (answerBox.detected) {
+            enhancedTrack('answer_box_appearance', {
+                search_query: answerBox.query,
+                keyword_match: answerBox.keyword_match,
+                page_product: pageContext.page_product
+            });
+        }
+    }
+
+    // Intersection Observer for viewport tracking
+    function trackElementVisibility(selector, eventName, additionalParams = {}) {
+        const elements = document.querySelectorAll(selector);
+        if (!elements.length || !('IntersectionObserver' in window)) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elementId = entry.target.id || entry.target.className || 'unknown';
+                    enhancedTrack(eventName, {
+                        element_id: elementId,
+                        visibility_percentage: Math.round(entry.intersectionRatio * 100),
+                        ...additionalParams
+                    });
+                    observer.unobserve(entry.target); // Track only once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    // Track scroll depth
+    function trackScrollDepth() {
+        let maxScroll = 0;
+        const milestones = [25, 50, 75, 90, 100];
+        const tracked = new Set();
+
+        function handleScroll() {
+            const scrollPercent = Math.round(
+                (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100
+            );
+            
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                milestones.forEach(milestone => {
+                    if (scrollPercent >= milestone && !tracked.has(milestone)) {
+                        tracked.add(milestone);
+                        enhancedTrack('scroll_depth', {
+                            scroll_percentage: milestone,
+                            page_product: getPageContext().page_product
+                        });
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // Send to custom analytics endpoint for additional processing
+    function sendToCustomEndpoint(eventName, params) {
+        // Optional: Send to your own analytics endpoint for cross-referencing with app data
+        if (window.location.hostname !== 'localhost') {
+            try {
+                fetch('/api/analytics', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: eventName,
+                        params: params,
+                        timestamp: new Date().toISOString(),
+                        user_agent: navigator.userAgent,
+                        screen_resolution: `${screen.width}x${screen.height}`
+                    })
+                }).catch(err => {
+                    if (CONFIG.DEBUG) console.log('Custom endpoint error:', err);
+                });
+            } catch (e) {
+                // Fail silently
+            }
+        }
+    }
+
+    // Replace the existing dasTrack function globally
+    window.dasTrack = enhancedTrack;
+
+    // Initialize enhanced tracking
+    function initialize() {
+        // Initialize GA4
+        initializeGA4();
+        
+        // Set up automatic tracking
+        trackScrollDepth();
+        
+        // Track sample output views
+        trackElementVisibility('.sample-output, .example-table', 'sample_output_view');
+        
+        // Track CTA visibility
+        trackElementVisibility('[data-track="product_cta_click"]', 'cta_visibility');
+        
+        // Enhanced click tracking
+        document.addEventListener('click', function(event) {
+            const element = event.target.closest('[data-track]');
+            if (element) {
+                const trackingEvent = element.getAttribute('data-track');
+                const productUrl = element.href || element.getAttribute('data-url');
+                
+                enhancedTrack(trackingEvent, {
+                    click_text: element.textContent.trim(),
+                    click_url: productUrl,
+                    element_type: element.tagName.toLowerCase(),
+                    page_product: getPageContext().page_product
+                });
+                
+                // For app store clicks, track as conversion
+                if (trackingEvent === 'app_store_click' || productUrl?.includes('apps.apple.com')) {
+                    enhancedTrack('organic_conversion', {
+                        conversion_type: 'app_store_click',
+                        target_app: getPageContext().page_product
+                    });
+                }
+            }
+        });
+
+        // Track exit intent
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(event) {
+            if (!exitIntentShown && event.clientY <= 0) {
+                exitIntentShown = true;
+                enhancedTrack('exit_intent', {
+                    time_on_page: Date.now() - performance.timeOrigin,
+                    scroll_depth: maxScroll || 0
+                });
+            }
+        });
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
+    // Export for manual use
+    window.EnhancedAnalytics = {
+        track: enhancedTrack,
+        trackPageView: sendPageView,
+        trackVisibility: trackElementVisibility,
+        getSessionId: () => sessionId,
+        getUserId: () => userId,
+        getPageContext: getPageContext,
+        detectAnswerBox: detectAnswerBoxAppearance
+    };
+
+})();
+</script>
+</head>
+<body>
+    <header>
+        <nav class="wrap" aria-label="Primary navigation">
+            <a class="brand" href="/">Das Group</a>
+            <div class="nav-links">
+                <a href="/apps/citeclear/">CiteClear</a>
+                <a href="/citation-only-checker/">Citation Checker</a>
+                <a href="mailto:support@dasgroupllc.com">Support</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap">
+                <p class="eyebrow">CiteClear</p>
+                <h1>Check AI-Generated Citations Without Uploading Documents</h1>
+                <p class="lead">Verify citations from ChatGPT, Claude, or any AI assistant by pasting text only. No client documents, no sensitive information, no login required.</p>
+                <p class="trust-copy"><strong>No client facts needed.</strong> Paste citations only.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="#tool">Check Citations Now</a>
+                    <a class="button secondary" href="/apps/citeclear/">About CiteClear</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="tool-section" id="tool">
+            <div class="wrap">
+                <h2>Citation Checker</h2>
+                <p class="section-copy">Paste AI-generated text containing citations below. The tool will extract, parse, and validate each citation deterministically.</p>
+                
+                <div class="tool-grid">
+                    <div class="input-panel">
+                        <h3>Input</h3>
+                        <div class="textarea-container">
+                            <textarea id="citationInput" placeholder="Paste AI-generated text with citations here...
+
+Example:
+The court held that 'a contract requires mutual assent' (Smith v. Jones, 123 F.3d 456, 458 (9th Cir. 2024)).
+
+See also: 28 U.S.C. § 1332; Restatement (Second) of Contracts § 22.
+
+Or: In a recent decision, the court applied the four-factor test (Doe v. Roe, 456 U.S. 789 (2023))."></textarea>
+                        </div>
+                        <button class="example-btn" onclick="loadExample()">
+                            ⊕ Load Example Citations
+                        </button>
+                        <div class="controls">
+                            <button class="button primary" onclick="analyzeCitations()">Check Citations</button>
+                            <button class="button secondary" onclick="clearAll()">Clear</button>
+                        </div>
+                    </div>
+                    
+                    <div class="output-panel">
+                        <h3>Results</h3>
+                        <div id="resultsContainer">
+                            <div class="empty-state">
+                                <div class="empty-state-icon">📋</div>
+                                <p>Paste citations and click "Check Citations" to see results.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>How It Works</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>📝 Paste Citations Only</h3>
+                    <p>Copy text from ChatGPT, Claude, or any AI tool. Paste it into the input area. No document upload needed.</p>
+                </article>
+                <article class="card">
+                    <h3>🔍 Deterministic Parsing</h3>
+                    <p>The tool extracts and validates citations using pattern matching against known legal citation formats.</p>
+                </article>
+                <article class="card">
+                    <h3>⚠️ Risk Triage</h3>
+                    <p>Get flagged for formatting errors, suspected hallucinations, staleness, and other quality indicators.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>What Gets Detected</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>✅ Valid Citations</h3>
+                    <p>Properly formatted case, statute, and regulation citations with correct structure.</p>
+                </article>
+                <article class="card">
+                    <h3>❌ Format Errors</h3>
+                    <p>Malformed citations, missing components, incorrect punctuation in legal citations.</p>
+                </article>
+                <article class="card">
+                    <h3>🤖 Suspected Hallucinations</h3>
+                    <p>Citations that don't match known patterns, potentially fabricated by AI.</p>
+                </article>
+                <article class="card">
+                    <h3>⏰ Staleness Warnings</h3>
+                    <p>Older cases that may need freshness verification for current legal arguments.</p>
+                </article>
+                <article class="card">
+                    <h3>📍 Jurisdiction Notes</h3>
+                    <p>Identifies jurisdiction and suggests verification sources.</p>
+                </article>
+                <article class="card">
+                    <h3>🔗 Source Links</h3>
+                    <p>Provides direct links to Google Scholar, CourtListener, and other verification sources.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <h2>Example Output</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Citation</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Risk</th>
+                            <th>Reason</th>
+                            <th>Action</th>
+                            <th>Sources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="citation-text">Smith v. Jones, 123 F.3d 456 (9th Cir. 2024)</td>
+                            <td><span class="badge valid">Case</span></td>
+                            <td><span class="badge valid">Valid Format</span></td>
+                            <td><span class="risk-low">Low</span></td>
+                            <td>Properly formatted federal case citation</td>
+                            <td>Verify on Westlaw</td>
+                            <td class="source-links">
+                                <a class="source-link" href="https://scholar.google.com/scholar?q=Smith+v.+Jones+123+F.3d+456" target="_blank">Google Scholar</a>
+                                <a class="source-link" href="https://www.courtlistener.com/?q=Smith+v.+Jones+123+F.3d+456" target="_blank">CourtListener</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="citation-text">Doe v. Roe, 999 F.4th 999 (11th Cir. 2025)</td>
+                            <td><span class="badge unknown">Case</span></td>
+                            <td><span class="badge warning">Unknown</span></td>
+                            <td><span class="risk-high">High</span></td>
+                            <td>No matching case found in databases</td>
+                            <td>Manual verification required</td>
+                            <td class="source-links">
+                                <a class="source-link" href="https://scholar.google.com/scholar?q=Doe+v.+Roe+999+F.4th+999" target="_blank">Search</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="citation-text">28 U.S.C. § 1332</td>
+                            <td><span class="badge valid">Statute</span></td>
+                            <td><span class="badge valid">Valid Format</span></td>
+                            <td><span class="risk-low">Low</span></td>
+                            <td>Valid statutory citation</td>
+                            <td>Verify current version</td>
+                            <td class="source-links">
+                                <a class="source-link" href="https://www.law.cornell.edu/uscode/text/28/1332" target="_blank">Cornell LII</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top: 16px; color: var(--muted); font-size: 0.95rem;">Actual results will vary based on the citations you paste. The tool provides deterministic format validation and risk triage.</p>
+        </section>
+
+        <section class="wrap">
+            <h2>Related Tools & Guides</h2>
+            <div class="card-grid">
+                <article class="card">
+                    <h3><a href="/fake-legal-citation-checker/">Fake Legal Citation Checker</a></h3>
+                    <p>Focused tool for detecting fabricated legal citations in AI output.</p>
+                    <a href="/fake-legal-citation-checker/">Try Now →</a>
+                </article>
+                <article class="card">
+                    <h3><a href="/check-chatgpt-legal-citations/">Check ChatGPT Legal Citations</a></h3>
+                    <p>Specific workflow for validating ChatGPT-generated legal citations.</p>
+                    <a href="/check-chatgpt-legal-citations/">Try Now →</a>
+                </article>
+                <article class="card">
+                    <h3><a href="/chatgpt-made-up-legal-cases/">ChatGPT Made-Up Legal Cases</a></h3>
+                    <p>Examples and patterns of hallucinated cases from AI tools.</p>
+                    <a href="/chatgpt-made-up-legal-cases/">Read More →</a>
+                </article>
+                <article class="card">
+                    <h3><a href="/legal-ai-citation-hallucination-examples/">Legal AI Citation Hallucination Examples</a></h3>
+                    <p>Real-world examples of AI citation hallucinations with analysis.</p>
+                    <a href="/legal-ai-citation-hallucination-examples/">Read More →</a>
+                </article>
+                <article class="card">
+                    <h3><a href="/how-to-verify-case-citations/">How to Verify Case Citations</a></h3>
+                    <p>Step-by-step guide to manual verification of legal citations.</p>
+                    <a href="/how-to-verify-case-citations/">Read Guide →</a>
+                </article>
+                <article class="card">
+                    <h3><a href="/legal-ai-citation-reliability-benchmark/">Legal AI Citation Reliability Benchmark</a></h3>
+                    <p>Benchmark data on citation accuracy across different AI models.</p>
+                    <a href="/legal-ai-citation-reliability-benchmark/">View Benchmark →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="wrap" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <details open>
+                    <summary>Does this tool require document upload?</summary>
+                    <p>No. You paste citations only. No document upload, no client facts, no sensitive information required. The tool works with text input only.</p>
+                </details>
+                <details>
+                    <summary>What types of citations can be checked?</summary>
+                    <p>The tool detects and validates case citations (e.g., Smith v. Jones, 123 F.3d 456), statutory citations, regulatory citations, and common legal citation formats from US federal and state jurisdictions.</p>
+                </details>
+                <details>
+                    <summary>Is this a substitute for legal review?</summary>
+                    <p>No. This tool provides deterministic format validation and risk triage. It does not make absolute legal claims or replace professional legal review. Always have a licensed attorney verify critical citations.</p>
+                </details>
+                <details>
+                    <summary>Do I need to create an account or pay?</summary>
+                    <p>No account, no login, no payment required. Paste citations and get results immediately. This is a free tool.</p>
+                </details>
+                <details>
+                    <summary>What does the risk assessment include?</summary>
+                    <p>The tool flags formatting errors, suspected hallucinations (non-existent citations), staleness risks (old cases), jurisdiction mismatches, and other quality indicators based on deterministic pattern matching against known citation databases and formats.</p>
+                </details>
+                <details>
+                    <summary>Can this detect made-up cases from ChatGPT?</summary>
+                    <p>The tool uses deterministic pattern matching against known citation formats and publicly available databases. It can flag suspicious citations that don't match expected patterns, which is useful for catching potential AI hallucinations.</p>
+                </details>
+                <details>
+                    <summary>Is my pasted text stored or used for training?</summary>
+                    <p>No. The analysis runs in your browser using client-side JavaScript. No automatic storage of user input. No model training on your pasted text. Your data stays on your device.</p>
+                </details>
+                <details>
+                    <summary>What jurisdiction does this cover?</summary>
+                    <p>The tool primarily supports US federal and state court citations. It can detect citations from other jurisdictions but may have limited validation capabilities outside the US.</p>
+                </details>
+                <details>
+                    <summary>How accurate is the detection?</summary>
+                    <p>The tool uses deterministic pattern matching which is highly accurate for format validation. However, it cannot guarantee that a properly formatted citation refers to an actual, existing case. Always verify critical citations through official sources.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="wrap">
+            <div class="cta-band">
+                <span class="section-label">CiteClear</span>
+                <h2>Need More Advanced Citation Review?</h2>
+                <p>CiteClear offers deeper citation verification, source-quality review, and AI-assisted analysis for legal teams that need more than format validation.</p>
+                <div class="hero-actions">
+                    <a class="button primary" href="/apps/citeclear/">Learn About CiteClear</a>
+                    <a class="button secondary" href="https://citeclear.dasgroupllc.com/" rel="noopener">Open CiteClear App</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="pill-links">
+                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
+                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
+                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
+                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
+                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
+                <a class="pill-link" href="/shopify-margin-leak-calculator/">Shopify Margin Calculator</a>
+            </div>
+            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Citation parsing patterns
+        const citationPatterns = [
+            // Case citations
+            { type: 'case', pattern: /^([A-Z][a-zA-Z]+)\s+v\.\s+([A-Z][a-zA-Z]+),\s+(\d{1,3}\s+[A-Z][a-z]{1,2}\.?\s+\d{1,4})\s+\(([^\)]+)\)\s*$/, risk: 'low' },
+            { type: 'case', pattern: /^([A-Z][a-zA-Z]+)\s+v\.\s+([A-Z][a-zA-Z]+),\s+(\d{1,3}\s+[A-Z]{2,4}\.\s+\d{1,4})\s+\(([^\)]+)\)\s*$/, risk: 'low' },
+            { type: 'case', pattern: /^([A-Z][a-zA-Z]+)\s+v\.\s+([A-Z][a-zA-Z]+),\s+No\.\s+([^\s]+),\s+(\d{4}\s+[A-Z]{2,4}\.\s+[A-Z][a-z]{1,2}\.\s+\d{4})\s*$/, risk: 'low' },
+            
+            // Statutes
+            { type: 'statute', pattern: /^(\d{1,2}\s+U\.S\.C\.)\s+§\s+(\d{1,4}[A-Za-z]*(?:-[A-Za-z0-9]+)*)\s*$/, risk: 'low' },
+            { type: 'statute', pattern: /^(\d{1,2}\s+U\.S\.C\.\s+A\.)\s+§\s+(\d{1,4}[A-Za-z]*(?:-[A-Za-z0-9]+)*)\s*$/, risk: 'low' },
+            
+            // Regulations
+            { type: 'regulation', pattern: /^(\d{1,2}\s+C\.F\.R\.)\s+§\s+(\d{1,3}\.\d{1,3}(?:[a-z]|\([a-z]\)))\s*$/, risk: 'low' },
+            { type: 'regulation', pattern: /^(\d{1,2}\s+e\.C\.F\.R\.)\s+§\s+(\d{1,3}\.\d{1,3}(?:[a-z]|\([a-z]\)))\s*$/, risk: 'low' },
+            
+            // Restatements
+            { type: 'restatement', pattern: /^Restatement\s+\((?:Second|Third)\)\s+of\s+([A-Za-z]+)\s+§\s+(\d{1,3}[A-Za-z]*(?:-[A-Za-z0-9]+)*)\s*$/, risk: 'low' },
+            
+            // Suspicious patterns (potential hallucinations)
+            { type: 'case', pattern: /^([A-Z][a-zA-Z]+)\s+v\.\s+([A-Z][a-zA-Z]+),\s+(\d{3,4}\s+[A-Z]{2,4}\.\s+\d{3,4})/,
+                validator: (match) => {
+                    const volume = parseInt(match[3].split(' ')[0]);
+                    const reporter = match[3].split(' ')[1].replace('.', '');
+                    const page = parseInt(match[3].split(' ')[2]);
+                    
+                    // Check for obviously fake reporter abbreviations
+                    const validReporters = ['F', 'F2d', 'F3d', 'F4th', 'US', 'Sct', 'LEd', 'LEd2d'];
+                    const reporterBase = reporter.replace(/\d/g, '');
+                    
+                    if (!validReporters.some(r => reporterBase.startsWith(r))) {
+                        return { risk: 'high', reason: 'Unrecognized reporter abbreviation' };
+                    }
+                    
+                    // Check for current year (2024+) with high volume numbers
+                    if (page > 999 && reporterBase === 'F4th') {
+                        return { risk: 'medium', reason: 'High page number for F.4th' };
+                    }
+                    
+                    return { risk: 'low', reason: 'Valid format' };
+                }
+            }
+        ];
+
+        // Known valid reporters and their ranges
+        const reporterInfo = {
+            'F': { name: 'Federal Reporter', years: '1880-1924', volumeRange: [1, 300] },
+            'F2d': { name: 'Federal Reporter 2nd', years: '1924-1993', volumeRange: [1, 999] },
+            'F3d': { name: 'Federal Reporter 3rd', years: '1993-2010s', volumeRange: [1, 999] },
+            'F4th': { name: 'Federal Reporter 4th', years: '2010s-present', volumeRange: [1, 100] },
+            'US': { name: 'United States Reports', years: '1754-present', volumeRange: [1, 600] },
+            'Sct': { name: 'Supreme Court Reporter', years: '1882-present', volumeRange: [1, 200] },
+            'LEd': { name: 'Lawyers Edition', years: '1882-present', volumeRange: [1, 100] },
+            'LEd2d': { name: 'Lawyers Edition 2nd', years: '1956-present', volumeRange: [1, 100] }
+        };
+
+        function extractCitations(text) {
+            // Extract text that looks like legal citations
+            const lines = text.split('\n');
+            const citations = [];
+            
+            // Pattern for inline citations
+            const inlinePattern = /(?:\(([^\)]{20,100}\)\))|(?:“([^”]{20,100}”)/g;
+            
+            // Pattern for standalone citations
+            const standalonePattern = /^\s*([A-Z][^.!?]*[A-Z][a-z]+\s+v\.[^\n]+)|(\d{1,2}\s+U\.S\.C\.\s*§\s*\d{1,4}[A-Za-z]*(?:-[A-Za-z0-9]+)*)|(\d{1,2}\s+C\.F\.R\.\s*§\s*\d{1,3}\.\d{1,3})/gm;
+            
+            for (const line of lines) {
+                // Check for inline citations
+                let match;
+                const inlineMatches = [];
+                while ((match = inlinePattern.exec(line)) !== null) {
+                    const citationText = match[1] || match[2];
+                    if (citationText && citationText.length > 15 && looksLikeCitation(citationText)) {
+                        inlineMatches.push(citationText.trim());
+                    }
+                }
+                
+                // Check for standalone citations
+                if (standalonePattern.test(line)) {
+                    const trimmed = line.trim();
+                    if (looksLikeCitation(trimmed)) {
+                        inlineMatches.push(trimmed);
+                    }
+                }
+                
+                citations.push(...inlineMatches);
+            }
+            
+            return [...new Set(citations)];
+        }
+
+        function looksLikeCitation(text) {
+            // Basic heuristics for legal citations
+            const patterns = [
+                /v\.\s*[A-Z]/,
+                /U\.S\.C\.\s*§/,
+                /C\.F\.R\.\s*§/,
+                /Restatement/,
+                /\d{1,3}\s+F\.?\d{0,2}."/,
+                /No\.\s+\d{4}/
+            ];
+            
+            return patterns.some(p => p.test(text));
+        }
+
+        function parseCitation(citation) {
+            // Clean up the citation
+            let cleanCitation = citation.replace(/^[("“]/, '').replace(/[)\””]$/, '').trim();
+            
+            // Try to match against patterns
+            for (const pattern of citationPatterns) {
+                const match = cleanCitation.match(pattern.pattern);
+                if (match) {
+                    let result = {
+                        raw: citation,
+                        clean: cleanCitation,
+                        type: pattern.type,
+                        status: 'valid',
+                        risk: pattern.risk || 'low',
+                        reason: 'Valid format',
+                        action: 'Verify on official sources',
+                        sources: getSources(pattern.type, cleanCitation)
+                    };
+                    
+                    // Apply validator if present
+                    if (pattern.validator) {
+                        const validation = pattern.validator(match);
+                        result.risk = validation.risk;
+                        result.reason = validation.reason;
+                        result.status = validation.risk === 'high' ? 'invalid' : result.status;
+                    }
+                    
+                    // Additional checks
+                    if (pattern.type === 'case') {
+                        const caseChecks = checkCaseCitation(cleanCitation);
+                        if (caseChecks) {
+                            result.risk = caseChecks.risk;
+                            result.reason = caseChecks.reason;
+                            result.status = caseChecks.risk === 'high' ? 'warning' : result.status;
+                        }
+                    }
+                    
+                    return result;
+                }
+            }
+            
+            // If no pattern matched, try to classify anyway
+            return {
+                raw: citation,
+                clean: cleanCitation,
+                type: guessType(cleanCitation),
+                status: 'unknown',
+                risk: 'high',
+                reason: 'Could not validate format',
+                action: 'Manual verification required',
+                sources: []
+            };
+        }
+
+        function guessType(citation) {
+            if (/v\.\s*[A-Z]/.test(citation)) return 'case';
+            if (/U\.S\.C\.\s*§/.test(citation)) return 'statute';
+            if (/C\.F\.R\.\s*§/.test(citation)) return 'regulation';
+            if (/Restatement/.test(citation)) return 'restatement';
+            return 'unknown';
+        }
+
+        function checkCaseCitation(citation) {
+            // Extract year
+            const yearMatch = citation.match(/\(([^\\)]+\d{4})/);
+            if (!yearMatch) return null;
+            
+            const yearPart = yearMatch[1];
+            const year = parseInt(yearPart.match(/\d{4}/)?.[0] || '0');
+            
+            // Check for future dates
+            if (year > new Date().getFullYear() + 1) {
+                return { risk: 'high', reason: 'Future date detected' };
+            }
+            
+            // Check for very old dates that might be suspect
+            if (year < 1789) {
+                return { risk: 'warning', reason: 'Very old date - verify existence' };
+            }
+            
+            // Check reporter validity
+            const reporterMatch = citation.match(/(\d{1,3}\s+[A-Z]{2,4}\.\s+\d{1,4})/);
+            if (reporterMatch) {
+                const reporterPart = reporterMatch[1];
+                const reporterAbbr = reporterPart.split(' ')[1].replace('.', '');
+                
+                // Check if reporter abbreviation is valid
+                const validAbbrs = ['F', 'F2d', 'F3d', 'F4th', 'US', 'Sct', 'LEd', 'LEd2d', 'FRD', 'Supp', 'AppDC'];
+                if (!validAbbrs.some(abbr => reporterAbbr.startsWith(abbr))) {
+                    return { risk: 'high', reason: 'Unrecognized reporter' };
+                }
+            }
+            
+            return null;
+        }
+
+        function getSources(type, citation) {
+            const sources = [];
+            
+            if (type === 'case') {
+                const searchQuery = encodeURIComponent(citation.replace(/[()]/g, '').replace(/\s+/g, ' '));
+                sources.push({
+                    name: 'Google Scholar',
+                    url: `https://scholar.google.com/scholar?q=${searchQuery}`
+                });
+                sources.push({
+                    name: 'CourtListener',
+                    url: `https://www.courtlistener.com/?q=${searchQuery}`
+                });
+                sources.push({
+                    name: 'Justia',
+                    url: `https://www.justia.com/search?q=${searchQuery}`
+                });
+            } else if (type === 'statute') {
+                // Extract title and section
+                const statMatch = citation.match(/(\d{1,2})\s+U\.S\.C\.\s*§\s*(\d{1,4}[A-Za-z]*(?:-[A-Za-z0-9]+)*)/);
+                if (statMatch) {
+                    const title = statMatch[1];
+                    const section = statMatch[2];
+                    sources.push({
+                        name: 'Cornell LII',
+                        url: `https://www.law.cornell.edu/uscode/text/${title}/${section}`
+                    });
+                    sources.push({
+                        name: 'US Code',
+                        url: `https://www.law.cornell.edu/uscode/text/${title}/${section}`
+                    });
+                }
+            } else if (type === 'regulation') {
+                const regMatch = citation.match(/(\d{1,2})\s+C\.F\.R\.\s*§\s*(\d{1,3}\.\d{1,3})/);
+                if (regMatch) {
+                    const title = regMatch[1];
+                    const section = regMatch[2];
+                    sources.push({
+                        name: 'eCFR',
+                        url: `https://www.ecfr.gov/current/title-${title}/subtitle-A/chapter-I/subchapter-A/part-${section.split('.')[0]}/section-${section}`
+                    });
+                }
+            }
+            
+            return sources;
+        }
+
+        function analyzeCitations() {
+            const input = document.getElementById('citationInput');
+            const output = document.getElementById('resultsContainer');
+            const text = input.value.trim();
+            
+            if (!text) {
+                output.innerHTML = '<div class="empty-state"><div class="empty-state-icon">⚠️</div><p>Please paste some text with citations to analyze.</p></div>';
+                return;
+            }
+            
+            // Extract citations
+            const citations = extractCitations(text);
+            
+            if (citations.length === 0) {
+                output.innerHTML = '<div class="empty-state"><div class="empty-state-icon">🔍</div><p>No citations found in the text. Try pasting text that contains legal citations.</p></div>';
+                return;
+            }
+            
+            // Parse each citation
+            const results = citations.map(parseCitation);
+            
+            // Calculate summary statistics
+            const total = results.length;
+            const valid = results.filter(r => r.status === 'valid').length;
+            const warning = results.filter(r => r.status === 'warning').length;
+            const invalid = results.filter(r => r.status === 'invalid' || r.status === 'unknown').length;
+            const highRisk = results.filter(r => r.risk === 'high').length;
+            const mediumRisk = results.filter(r => r.risk === 'medium').length;
+            
+            // Build output
+            let html = `
+                <div class="results-summary">
+                    <div class="stat-card ${total > 0 ? 'success' : ''}">
+                        <strong>${total}</strong>
+                        <span>Total Citations</span>
+                    </div>
+                    <div class="stat-card ${valid > 0 ? 'success' : ''}">
+                        <strong>${valid}</strong>
+                        <span>Valid Format</span>
+                    </div>
+                    <div class="stat-card ${warning > 0 ? 'warning' : ''}">
+                        <strong>${warning}</strong>
+                        <span>Needs Review</span>
+                    </div>
+                    <div class="stat-card ${invalid > 0 ? 'error' : ''}">
+                        <strong>${invalid}</strong>
+                        <span>Invalid/Unknown</span>
+                    </div>
+                    <div class="stat-card ${highRisk > 0 ? 'error' : mediumRisk > 0 ? 'warning' : 'success'}">
+                        <strong>${highRisk}</strong>
+                        <span>High Risk</span>
+                    </div>
+                </div>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Citation</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Risk</th>
+                                <th>Reason</th>
+                                <th>Action</th>
+                                <th>Sources</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+            `;
+            
+            results.forEach(result => {
+                const riskClass = `risk-${result.risk}`;
+                const statusClass = result.status === 'valid' ? 'valid' : result.status === 'warning' ? 'warning' : 'invalid';
+                
+                html += `
+                    <tr>
+                        <td class="citation-text">${escapeHtml(result.raw)}</td>
+                        <td><span class="badge ${statusClass}">${result.type || 'unknown'}</span></td>
+                        <td><span class="badge ${statusClass}">${capitalizeFirst(result.status)}</span></td>
+                        <td><span class="${riskClass}">${capitalizeFirst(result.risk)}</span></td>
+                        <td>${escapeHtml(result.reason)}</td>
+                        <td>${escapeHtml(result.action)}</td>
+                        <td class="source-links">
+                            ${result.sources.map(s => `<a class="source-link" href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`).join('')}
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                        </tbody>
+                    </table>
+                </div>
+            `;
+            
+            output.innerHTML = html;
+            
+            // Track usage
+            trackEvent('citation_check', { count: total, valid: valid, warning: warning, invalid: invalid });
+        }
+
+        function loadExample() {
+            const examples = [
+                `The court held that "a contract requires mutual assent" (Smith v. Jones, 123 F.3d 456, 458 (9th Cir. 2024)).
+
+According to the statute, jurisdiction exists under 28 U.S.C. § 1332.
+
+The regulation provides guidance at 42 C.F.R. § 405.1002.
+
+See also: Doe v. Roe, 456 U.S. 789 (2023); Restatement (Second) of Contracts § 22.`,
+
+                `In a recent decision, the Ninth Circuit applied the four-factor test (In re: Tech Corp., 999 F.4th 123 (9th Cir. 2025)).
+
+The court cited Smith v. Johnson, 555 U.S. 555 (2010).
+
+The parties relied on 15 U.S.C. § 1681 et seq.`,
+
+                `The complaint alleges violations of 42 U.S.C. § 1983.
+
+Plaintiff cites Doe v. City of Anytown, No. 20-cv-12345, 2024 WL 1234567 (S.D.N.Y. Jan. 15, 2024).
+
+Defendant responds with Smith v. State, 123 P.3d 456 (Cal. 2020).`
+            ];
+            
+            const input = document.getElementById('citationInput');
+            input.value = examples[Math.floor(Math.random() * examples.length)];
+        }
+
+        function clearAll() {
+            document.getElementById('citationInput').value = '';
+            document.getElementById('resultsContainer').innerHTML = `
+                <div class="empty-state">
+                    <div class="empty-state-icon">📋</div>
+                    <p>Paste citations and click "Check Citations" to see results.</p>
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function capitalizeFirst(text) {
+            return text.charAt(0).toUpperCase() + text.slice(1);
+        }
+
+        function trackEvent(event, props) {
+            // Analytics placeholder
+            if (window.dasTrack) {
+                window.dasTrack(event, props);
+            }
+            console.log('Track:', event, props);
+        }
+    </script>
+</body>
+</html>

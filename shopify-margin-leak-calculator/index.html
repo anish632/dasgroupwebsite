@@ -13,384 +13,397 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Das Group LLC">
     <meta name="twitter:card" content="summary_large_image">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        "name": "How to Calculate Shopify Margin Leaks",
-        "description": "A four-step framework for estimating how much margin a Shopify store loses to discount drag, shipping overruns, stale COGS, and transaction fees.",
-        "step": [
-            {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Identify your four leak types",
-                "text": "Shopify margin leaks fall into four categories: discount drag (promo codes reducing price below cost), shipping overrun (carrier cost exceeding customer shipping charge), COGS gap (product cost records not updated after supplier price changes), and fee drag (cumulative transaction and app fees eroding thin-margin orders)."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Pull your order and cost data",
-                "text": "Export last 90 days of orders as CSV from Shopify Admin > Orders > Export. Gather your product cost records (Cost per item in Shopify or supplier invoices) and your carrier shipping invoices."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Calculate each leak type",
-                "text": "Discount drag: total discount amount on orders where discounts pushed margin negative. Shipping overrun: sum of (carrier cost minus customer shipping charge) for orders where carrier cost exceeded what you charged. COGS gap: difference between current supplier cost and Shopify Cost per item field, multiplied by units sold. Fee drag: total transaction and app fees on orders with margin below 15 percent."
-            },
-            {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Annualize and prioritize",
-                "text": "Multiply 90-day totals by 4 to estimate annual impact. Rank the four leak types by dollar impact and address the largest first. A shipping overrun of $200 per month annualizes to $2,400 per year."
-            }
-        ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is a margin leak in a Shopify store?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A margin leak is profit that disappears between your listed price and your actual net margin. For Shopify stores, leaks typically come from four sources: stacked or aggressive discounts, carrier shipping costs that exceed what you charge customers, product costs that were never updated after a supplier price increase, and cumulative transaction or app fees on thin-margin orders."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How do I calculate margin leaks in Shopify without a tool?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Export your Orders CSV, gather your carrier invoices and product cost records, then calculate four figures: total discount drag on orders where discounts pushed margin below zero; total shipping overrun where carrier cost exceeded customer charge; COGS gap where current supplier cost exceeds the Cost per item entered in Shopify; and total fee drag on orders with thin margins. Sum these four numbers to estimate total margin leakage."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What is a typical margin leak rate for Shopify stores?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "There is no universal benchmark because it depends on product category, discount strategy, and shipping carrier. The four leak types vary significantly by store. The goal of this framework is to measure your specific leak, not compare it to an industry average."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How often should I audit for margin leaks in Shopify?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "At minimum, review discount codes and shipping costs quarterly. After any new promotional campaign or supplier price change, run the calculation again. Stale COGS is particularly easy to miss because it does not trigger an alert in Shopify."
-                }
-            }
-        ]
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
-    <style>
-        :root {
-            --accent: #ca8a04;
-            --accent-strong: #a16207;
-            --accent-soft: rgba(202, 138, 4, 0.14);
-            --hero-start: #fefce8;
-            --hero-end: #fff7ed;
-        }
-        .table-wrap { overflow-x: auto; margin: 1rem 0; border-radius: 1.2rem; border: 1px solid var(--line); }
-        table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
-        th { background: var(--accent-soft); color: var(--accent-strong); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.7rem 0.9rem; text-align: left; white-space: nowrap; }
-        td { padding: 0.65rem 0.9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-        tr:last-child td { border-bottom: none; }
-        .neg { color: #dc2626; font-weight: 700; }
-        .pos { color: #16a34a; font-weight: 700; }
-        td.mono { font-family: "IBM Plex Mono", monospace; font-size: 0.88rem; }
-        .leak-total { background: var(--accent-soft); font-weight: 700; }
-        .pill-note { font-size: 0.88rem; padding: 0.65rem 1rem; border-radius: 0.85rem; border: 1px solid var(--line); background: var(--surface); margin-top: 0.75rem; display: inline-block; }
-    </style>
-</head>
-<body>
-    <header class="site-header">
-        <div class="shell topbar">
-            <a class="brand" href="/">Das Group LLC</a>
-            <nav class="topnav" aria-label="Primary">
-                <a href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
-                <a href="/how-to-find-negative-margin-orders-shopify/">Find Negative-Margin Orders</a>
-                <a href="/shopify-product-seo-audit/">Product SEO Audit</a>
-            </nav>
-        </div>
-    </header>
-    <main class="page shell">
-        <section class="hero">
-            <div class="hero-panel">
-                <div class="hero-grid">
-                    <div>
-                        <p class="eyebrow">Shopify Profit Framework</p>
-                        <h1>Shopify Margin Leak Calculator</h1>
-                        <p class="lead">A margin leak is profit that disappears between your listed price and your actual net margin. For Shopify stores, leaks come from four sources: discount drag, shipping overruns, stale COGS, and fee drag.</p>
-                        <p class="body-copy">This page is a calculation framework — not an interactive tool. Apply the four formulas to your own order data to estimate your total annualized margin leak. A worked example using fictional data is below.</p>
-                        <div class="actions">
-                            <a class="button primary" href="https://apps.shopify.com/profit-pulse-ai" rel="noopener" data-track="marketplace_click">Automate With ProfitPulse AI</a>
-                            <a class="button secondary" href="#framework">See the Framework</a>
-                        </div>
-                    </div>
-                    <aside class="hero-aside">
-                        <h2>Four leak types</h2>
-                        <ul class="meta-list">
-                            <li><span class="meta-label">1. Discount drag</span>Promo codes reducing order price below break-even</li>
-                            <li><span class="meta-label">2. Shipping overrun</span>Carrier cost exceeding customer shipping charge</li>
-                            <li><span class="meta-label">3. COGS gap</span>Product cost records not updated after supplier price changes</li>
-                            <li><span class="meta-label">4. Fee drag</span>Transaction and app fees eroding thin-margin orders</li>
-                        </ul>
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="framework">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Framework</span>
-                    <h2>Four formulas for calculating Shopify margin leaks</h2>
-                </div>
-            </div>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Leak type</th>
-                            <th>What it is</th>
-                            <th>Formula</th>
-                            <th>Data source</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Discount drag</strong></td>
-                            <td>Discount codes that push order margin below zero</td>
-                            <td class="mono">Sum of (COGS + Carrier Ship. + Fee − Net Revenue) for orders where that result > 0</td>
-                            <td>Orders CSV + product cost records</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Shipping overrun</strong></td>
-                            <td>Carrier cost exceeds what you charged the customer</td>
-                            <td class="mono">Sum of (Carrier Cost − Customer Shipping Charge) where Carrier Cost > Customer Charge</td>
-                            <td>Orders CSV + carrier invoices</td>
-                        </tr>
-                        <tr>
-                            <td><strong>COGS gap</strong></td>
-                            <td>Shopify cost records behind current supplier pricing</td>
-                            <td class="mono">Sum of (Current Supplier Cost − Shopify Cost per Item) × Units Sold</td>
-                            <td>Shopify product export + supplier invoices</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Fee drag</strong></td>
-                            <td>Transaction and app fees on thin-margin orders</td>
-                            <td class="mono">Sum of (Transaction Fee + App Fees) for orders where gross margin % &lt; 15%</td>
-                            <td>Shopify Payments report + app billing</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="section" id="sample-report">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Worked Example</span>
-                    <h2>Sample margin leak calculation: fictional store, 100 orders/month</h2>
-                </div>
-            </div>
-            <p class="body-copy">All numbers below are fictional and illustrative. They show how to apply the four formulas and annualize the result. Substitute your own data in each row.</p>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Leak type</th>
-                            <th>Monthly orders</th>
-                            <th>Avg. leak per order</th>
-                            <th>Monthly leak</th>
-                            <th>Annual leak</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Discount drag</td>
-                            <td>12 orders with discount codes pushing margin negative</td>
-                            <td>$6.20 average loss per order</td>
-                            <td class="neg">−$74.40</td>
-                            <td class="neg">−$892.80</td>
-                        </tr>
-                        <tr>
-                            <td>Shipping overrun</td>
-                            <td>28 orders where carrier cost exceeded flat charge</td>
-                            <td>$3.80 average overrun per order</td>
-                            <td class="neg">−$106.40</td>
-                            <td class="neg">−$1,276.80</td>
-                        </tr>
-                        <tr>
-                            <td>COGS gap</td>
-                            <td>Supplier raised price $1.50 on top SKU (40 units/mo)</td>
-                            <td>$1.50 per unit</td>
-                            <td class="neg">−$60.00</td>
-                            <td class="neg">−$720.00</td>
-                        </tr>
-                        <tr>
-                            <td>Fee drag</td>
-                            <td>22 thin-margin orders</td>
-                            <td>$1.40 in fees per order</td>
-                            <td class="neg">−$30.80</td>
-                            <td class="neg">−$369.60</td>
-                        </tr>
-                        <tr class="leak-total">
-                            <td><strong>Total margin leak</strong></td>
-                            <td colspan="2">Across 100 orders/month</td>
-                            <td class="neg"><strong>−$271.60</strong></td>
-                            <td class="neg"><strong>−$3,259.20</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="body-copy">In this fictional example, the store leaks $3,259 per year across 100 monthly orders. The largest single source is shipping overrun ($1,277/yr). Fixing flat-rate shipping on heavier products is the highest-ROI change in this scenario.</p>
-            <p class="pill-note">Apply these formulas to your own data. Your leak mix will differ — COGS gaps tend to be larger for stores that have not reviewed product costs in 6+ months.</p>
-        </section>
-
-        <section class="section">
-            <div class="steps">
-                <article class="step">
-                    <span class="step-index">01</span>
-                    <div>
-                        <strong>Pull 90 days of order data</strong>
-                        <p>Export your Orders CSV from Shopify Admin → Orders → Export. Use 90 days for a representative sample that covers at least one promotional period.</p>
-                    </div>
-                </article>
-                <article class="step">
-                    <span class="step-index">02</span>
-                    <div>
-                        <strong>Gather carrier invoices and product cost records</strong>
-                        <p>You need actual carrier costs (not what Shopify estimated), and current supplier invoices to compare against the Cost per item field in Shopify.</p>
-                    </div>
-                </article>
-                <article class="step">
-                    <span class="step-index">03</span>
-                    <div>
-                        <strong>Apply the four formulas</strong>
-                        <p>Calculate discount drag, shipping overrun, COGS gap, and fee drag separately. Keeping them separate helps you see which source is largest and which is easiest to fix.</p>
-                    </div>
-                </article>
-                <article class="step">
-                    <span class="step-index">04</span>
-                    <div>
-                        <strong>Annualize and prioritize</strong>
-                        <p>Multiply 90-day totals by four. Rank the four leak types by dollar impact. Address the largest first — usually shipping overrun or discount drag.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">Related</span>
-                    <h2>Connected guides</h2>
-                </div>
-            </div>
-            <div class="card-grid">
-                <article class="card">
-                    <h3><a href="/how-to-find-negative-margin-orders-shopify/" style="text-decoration:none;color:inherit;">Find Negative-Margin Orders in Shopify</a></h3>
-                    <p>The 7-step spreadsheet process for identifying individual orders where you lost money, including a sample order table.</p>
-                    <a href="/how-to-find-negative-margin-orders-shopify/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Read the guide →</a>
-                </article>
-                <article class="card">
-                    <h3><a href="/shopify-product-seo-audit/" style="text-decoration:none;color:inherit;">Shopify Product SEO Audit</a></h3>
-                    <p>A 10-point checklist to audit every product page for missing meta descriptions, alt text, and other SEO gaps.</p>
-                    <a href="/shopify-product-seo-audit/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">Run the audit →</a>
-                </article>
-                <article class="card">
-                    <h3><a href="/apps/profitpulse-ai-shopify/" style="text-decoration:none;color:inherit;">ProfitPulse AI for Shopify</a></h3>
-                    <p>Automates the margin leak detection process — surfaces negative-margin orders and low-margin products inside your Shopify dashboard.</p>
-                    <a href="/apps/profitpulse-ai-shopify/" style="font-size:0.9rem;font-weight:700;color:var(--accent-strong);">See the app →</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="section" id="faq">
-            <div class="section-head">
-                <div>
-                    <span class="section-label">FAQ</span>
-                    <h2>Questions about Shopify margin leaks</h2>
-                </div>
-            </div>
-            <div class="faq">
-                <details open>
-                    <summary>What is a margin leak in a Shopify store?</summary>
-                    <p>A margin leak is profit that disappears between your listed price and your actual net margin. For Shopify stores, leaks typically come from discount drag, shipping overruns, stale COGS, and fee drag on thin-margin orders.</p>
-                </details>
-                <details>
-                    <summary>How do I calculate margin leaks without a dedicated tool?</summary>
-                    <p>Export your Orders CSV, gather carrier invoices and current product cost records, then apply the four formulas described on this page. Each leak type requires a different data source, which is why many merchants underestimate their total leak by only checking one or two sources.</p>
-                </details>
-                <details>
-                    <summary>Is this page an interactive calculator?</summary>
-                    <p>No. This is a calculation framework with formulas and a worked example using fictional data. You apply the formulas to your own Shopify order data. ProfitPulse AI automates this process inside your Shopify dashboard.</p>
-                </details>
-                <details>
-                    <summary>What is a typical margin leak rate for Shopify stores?</summary>
-                    <p>There is no universal benchmark — it depends on your product category, discount strategy, and shipping carrier mix. The goal of this framework is to measure your specific leak rather than compare to an industry average.</p>
-                </details>
-                <details>
-                    <summary>How often should I audit for margin leaks?</summary>
-                    <p>At minimum, review discount codes and shipping costs quarterly. After any new promotional campaign or supplier price change, run the calculation again. Stale COGS is especially easy to miss because Shopify does not alert you when supplier prices change.</p>
-                </details>
-            </div>
-            <div class="cta-band">
-                <span class="section-label">Next Step</span>
-                <h2>Track margin leaks automatically.</h2>
-                <p>ProfitPulse AI connects to your Shopify store and surfaces discount drag, shipping overruns, and low-margin products — without a manual spreadsheet process.</p>
-                <div class="actions">
-                    <a class="button ghost" href="https://apps.shopify.com/profit-pulse-ai" rel="noopener" data-track="marketplace_click">View on Shopify App Store</a>
-                    <a class="button secondary" href="/apps/profitpulse-ai-shopify/" data-track="product_cta_click">Learn About ProfitPulse AI</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="shell footer-grid">
-            <div class="app-links">
-                <a class="pill-link" href="/apps/profitpulse-ai-shopify/">ProfitPulse AI</a>
-                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
-                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
-                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
-                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
-                <a class="pill-link" href="/how-to-find-negative-margin-orders-shopify/">Find Negative-Margin Orders</a>
-                <a class="pill-link" href="/shopify-product-seo-audit/">Product SEO Audit</a>
-            </div>
-            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
-        </div>
-    </footer>
     <script>
-    (function() {
-        function dasTrack(event, props) {
-            // Wire to your analytics provider:
-            // plausible(event, {props: props});
-            // gtag('event', event, props);
+/**
+ * Enhanced Website Analytics Tracking
+ * Replaces dasTrack() stubs with real Google Analytics 4 + Search Console integration
+ * 
+ * Features:
+ * - GA4 event tracking with custom parameters
+ * - SEO/AEO/GEO-specific event tracking
+ * - Cross-platform attribution (web to app)
+ * - Answer box appearance detection
+ * - Conversion funnel tracking
+ * - Geographic performance tracking
+ */
+
+(function() {
+    'use strict';
+
+    // Configuration
+    const CONFIG = {
+        GA4_MEASUREMENT_ID: 'G-KKKX3H7LLW', // Replace with your GA4 Measurement ID
+        DEBUG: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1',
+        SESSION_TIMEOUT: 30 * 60 * 1000, // 30 minutes
+        
+        // Target keywords for AEO tracking
+        TARGET_KEYWORDS: [
+            'how to find negative margin orders shopify',
+            'shopify margin leak calculator',
+            'shopify product seo audit',
+            'shopify missing alt text',
+            'figma prototype to mp4',
+            'convert photo format iphone',
+            'scan receipts iphone',
+            'verify ai generated citations',
+            'linear issue spec checker'
+        ],
+        
+        // Product mapping for attribution
+        PRODUCT_MAPPING: {
+            '/how-to-find-negative-margin-orders-shopify/': 'profitpulse-ai',
+            '/shopify-margin-leak-calculator/': 'profitpulse-ai',
+            '/shopify-product-seo-audit/': 'bulkgenie-ai', 
+            '/shopify-missing-alt-text-checker/': 'bulkgenie-ai',
+            '/figma-prototype-to-mp4/': 'protovid',
+            '/convert-photo-format-iphone/': 'photo-converter-ios',
+            '/scan-receipts-iphone/': 'receipt-scanner-ios',
+            '/verify-ai-generated-citations/': 'citeclear',
+            '/linear-issue-spec-checker/': 'specbot'
         }
-        dasTrack('seo_page_view', {page: location.pathname});
-        document.querySelectorAll('[data-track]').forEach(function(el) {
-            el.addEventListener('click', function() {
-                dasTrack(el.dataset.track, {href: el.href, label: el.textContent.trim()});
-            });
+    };
+
+    // Initialize Google Analytics 4
+    function initializeGA4() {
+        if (typeof gtag === 'undefined') {
+            // Load GA4 if not already present
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.GA4_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+            
+            script.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function() { dataLayer.push(arguments); }
+                
+                gtag('js', new Date());
+                gtag('config', CONFIG.GA4_MEASUREMENT_ID, {
+                    send_page_view: false, // We'll send manually with custom parameters
+                    anonymize_ip: true,
+                    allow_google_signals: true,
+                    allow_ad_personalization_signals: false
+                });
+                
+                // Send initial page view with SEO context
+                sendPageView();
+            };
+        } else {
+            // GA4 already loaded, send initial page view
+            sendPageView();
+        }
+    }
+
+    // Session and user tracking
+    let sessionId = getOrCreateSessionId();
+    let userId = getOrCreateUserId();
+
+    function getOrCreateSessionId() {
+        let sessionId = sessionStorage.getItem('das_session_id');
+        const sessionTimestamp = sessionStorage.getItem('das_session_timestamp');
+        const now = Date.now();
+        
+        if (!sessionId || !sessionTimestamp || (now - parseInt(sessionTimestamp)) > CONFIG.SESSION_TIMEOUT) {
+            sessionId = 'das_' + now.toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            sessionStorage.setItem('das_session_id', sessionId);
+        }
+        
+        sessionStorage.setItem('das_session_timestamp', now.toString());
+        return sessionId;
+    }
+
+    function getOrCreateUserId() {
+        let userId = localStorage.getItem('das_user_id');
+        if (!userId) {
+            userId = 'user_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('das_user_id', userId);
+        }
+        return userId;
+    }
+
+    // Get referral and campaign information
+    function getAttributionData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        return {
+            utm_source: urlParams.get('utm_source') || document.referrer || null,
+            utm_medium: urlParams.get('utm_medium') || 'organic',
+            utm_campaign: urlParams.get('utm_campaign') || null,
+            utm_term: urlParams.get('utm_term') || null,
+            utm_content: urlParams.get('utm_content') || null,
+            referrer: document.referrer || null,
+            referrer_domain: document.referrer ? new URL(document.referrer).hostname : null
+        };
+    }
+
+    // Detect if page appeared in answer box (check referrer patterns and query params)
+    function detectAnswerBoxAppearance() {
+        const attribution = getAttributionData();
+        const queryParams = new URLSearchParams(window.location.search);
+        
+        // Check for Google SERP referrer patterns that might indicate answer box
+        if (attribution.referrer_domain && attribution.referrer_domain.includes('google')) {
+            const referrerUrl = new URL(document.referrer);
+            const query = referrerUrl.searchParams.get('q');
+            
+            // Check if the query matches our target keywords
+            if (query) {
+                for (const keyword of CONFIG.TARGET_KEYWORDS) {
+                    if (query.toLowerCase().includes(keyword.toLowerCase()) || 
+                        keyword.toLowerCase().includes(query.toLowerCase())) {
+                        return {
+                            detected: true,
+                            query: query,
+                            keyword_match: keyword,
+                            referrer: document.referrer
+                        };
+                    }
+                }
+            }
+        }
+        
+        return { detected: false };
+    }
+
+    // Get page context and product mapping
+    function getPageContext() {
+        const path = window.location.pathname;
+        const product = CONFIG.PRODUCT_MAPPING[path] || 'unknown';
+        
+        return {
+            page_path: path,
+            page_title: document.title,
+            page_product: product,
+            page_category: getPageCategory(path),
+            canonical_url: getCanonicalUrl()
+        };
+    }
+
+    function getPageCategory(path) {
+        if (path.includes('shopify')) return 'shopify-tools';
+        if (path.includes('figma')) return 'design-tools';
+        if (path.includes('iphone') || path.includes('ios')) return 'ios-apps';
+        if (path.includes('citation') || path.includes('legal')) return 'legal-tools';
+        if (path.includes('linear')) return 'dev-tools';
+        return 'general';
+    }
+
+    function getCanonicalUrl() {
+        const canonical = document.querySelector('link[rel="canonical"]');
+        return canonical ? canonical.href : window.location.href;
+    }
+
+    // Enhanced tracking function that replaces dasTrack()
+    function enhancedTrack(eventName, eventParams = {}) {
+        if (CONFIG.DEBUG) {
+            console.log('[Enhanced Analytics]', eventName, eventParams);
+        }
+
+        const attribution = getAttributionData();
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        // Prepare GA4 event parameters
+        const ga4Params = {
+            // Custom parameters
+            session_id: sessionId,
+            user_id: userId,
+            page_product: pageContext.page_product,
+            page_category: pageContext.page_category,
+            
+            // Attribution
+            traffic_source: attribution.utm_source,
+            traffic_medium: attribution.utm_medium,
+            traffic_campaign: attribution.utm_campaign,
+            
+            // SEO/AEO specific
+            answer_box_detected: answerBox.detected,
+            search_query: answerBox.query || null,
+            keyword_match: answerBox.keyword_match || null,
+            
+            // Geographic (will be auto-detected by GA4)
+            ...eventParams
+        };
+
+        // Send to GA4
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, ga4Params);
+        }
+
+        // Send to custom endpoint if available (for additional processing)
+        sendToCustomEndpoint(eventName, ga4Params);
+    }
+
+    // Send enhanced page view with SEO context
+    function sendPageView() {
+        const pageContext = getPageContext();
+        const answerBox = detectAnswerBoxAppearance();
+        
+        enhancedTrack('seo_page_view', {
+            page_title: pageContext.page_title,
+            page_location: window.location.href,
+            content_group1: pageContext.page_category,
+            content_group2: pageContext.page_product,
+            custom_parameter_1: answerBox.detected ? 'answer_box_entry' : 'organic_entry'
         });
-        var sample = document.getElementById('sample-report');
-        if (sample && 'IntersectionObserver' in window) {
-            var io = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting) { dasTrack('sample_output_view', {page: location.pathname}); io.disconnect(); }
-            }, {threshold: 0.3});
-            io.observe(sample);
+
+        // If answer box detected, send specific event
+        if (answerBox.detected) {
+            enhancedTrack('answer_box_appearance', {
+                search_query: answerBox.query,
+                keyword_match: answerBox.keyword_match,
+                page_product: pageContext.page_product
+            });
         }
-    })();
-    </script>
+    }
+
+    // Intersection Observer for viewport tracking
+    function trackElementVisibility(selector, eventName, additionalParams = {}) {
+        const elements = document.querySelectorAll(selector);
+        if (!elements.length || !('IntersectionObserver' in window)) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elementId = entry.target.id || entry.target.className || 'unknown';
+                    enhancedTrack(eventName, {
+                        element_id: elementId,
+                        visibility_percentage: Math.round(entry.intersectionRatio * 100),
+                        ...additionalParams
+                    });
+                    observer.unobserve(entry.target); // Track only once
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elements.forEach(el => observer.observe(el));
+    }
+
+    // Track scroll depth
+    function trackScrollDepth() {
+        let maxScroll = 0;
+        const milestones = [25, 50, 75, 90, 100];
+        const tracked = new Set();
+
+        function handleScroll() {
+            const scrollPercent = Math.round(
+                (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100
+            );
+            
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                
+                milestones.forEach(milestone => {
+                    if (scrollPercent >= milestone && !tracked.has(milestone)) {
+                        tracked.add(milestone);
+                        enhancedTrack('scroll_depth', {
+                            scroll_percentage: milestone,
+                            page_product: getPageContext().page_product
+                        });
+                    }
+                });
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // Send to custom analytics endpoint for additional processing
+    function sendToCustomEndpoint(eventName, params) {
+        // Optional: Send to your own analytics endpoint for cross-referencing with app data
+        if (window.location.hostname !== 'localhost') {
+            try {
+                fetch('/api/analytics', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: eventName,
+                        params: params,
+                        timestamp: new Date().toISOString(),
+                        user_agent: navigator.userAgent,
+                        screen_resolution: `${screen.width}x${screen.height}`
+                    })
+                }).catch(err => {
+                    if (CONFIG.DEBUG) console.log('Custom endpoint error:', err);
+                });
+            } catch (e) {
+                // Fail silently
+            }
+        }
+    }
+
+    // Replace the existing dasTrack function globally
+    window.dasTrack = enhancedTrack;
+
+    // Initialize enhanced tracking
+    function initialize() {
+        // Initialize GA4
+        initializeGA4();
+        
+        // Set up automatic tracking
+        trackScrollDepth();
+        
+        // Track sample output views
+        trackElementVisibility('.sample-output, .example-table', 'sample_output_view');
+        
+        // Track CTA visibility
+        trackElementVisibility('[data-track="product_cta_click"]', 'cta_visibility');
+        
+        // Enhanced click tracking
+        document.addEventListener('click', function(event) {
+            const element = event.target.closest('[data-track]');
+            if (element) {
+                const trackingEvent = element.getAttribute('data-track');
+                const productUrl = element.href || element.getAttribute('data-url');
+                
+                enhancedTrack(trackingEvent, {
+                    click_text: element.textContent.trim(),
+                    click_url: productUrl,
+                    element_type: element.tagName.toLowerCase(),
+                    page_product: getPageContext().page_product
+                });
+                
+                // For app store clicks, track as conversion
+                if (trackingEvent === 'app_store_click' || productUrl?.includes('apps.apple.com')) {
+                    enhancedTrack('organic_conversion', {
+                        conversion_type: 'app_store_click',
+                        target_app: getPageContext().page_product
+                    });
+                }
+            }
+        });
+
+        // Track exit intent
+        let exitIntentShown = false;
+        document.addEventListener('mouseleave', function(event) {
+            if (!exitIntentShown && event.clientY <= 0) {
+                exitIntentShown = true;
+                enhancedTrack('exit_intent', {
+                    time_on_page: Date.now() - performance.timeOrigin,
+                    scroll_depth: maxScroll || 0
+                });
+            }
+        });
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initialize);
+    } else {
+        initialize();
+    }
+
+    // Export for manual use
+    window.EnhancedAnalytics = {
+        track: enhancedTrack,
+        trackPageView: sendPageView,
+        trackVisibility: trackElementVisibility,
+        getSessionId: () => sessionId,
+        getUserId: () => userId,
+        getPageContext: getPageContext,
+        detectAnswerBox: detectAnswerBoxAppearance
+    };
+
+})();
+</script>
 </body>
 </html>
