@@ -16,7 +16,6 @@ By Das Group LLC (https://dasgroupllc.com/)
 ## Contact
 - Email: support@dasgroupllc.com
 - Website: https://dasgroupllc.com
-- Twitter: @DasGroupLLC
 
 ## Quick Summary
 Invoices & Time Tracker is a privacy-first iOS app that revolutionizes freelancer invoicing by combining voice-based invoice creation, built-in time tracking with GPS geofencing, and AI-powered Smart Compose. Users can create professional PDF invoices in under 30 seconds directly from their iPhone. All data processing happens on-device - speech recognition, GPS tracking, and AI features run locally. No account, sign-up, or internet connection required.
