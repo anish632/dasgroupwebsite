@@ -5,6 +5,7 @@
 ## Primary pages
 
 - [Home](https://dasgroupllc.com/): Portfolio overview, product categories, and direct answers about the company.
+- [Shopify suite](https://dasgroupllc.com/apps/shopify-suite/): Portfolio hub for ResolveAI, BulkGenie AI, ProfitPulse AI, and SupplyContext AI.
 - [Portfolio full context](https://dasgroupllc.com/llms-full.txt): Expanded company and product context in one file.
 
 ## Product index
@@ -12,11 +13,12 @@
 - [CourtFile](https://courtfile.dasgroupllc.com/): Court filing review workflows and matter-brief generation for litigation teams.
 - [CiteClear](https://citeclear.dasgroupllc.com/): Citation verification and source-quality review.
 - [SpecBot](https://specbot.dasgroupllc.com/): Linear issue quality gates for cleaner engineering handoff.
+- [ZeroSync](https://zerosync.dasgroupllc.com/): Air-gapped Figma-to-React code generation through localhost, with no cloud LLM calls or model install required.
 - [ResolveAI for Shopify](https://resolveai.dasgroupllc.com/): Policy-aware autonomous support resolution for Shopify merchants.
 - [ResolveAI for Zendesk](https://resolveai-zendesk.dasgroupllc.com/): Outcome-based AI ticket resolution for Zendesk teams.
 - [ProfitPulse AI](https://profitpulse-ai.dasgroupllc.com/): Profit-leak detection and margin protection for Shopify stores.
 - [ThoughtLint](https://thoughtlint.dasgroupllc.com/): Local-first Obsidian plugin for reasoning review.
-- [ProtoVid](https://dasgroupllc.com/protovid/): Figma prototype export to MP4 and GIF.
+- [ProtoVid](https://protovid.dasgroupllc.com/): Connected Figma flow export to MP4 with browser-based timestamped review and approval.
 
 ## iOS apps (App Store)
 
@@ -24,14 +26,14 @@ iPhone apps by DAS Group LLC. Each link is the canonical product page with a dir
 
 - [TrackWell Daily](https://dasgroupllc.com/apps/trackwell/): Simple nutrition tracker for water, protein, and vegetables. One-tap logging, no calorie counting or food databases.
 - [LifeGarden](https://dasgroupllc.com/apps/lifegarden/): Visual habit tracker where each habit grows into a living plant. Build streaks and daily routines; the plant wilts if you skip.
-- [VoiceJournal](https://dasgroupllc.com/apps/voicejournal/): Voice-first journaling app that transcribes what you say and detects your mood automatically, fully on-device.
+- [VoiceJournal](https://dasgroupllc.com/apps/voicejournal/): Private voice journal for iPhone. Speak a reflection; on-device transcription and mood analysis create a searchable local diary with streaks, Siri, and no account required.
 - [QuickScan](https://dasgroupllc.com/apps/quickscan/): Fast iPhone document scanner that turns any document into a clean PDF with OCR text extraction and signatures, offline.
 - [Scan Receipts](https://dasgroupllc.com/apps/receipts/): AI receipt scanner that reads merchant, date, total, and category from any receipt and exports tax-ready expense reports.
 - [Photo Converter](https://dasgroupllc.com/apps/photo-converter/): On-device photo format converter (HEIC, JPG, PNG, WebP) with one-tap AI background removal. No uploads.
 - [ADHDFocus](https://dasgroupllc.com/apps/adhdfocus/): ADHD focus timer that breaks overwhelming tasks into small starter steps and runs short Pomodoro sessions to help you start.
 - [AffirmDaily](https://dasgroupllc.com/apps/affirmdaily/): Daily affirmations app that matches one affirmation to your mood each morning using on-device AI.
 - [Mood Tracker (CopeCalm)](https://dasgroupllc.com/apps/copecalm/): Anxiety and panic relief toolkit with 60-second breathing exercises, grounding, and mood tracking. Works offline.
-- [StrongHer](https://dasgroupllc.com/apps/strongher/): Strength training app built for women, including workouts for postpartum, menopause, and pelvic-floor recovery.
+- [AllStrength AI](https://dasgroupllc.com/apps/allstrength/): Women's strength training app for iPhone with 30+ guided workouts, glutes and calisthenics programs, life-stage modifications, AI coaching, streaks, and optional hands-free voice controls.
 - [TrackFasts](https://dasgroupllc.com/apps/trackfasts/): Intermittent fasting timer focused on keeping your streak alive, with 16:8, 18:6, 20:4, and OMAD protocols.
 - [Be Ridiculous AI](https://dasgroupllc.com/apps/be-ridiculous/): AI activity generator that suggests something to do based on your mood, energy, and who you are with.
 - [WOD Timer Pro](https://dasgroupllc.com/apps/crossfit-timer/): Interval workout timer with AMRAP, EMOM, Tabata, and For Time modes, voice cues, and Apple Watch support.

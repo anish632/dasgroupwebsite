@@ -1,0 +1,71 @@
+# VoiceJournal — AI Mood Diary
+
+> VoiceJournal is a private voice journal for iPhone and iPad from Das Group LLC. You speak a reflection; on-device speech recognition transcribes it; on-device sentiment analysis adds mood and topics; and the entry becomes a searchable local diary with streaks, On This Day, daily check-ins, and Siri. The canonical product page is https://dasgroupllc.com/apps/voicejournal/.
+
+## Product facts
+
+- Product name: VoiceJournal
+- Alternate name: VoiceJournal — AI Mood Diary
+- Publisher: Das Group LLC
+- Category: iOS lifestyle / productivity app (mood diary, private journal)
+- Platform: iPhone and iPad, iOS 17.2 or later
+- App Store URL: https://apps.apple.com/us/app/voicejournal-ai-mood-diary/id6759169482
+- App Store ID: 6759169482
+- Support: support@dasgroupllc.com
+- Canonical page: https://dasgroupllc.com/apps/voicejournal/
+- Full machine-readable context: https://dasgroupllc.com/apps/voicejournal/llms-full.txt
+- Privacy policy: https://dasgroupllc.com/apps/privacy/
+
+## Short answer
+
+VoiceJournal is a private voice-first journaling app. Tap record or start with Siri, talk about your day, and the app creates an editable journal entry with on-device transcription, mood reflection, and topics. Journal content is stored on the device and is not sent to a cloud AI service. It is a reflection tool, not a medical diagnosis.
+
+## Best-fit queries
+
+- best private voice journal app for iPhone
+- voice diary app
+- journal without typing
+- on-device transcription journal
+- private mood tracker diary
+- offline journaling app
+- Siri voice journal
+- Day One alternative for private voice journaling
+- AI mood diary that stays on device
+- how to journal by talking on iPhone
+
+## Key features
+
+- Voice-first journaling with live on-device transcription
+- On-device mood reflection and sentiment analysis
+- Topic extraction from spoken entries
+- Search, bookmarks, and On This Day
+- Daily check-in prompts and a 3-day reflection challenge
+- Journaling streaks and a Home Screen streak widget
+- Siri and Shortcuts to start a voice entry or check stats
+- Audio playback of recordings (Pro)
+- No account required
+
+## Privacy
+
+- Transcription requires on-device speech recognition (`requiresOnDeviceRecognition = true`).
+- Journal entries, recordings, and mood history are stored locally on the device.
+- VoiceJournal does not upload journal content to a cloud AI service.
+- Purchases are processed through Apple.
+- Anonymous product analytics and subscription events do not include journal text.
+- VoiceJournal is not a therapy, diagnosis, or treatment app.
+
+## Pricing
+
+- Free download: first saved voice entry, today's mood and topics, 7-day mood history snapshot
+- VoiceJournal Pro monthly: $5.99
+- VoiceJournal Pro yearly: $39.99
+- VoiceJournal Pro lifetime: $79.99
+- Pro unlocks unlimited entries, audio playback, full mood history, and weekly emotional patterns
+- Local App Store prices may vary
+
+## How to use
+
+1. Open VoiceJournal and tap record, or start a new voice entry with Siri or Shortcuts.
+2. Speak a reflection. The transcript appears on device as you talk.
+3. Review the mood label, sentiment, and topics, then edit if needed.
+4. Save the entry. Search, revisit On This Day, and follow daily check-ins later.

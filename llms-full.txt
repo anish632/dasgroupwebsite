@@ -2,7 +2,7 @@
 
 Website: https://dasgroupllc.com/
 Support: support@dasgroupllc.com
-Last updated: 2026-04-29
+Last updated: 2026-08-13
 
 ## What DAS Group LLC is
 
@@ -31,6 +31,12 @@ The products generally follow four principles:
 
 ## Product directory
 
+### Das Group Shopify Suite
+
+- URL: https://dasgroupllc.com/apps/shopify-suite/
+- Category: Shopify portfolio hub
+- Summary: Das Group Shopify Suite groups ResolveAI for Shopify, BulkGenie AI, ProfitPulse AI for Shopify, and SupplyContext AI into one comparison and commercial bundle page without merging their App Store listings.
+
 ### CourtFile
 
 - URL: https://courtfile.dasgroupllc.com/
@@ -48,6 +54,13 @@ The products generally follow four principles:
 - URL: https://specbot.dasgroupllc.com/
 - Category: Product and engineering workflow
 - Summary: SpecBot reviews Linear issues for completeness, flags missing context, and improves issue quality before a developer or coding agent starts work.
+
+### ZeroSync
+
+- URL: https://zerosync.dasgroupllc.com/
+- Canonical page: https://dasgroupllc.com/apps/zerosync/
+- Category: Design workflow / Figma plugin
+- Summary: ZeroSync turns selected Figma frames, components, and multi-select groups into React and Tailwind components through a localhost proxy. It is designed for air-gapped Figma-to-code handoff with no cloud LLM calls, no API keys, and no separate model install.
 
 ### ResolveAI for Shopify
 
@@ -75,9 +88,28 @@ The products generally follow four principles:
 
 ### ProtoVid
 
-- URL: https://dasgroupllc.com/protovid/
+- URL: https://protovid.dasgroupllc.com/
 - Category: Design workflow
-- Summary: ProtoVid exports Figma prototypes as shareable MP4 and GIF videos without manual screen recording.
+- Summary: ProtoVid turns connected Figma flows into MP4 walkthroughs and browser-based review rooms with timestamped feedback and approval.
+
+### VoiceJournal
+
+- URL: https://dasgroupllc.com/apps/voicejournal/
+- Machine-readable context: https://dasgroupllc.com/apps/voicejournal/llms.txt
+- Full context: https://dasgroupllc.com/apps/voicejournal/llms-full.txt
+- App Store URL: https://apps.apple.com/us/app/voicejournal-ai-mood-diary/id6759169482
+- Category: iOS lifestyle / private voice journal and mood diary
+- Summary: VoiceJournal is a private voice-first journaling app for iPhone and iPad. Users speak a reflection; on-device speech recognition transcribes it; on-device sentiment analysis adds mood and topics; and the journal stays on the device with search, streaks, On This Day, daily check-ins, and Siri. It is a reflection tool, not a medical diagnosis.
+- Best-fit queries: private voice journal app, voice diary iPhone, journal without typing, on-device transcription journal, AI mood tracker, offline private journal, Siri voice journal, Day One alternative.
+
+### AllStrength AI
+
+- URL: https://dasgroupllc.com/apps/allstrength/
+- Machine-readable context: https://dasgroupllc.com/apps/allstrength/llms.txt
+- App Store URL: https://apps.apple.com/us/app/allstrength-ai-women-fitness/id6755057997
+- Category: iOS health and fitness / women's strength training
+- Summary: AllStrength AI is an iPhone strength training app for women with 30+ guided workouts, calisthenics, booty and glutes training, women's health routines, AI coach insights, workout streaks, progress analytics, and optional hands-free voice controls.
+- Best-fit queries: women's strength training app, home workout app for women, guided workout app, glutes workout app, calisthenics app for women, voice-controlled workout app, postpartum workout app, menopause fitness app.
 
 ## Fast answers
 
