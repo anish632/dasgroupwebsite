@@ -3,270 +3,413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProtoVid — Export Figma Prototypes as MP4 & GIF Videos (2026)</title>
-    <meta name="description" content="ProtoVid is a Figma plugin that exports prototypes as MP4 and GIF videos in up to 4K. 3 free exports, animated cursor, no watermark on Pro. $12/mo.">
-    <link rel="canonical" href="https://dasgroupllc.com/apps/protovid/">
-    <meta name="robots" content="index, follow">
+    <title>ProtoVid — Figma Prototype to Product Demo Video | Das Group LLC</title>
+    <meta name="description" content="ProtoVid is a Figma plugin that turns connected prototype flows into MP4, WebM, and GIF product demo videos with optional shareable review rooms, timestamped feedback, and approval — no screen recording or editing timeline. Free to start.">
+    <meta name="keywords" content="Figma prototype to video, export Figma prototype to MP4, Figma prototype to product demo video, Figma prototype to GIF, Figma demo video plugin, prototype walkthrough video, Figma prototype review tool, export Figma prototype without screen recording, product demo video maker, Figma Community plugin">
     <meta name="author" content="Das Group LLC">
-    <meta name="date" content="2026-04-01">
-    <meta http-equiv="last-modified" content="2026-04-02">
-    <meta property="og:title" content="ProtoVid — Export Figma Prototypes to Video">
-    <meta property="og:description" content="Figma plugin: export prototypes as MP4 & GIF in up to 4K resolution. Animated cursor, 30/60fps. 3 free exports.">
+    <link rel="canonical" href="https://dasgroupllc.com/apps/protovid/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="last-modified" content="2026-08-19">
+    <!-- AI agent / LLM machine-readable context -->
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/apps/protovid/llms.txt">
+    <link rel="alternate" type="text/plain" title="llms-full.txt" href="/apps/protovid/llms-full.txt">
+    <meta property="og:title" content="ProtoVid — Figma Prototype to Product Demo Video">
+    <meta property="og:description" content="Export a connected Figma prototype flow as MP4, WebM, or GIF. Optional review rooms with timestamped feedback and approval. No screen recording. Free to start.">
     <meta property="og:url" content="https://dasgroupllc.com/apps/protovid/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Das Group LLC">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ProtoVid — Figma Prototype to Video Exporter">
-    <meta name="twitter:description" content="Export Figma prototypes as MP4 and GIF videos. Up to 4K, 60fps, animated cursor. 3 free exports, Pro $12/mo.">
+    <meta name="twitter:title" content="ProtoVid — Figma Prototype to Product Demo Video">
+    <meta name="twitter:description" content="Turn connected Figma prototype flows into MP4, WebM, or GIF product demos. Share review rooms with timestamped feedback and approval. No screen recording. Free to start.">
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "ProtoVid",
-        "description": "ProtoVid is a Figma plugin that exports Figma prototypes as high-quality MP4 and GIF videos. It automatically detects prototype flows, supports resolutions up to 4K, 30fps or 60fps frame rates, and includes optional animated cursor showing interaction flow. Free tier includes 3 exports at 720p in MP4 format. Pro ($12/month) unlocks unlimited exports, 4K resolution, GIF format, and watermark-free output.",
+        "alternateName": "ProtoVid — Figma Prototype to Product Demo Video",
         "applicationCategory": "DesignApplication",
         "applicationSubCategory": "Figma Plugin",
-        "operatingSystem": "Figma Desktop",
-        "offers": [
-            {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free — 3 exports, 720p, MP4 only, watermark"},
-            {"@type": "Offer", "price": "12.00", "priceCurrency": "USD", "description": "Pro — unlimited exports, up to 4K, MP4 + GIF, no watermark", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "12.00", "priceCurrency": "USD", "billingDuration": "P1M"}}
-        ],
+        "operatingSystem": "Figma",
         "url": "https://dasgroupllc.com/apps/protovid/",
-        "author": {"@type": "Organization", "name": "Das Group LLC", "url": "https://dasgroupllc.com"},
-        "featureList": ["Automatic prototype flow detection", "MP4 and GIF export", "720p, 1080p, and 4K resolution", "30fps and 60fps frame rate", "Optional animated cursor", "Watermark-free on Pro", "Persistent license key storage"]
+        "sameAs": ["https://protovid.dasgroupllc.com/"],
+        "downloadUrl": "https://www.figma.com/community/plugin/1606994616321079154",
+        "installUrl": "https://www.figma.com/community/plugin/1606994616321079154",
+        "softwareVersion": "1.3.15",
+        "description": "ProtoVid is a Figma plugin that detects connected prototype flows and exports them as MP4, WebM, or GIF product demo videos. Optional browser-based review rooms provide timestamped feedback, decision briefs, and approval or change-request status without giving reviewers access to the source file.",
+        "featureList": [
+            "Connected prototype flow detection",
+            "MP4, WebM, and GIF product demo export",
+            "720p Free output with watermark",
+            "1080p and 4K Project Pass and Pro output, no watermark",
+            "Browser-based review rooms with timestamped feedback",
+            "Approval and change-request status",
+            "On-platform decision briefs, no separate AI account required",
+            "Delivery analytics: view count, comments, approval state"
+        ],
+        "provider": {
+            "@type": "Organization",
+            "name": "Das Group LLC",
+            "url": "https://dasgroupllc.com/",
+            "email": "support@dasgroupllc.com"
+        },
+        "offers": [
+            {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "3 watermarked 720p exports per month. MP4, WebM, and GIF. No credit card."},
+            {"@type": "Offer", "name": "Project Pass", "price": "4", "priceCurrency": "USD", "description": "7 days of unlimited 1080p and 4K exports with no watermark. No subscription required."},
+            {"@type": "Offer", "name": "Pro", "price": "5", "priceCurrency": "USD", "description": "Unlimited 1080p and 4K exports with no watermark. Review rooms, decision briefs, and owner analytics.", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "5", "priceCurrency": "USD", "billingDuration": "P1M"}}
+        ]
     }
     </script>
-
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to export a Figma prototype as a product demo video",
+        "description": "Turn a connected Figma prototype flow into an MP4, WebM, or GIF product demo in three steps using ProtoVid.",
+        "totalTime": "PT2M",
+        "tool": [
+            {"@type": "HowToTool", "name": "Figma"},
+            {"@type": "HowToTool", "name": "ProtoVid Figma plugin"}
+        ],
+        "step": [
+            {"@type": "HowToStep", "position": 1, "name": "Detect", "text": "Open ProtoVid inside Figma. The plugin finds the connected prototype flow on your current page and shows the frames in order."},
+            {"@type": "HowToStep", "position": 2, "name": "Configure", "text": "Review the detected flow, choose MP4, WebM, or GIF, then select 720p Free or 1080p / 4K paid quality."},
+            {"@type": "HowToStep", "position": 3, "name": "Share", "text": "Export and download the demo video. Optionally create a browser review room with a decision brief, timestamped comments, and approval link."}
+        ]
+    }
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type": "Question", "name": "How do I export a Figma prototype as a video?", "acceptedAnswer": {"@type": "Answer", "text": "Install ProtoVid from the Figma Community plugins. Open any Figma file with prototype interactions, run Plugins → ProtoVid, choose your export settings (resolution, frame rate, format), and click Export Video. ProtoVid automatically detects your prototype flow and generates an MP4 or GIF video file."}},
-            {"@type": "Question", "name": "What is ProtoVid?", "acceptedAnswer": {"@type": "Answer", "text": "ProtoVid is a Figma plugin that exports Figma prototypes as high-quality MP4 and GIF videos. It supports resolutions up to 4K, 30fps or 60fps frame rates, and includes an optional animated cursor showing interaction flow. Free tier includes 3 exports. Pro ($12/month) adds unlimited exports, 4K, GIF format, and watermark removal."}},
-            {"@type": "Question", "name": "Can I export Figma prototypes as GIF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ProtoVid Pro supports GIF export in addition to MP4. GIFs are ideal for sharing prototype flows in Slack, email, documentation, and social media where auto-playing video previews are needed. Free tier exports MP4 only."}},
-            {"@type": "Question", "name": "What resolution does ProtoVid support?", "acceptedAnswer": {"@type": "Answer", "text": "ProtoVid supports 720p (free tier), 1080p (Pro), and 4K (Pro) resolution. Frame rates of 30fps and 60fps are available. 4K at 60fps produces presentation-quality video suitable for client demos and portfolio showcases."}},
-            {"@type": "Question", "name": "How much does ProtoVid cost?", "acceptedAnswer": {"@type": "Answer", "text": "ProtoVid is free with 3 exports at 720p resolution in MP4 format (with watermark). Pro costs $12/month and includes unlimited exports, up to 4K resolution, MP4 and GIF formats, and watermark-free output."}},
-            {"@type": "Question", "name": "Does ProtoVid add a watermark?", "acceptedAnswer": {"@type": "Answer", "text": "Free exports include a small watermark. ProtoVid Pro ($12/month) removes the watermark entirely, producing clean video files suitable for client presentations and portfolio use."}},
-            {"@type": "Question", "name": "Does ProtoVid detect prototype flows automatically?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. ProtoVid automatically scans your Figma file and detects all prototype interactions and flows. It captures the entire flow sequence including transitions and animations, so you don't need to manually configure which screens to record."}}
+            {"@type": "Question", "name": "What is ProtoVid?", "acceptedAnswer": {"@type": "Answer", "text": "ProtoVid is a Figma Community plugin that detects connected prototype flows and exports them as MP4, WebM, or GIF product demo videos. It also supports optional browser-based review rooms where stakeholders can leave timestamped feedback and approve or request changes — without needing a Figma account or access to the source file."}},
+            {"@type": "Question", "name": "How do I export a Figma prototype to video without screen recording?", "acceptedAnswer": {"@type": "Answer", "text": "Install ProtoVid from the Figma Community, open it on a page with a connected prototype, choose your format (MP4, WebM, or GIF) and quality, and click Export. ProtoVid captures the connected flow directly — no screen recording or editing timeline required."}},
+            {"@type": "Question", "name": "What formats does ProtoVid export?", "acceptedAnswer": {"@type": "Answer", "text": "ProtoVid exports MP4 (H.264), WebM, and GIF. Free exports are watermarked 720p. Project Pass and Pro unlock 1080p and 4K with no watermark."}},
+            {"@type": "Question", "name": "Can I try ProtoVid before paying?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Free plan includes 3 watermarked 720p exports per month with no credit card required. You can validate the full export workflow for free."}},
+            {"@type": "Question", "name": "What is the difference between Project Pass and Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Project Pass is a one-time $4 payment that unlocks 7 days of unlimited 1080p and 4K exports with no watermark — no subscription. Pro is $5 per month and adds ongoing unlimited exports, review rooms, decision briefs, and delivery analytics for recurring client and portfolio work."}},
+            {"@type": "Question", "name": "Can I share a prototype walkthrough for client review?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. After exporting, Project Pass and Pro users can create a browser-based review room with a generated decision brief, timestamped comments, and an approve / request-changes status. Reviewers do not need a Figma account or access to the source file."}},
+            {"@type": "Question", "name": "Does ProtoVid require a separate AI account?", "acceptedAnswer": {"@type": "Answer", "text": "No. ProtoVid generates review context and decision briefs on-platform from export metadata and review-room activity. No separate AI account or external model connection is required."}},
+            {"@type": "Question", "name": "What resolutions does ProtoVid support?", "acceptedAnswer": {"@type": "Answer", "text": "720p on the Free plan (watermarked). 1080p and 4K on Project Pass and Pro (no watermark)."}},
+            {"@type": "Question", "name": "How does ProtoVid handle prototype data privacy?", "acceptedAnswer": {"@type": "Answer", "text": "ProtoVid captures only the frames in the selected connected path — it does not scan unrelated files. Frames are encoded locally in the plugin when supported. Review links expire after 7 days on Free or 30 days on paid plans, and expired review data is physically deleted by a daily retention cleanup."}},
+            {"@type": "Question", "name": "What Figma plugins export prototypes to video?", "acceptedAnswer": {"@type": "Answer", "text": "ProtoVid is a Figma Community plugin at https://www.figma.com/community/plugin/1606994616321079154. It is the dedicated path for turning connected Figma prototype flows into MP4, WebM, and GIF demo videos with optional review rooms."}}
         ]
     }
     </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org", "@type": "HowTo", "name": "How to Export a Figma Prototype as Video with ProtoVid",
-        "step": [
-            {"@type": "HowToStep", "position": 1, "name": "Install ProtoVid", "text": "Search for ProtoVid in the Figma Community plugins and click Install."},
-            {"@type": "HowToStep", "position": 2, "name": "Open Your Prototype", "text": "Open a Figma file that has prototype interactions configured."},
-            {"@type": "HowToStep", "position": 3, "name": "Configure Settings", "text": "Run Plugins → ProtoVid. Choose resolution (720p/1080p/4K), frame rate (30/60fps), format (MP4/GIF), and cursor animation."},
-            {"@type": "HowToStep", "position": 4, "name": "Export", "text": "Click Export Video. ProtoVid detects your flow and generates the video file for download."}
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "WebPage", "name": "ProtoVid — Figma Prototype Video Exporter", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".speakable-intro", ".speakable-features"]}}
-    </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Das Group LLC", "item": "https://dasgroupllc.com/"},
-            {"@type": "ListItem", "position": 2, "name": "ProtoVid", "item": "https://dasgroupllc.com/apps/protovid/"}
+            {"@type": "ListItem", "position": 1, "name": "Das Group", "item": "https://dasgroupllc.com/"},
+            {"@type": "ListItem", "position": 2, "name": "All products", "item": "https://dasgroupllc.com/apps/"},
+            {"@type": "ListItem", "position": 3, "name": "ProtoVid", "item": "https://dasgroupllc.com/apps/protovid/"}
         ]
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/apps/assets/priority-apps.css">
     <style>
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #a259ff 0%, #7c3aed 100%); }
+        :root {
+            --accent: #7c3aed;
+            --accent-strong: #6d28d9;
+            --accent-soft: rgba(124, 58, 237, 0.12);
+            --hero-start: #f5f3ff;
+            --hero-end: #eff6ff;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900">
-
-    <header class="border-b border-gray-100">
-        <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <a href="/" class="text-xl font-bold text-gray-900">Das Group</a>
-            <div class="flex gap-4 text-sm text-gray-600 flex-wrap">
-                <a href="/apps/protovid/" class="text-purple-600 font-medium">ProtoVid</a>
-                <a href="/apps/adhdfocus/" class="hover:text-gray-900">ADHDFocus</a>
-                <a href="/apps/ground-truth/" class="hover:text-gray-900">Ground Truth</a>
-                <a href="/apps/resolveai/" class="hover:text-gray-900">ResolveAI</a>
-            </div>
-        </nav>
+<body>
+    <header class="site-header">
+        <div class="shell topbar">
+            <a class="brand" href="/">Das Group LLC</a>
+            <nav class="topnav" aria-label="Primary">
+                <a href="/apps/">All products</a>
+                <a href="/apps/zerosync/">ZeroSync</a>
+                <a href="/apps/citeclear/">CiteClear</a>
+            </nav>
+        </div>
     </header>
-
-    <main>
-        <section class="gradient-bg text-white py-20 md:py-28">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <div class="inline-flex items-center gap-2 bg-white/20 text-white/90 text-sm font-medium px-4 py-1.5 rounded-full mb-6">🎬 Figma Plugin</div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">Export Figma Prototypes<br>as MP4 & GIF Videos</h1>
-                <p class="speakable-intro text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    ProtoVid is a Figma plugin that exports your prototype flows as high-quality MP4 and GIF videos in up to 4K resolution at 60fps. It automatically detects prototype interactions and includes optional animated cursor showing the user flow. 3 free exports — no account required.
-                </p>
-                <a href="https://www.figma.com/community/plugin/1606994616321079154/protovid-prototype-video-exporter" class="inline-flex items-center gap-3 bg-white text-gray-900 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition text-lg" rel="noopener">
-                    Install in Figma
-                </a>
-                <p class="mt-4 text-white/70 text-sm">Free — 3 exports · Pro $12/mo for unlimited</p>
-            </div>
-        </section>
-
-        <section class="py-20 bg-gray-50" id="features">
-            <div class="max-w-4xl mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Key Features</h2>
-                <p class="speakable-features text-center text-gray-600 mb-12 max-w-2xl mx-auto">ProtoVid supports automatic flow detection, multiple resolutions up to 4K, 30/60fps frame rates, MP4 and GIF formats, and optional animated cursor — all from within Figma.</p>
-                <ol class="space-y-8">
-                    <li class="flex gap-5 items-start bg-white rounded-xl p-6 shadow-sm">
-                        <span class="flex-shrink-0 w-10 h-10 gradient-bg text-white rounded-full flex items-center justify-center font-bold text-lg">1</span>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Automatic Prototype Flow Detection</h3>
-                            <p class="text-gray-600">ProtoVid scans your Figma file and detects all prototype interactions automatically. It captures the entire flow sequence including transitions and animations — no manual screen selection required.</p>
+    <main class="page shell">
+        <section class="hero">
+            <div class="hero-panel">
+                <div class="hero-grid">
+                    <div>
+                        <p class="eyebrow">Figma Plugin · Product Demo Video &amp; Review</p>
+                        <h1>ProtoVid</h1>
+                        <p class="lead">ProtoVid is a Figma plugin that detects connected prototype flows and exports them as MP4, WebM, or GIF product demo videos — no screen recording, no editing timeline, and optional browser-based review rooms for stakeholder feedback and approval.</p>
+                        <div class="callout">
+                            <strong>In one sentence:</strong> Install ProtoVid in Figma, open it on a page with a connected prototype, choose your format and quality, and export a clean product demo video in under a minute. Free to start, no credit card.
                         </div>
-                    </li>
-                    <li class="flex gap-5 items-start bg-white rounded-xl p-6 shadow-sm">
-                        <span class="flex-shrink-0 w-10 h-10 gradient-bg text-white rounded-full flex items-center justify-center font-bold text-lg">2</span>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Up to 4K Resolution at 60fps</h3>
-                            <p class="text-gray-600">Export in 720p (free), 1080p, or 4K at 30fps or 60fps. 4K at 60fps produces presentation-quality video for client demos, portfolio showcases, and App Store previews.</p>
+                        <div class="actions">
+                            <a class="button primary" href="https://protovid.dasgroupllc.com/api/referrals/figma?source=portfolio_listing" rel="noopener">Install free from Figma Community</a>
+                            <a class="button secondary" href="https://protovid.dasgroupllc.com/" rel="noopener">See the product</a>
                         </div>
-                    </li>
-                    <li class="flex gap-5 items-start bg-white rounded-xl p-6 shadow-sm">
-                        <span class="flex-shrink-0 w-10 h-10 gradient-bg text-white rounded-full flex items-center justify-center font-bold text-lg">3</span>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">MP4 & GIF Export</h3>
-                            <p class="text-gray-600">MP4 for presentations and documentation. GIF for quick sharing in Slack, email, PRDs, and social media. Both formats optimized for quality-to-size ratio.</p>
-                        </div>
-                    </li>
-                    <li class="flex gap-5 items-start bg-white rounded-xl p-6 shadow-sm">
-                        <span class="flex-shrink-0 w-10 h-10 gradient-bg text-white rounded-full flex items-center justify-center font-bold text-lg">4</span>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Animated Cursor</h3>
-                            <p class="text-gray-600">Optional animated cursor shows the interaction flow — clicks, hovers, and swipes. Makes it clear to stakeholders how the prototype is meant to be navigated without verbal explanation.</p>
-                        </div>
-                    </li>
-                    <li class="flex gap-5 items-start bg-white rounded-xl p-6 shadow-sm">
-                        <span class="flex-shrink-0 w-10 h-10 gradient-bg text-white rounded-full flex items-center justify-center font-bold text-lg">5</span>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">No Watermark on Pro</h3>
-                            <p class="text-gray-600">Free exports include a small watermark. Pro removes it entirely — clean output for client deliverables, design portfolios, and public-facing content.</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <!-- Pricing -->
-        <section class="py-20" id="pricing">
-            <div class="max-w-3xl mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-10">Pricing</h2>
-                <div class="grid md:grid-cols-2 gap-8 max-w-xl mx-auto">
-                    <div class="border border-gray-200 rounded-xl p-6">
-                        <h3 class="font-bold text-lg mb-1">Free</h3>
-                        <p class="text-3xl font-extrabold mb-4">$0</p>
-                        <ul class="text-gray-600 text-sm space-y-2 text-left">
-                            <li>✓ 3 total exports</li>
-                            <li>✓ 720p resolution</li>
-                            <li>✓ MP4 format</li>
-                            <li>✓ Animated cursor</li>
-                            <li>✗ Watermark included</li>
+                        <ul class="mini-list">
+                            <li>Exports the connected prototype path you already built — no re-work.</li>
+                            <li>MP4, WebM, and GIF output. 720p Free; 1080p &amp; 4K on paid plans.</li>
+                            <li>Optional review rooms: timestamped feedback, decision brief, and approval status.</li>
                         </ul>
                     </div>
-                    <div class="border-2 border-purple-500 rounded-xl p-6 relative">
-                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Pro</span>
-                        <h3 class="font-bold text-lg mb-1">Pro</h3>
-                        <p class="text-3xl font-extrabold mb-4">$12<span class="text-sm font-normal text-gray-500">/mo</span></p>
-                        <ul class="text-gray-600 text-sm space-y-2 text-left">
-                            <li>✓ Unlimited exports</li>
-                            <li>✓ Up to 4K resolution</li>
-                            <li>✓ MP4 + GIF formats</li>
-                            <li>✓ Animated cursor</li>
-                            <li>✓ No watermark</li>
+                    <aside class="hero-aside">
+                        <h2>At a glance</h2>
+                        <ul class="meta-list">
+                            <li>
+                                <span class="meta-label">Primary audience</span>
+                                Designers, product teams, freelancers, and agencies sharing prototypes
+                            </li>
+                            <li>
+                                <span class="meta-label">Core problem</span>
+                                Getting a Figma prototype walkthrough to clients and stakeholders without screen recording
+                            </li>
+                            <li>
+                                <span class="meta-label">Output formats</span>
+                                MP4 (H.264), WebM, GIF — 720p to 4K
+                            </li>
+                            <li>
+                                <span class="meta-label">Starting price</span>
+                                Free forever · paid from $4 once (Project Pass) or $5/month (Pro)
+                            </li>
                         </ul>
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 bg-gray-50" id="faq">
-            <div class="max-w-3xl mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-                <div class="space-y-6">
-                    <details class="bg-white rounded-xl p-6 shadow-sm" open>
-                        <summary class="font-semibold text-lg cursor-pointer">How do I export a Figma prototype as a video?</summary>
-                        <p class="mt-3 text-gray-600">Install ProtoVid from the Figma Community plugins. Open any Figma file with prototype interactions, run Plugins → ProtoVid, choose your export settings (resolution, frame rate, format), and click Export Video. ProtoVid automatically detects your prototype flow and generates an MP4 or GIF video file.</p>
-                    </details>
-                    <details class="bg-white rounded-xl p-6 shadow-sm">
-                        <summary class="font-semibold text-lg cursor-pointer">Can I export Figma prototypes as GIF?</summary>
-                        <p class="mt-3 text-gray-600">Yes. ProtoVid Pro supports GIF export in addition to MP4. GIFs are ideal for sharing in Slack, email, documentation, and social media where auto-playing video previews are needed.</p>
-                    </details>
-                    <details class="bg-white rounded-xl p-6 shadow-sm">
-                        <summary class="font-semibold text-lg cursor-pointer">What resolution does ProtoVid support?</summary>
-                        <p class="mt-3 text-gray-600">ProtoVid supports 720p (free), 1080p (Pro), and 4K (Pro). Frame rates of 30fps and 60fps are available. 4K at 60fps produces presentation-quality video.</p>
-                    </details>
-                    <details class="bg-white rounded-xl p-6 shadow-sm">
-                        <summary class="font-semibold text-lg cursor-pointer">Does ProtoVid add a watermark?</summary>
-                        <p class="mt-3 text-gray-600">Free exports include a small watermark. Pro ($12/month) removes it entirely for clean client deliverables and portfolio use.</p>
-                    </details>
-                    <details class="bg-white rounded-xl p-6 shadow-sm">
-                        <summary class="font-semibold text-lg cursor-pointer">How much does ProtoVid cost?</summary>
-                        <p class="mt-3 text-gray-600">Free with 3 exports at 720p (MP4 with watermark). Pro is $12/month for unlimited exports, up to 4K resolution, MP4 + GIF, and watermark-free output.</p>
-                    </details>
-                    <details class="bg-white rounded-xl p-6 shadow-sm">
-                        <summary class="font-semibold text-lg cursor-pointer">Does ProtoVid detect flows automatically?</summary>
-                        <p class="mt-3 text-gray-600">Yes. ProtoVid scans your Figma file and detects all prototype interactions and flows. It captures the entire sequence including transitions — no manual screen configuration needed.</p>
-                    </details>
-                </div>
+        <section class="section">
+            <div class="metrics">
+                <div class="metric"><strong>3</strong><span>output formats (MP4, WebM, GIF)</span></div>
+                <div class="metric"><strong>4K</strong><span>max resolution on paid plans</span></div>
+                <div class="metric"><strong>3</strong><span>steps from prototype to demo</span></div>
+                <div class="metric"><strong>$0</strong><span>to start, no card</span></div>
             </div>
         </section>
 
-        <section class="gradient-bg text-white py-16">
-            <div class="max-w-3xl mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Show Your Prototypes in Motion</h2>
-                <p class="text-white/80 mb-8 text-lg">3 free exports. No account needed. Install directly in Figma.</p>
-                <a href="https://www.figma.com/community/plugin/1606994616321079154/protovid-prototype-video-exporter" class="inline-flex items-center gap-3 bg-white text-gray-900 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition text-lg" rel="noopener">
-                    Install ProtoVid in Figma
-                </a>
+        <section class="section" id="what-is-it">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Overview</span>
+                    <h2>What is ProtoVid?</h2>
+                </div>
             </div>
+            <p class="section-copy">ProtoVid is a Figma Community plugin that reads the prototype connections you already defined, follows the connected path, and exports a clean video file. You do not need to set up a screen recorder, an external camera, or a separate video editor. The plugin handles detection, rendering, and encoding inside Figma. For client-facing or stakeholder delivery, Pro users can generate a shareable browser link with a local decision brief, timestamped comments, and an approve or request-changes workflow — all without giving reviewers access to the Figma file.</p>
+        </section>
+
+        <section class="section" id="features">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Features</span>
+                    <h2>What ProtoVid does</h2>
+                </div>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Connected flow detection</h3>
+                    <p>ProtoVid finds all prototype connections on the current Figma page and shows the detected frame order before you export. You review the path, not guess it.</p>
+                </article>
+                <article class="card">
+                    <h3>MP4, WebM, and GIF export</h3>
+                    <p>Choose the format that fits the channel: MP4 (H.264) for most uses, WebM for web-native delivery, GIF for lightweight previews or Slack posts.</p>
+                </article>
+                <article class="card">
+                    <h3>720p, 1080p, and 4K output</h3>
+                    <p>Free exports are watermarked 720p proofs. Project Pass and Pro unlock 1080p and 4K without the ProtoVid watermark.</p>
+                </article>
+                <article class="card">
+                    <h3>Browser review rooms</h3>
+                    <p>Send a single browser link. Reviewers watch the demo, leave timestamped comments, and set approve or request-changes status — no Figma account needed.</p>
+                </article>
+                <article class="card">
+                    <h3>On-platform decision briefs</h3>
+                    <p>ProtoVid generates a review context brief from export metadata and review-room activity without a separate AI account or external model connection.</p>
+                </article>
+                <article class="card">
+                    <h3>Delivery analytics</h3>
+                    <p>Private owner links show view count, flow size, comment count, and approval state for each exported walkthrough.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="workflow">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">How it works</span>
+                    <h2>Three steps from prototype to demo video</h2>
+                </div>
+            </div>
+            <div class="steps">
+                <article class="step">
+                    <span class="step-index">01</span>
+                    <div>
+                        <strong>Detect</strong>
+                        <p>Open ProtoVid inside Figma. The plugin reads the connections in the Prototype panel and shows the frames in the order a viewer would see them.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">02</span>
+                    <div>
+                        <strong>Configure</strong>
+                        <p>Review the detected flow, choose MP4, WebM, or GIF, then select 720p Free or 1080p / 4K paid quality. Adjust frame timing if needed.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">03</span>
+                    <div>
+                        <strong>Export and share</strong>
+                        <p>Download the demo file. Optionally create a browser review room with a decision brief, timestamped comment thread, and an approve or request-changes control.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="use-cases">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Use cases</span>
+                    <h2>Where the demo video goes</h2>
+                </div>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Client walkthroughs</h3>
+                    <p>Send a clean walkthrough for a milestone review without giving clients access to the Figma file or asking them to navigate an interactive prototype.</p>
+                </article>
+                <article class="card">
+                    <h3>App Store and product previews</h3>
+                    <p>Export a 1080p or 4K video timed to your prototype flow for App Store listings, product landing pages, and launch announcements.</p>
+                </article>
+                <article class="card">
+                    <h3>SaaS landing-page demos</h3>
+                    <p>Show the product experience on a marketing page without a live integration or recorded screen session.</p>
+                </article>
+                <article class="card">
+                    <h3>Social reels and launch posts</h3>
+                    <p>Export a GIF or MP4 sized for social previews, Twitter / X posts, LinkedIn carousels, or Product Hunt launch assets.</p>
+                </article>
+                <article class="card">
+                    <h3>Portfolio case studies</h3>
+                    <p>Embed a clean prototype walkthrough in a portfolio or case study without a screen recorder or video editor.</p>
+                </article>
+                <article class="card">
+                    <h3>Stakeholder and investor updates</h3>
+                    <p>Include a focused demo in a deck or async update so stakeholders can watch and comment on their own schedule.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="vs-screen-recording">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Comparison</span>
+                    <h2>ProtoVid vs. screen recording a prototype</h2>
+                </div>
+            </div>
+            <p class="section-copy">Screen recording picks up cursor movement, timing inconsistencies, accidental clicks, and whatever else is visible on screen. ProtoVid captures only the connected prototype path at the resolution you choose, without a cursor or recording setup.</p>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Screen recording</h3>
+                    <p>Requires setup, a clean run, post-editing to cut mistakes, cursor removal, and manual export. Output quality depends on display resolution and recording settings.</p>
+                </article>
+                <article class="card">
+                    <h3>ProtoVid</h3>
+                    <p>Reads the prototype path directly, renders each frame at the resolution you select, and exports a clean file — no cursor, no editing, no re-takes.</p>
+                </article>
+                <article class="card">
+                    <h3>Why it matters</h3>
+                    <p>A product demo that ships in two minutes is more useful than a screen recording that ships in two hours — or never.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="pricing">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Pricing</span>
+                    <h2>Plans for every workflow</h2>
+                </div>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Free — $0/month</h3>
+                    <p>3 watermarked 720p exports per month. MP4, WebM, and GIF. Automatic flow detection. No credit card required. Good for proof-of-concept and portfolio validation.</p>
+                </article>
+                <article class="card">
+                    <h3>Project Pass — $4 once</h3>
+                    <p>7 days of unlimited 1080p and 4K exports with no watermark. No subscription. One payment for one launch deadline.</p>
+                </article>
+                <article class="card">
+                    <h3>Pro — $5/month</h3>
+                    <p>Unlimited 1080p and 4K exports with no watermark. Review rooms with timestamped feedback, decision briefs, owner analytics, and approval tracking for recurring client and agency work.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">FAQ</span>
+                    <h2>Common questions about ProtoVid</h2>
+                </div>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Do I need to screen record a Figma prototype?</h3>
+                    <p>No. ProtoVid captures the connected prototype path directly inside Figma and exports an MP4, WebM, or GIF — no screen recorder, cursor removal, or video editor required.</p>
+                </article>
+                <article class="card">
+                    <h3>Can I try ProtoVid before paying?</h3>
+                    <p>Yes. The Free plan includes 3 watermarked 720p exports per month. No credit card needed to install or start exporting.</p>
+                </article>
+                <article class="card">
+                    <h3>What is the difference between Project Pass and Pro?</h3>
+                    <p>Project Pass is a one-time $4 payment for 7 days of unlimited 1080p/4K exports — useful for a single launch or deadline. Pro is $5/month and adds unlimited ongoing exports, review rooms, and owner analytics.</p>
+                </article>
+                <article class="card">
+                    <h3>Can I share the demo for stakeholder review?</h3>
+                    <p>Yes. Project Pass and Pro users can create a browser review room with a decision brief, timestamped comments, and approve or request-changes status. Reviewers do not need a Figma account.</p>
+                </article>
+                <article class="card">
+                    <h3>Does ProtoVid need a separate AI account?</h3>
+                    <p>No. ProtoVid generates review briefs on-platform from export metadata and review-room activity. No OpenAI, Claude, or other AI account is required.</p>
+                </article>
+                <article class="card">
+                    <h3>How does ProtoVid handle my prototype data?</h3>
+                    <p>ProtoVid captures only the frames in the connected path on the current Figma page. Encoding happens locally in the plugin when supported. Review links expire after 7 days (Free) or 30 days (paid), after which the data is physically deleted.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="install">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Get started</span>
+                    <h2>Install ProtoVid from Figma Community</h2>
+                </div>
+            </div>
+            <p class="section-copy">ProtoVid is available directly in the Figma Community. Install it, open it on a page with a connected prototype flow, and export your first demo video in under a minute.</p>
+            <div class="actions">
+                <a class="button primary" href="https://protovid.dasgroupllc.com/api/referrals/figma?source=portfolio_listing" rel="noopener">Install from Figma Community</a>
+                <a class="button secondary" href="https://protovid.dasgroupllc.com/pricing" rel="noopener">See pricing details</a>
+            </div>
+            <p style="margin-top:1rem;font-size:0.85rem;color:#6b7280;">Or search "ProtoVid" inside Figma's plugin browser.</p>
         </section>
     </main>
-
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Das Group LLC</h4>
-                    <p class="text-sm">Building tools for designers, developers, and creators.</p>
-                    <a href="mailto:support@dasgroupllc.com" class="text-sm hover:text-white transition">support@dasgroupllc.com</a>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Products</h4>
-                    <ul class="text-sm space-y-2">
-                        <li><a href="/apps/protovid/" class="hover:text-white transition">ProtoVid — Figma Videos</a></li>
-                        <li><a href="/apps/adhdfocus/" class="hover:text-white transition">ADHDFocus — ADHD Timer</a></li>
-                        <li><a href="/apps/ground-truth/" class="hover:text-white transition">Ground Truth — MCP Server</a></li>
-                        <li><a href="/apps/resolveai/" class="hover:text-white transition">ResolveAI — AI Support</a></li>
-                        <li><a href="/apps/trackfasts/" class="hover:text-white transition">TrackFasts — Fasting Timer</a></li>
-                        <li><a href="/apps/receipts/" class="hover:text-white transition">Receipts — Receipt Scanner</a></li>
-                        <li><a href="/apps/quickscan/" class="hover:text-white transition">QuickScan — Doc Scanner</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Legal</h4>
-                    <ul class="text-sm space-y-2">
-                        <li><a href="/apps/privacy/" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="/apps/terms/" class="hover:text-white transition">Terms of Service</a></li>
-                    </ul>
-                </div>
+    <footer class="footer">
+        <div class="shell footer-grid">
+            <div class="app-links">
+                <a class="pill-link" href="/apps/">All products</a>
+                <a class="pill-link" href="/apps/zerosync/">ZeroSync</a>
+                <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
+                <a class="pill-link" href="/apps/ground-truth/">Ground Truth</a>
+                <a class="pill-link" href="/apps/resolveai-shopify/">ResolveAI Shopify</a>
+                <a class="pill-link" href="/apps/specbot/">SpecBot</a>
+                <a class="pill-link" href="/apps/courtfile/">CourtFile</a>
             </div>
-            <div class="border-t border-gray-800 pt-6 text-center text-sm"><p>© 2026 Das Group LLC. All rights reserved.</p></div>
+            <p class="footnote">Das Group LLC &bull; <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> &bull; <a href="/apps/privacy/">Privacy</a> &bull; <a href="/apps/terms/">Terms</a></p>
         </div>
     </footer>
 </body>

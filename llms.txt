@@ -18,13 +18,13 @@
 - [ResolveAI for Zendesk](https://resolveai-zendesk.dasgroupllc.com/): Outcome-based AI ticket resolution for Zendesk teams.
 - [ProfitPulse AI](https://profitpulse-ai.dasgroupllc.com/): Profit-leak detection and margin protection for Shopify stores.
 - [ThoughtLint](https://thoughtlint.dasgroupllc.com/): Local-first Obsidian plugin for reasoning review.
-- [ProtoVid](https://protovid.dasgroupllc.com/): Connected Figma flow export to MP4 with browser-based timestamped review and approval.
+- [ProtoVid](https://dasgroupllc.com/apps/protovid/): Figma plugin that exports connected prototype flows to MP4, WebM, and GIF product demo videos with optional browser review rooms for timestamped feedback and approval. [Machine-readable context](https://dasgroupllc.com/apps/protovid/llms.txt) [Full context](https://dasgroupllc.com/apps/protovid/llms-full.txt)
 
 ## iOS apps (App Store)
 
 iPhone apps by DAS Group LLC. Each link is the canonical product page with a direct App Store download link.
 
-- [TrackWell Daily](https://dasgroupllc.com/apps/trackwell/): Simple nutrition tracker for water, protein, and vegetables. One-tap logging, no calorie counting or food databases.
+- [TrackWell Daily](https://dasgroupllc.com/apps/trackwell/): Simple nutrition tracker for water, protein, and vegetables. One-tap logging, no calorie counting or food databases. [LLMO context](https://dasgroupllc.com/apps/trackwell/llms.txt)
 - [LifeGarden](https://dasgroupllc.com/apps/lifegarden/): Visual habit tracker where each habit grows into a living plant. Build streaks and daily routines; the plant wilts if you skip.
 - [VoiceJournal](https://dasgroupllc.com/apps/voicejournal/): Private voice journal for iPhone. Speak a reflection; on-device transcription and mood analysis create a searchable local diary with streaks, Siri, and no account required.
 - [QuickScan](https://dasgroupllc.com/apps/quickscan/): AI document scanner and PDF maker for iPhone. Scans documents, IDs, and receipts to clean PDFs in 3 seconds with on-device OCR, 10-type auto-classification, and digital signatures. Works 100% offline.

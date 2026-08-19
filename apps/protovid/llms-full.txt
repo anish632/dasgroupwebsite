@@ -1,0 +1,125 @@
+# ProtoVid
+
+Canonical page: https://dasgroupllc.com/apps/protovid/
+Product site: https://protovid.dasgroupllc.com/
+Provider: Das Group LLC (https://dasgroupllc.com/)
+Support: support@dasgroupllc.com
+Last updated: 2026-08-19
+Version: 1.3.15
+
+## What is ProtoVid?
+
+ProtoVid is a Figma Community plugin that reads the prototype connections defined in Figma's Prototype panel, follows the connected path, and exports the walkthrough as an MP4, WebM, or GIF product demo video. No screen recording, no editing timeline, no external video editor. Optional browser-based review rooms let stakeholders leave timestamped comments and set approve or request-changes status without a Figma account or access to the source file.
+
+## What problem does it solve?
+
+Sharing a Figma prototype walkthrough with clients, stakeholders, or a launch audience typically requires screen recording, cursor removal, re-takes, and post-editing. ProtoVid removes all of those steps. The plugin captures the connected path at the quality you choose and produces a clean, downloadable file that is ready to send, embed, or publish.
+
+## Who is it for?
+
+- **Designers** who need to hand off a prototype walkthrough without sharing the source file.
+- **Product teams** producing App Store previews, SaaS landing-page demos, or investor updates.
+- **Freelancers and agencies** doing recurring client deliveries who need clean exports fast.
+- **Anyone** who wants to show a Figma prototype as a video without setting up a screen recorder.
+
+## Output formats and resolutions
+
+- MP4 (H.264) — compatible with almost every platform and hosting service.
+- WebM — web-native format for embedding in browsers without re-encoding.
+- GIF — lightweight, auto-plays inline in Slack, email, and docs. Good for short flows.
+
+Resolution tiers:
+- 720p — Free plan, includes ProtoVid watermark.
+- 1080p — Project Pass and Pro, no watermark.
+- 4K — Project Pass and Pro, no watermark.
+
+## Features
+
+### Core export
+- **Connected flow detection**: ProtoVid scans the current Figma page for prototype connections and presents the detected frame order before export. You confirm the path; you do not have to define it again.
+- **Format and quality selection**: choose MP4, WebM, or GIF and resolution before exporting.
+- **Local encoding**: frames are encoded locally in the Figma plugin sandbox when supported, limiting data sent to the backend.
+
+### Review rooms (Project Pass and Pro)
+- **Browser review link**: shareable URL that plays the walkthrough in a browser without a Figma account.
+- **Decision brief**: generated from export metadata and review-room activity on-platform, no external AI account required.
+- **Timestamped comments**: reviewers can leave comments at specific playback moments.
+- **Approve / request-changes status**: stakeholders set a clear decision state on the demo.
+- **Owner analytics**: private link shows view count, comment count, approval state, and flow details.
+
+## Pricing
+
+- **Free — $0/month**: 3 watermarked 720p exports per month. MP4, WebM, and GIF. No credit card.
+- **Project Pass — $4 once**: 7 days of unlimited 1080p and 4K exports, no watermark. One-time payment, no subscription.
+- **Pro — $5/month**: unlimited 1080p and 4K exports, no watermark. Includes review rooms, decision briefs, and owner analytics for ongoing client or portfolio work.
+
+## How it works (step by step)
+
+1. **Install**: add ProtoVid from the Figma Community (search "ProtoVid" or use the direct link).
+2. **Open**: in Figma, open the plugin on a page that has a connected prototype flow.
+3. **Detect**: ProtoVid scans prototype connections and shows the frames in the order a viewer would see them.
+4. **Configure**: choose format (MP4, WebM, GIF) and quality (720p Free or 1080p/4K paid). Adjust frame duration if needed.
+5. **Export**: the plugin encodes the walkthrough locally when supported, or sends the fallback payload to the backend encoding endpoint for MP4.
+6. **Download or share**: download the file, or (on Project Pass/Pro) generate a browser review room with a decision brief and approval link.
+
+## Use cases
+
+- App Store preview videos (MP4 or GIF)
+- SaaS and product landing-page demo embeds
+- Client walkthrough delivery without sharing the source file
+- Portfolio case study embeds
+- Social reels and launch posts (LinkedIn, Twitter/X, Product Hunt)
+- Investor and stakeholder async updates
+- Design review documentation
+
+## What ProtoVid does not do
+
+- Screen recording or general video editing.
+- Interactive prototyping (ProtoVid reads existing connections; it does not create them).
+- Static design export (no PDF, PNG export — ProtoVid is for connected flows only).
+- Export of non-prototype frames or pages with no connections.
+
+## Privacy and data handling
+
+- **Scoped capture**: only frames in the selected connected path on the current Figma page are captured.
+- **Local encoding first**: the plugin attempts local MP4/WebM/GIF encoding in the browser before falling back to the backend.
+- **Backend fallback**: if local encoding is not supported, the fallback video payload is sent to ProtoVid's encoding endpoint.
+- **Review link retention**: Free review links are available for 7 days; paid review links for 30 days. Expired review video files, comments, and owner links are physically deleted by a daily retention cleanup.
+- **No AI account required**: review briefs are generated on-platform from export metadata and review-room state.
+
+## Technical context
+
+- Platform: Figma sandbox (Figma Community plugin).
+- Plugin ID: 1606994616321079154.
+- Backend: Next.js app hosted on Vercel (protovid.dasgroupllc.com).
+- Encoding: WebCodecs API / local browser encoding where available; H.264 MP4 fallback via backend.
+- Payments: Stripe (subscription for Pro; one-time for Project Pass).
+- Network access: allowed to api.stripe.com and protovid.dasgroupllc.com.
+
+## Claim policy
+
+**Allowed claims:**
+- Exports connected Figma prototype flows to MP4, WebM, and GIF.
+- Supports 720p, 1080p, and 4K resolutions.
+- Free tier includes 3 watermarked 720p exports per month, no credit card.
+- Project Pass is $4 once for 7 days of unlimited 1080p/4K with no watermark.
+- Pro is $5/month with unlimited exports, review rooms, and owner analytics.
+- Review rooms include timestamped comments, decision briefs, and approve/request-changes status.
+- No separate AI account or external model connection required.
+
+**Do not claim:**
+- Revenue numbers, install counts, or user ratings.
+- Performance benchmarks.
+- Specific data retention window after expiry (the cleanup job runs daily, so physical deletion timing may lag the expiry by up to 24 hours).
+
+## Links
+
+- Canonical page: https://dasgroupllc.com/apps/protovid/
+- Product site: https://protovid.dasgroupllc.com/
+- Pricing page: https://protovid.dasgroupllc.com/pricing
+- Figma Community install: https://www.figma.com/community/plugin/1606994616321079154
+- Machine-readable context (short): https://dasgroupllc.com/apps/protovid/llms.txt
+- Machine-readable context (full): https://dasgroupllc.com/apps/protovid/llms-full.txt
+- Product site llms.txt: https://protovid.dasgroupllc.com/llms.txt
+- Agent manifest: https://protovid.dasgroupllc.com/.well-known/agent.json
+- Portfolio index: https://dasgroupllc.com/apps/

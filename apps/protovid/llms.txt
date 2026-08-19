@@ -1,0 +1,58 @@
+# ProtoVid
+
+> A self-serve Figma plugin that turns connected prototype flows into MP4, WebM, or GIF product demo videos, with optional browser-based review rooms for timestamped stakeholder feedback and approval — no screen recording, no editing timeline.
+
+By Das Group LLC. Last updated: 2026-08-19.
+
+## Key facts
+
+- For: designers, product teams, freelancers, and agencies who share Figma prototype walkthroughs with clients or stakeholders.
+- Core problem: turning a connected Figma prototype into a shareable demo video without screen recording, cursor cleanup, or post-editing.
+- Output formats: MP4 (H.264), WebM, GIF.
+- Resolutions: 720p on Free (watermarked); 1080p and 4K on Project Pass and Pro (no watermark).
+- Review rooms: browser links with a decision brief, timestamped comments, and approve/request-changes status. Reviewers do not need a Figma account.
+- Plugin: Figma Community, runs in the Figma sandbox.
+- Version: 1.3.15.
+
+## Pricing
+
+- Free: $0/month — 3 watermarked 720p exports per month. No credit card.
+- Project Pass: $4 once — 7 days of unlimited 1080p and 4K exports, no watermark. No subscription.
+- Pro: $5/month — unlimited 1080p and 4K exports, no watermark, review rooms, decision briefs, and owner analytics.
+
+## Best for
+
+- App Store and product preview videos
+- SaaS landing-page demos
+- Client walkthroughs and design reviews
+- Portfolio case studies
+- Social reels and launch posts
+- Investor and stakeholder updates
+
+## Not for
+
+- Screen recording or general video editing
+- Interactive prototyping (ProtoVid reads existing prototype connections; it does not build them)
+- Static design exports
+
+## Privacy
+
+- Captures only the frames in the selected connected path. Does not scan other files or unrelated frames.
+- Encoding happens locally in the plugin when supported.
+- Review links expire after 7 days (Free) or 30 days (paid). Expired review data is physically deleted by a daily retention cleanup.
+- No external AI account or model connection required for decision briefs.
+
+## Links
+
+- Canonical page: https://dasgroupllc.com/apps/protovid/
+- Product site: https://protovid.dasgroupllc.com/
+- Figma Community install: https://www.figma.com/community/plugin/1606994616321079154
+- Pricing: https://protovid.dasgroupllc.com/pricing
+- Full machine-readable context: https://dasgroupllc.com/apps/protovid/llms-full.txt
+- Portfolio: https://dasgroupllc.com/apps/
+- Agent manifest: https://protovid.dasgroupllc.com/.well-known/agent.json
+- LLM context on product site: https://protovid.dasgroupllc.com/llms.txt
+
+## Contact
+
+- support@dasgroupllc.com

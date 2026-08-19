@@ -88,9 +88,16 @@ The products generally follow four principles:
 
 ### ProtoVid
 
-- URL: https://protovid.dasgroupllc.com/
-- Category: Design workflow
-- Summary: ProtoVid turns connected Figma flows into MP4 walkthroughs and browser-based review rooms with timestamped feedback and approval.
+- URL: https://dasgroupllc.com/apps/protovid/
+- Product site: https://protovid.dasgroupllc.com/
+- Figma Community: https://www.figma.com/community/plugin/1606994616321079154
+- Machine-readable context: https://dasgroupllc.com/apps/protovid/llms.txt
+- Full context: https://dasgroupllc.com/apps/protovid/llms-full.txt
+- Category: Design workflow / Figma plugin
+- Version: 1.3.15
+- Summary: ProtoVid is a Figma Community plugin that detects connected prototype flows and exports them as MP4 (H.264), WebM, or GIF product demo videos — no screen recording or editing timeline. Optional browser-based review rooms provide timestamped comments, on-platform decision briefs, and approve/request-changes status without requiring reviewers to have a Figma account.
+- Pricing: Free ($0, 3 watermarked 720p exports/month); Project Pass ($4 once, 7 days unlimited 1080p/4K, no watermark); Pro ($5/month, unlimited exports, review rooms, owner analytics).
+- Best-fit queries: Figma prototype to video, export Figma prototype to MP4, Figma prototype to GIF, Figma prototype to WebM, Figma prototype review tool, product demo video from Figma, prototype walkthrough video, export Figma prototype without screen recording.
 
 ### VoiceJournal
 
