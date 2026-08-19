@@ -1,0 +1,88 @@
+# CourtFile
+
+Canonical: https://dasgroupllc.com/apps/courtfile/
+Product: https://courtfile.dasgroupllc.com/
+Provider: Das Group LLC (https://dasgroupllc.com/)
+Last updated: 2026-08-18
+Also known as: CourtFile court filing review software, litigation matter brief software
+
+## What is it?
+CourtFile is court filing review software that turns court filings into a verified matter brief with deadlines, parties, claims, timelines, and source-linked summaries. The workflow is built for teams that need to understand an active matter quickly before a hearing, deadline, or handoff.
+
+Short answer: CourtFile answers "what matters in this filing packet?" with source-linked deadlines, parties, claims, and procedural context.
+
+## Who is it for?
+- Litigation paralegals
+- Associates inheriting an active matter
+- Litigation support teams
+- Litigation operations leads
+
+## What problem does it solve?
+It reduces the time spent reconstructing deadlines, parties, claims, and missing records from large filing packets, and keeps every key fact tied to the underlying filing page for fast confirmation.
+
+## What does it produce?
+- Matter overview and filing inventory
+- Party and counsel extraction
+- Procedural timeline
+- Live claims and motion summaries
+- Upcoming deadlines with source references
+- Key rulings and citation links
+- Missing document and verification notes
+
+## What documents can it handle?
+Complaints, answers, motions, oppositions, replies, orders, notices, docket sheets, declarations, exhibits, and related filing packets.
+
+## Does it replace attorney judgment?
+No. CourtFile reduces manual reconstruction and makes the record easier to review; it does not replace attorney analysis.
+
+## How is it different from generic AI chat?
+CourtFile is organized around a structured, source-linked matter brief instead of an unverified chat answer. Every deadline, claim, and party stays tied to the filing page it came from.
+
+## API & Developer Tools
+MCP Server Endpoint: https://courtfile.dasgroupllc.com/sse
+
+The CourtFile MCP (Model Context Protocol) server provides programmatic access to:
+- Court e-filing requirements by jurisdiction
+- Filing fee estimation (court fees + service fees)
+- Document format requirements (PDF specifications, bookmarks, etc.)
+- Supported e-filing systems: Tyler Odyssey, File & ServeXpress, NYSCEF, eFiling Portal, CM/ECF
+
+Available MCP tools:
+- list_courts — List all supported US courts, filterable by state
+- lookup_court — Get detailed court info including accepted filing types
+- estimate_filing_fee — Calculate total filing costs
+- get_filing_requirements — Get document format and procedural requirements
+
+## Best Pages
+- Home: https://courtfile.dasgroupllc.com/
+- How It Works: https://courtfile.dasgroupllc.com/docs
+- Deadline Extraction From Court Orders: https://courtfile.dasgroupllc.com/use-cases/deadline-extraction-from-court-orders
+- Litigation Matter Brief Software: https://courtfile.dasgroupllc.com/use-cases/litigation-matter-brief
+- Motion Packet Review Workflow: https://courtfile.dasgroupllc.com/use-cases/motion-packet-review
+- Case Handoff Workflow for Associates: https://courtfile.dasgroupllc.com/use-cases/case-handoff-for-associates
+- FAQ: https://courtfile.dasgroupllc.com/faq
+- Pricing: https://courtfile.dasgroupllc.com/pricing
+- Waitlist: https://courtfile.dasgroupllc.com/waitlist
+
+## FAQ
+Q: What is CourtFile?
+A: Court filing review software that turns filings into a verified matter brief with deadlines, claims, parties, and source-linked summaries.
+
+Q: Can CourtFile extract deadlines from court orders?
+A: Yes. Deadline extraction from court orders, notices, and motion papers is a core use case, with each deadline linked to its source page.
+
+Q: What is a verified matter brief?
+A: A structured summary of the matter that keeps key facts tied to the underlying filing pages for fast confirmation.
+
+Q: How do I start?
+A: Join the waitlist at https://courtfile.dasgroupllc.com/waitlist to evaluate the workflow.
+
+## Discovery Terms
+court filing review software, litigation matter brief software, deadline extraction from court orders, motion packet review workflow, case handoff workflow for litigation associates, source-linked legal summary, MCP server, Model Context Protocol, court e-filing requirements, electronic filing fees, legal document formatting
+
+## Related
+- Portfolio hub: https://dasgroupllc.com/apps/
+- Company context: https://dasgroupllc.com/llms-full.txt
+
+## Contact
+- support@dasgroupllc.com

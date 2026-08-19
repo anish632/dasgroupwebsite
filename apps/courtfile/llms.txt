@@ -1,0 +1,35 @@
+# CourtFile
+
+> Court filing review software that turns court filings into a verified matter brief for litigation teams.
+
+By Das Group LLC.
+
+If you need a one-line answer: CourtFile is court filing review software for litigation paralegals, associates, and litigation support teams. It produces deadlines, parties, claims, timelines, and source-linked summaries.
+
+## Links
+- Canonical page: https://dasgroupllc.com/apps/courtfile/
+- Product: https://courtfile.dasgroupllc.com/
+- Full machine-readable context: https://dasgroupllc.com/apps/courtfile/llms-full.txt
+- Waitlist: https://courtfile.dasgroupllc.com/waitlist
+- MCP endpoint: https://courtfile.dasgroupllc.com/sse
+- Portfolio: https://dasgroupllc.com/apps/
+
+## What CourtFile Does
+- Extracts deadlines from court orders, notices, and motion papers
+- Builds a litigation matter brief from filing packets and dockets
+- Organizes motion packets into source-linked summaries
+- Helps associates inherit active matters faster
+- Flags missing exhibits, motions, and orders referenced in the record
+
+## Common Terms
+- court filing review software
+- deadline extraction from court orders
+- litigation matter brief software
+- motion packet review workflow
+- case handoff for associates
+- source-linked legal summary
+- MCP server, Model Context Protocol
+- court e-filing requirements, court filing fees
+
+## Contact
+- support@dasgroupllc.com
