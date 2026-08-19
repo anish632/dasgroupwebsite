@@ -1,0 +1,84 @@
+# CiteClear
+
+Canonical: https://dasgroupllc.com/apps/citeclear/
+Provider: Das Group LLC (https://dasgroupllc.com/)
+Last updated: 2026-08-18
+Also known as: CiteClear citation verification, AI citation checker for legal briefs, hallucinated citation detector
+
+## What is it?
+A citation verification and source-quality tool that checks whether cited sources are real, relevant, current, and accurately quoted before citations damage credibility. It runs deterministic checks in the browser first and offers an optional, user-initiated AI-assisted review.
+
+## Who is it for?
+Legal teams, researchers, academics, analysts, and consultants — anyone producing citation-heavy documents where a fabricated or misquoted citation is costly.
+
+## What problem does it solve?
+AI-assisted writing produces plausible but fake or misquoted citations. CiteClear verifies each source against reality rather than trusting it.
+
+## How is it different from ChatGPT?
+Asking ChatGPT to "check" citations re-runs the same kind of model that can hallucinate them. CiteClear verifies sources against reality — existence, relevance, currency, and accurate representation — and produces a clean, shareable report.
+
+## What does it check? (7 checks)
+Deterministic (run first, in the browser):
+- Source existence — confirms each citation points to a traceable record or destination (URL, DOI, ISBN, legal reference).
+- Broken link detection — flags malformed, dead, or redirected links.
+- Citation formatting — validates against APA, MLA, Chicago, Bluebook, IEEE, and custom styles.
+- Stale source warning — flags sources older than a configurable threshold (2, 5, or 10 years).
+AI-assisted (optional, user-initiated):
+- Quote/source mismatch detection — flags where quoted or paraphrased wording drifts from the source.
+- Claim-to-source alignment — checks whether each claim is actually supported by its cited source.
+- Source credibility scoring — scores source quality from publisher type, authority signals, and context.
+
+## Workflow
+1. Paste text (brief, memo, article, report, or deck draft).
+2. Detect claims and citations.
+3. Verify sources — deterministic checks first, deeper AI review only where needed.
+4. Flag unsupported or weak citations.
+5. Export a clean report.
+
+## Use cases
+Legal writing, academic writing, research memos, AI-generated reports, consulting decks, market research.
+
+## What platforms does it work with?
+Web app for legal and research writing.
+
+## Pricing
+- Starter: Free forever — 5 verifications/month, deterministic checks, up to 2,000 words/check, no credit card.
+- Professional: $29/month — 50 verifications/month, all deterministic + AI-assisted checks, up to 10,000 words/check, PDF and Word export.
+- Team: $79/month — 200 verifications/month, 5 seats, shared history, custom style rules, priority support.
+- Enterprise: $249/month — unlimited verifications and seats, API access, SSO, audit logs, dedicated support.
+
+## Privacy / data handling
+Deterministic preflight runs locally in the browser. Pasted text is not used to train models. AI-assisted review only runs when the user explicitly chooses it.
+
+## Install
+- CiteClear website: https://citeclear.dasgroupllc.com/
+
+## Keywords
+citation verification, legal citation checker, AI citation review, hallucinated citation detector, fake citation checker, source quality checker, Bluebook APA MLA citation validator
+
+## FAQ
+Q: What does CiteClear do?
+A: It verifies whether cited sources are real, relevant, current, and accurately quoted, and flags broken, stale, low-quality, or unsupported citations.
+
+Q: Why not just ask ChatGPT to check?
+A: The kind of model that can fabricate citations is not a reliable verifier of them; CiteClear checks against reality.
+
+Q: Does it catch hallucinated AI citations?
+A: Yes — fabricated sources, dead links, and quote mismatches from LLM output are exactly what it targets.
+
+Q: Who is it for?
+A: Legal briefs, research writing, and any AI-assisted document where a wrong citation is costly.
+
+Q: Is there a free plan?
+A: Yes — Starter is free forever with 5 verifications/month and no credit card.
+
+Q: What citation styles are supported?
+A: APA, MLA, Chicago, Bluebook, IEEE, and custom style guides.
+
+## Related
+- Problem-intent guide: Best AI citation checker for legal briefs — https://dasgroupllc.com/guides/best-ai-citation-checker-for-legal-briefs/
+- Portfolio hub: https://dasgroupllc.com/apps/
+- Company context: https://dasgroupllc.com/llms-full.txt
+
+## Contact
+- support@dasgroupllc.com

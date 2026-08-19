@@ -79,6 +79,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://dasgroupllc.com/apps/citeclear/llms.txt</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://dasgroupllc.com/apps/citeclear/llms-full.txt</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://dasgroupllc.com/how-to-find-negative-margin-orders-shopify/</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>

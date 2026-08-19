@@ -1,32 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB51NSXRQ8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QB51NSXRQ8', {
+            linker: { domains: ['dasgroupllc.com', 'citeclear.dasgroupllc.com'] }
+        });
+        document.addEventListener('click', function(event) {
+            var link = event.target.closest ? event.target.closest('a') : null;
+            if (!link || typeof gtag !== 'function') return;
+            var href = link.getAttribute('href') || '';
+            var label = (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+            if (href.indexOf('citeclear.dasgroupllc.com') !== -1) {
+                gtag('event', 'landing_cta_click', { destination: 'citeclear_app', cta_text: label });
+            }
+        });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CiteClear | Citation verification for legal and research writing</title>
-    <meta name="description" content="CiteClear checks citations and source quality for legal writing, research memos, and AI-assisted drafts with local preflight first and optional AI review.">
+    <title>CiteClear — AI Citation Checker & Source Verification for Legal, Academic, and Research Writing</title>
+    <meta name="description" content="CiteClear verifies that every citation points to a real, relevant, current, and accurately quoted source. Deterministic browser preflight runs first; optional AI review is a user-chosen second step. Free plan available.">
+    <meta name="keywords" content="citation checker, AI citation verification, legal citation checker, fake citation checker, hallucinated citation detector, source quality checker, verify AI-generated citations, Bluebook APA MLA citation validator">
+    <meta name="author" content="Das Group LLC">
     <link rel="canonical" href="https://dasgroupllc.com/apps/citeclear/">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="CiteClear | Citation verification and source review">
-    <meta property="og:description" content="Citation verification for legal, academic, and research writing with deterministic preflight before optional AI review.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="last-modified" content="2026-08-18">
+    <!-- AI agent / LLM machine-readable context -->
+    <link rel="alternate" type="text/plain" title="llms.txt" href="/apps/citeclear/llms.txt">
+    <link rel="alternate" type="text/plain" title="llms-full.txt" href="/apps/citeclear/llms-full.txt">
+    <meta property="og:title" content="CiteClear — AI Citation Checker & Source Verification">
+    <meta property="og:description" content="Verify citations before they damage your credibility. Deterministic preflight in the browser, optional AI review only when you choose it. Free plan available.">
     <meta property="og:url" content="https://dasgroupllc.com/apps/citeclear/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Das Group LLC">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CiteClear — AI Citation Checker & Source Verification">
+    <meta name="twitter:description" content="Catch fake, broken, stale, or misquoted citations before your brief, memo, or AI-assisted report goes out.">
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "CiteClear",
-        "applicationCategory": "ProductivityApplication",
+        "alternateName": "CiteClear AI Citation Checker",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Citation Verification",
         "operatingSystem": "Web",
-        "description": "CiteClear is a citation verification tool for legal, academic, and research writing that emphasizes deterministic local preflight before optional AI-assisted review.",
         "url": "https://dasgroupllc.com/apps/citeclear/",
+        "sameAs": ["https://citeclear.dasgroupllc.com/"],
+        "description": "CiteClear is a citation verification and source-quality tool that checks whether cited sources are real, relevant, current, and accurately quoted before citations damage credibility. It runs deterministic checks in the browser first and offers an optional, user-initiated AI-assisted review.",
+        "featureList": [
+            "Source existence check (deterministic)",
+            "Broken link detection (deterministic)",
+            "Citation formatting check for APA, MLA, Chicago, Bluebook, IEEE, and custom styles (deterministic)",
+            "Stale source warning with configurable thresholds (deterministic)",
+            "Quote/source mismatch detection (AI-assisted)",
+            "Claim-to-source alignment (AI-assisted)",
+            "Source credibility scoring (AI-assisted)"
+        ],
+        "softwareHelp": "https://dasgroupllc.com/apps/support/",
         "provider": {
             "@type": "Organization",
             "name": "Das Group LLC",
-            "url": "https://dasgroupllc.com/"
-        }
+            "url": "https://dasgroupllc.com/",
+            "email": "support@dasgroupllc.com"
+        },
+        "offers": [
+            {"@type": "Offer", "name": "Starter", "price": "0", "priceCurrency": "USD", "description": "5 verifications per month, deterministic checks, up to 2,000 words per check."},
+            {"@type": "Offer", "name": "Professional", "price": "29", "priceCurrency": "USD", "description": "50 verifications per month, all deterministic and AI-assisted checks, up to 10,000 words per check."},
+            {"@type": "Offer", "name": "Team", "price": "79", "priceCurrency": "USD", "description": "200 verifications per month, 5 seats, shared history, custom style rules."},
+            {"@type": "Offer", "name": "Enterprise", "price": "249", "priceCurrency": "USD", "description": "Unlimited verifications and seats, API access, SSO, and audit logs."}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to verify citations with CiteClear",
+        "description": "Verify that the citations in a brief, memo, article, report, or deck are real, current, and accurately quoted.",
+        "step": [
+            {"@type": "HowToStep", "position": 1, "name": "Paste text", "text": "Drop in a brief, memo, article, report, or deck draft."},
+            {"@type": "HowToStep", "position": 2, "name": "Detect claims and citations", "text": "CiteClear maps where claims are made and what evidence is attached."},
+            {"@type": "HowToStep", "position": 3, "name": "Verify sources", "text": "Deterministic checks run first in the browser. Deeper AI review follows only where needed."},
+            {"@type": "HowToStep", "position": 4, "name": "Flag unsupported or weak citations", "text": "Broken, stale, low-quality, or weakly aligned citations are surfaced."},
+            {"@type": "HowToStep", "position": 5, "name": "Export a clean report", "text": "Share a clean report with reviewers, editors, counsel, or clients."}
+        ]
     }
     </script>
     <script type="application/ld+json">
@@ -34,38 +97,25 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "What is CiteClear?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "CiteClear is a citation verification tool for legal writing, academic writing, research memos, AI-generated reports, and other source-heavy work."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does CiteClear work?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "CiteClear starts with deterministic preflight checks in the browser and can optionally hand off into a more structured AI-assisted review when the user chooses that step."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Who is CiteClear for?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "CiteClear is aimed at legal teams, researchers, analysts, consultants, and anyone who needs stronger source quality before sharing written work."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Does CiteClear emphasize privacy?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes. The product is positioned around local preflight first, no model training on pasted text, and optional AI review only when the user explicitly chooses it."
-                }
-            }
+            {"@type": "Question", "name": "What is CiteClear?", "acceptedAnswer": {"@type": "Answer", "text": "CiteClear is a citation verification and source-quality tool for legal writing, academic writing, research memos, AI-generated reports, consulting decks, and market research. It checks whether cited sources are real, relevant, current, and accurately quoted before citations damage credibility."}},
+            {"@type": "Question", "name": "How does CiteClear work?", "acceptedAnswer": {"@type": "Answer", "text": "CiteClear runs deterministic checks in the browser first (source existence, broken links, citation formatting, and staleness). If you want deeper analysis such as quote fidelity, claim-to-source alignment, and credibility scoring, that AI-assisted step is explicit and you choose when to take it."}},
+            {"@type": "Question", "name": "Why not just ask ChatGPT to check my citations?", "acceptedAnswer": {"@type": "Answer", "text": "Asking a language model to check citations re-runs the same kind of model that can fabricate them. CiteClear verifies each source against reality — existence, relevance, currency, and accurate representation — instead of trusting a model's word."}},
+            {"@type": "Question", "name": "Who is CiteClear for?", "acceptedAnswer": {"@type": "Answer", "text": "Legal teams, researchers, academics, analysts, and consultants — anyone producing citation-heavy documents where a fabricated or misquoted citation is costly."}},
+            {"@type": "Question", "name": "What citation styles does CiteClear support?", "acceptedAnswer": {"@type": "Answer", "text": "CiteClear validates formatting against APA, MLA, Chicago, Bluebook, IEEE, and custom style guides."}},
+            {"@type": "Question", "name": "Is CiteClear private?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Deterministic preflight runs locally in your browser, pasted text is not used to train models, and AI-assisted review only happens when you explicitly choose it."}},
+            {"@type": "Question", "name": "Does CiteClear have a free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Starter plan is free forever with 5 verifications per month and no credit card required. Paid plans start at $29/month for AI-assisted checks."}},
+            {"@type": "Question", "name": "Can CiteClear detect hallucinated or fake AI citations?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. CiteClear is built to catch fabricated sources, dead links, and quote mismatches that commonly appear in LLM-generated briefs, memos, and reports."}}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Das Group", "item": "https://dasgroupllc.com/"},
+            {"@type": "ListItem", "position": 2, "name": "All products", "item": "https://dasgroupllc.com/apps/"},
+            {"@type": "ListItem", "position": 3, "name": "CiteClear", "item": "https://dasgroupllc.com/apps/citeclear/"}
         ]
     }
     </script>
@@ -99,34 +149,40 @@
             <div class="hero-panel">
                 <div class="hero-grid">
                     <div>
-                        <p class="eyebrow">Research + Legal Writing</p>
+                        <p class="eyebrow">AI Citation Checker · Legal &amp; Research Writing</p>
                         <h1>CiteClear</h1>
-                        <p class="lead">CiteClear is a citation verification tool that helps legal teams, researchers, and analysts catch citation problems and weak sources before they share a brief, memo, or AI-assisted report.</p>
-                        <p class="body-copy">The first pass runs entirely in the browser: source existence, broken links, citation structure, and staleness. If you want deeper analysis — quote fidelity, claim-to-source alignment, credibility scoring — that step is explicit and you choose when to take it.</p>
+                        <p class="lead">CiteClear is a citation verification tool that checks whether every cited source is real, relevant, current, and accurately quoted — so legal teams, researchers, and analysts catch citation problems before a brief, memo, or AI-assisted report goes out.</p>
+                        <div class="callout">
+                            <strong>In one sentence:</strong> CiteClear verifies your citations against reality — running deterministic checks in your browser first, then optional AI-assisted review only when you choose it. Free plan available, no account required to start.
+                        </div>
                         <div class="actions">
                             <a class="button primary" href="https://citeclear.dasgroupllc.com/" rel="noopener">Open CiteClear</a>
-                            <a class="button secondary" href="#workflow">See how it works</a>
+                            <a class="button secondary" href="#pricing">See pricing</a>
                         </div>
                         <ul class="mini-list">
                             <li>Deterministic citation preflight runs in the browser first.</li>
                             <li>Optional AI-assisted review is a user-chosen second step, not the default.</li>
-                            <li>Built for legal, academic, research, consulting, and AI-assisted writing workflows.</li>
+                            <li>Built for legal, academic, research, consulting, and AI-assisted writing.</li>
                         </ul>
                     </div>
                     <aside class="hero-aside">
-                        <h2>Problem and audience</h2>
+                        <h2>At a glance</h2>
                         <ul class="meta-list">
                             <li>
                                 <span class="meta-label">Primary audience</span>
-                                Legal teams, researchers, analysts, consultants
+                                Legal teams, researchers, academics, analysts, consultants
                             </li>
                             <li>
                                 <span class="meta-label">Core problem</span>
-                                Citation mistakes and weak source quality before a document goes out
+                                Fake, broken, stale, or misquoted citations reaching a reader
                             </li>
                             <li>
                                 <span class="meta-label">Workflow stance</span>
                                 Local preflight first, optional AI review second
+                            </li>
+                            <li>
+                                <span class="meta-label">Starting price</span>
+                                Free forever · paid from $29/month
                             </li>
                         </ul>
                     </aside>
@@ -135,44 +191,191 @@
         </section>
 
         <section class="section">
+            <div class="metrics">
+                <div class="metric"><strong>7</strong><span>verification checks</span></div>
+                <div class="metric"><strong>6</strong><span>citation styles supported</span></div>
+                <div class="metric"><strong>6</strong><span>document use cases</span></div>
+                <div class="metric"><strong>$0</strong><span>to start, no card</span></div>
+            </div>
+        </section>
+
+        <section class="section" id="what-is-it">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Overview</span>
+                    <h2>What is CiteClear?</h2>
+                </div>
+            </div>
+            <p class="section-copy">CiteClear is a citation verification and source-quality tool. It confirms that each citation in your document points to a source that actually exists, is reachable, is current enough for your field, and is quoted or paraphrased accurately. AI-assisted writing produces plausible but fabricated or misquoted citations; CiteClear verifies each source against reality rather than trusting it. The first pass runs entirely in the browser, and deeper AI-assisted review only runs when you explicitly ask for it.</p>
+        </section>
+
+        <section class="section" id="checks">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Verification checks</span>
+                    <h2>What CiteClear checks</h2>
+                </div>
+            </div>
             <div class="card-grid">
                 <article class="card">
-                    <h3>Citation preflight</h3>
-                    <p>CiteClear starts by checking citation structure and readiness in the browser so users can catch obvious issues before moving on.</p>
+                    <h3>Source existence</h3>
+                    <p>Confirms each citation points to a traceable source record or destination — URLs, DOIs, ISBNs, and legal references — before any interpretive review. <span class="pill-note">Deterministic</span></p>
                 </article>
                 <article class="card">
-                    <h3>Source-quality review</h3>
-                    <p>The product is positioned around stronger source confidence, not just citation formatting, which matters in legal and research-heavy writing.</p>
+                    <h3>Broken link detection</h3>
+                    <p>Flags malformed, dead, or redirected links so unreachable sources surface before deeper analysis. <span class="pill-note">Deterministic</span></p>
                 </article>
                 <article class="card">
-                    <h3>Optional AI handoff</h3>
-                    <p>AI-assisted review exists as a deliberate next step when the user wants deeper help, not as the first thing that happens to their text.</p>
+                    <h3>Citation formatting</h3>
+                    <p>Validates format against APA, MLA, Chicago, Bluebook, IEEE, and custom styles, flagging missing fields and ordering problems. <span class="pill-note">Deterministic</span></p>
+                </article>
+                <article class="card">
+                    <h3>Stale source warning</h3>
+                    <p>Surfaces publication dates and flags sources older than a configurable threshold — 2, 5, or 10 years depending on your field. <span class="pill-note">Deterministic</span></p>
+                </article>
+                <article class="card">
+                    <h3>Quote/source mismatch</h3>
+                    <p>Compares quoted or paraphrased language against the source and flags where wording or meaning appears to drift. <span class="pill-note">AI-assisted</span></p>
+                </article>
+                <article class="card">
+                    <h3>Claim-to-source alignment</h3>
+                    <p>Evaluates whether each claim is actually supported by the source it cites, flagging overstatement, drift, and cherry-picking. <span class="pill-note">AI-assisted</span></p>
+                </article>
+                <article class="card">
+                    <h3>Source credibility scoring</h3>
+                    <p>Scores source quality from publisher type, authority signals, and context to separate strong evidence from thin citations. <span class="pill-note">AI-assisted</span></p>
                 </article>
             </div>
         </section>
 
         <section class="section" id="workflow">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">How it works</span>
+                    <h2>From draft to clean report in five steps</h2>
+                </div>
+            </div>
             <div class="steps">
                 <article class="step">
                     <span class="step-index">01</span>
                     <div>
-                        <strong>Run local preflight checks</strong>
-                        <p>Users start with deterministic browser-side review to see whether the citation and source baseline is clean enough to keep going.</p>
+                        <strong>Paste text</strong>
+                        <p>Drop in a brief, memo, article, report, or deck draft.</p>
                     </div>
                 </article>
                 <article class="step">
                     <span class="step-index">02</span>
                     <div>
-                        <strong>Review the source-quality issues</strong>
-                        <p>CiteClear helps surface where support is thin, unclear, or risky before the document gets shared outward.</p>
+                        <strong>Detect claims and citations</strong>
+                        <p>CiteClear maps where claims are made and what evidence is attached to each.</p>
                     </div>
                 </article>
                 <article class="step">
                     <span class="step-index">03</span>
                     <div>
-                        <strong>Choose optional AI review only when needed</strong>
-                        <p>The product flow keeps control with the user instead of assuming every document should immediately be sent into an AI workflow.</p>
+                        <strong>Verify sources</strong>
+                        <p>Deterministic checks run first in the browser. Deeper AI review follows only where needed.</p>
                     </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">04</span>
+                    <div>
+                        <strong>Flag unsupported or weak citations</strong>
+                        <p>Broken, stale, low-quality, or weakly aligned citations are surfaced for you to fix.</p>
+                    </div>
+                </article>
+                <article class="step">
+                    <span class="step-index">05</span>
+                    <div>
+                        <strong>Export a clean report</strong>
+                        <p>Share a clean report with reviewers, editors, counsel, or clients.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="use-cases">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Use cases</span>
+                    <h2>Who uses CiteClear</h2>
+                </div>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Legal writing</h3>
+                    <p>Verify cases, statutes, regulations, and quoted holdings before filing or circulation.</p>
+                </article>
+                <article class="card">
+                    <h3>Academic writing</h3>
+                    <p>Check that articles, books, datasets, and cited claims are real, current, and accurately represented.</p>
+                </article>
+                <article class="card">
+                    <h3>Research memos</h3>
+                    <p>Audit internal memos and policy briefs for unsupported claims, stale evidence, and weak sourcing.</p>
+                </article>
+                <article class="card">
+                    <h3>AI-generated reports</h3>
+                    <p>Catch hallucinated citations, fabricated sources, and quote mismatches in LLM-generated output.</p>
+                </article>
+                <article class="card">
+                    <h3>Consulting decks</h3>
+                    <p>Validate market statistics and third-party references before they reach a client deck.</p>
+                </article>
+                <article class="card">
+                    <h3>Market research</h3>
+                    <p>Pressure-test analyst reports, surveys, and competitive claims before decisions get made.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="vs-chatgpt">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Comparison</span>
+                    <h2>CiteClear vs. asking ChatGPT to check</h2>
+                </div>
+            </div>
+            <p class="section-copy">The short answer: a language model that can fabricate a citation is not a reliable verifier of that citation. CiteClear checks sources against reality instead of asking a model to grade its own work.</p>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Asking ChatGPT</h3>
+                    <p>Re-runs the same kind of model that can hallucinate sources, can invent confirmations, and gives no deterministic, reproducible audit trail.</p>
+                </article>
+                <article class="card">
+                    <h3>CiteClear</h3>
+                    <p>Runs deterministic existence, link, format, and staleness checks first, then adds optional AI review for quote fidelity and claim alignment — with a clean, shareable report.</p>
+                </article>
+                <article class="card">
+                    <h3>Why it matters</h3>
+                    <p>In legal and research writing, one fabricated or misquoted citation can undermine an entire document. Verification, not trust, is the point.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="pricing">
+            <div class="section-head">
+                <div>
+                    <span class="section-label">Pricing</span>
+                    <h2>Plans for every workload</h2>
+                </div>
+            </div>
+            <div class="card-grid">
+                <article class="card">
+                    <h3>Starter — Free</h3>
+                    <p>5 verifications per month, source existence, broken link, and citation format checks, up to 2,000 words per check. No credit card.</p>
+                </article>
+                <article class="card">
+                    <h3>Professional — $29/mo</h3>
+                    <p>50 verifications per month, all deterministic and AI-assisted checks, quote-mismatch and credibility scoring, up to 10,000 words, PDF and Word export.</p>
+                </article>
+                <article class="card">
+                    <h3>Team — $79/mo</h3>
+                    <p>200 verifications per month, 5 seats, shared history, custom style-guide rules, claim-to-source alignment, priority support.</p>
+                </article>
+                <article class="card">
+                    <h3>Enterprise — $249/mo</h3>
+                    <p>Unlimited verifications and seats, API access, custom credibility criteria, SSO and audit logs, dedicated support.</p>
                 </article>
             </div>
         </section>
@@ -181,25 +384,37 @@
             <div class="section-head">
                 <div>
                     <span class="section-label">FAQ</span>
-                    <h2>Direct questions from source-heavy teams</h2>
+                    <h2>Direct answers for source-heavy teams</h2>
                 </div>
             </div>
             <div class="faq">
                 <details open>
                     <summary>What is CiteClear?</summary>
-                    <p>It is a citation verification and source-review tool for legal, research, and AI-assisted writing workflows.</p>
+                    <p>A citation verification and source-quality tool for legal, academic, research, and AI-assisted writing. It checks whether cited sources are real, relevant, current, and accurately quoted.</p>
                 </details>
                 <details>
-                    <summary>Why does the page talk about local preflight first?</summary>
-                    <p>Because that is the product's clearest trust position: check locally first, then only hand off to AI when the user explicitly chooses that step.</p>
+                    <summary>Why not just ask ChatGPT to check my citations?</summary>
+                    <p>Asking a language model to check citations re-runs the same kind of model that can fabricate them. CiteClear verifies each source against reality instead of trusting a model's word.</p>
                 </details>
                 <details>
-                    <summary>Who should evaluate CiteClear?</summary>
-                    <p>Legal teams, researchers, analysts, consultants, and anyone producing citation-heavy documents are the clearest fit.</p>
+                    <summary>Does CiteClear catch hallucinated AI citations?</summary>
+                    <p>Yes. It is built to catch fabricated sources, dead links, and quote mismatches that commonly appear in LLM-generated briefs, memos, and reports.</p>
                 </details>
                 <details>
-                    <summary>What types of documents does CiteClear support?</summary>
-                    <p>Legal briefs, research memos, academic papers, consulting decks, and AI-generated reports. Select the document type when you start a check to apply field-specific verification rules.</p>
+                    <summary>Why does the product lead with local preflight?</summary>
+                    <p>Because that is the clearest trust position: check locally first, then only hand off to AI when you explicitly choose that step. Pasted text is not used to train models.</p>
+                </details>
+                <details>
+                    <summary>What citation styles are supported?</summary>
+                    <p>APA, MLA, Chicago, Bluebook, IEEE, and custom style guides.</p>
+                </details>
+                <details>
+                    <summary>Is there a free plan?</summary>
+                    <p>Yes. Starter is free forever with 5 verifications per month and no credit card. Paid plans start at $29/month for AI-assisted checks.</p>
+                </details>
+                <details>
+                    <summary>What documents does CiteClear support?</summary>
+                    <p>Legal briefs, research memos, academic papers, consulting decks, and AI-generated reports. Select the document type when you start a check to apply field-specific rules.</p>
                 </details>
             </div>
             <div class="cta-band">
@@ -207,7 +422,8 @@
                 <h2>Catch citation problems before your document goes out.</h2>
                 <p>Paste text, run deterministic checks in the browser, and get a clean preflight report. No account or credit card needed.</p>
                 <div class="actions">
-                    <a class="button secondary" href="https://citeclear.dasgroupllc.com/" rel="noopener">Open CiteClear</a>
+                    <a class="button primary" href="https://citeclear.dasgroupllc.com/" rel="noopener">Open CiteClear</a>
+                    <a class="button secondary" href="/guides/best-ai-citation-checker-for-legal-briefs/">Read the buyer's guide</a>
                 </div>
             </div>
         </section>
@@ -224,7 +440,7 @@
                 <a class="pill-link" href="/apps/courtfile/">CourtFile</a>
                 <a class="pill-link" href="/apps/citeclear/">CiteClear</a>
             </div>
-            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a></p>
+            <p class="footnote">Das Group LLC • <a href="mailto:support@dasgroupllc.com">support@dasgroupllc.com</a> • <a href="/apps/privacy/">Privacy</a> • <a href="/apps/terms/">Terms</a> • <a href="/apps/citeclear/llms.txt">llms.txt</a></p>
         </div>
     </footer>
 </body>

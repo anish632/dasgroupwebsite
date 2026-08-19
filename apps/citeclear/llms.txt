@@ -1,0 +1,21 @@
+# CiteClear
+
+> A citation verification and source-quality tool that checks whether cited sources are real, relevant, current, and accurately quoted before citations damage credibility. Deterministic browser checks run first; optional AI-assisted review runs only when the user chooses it.
+
+By Das Group LLC. Last updated: 2026-08-18.
+
+## Key facts
+- For: legal teams, researchers, academics, analysts, consultants.
+- Checks: source existence, broken links, citation formatting (APA/MLA/Chicago/Bluebook/IEEE), stale sources, quote/source mismatch, claim-to-source alignment, credibility scoring.
+- Pricing: Free Starter plan; paid from $29/month.
+- Privacy: local preflight first, no model training on pasted text, optional AI review only.
+
+## Links
+- Canonical page: https://dasgroupllc.com/apps/citeclear/
+- CiteClear website: https://citeclear.dasgroupllc.com/
+- Full machine-readable context: https://dasgroupllc.com/apps/citeclear/llms-full.txt
+- Problem-intent guide: https://dasgroupllc.com/guides/best-ai-citation-checker-for-legal-briefs/
+- Portfolio: https://dasgroupllc.com/apps/
+
+## Contact
+- support@dasgroupllc.com
