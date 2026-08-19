@@ -1,0 +1,169 @@
+# Scan Receipts — AI Receipt Scanner for iPhone
+
+Canonical: https://dasgroupllc.com/apps/receipts/
+Provider: Das Group LLC (https://dasgroupllc.com/)
+Last updated: 2026-08-19
+
+## What is it?
+
+Scan Receipts is a free AI receipt scanner and expense tracker for iPhone. A user photographs a receipt or says the expense aloud. On-device OCR extracts the merchant name, date, amount, tax, and expense category in under 2 seconds. The result is a categorized expense record stored locally on the device. Voice receipt entry accepts natural language like "forty-two fifty at Costco for groceries" and parses it into a structured expense draft.
+
+It is an expense capture and organization tool. It is not accounting software, a tax advisor, or a cloud financial service.
+
+## Who is it for?
+
+- Freelancers and 1099 workers who need to track deductible expenses year-round for tax season
+- Self-employed people and small business owners who want to capture receipts on the spot without a corporate expense account
+- Business travelers who need to create trips, assign receipts as they go, and submit expense reports
+- Anyone who wants to know where their money goes without manually entering data into a spreadsheet
+
+## What problem does it solve?
+
+Paper receipts get lost. Manual expense spreadsheets take hours before tax season. Cloud-based receipt scanners like Expensify and Dext require accounts and upload financial data. Voice memos capture spending but don't become searchable expense records. Scan Receipts lets users photograph or speak an expense, then organizes, categorizes, and exports everything the user needs for taxes or reimbursement — without a cloud upload or account.
+
+## What it is not
+
+- Not accounting software (it does not replace QuickBooks, Xero, or FreshBooks)
+- Not a cloud financial service (all data stays on the device)
+- Not a team or corporate expense management platform
+- Not a tax preparation service or tax advisor
+- Not designed for high-volume business or multi-user team workflows
+
+## Platforms
+
+- iPhone, iOS 17 or later
+- Siri and Shortcuts supported for starting voice receipt entry
+- Home Screen widget (small and medium) for spending summary and quick scan
+- No Android version
+
+## How it works
+
+1. Open Scan Receipts and tap the scan button, or say the expense aloud using voice entry.
+2. For camera scans: Apple's native document scanner captures the receipt. On-device OCR (using Apple's Vision framework) extracts merchant, date, amount, and tax in under 2 seconds.
+3. For voice entry: the user speaks naturally. On-device speech parsing extracts amount, merchant, and category into a draft. The user reviews the parsed fields before saving.
+4. The app auto-assigns a tax category to each receipt (11 categories available).
+5. Receipts are stored locally. Users can search, filter by trip or date, add to a business trip, and view AI spending insights.
+6. At tax time or for reimbursement, the user exports a PDF or CSV expense report.
+
+## Key features
+
+- AI-powered OCR receipt scanning with 91% on-device accuracy
+- Voice receipt entry — say the expense aloud to create a draft
+- Auto-extracts merchant, date, amount, tax, and category in under 2 seconds
+- 11 automatic tax expense categories:
+  - Meals & dining
+  - Travel
+  - Office supplies
+  - Gas & fuel
+  - Healthcare
+  - Parking
+  - Entertainment
+  - Utilities
+  - Shopping
+  - Personal
+  - Other
+- Batch scan multiple receipts in a single session
+- Home screen widget (small and medium) showing monthly spending and top categories
+- AI spending insights — alerts for spending spikes, recurring patterns, savings opportunities, and tax deduction reminders (all on-device)
+- Business trip tracking with per-category totals and expense reports
+- Mileage tracking with customizable per-mile rate
+- Search receipts by merchant, amount, date range, or category
+- Filter by business trip or tax year
+- Duplicate receipt detection
+- Export to PDF — formatted expense report for accountants
+- Export to CSV — importable into QuickBooks, Xero, FreshBooks, or any tax software
+- Multiple currencies supported
+- 100% on-device processing — no cloud uploads
+- No account required
+
+## Pricing
+
+Free download through the App Store.
+
+Free tier:
+- 15 receipt scans
+- 1 PDF export
+- Automatic categorization
+- Basic expense tracking
+- Receipt search and filtering
+
+Scan Receipts Pro (auto-renewable subscription or lifetime, USD):
+- Monthly: $6.99
+- Annual: $39.99 (52% savings vs monthly)
+- Lifetime: $99.99 one-time
+
+Pro unlocks:
+- Unlimited receipt scans
+- Unlimited PDF and CSV exports
+- AI spending insights (alerts, patterns, savings suggestions)
+- Business trip tracking
+- Spending analytics dashboard
+- Priority support
+
+Subscriptions include a 3-day free trial. Local App Store prices may vary. Purchases are processed by Apple.
+
+## Privacy / data handling
+
+- All receipt scanning and OCR runs on-device using Apple's Vision framework.
+- Receipt photos and extracted financial data are stored locally on the device.
+- Scan Receipts does not upload receipt photos or expense data to a cloud server.
+- Voice entry uses on-device speech processing.
+- Purchases are processed through Apple.
+- Anonymous product analytics and subscription events do not include receipt content or financial data.
+- No account or sign-in is required to scan receipts.
+- See the privacy policy: https://dasgroupllc.com/apps/privacy/
+- See the App Store privacy label for the current Apple disclosure.
+
+## Install
+
+- App Store: https://apps.apple.com/us/app/ai-receipt-organizer-scanner/id6755660040
+- App Store ID: 6755660040
+- Bundle ID: com.anishdas.ExpenseReceiptScanner
+- Developer: Das Group LLC
+
+## Comparison notes
+
+- vs Expensify: Expensify targets teams and corporate workflows, requires an account, and syncs to the cloud. Scan Receipts is for individuals, works offline, stores data on-device, and requires no account or signup.
+- vs Dext (Receipt Bank): Dext is a cloud-first accountant-facing tool with a subscription model aimed at bookkeepers and accounting firms. Scan Receipts is a consumer app focused on the individual who generates the receipts.
+- vs Wave Receipts: Wave Receipts is tied to Wave's cloud accounting platform and requires an account. Scan Receipts works standalone with no cloud dependency.
+- Key differentiator: voice receipt entry. Users can say "forty-two fifty at Costco for groceries" and the app creates a structured expense draft. No comparable iPhone receipt scanner offers this.
+
+## FAQ
+
+Q: What is Scan Receipts?
+A: A free AI receipt scanner and expense tracker for iPhone by Das Group LLC. Photograph or say any expense and the app extracts merchant, date, amount, tax, and category automatically. All on-device. No account required.
+
+Q: Does Scan Receipts work offline?
+A: Yes. All scanning, OCR, and categorization run on-device. No internet connection is needed.
+
+Q: Does Scan Receipts upload my receipts to the cloud?
+A: No. Receipt photos and extracted data are stored locally on the device. No financial data is uploaded to a cloud server.
+
+Q: Can I add receipts by voice?
+A: Yes. Say the expense aloud — for example, "forty-two fifty at Costco for groceries" — and the app creates an expense draft with amount, merchant, and category parsed. Available from the app, Siri, and the Shortcuts app.
+
+Q: Can I export for taxes?
+A: Yes. Export as PDF or CSV. Each report includes merchant, date, amount, tax, and category for every receipt. Compatible with QuickBooks, Xero, FreshBooks, and most tax software.
+
+Q: Is it free?
+A: Free to download with 15 receipt scans and 1 PDF export. Pro unlocks unlimited scans, exports, AI insights, trip tracking, and analytics. Pro is $6.99/month, $39.99/year, or $99.99 lifetime. 3-day free trial included.
+
+Q: Does it track mileage?
+A: Yes. Log business miles with a customizable per-mile rate. Mileage appears in exported expense reports.
+
+Q: Is Scan Receipts good for 1099 freelancers?
+A: Yes. Auto-categorizes deductible expenses (meals, travel, gas, home office, and more), tracks business trips, logs mileage, and exports a tax-ready CSV or PDF for your accountant.
+
+Q: How does it compare to Expensify?
+A: Scan Receipts is for individuals — no account, no cloud sync, fully offline. Expensify targets teams and requires an account. For solo freelancers and self-employed people, Scan Receipts is simpler and more private.
+
+## Related
+
+- Portfolio hub: https://dasgroupllc.com/apps/
+- Company context: https://dasgroupllc.com/llms-full.txt
+- Compact AI context: https://dasgroupllc.com/apps/receipts/llms.txt
+
+## Contact
+
+- support@dasgroupllc.com
+- Das Group LLC: https://dasgroupllc.com

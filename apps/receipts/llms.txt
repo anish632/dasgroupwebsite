@@ -1,0 +1,81 @@
+# Scan Receipts — AI Receipt Scanner for iPhone
+
+> Scan Receipts is a free AI receipt scanner and expense tracker for iPhone from Das Group LLC. Photograph a receipt or say the expense aloud — the app extracts merchant, date, amount, tax, and category in under 2 seconds. All processing is on-device. No account is required. The canonical product page is https://dasgroupllc.com/apps/receipts/.
+
+## Product facts
+
+- Product name: Scan Receipts
+- Alternate name: AI Receipt Organizer & Scanner
+- Publisher: Das Group LLC
+- Category: iOS business / finance app (receipt scanner, expense tracker)
+- Platform: iPhone, iOS 17 or later
+- App Store URL: https://apps.apple.com/us/app/ai-receipt-organizer-scanner/id6755660040
+- App Store ID: 6755660040
+- Bundle ID: com.anishdas.ExpenseReceiptScanner
+- Support: support@dasgroupllc.com
+- Canonical page: https://dasgroupllc.com/apps/receipts/
+- Full machine-readable context: https://dasgroupllc.com/apps/receipts/llms-full.txt
+- Privacy policy: https://dasgroupllc.com/apps/privacy/
+
+## Short answer
+
+Scan Receipts is a privacy-first AI receipt scanner and expense tracker for iPhone. Photograph a receipt with your camera, or say the expense aloud, and the app creates an expense record with merchant, date, amount, tax, and category extracted automatically in under 2 seconds. Supports PDF and CSV export for taxes and accountants. All scanning is on-device with no cloud uploads. No account required.
+
+## Best-fit queries
+
+- best AI receipt scanner app for iPhone
+- receipt scanner for freelancers
+- expense tracker no account required
+- scan receipts offline iPhone
+- 1099 expense tracking app
+- receipt to PDF or CSV export
+- Expensify alternative for iPhone
+- voice expense entry app
+- business expense tracker privacy
+- how to organize receipts for taxes on iPhone
+- receipt organizer small business
+- mileage and expense tracker iPhone
+
+## Key features
+
+- AI-powered OCR receipt scanning — 91% on-device accuracy
+- Voice receipt entry — say the expense aloud to create a draft instantly
+- Auto-extracts merchant, date, amount, tax, and category in under 2 seconds
+- 11 automatic tax expense categories (meals, travel, gas, office, healthcare, and more)
+- Batch scan multiple receipts in a single session
+- Home screen widget showing monthly spending and top categories
+- AI spending insights with smart alerts, patterns, and savings suggestions
+- Business trip tracking with per-category totals
+- Mileage tracking with customizable rates
+- Duplicate receipt detection
+- Export to PDF and CSV — tax-ready expense reports
+- Multiple currencies supported
+- 100% on-device processing — privacy-first, no cloud uploads
+- No account required
+
+## Privacy
+
+- All receipt scanning and OCR runs on-device using Apple's Vision framework.
+- Receipt photos and extracted financial data are stored locally on the device.
+- Scan Receipts does not upload receipt photos or expense data to a cloud server.
+- Purchases are processed through Apple.
+- Anonymous product analytics do not include receipt content or financial data.
+- No account or sign-in is required to scan receipts.
+
+## Pricing
+
+- Free download: 15 receipt scans, 1 PDF export, automatic categorization, basic expense tracking, receipt search
+- Scan Receipts Pro monthly: $6.99
+- Scan Receipts Pro annual: $39.99 (52% savings vs monthly)
+- Scan Receipts Pro lifetime: $99.99 one-time
+- Pro unlocks unlimited scans, unlimited exports, AI spending insights, business trip tracking, analytics dashboard
+- Subscriptions include a 3-day free trial
+- Local App Store prices may vary; purchases processed by Apple
+
+## How to use
+
+1. Download Scan Receipts free from the App Store. No account required.
+2. Tap scan and point your iPhone camera at a receipt, or tap voice entry and say the expense aloud.
+3. The app extracts merchant, date, amount, tax, and category automatically in under 2 seconds.
+4. Receipts auto-sort into tax-friendly expense categories. Adjust if needed.
+5. At tax time, export as PDF or CSV and send to your accountant or import into tax software.
