@@ -34,7 +34,7 @@ iPhone apps by DAS Group LLC. Each link is the canonical product page with a dir
 - [AffirmDaily](https://dasgroupllc.com/apps/affirmdaily/): Daily affirmations app that matches one affirmation to your mood each morning using on-device AI.
 - [Mood Tracker (CopeCalm)](https://dasgroupllc.com/apps/copecalm/): Anxiety and panic relief toolkit with 60-second breathing exercises, grounding, and mood tracking. Works offline.
 - [AllStrength AI](https://dasgroupllc.com/apps/allstrength/): Women's strength training app for iPhone with 30+ guided workouts, glutes and calisthenics programs, life-stage modifications, AI coaching, streaks, and optional hands-free voice controls.
-- [TrackFasts](https://dasgroupllc.com/apps/trackfasts/): Intermittent fasting timer focused on keeping your streak alive, with 16:8, 18:6, 20:4, and OMAD protocols.
+- [TrackFasts](https://dasgroupllc.com/apps/trackfasts/): Free, privacy-first intermittent fasting timer for iPhone & Apple Watch with 16:8, 18:6, 20:4, OMAD, biological stage tracking (fat burning, ketosis, autophagy), Live Activities, and on-device AI insights. 100% offline.
 - [Be Ridiculous AI](https://dasgroupllc.com/apps/be-ridiculous/): AI activity generator that suggests something to do based on your mood, energy, and who you are with.
 - [WOD Timer Pro](https://dasgroupllc.com/apps/crossfit-timer/): Interval workout timer with AMRAP, EMOM, Tabata, and For Time modes, voice cues, and Apple Watch support.
 - [Invoices & Time Tracker](https://dasgroupllc.com/apps/invoices/): Invoice maker for freelancers and contractors to create and send professional PDF invoices in under a minute.

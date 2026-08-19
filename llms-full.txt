@@ -121,6 +121,17 @@ The products generally follow four principles:
 - Summary: AllStrength AI is an iPhone strength training app for women with 30+ guided workouts, calisthenics, booty and glutes training, women's health routines, AI coach insights, workout streaks, progress analytics, and optional hands-free voice controls.
 - Best-fit queries: women's strength training app, home workout app for women, guided workout app, glutes workout app, calisthenics app for women, voice-controlled workout app, postpartum workout app, menopause fitness app.
 
+### TrackFasts
+
+- URL: https://dasgroupllc.com/apps/trackfasts/
+- Machine-readable context: https://dasgroupllc.com/apps/trackfasts/llms.txt
+- Full context: https://dasgroupllc.com/apps/trackfasts/llms-full.txt
+- App Store URL: https://apps.apple.com/us/app/fasting-timer-trackfasts-ai/id6755202734
+- Category: iOS health and fitness / intermittent fasting timer & habit tracker
+- Summary: TrackFasts is a privacy-first intermittent fasting timer for iPhone and Apple Watch. Features 4+ fasting protocols (16:8, 18:6, 20:4, OMAD), 6 biological fasting stages (glycogen depletion, fat burning, ketosis, autophagy), Lock Screen Live Activities, interactive widgets, on-device AI insights engine, weight trend tracking, and Siri Shortcuts. Works 100% offline with zero accounts and no cloud tracking.
+- Best-fit queries: free intermittent fasting app iPhone, fasting timer Apple Watch, best 16:8 fasting tracker, OMAD timer app, private fasting tracker no cloud, Zero fasting alternative, Simple fasting alternative, autophagy timer iOS, offline fasting app, fasting streak tracker.
+
+
 ## Fast answers
 
 ### What does DAS Group LLC build?

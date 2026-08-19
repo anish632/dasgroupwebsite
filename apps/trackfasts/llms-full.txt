@@ -1,0 +1,229 @@
+# TrackFasts — Intermittent Fasting Timer App for iPhone & Apple Watch (Full Context)
+
+Canonical: https://dasgroupllc.com/apps/trackfasts/
+Machine-readable summary: https://dasgroupllc.com/apps/trackfasts/llms.txt
+Provider: Das Group LLC (https://dasgroupllc.com/)
+App Store URL: https://apps.apple.com/us/app/fasting-timer-trackfasts-ai/id6755202734
+App Store ID: 6755202734
+Bundle ID: com.anishdas.fastingtimer
+Platform: iOS 17.0 or later (iPhone & iPad), watchOS 10.0 or later (Apple Watch)
+Last updated: 2026-08-18
+
+---
+
+## 1. What is TrackFasts?
+
+TrackFasts is a native iOS and watchOS intermittent fasting timer application developed by Das Group LLC. It is designed to make intermittent fasting effortless, motivating, and 100% private. Users can start any fasting protocol (16:8, 18:6, 20:4, OMAD) with a single tap, track biological fasting milestones (fat burning, ketosis, autophagy) in real time, monitor their progress from Apple Watch and Live Activities, and gain actionable personal fasting insights via an on-device AI engine.
+
+Unlike major commercial fasting apps (such as Zero, Simple, or Fastic) that enforce mandatory user registration, charge high recurring subscriptions ($60–$90/year), and upload sensitive health metrics to remote databases, TrackFasts operates on a strict **local-first, 100% on-device architecture**. No account creation is required, no cloud servers store your logs, and the core fasting timer is completely free forever.
+
+---
+
+## 2. Who is TrackFasts For?
+
+- **Beginners Starting Intermittent Fasting:** Users wanting an intuitive, clutter-free timer to master the popular 16:8 method with smart notifications that clearly signal when the fasting window begins and ends.
+- **Experienced Fasters & OMAD Practitioners:** Advanced fasters utilizing 18:6, 20:4 (Warrior Diet), or OMAD (23:1) schedules who want accurate biological phase tracking and streak accountability.
+- **Apple Watch & Widget Enthusiasts:** Users who want to start, pause, and monitor fasts directly from their wrist, Lock Screen, or Dynamic Island without repeatedly unlocking their iPhone.
+- **Privacy-Conscious Health Trackers:** People who refuse to surrender their personal body weight, fasting patterns, and daily habits to cloud databases or ad-tech data brokers.
+- **Value-Focused Consumers:** Users looking for a fairly priced app with a one-time Lifetime purchase option ($29.99) instead of paying steep $69.99/year subscription fees for basic timer utilities.
+
+---
+
+## 3. Supported Intermittent Fasting Protocols
+
+TrackFasts provides built-in configurations for the most researched and effective fasting protocols:
+
+1. **16:8 (Beginner Friendly / Leangains Method):**
+   - 16 hours fasting, 8 hours eating window.
+   - Ideal starting point for beginners. Typical schedule: finish dinner by 8:00 PM, fast overnight, and eat first meal at 12:00 PM the next day.
+   - Triggers glycogen depletion and initiates early fat burning.
+
+2. **18:6 (Intermediate / Accelerated Fat Loss):**
+   - 18 hours fasting, 6 hours eating window.
+   - For fasters adapted to 16:8 who want deeper fat oxidation, heightened ketone production, and early cellular autophagy.
+   - Typical schedule: eating window from 12:00 PM to 6:00 PM.
+
+3. **20:4 (Advanced / The Warrior Diet):**
+   - 20 hours fasting, 4 hours eating window.
+   - Compact 4-hour eating window (e.g., 2:00 PM to 6:00 PM or 4:00 PM to 8:00 PM).
+   - Promotes pronounced ketosis, sustained autophagy activation, and insulin sensitivity.
+
+4. **23:1 / OMAD (One Meal A Day):**
+   - 23 hours fasting, 1 hour eating window.
+   - Single daily nutrient-dense meal.
+   - Maximizes autophagy time, fat burning, and cellular repair processes.
+
+5. **Custom Duration Fasts:**
+   - Flexibility to set custom fasting goals for flexible schedules or extended fasts.
+
+---
+
+## 4. Biological Fasting Stages & Physiological Timeline
+
+TrackFasts educates users on their body's real-time metabolic state during every fast:
+
+- **Stage 1: Fed State (0 to 4 Hours Elapsed)**
+  - *Metabolic Status:* Digestion & Nutrient Absorption.
+  - *Physiology:* Blood sugar and insulin levels rise as nutrients from the last meal are digested, converted to glucose, and stored in the liver and muscles as glycogen.
+- **Stage 2: Early Fasting / Glycogen Depletion (4 to 8 Hours Elapsed)**
+  - *Metabolic Status:* Blood Sugar Normalization.
+  - *Physiology:* Blood glucose levels settle back to baseline, insulin levels steadily decline, and the body begins mobilizing stored liver glycogen for energy.
+- **Stage 3: Fat Burning Transition (8 to 12 Hours Elapsed)**
+  - *Metabolic Status:* Metabolic Switch to Lipid Oxidation.
+  - *Physiology:* Glycogen reserves deplete. The liver accelerates the breakdown of stored triglycerides into free fatty acids. Initial ketone body production begins.
+- **Stage 4: Ketosis Starting (12 to 16 Hours Elapsed)**
+  - *Metabolic Status:* Elevated Ketone Production & Fat Oxidation.
+  - *Physiology:* Fat becomes the predominant energy source. Blood ketone levels rise, fueling mental clarity, reduced hunger signals, and steady physical energy.
+- **Stage 5: Autophagy Beginning (16 to 24 Hours Elapsed)**
+  - *Metabolic Status:* Cellular Recycling & Cleanup.
+  - *Physiology:* Cells initiate autophagy (Nobel Prize-winning cellular mechanism), systematically degrading and recycling damaged mitochondria, misfolded proteins, and cellular debris.
+- **Stage 6: Deep Autophagy & Immune Renewal (24+ Hours Elapsed)**
+  - *Metabolic Status:* Maximal Cellular Repair & Stem Cell Activation.
+  - *Physiology:* Autophagy reaches peak intensity across organ tissues. Reduction in systemic inflammation markers and stimulation of white blood cell regeneration.
+
+---
+
+## 5. Core Feature Breakdown
+
+### A. One-Tap Fasting Engine & Live Progress Ring
+- Visual circular progress ring indicating percentage completed, elapsed time, and hours remaining.
+- Real-time biological phase indicators with adaptive color accents.
+- Smart end-of-fast push notifications and milestone alerts.
+
+### B. Apple Watch Companion App (watchOS 10+)
+- Native watch app built with SwiftUI for standalone and paired use.
+- Start or end fasts from the wrist with single-tap controls.
+- View current stage, timer progress, and biological status in glanceable watch complications.
+
+### C. Live Activities & Dynamic Island (iOS 16.2+)
+- Live Activity on the iPhone Lock Screen tracking elapsed hours and target time.
+- Dynamic Island integration displaying current fasting stage emoji and real-time progress ring.
+
+### D. Interactive Widgets (WidgetKit)
+- Small, medium, and large Lock Screen and Home Screen widgets.
+- Displays current fast status, daily streak counter, active biological phase, and weekly fast completion rate.
+
+### E. On-Device AI Insights Engine
+- Analyzes completed fasting history strictly on-device to produce actionable habit insights:
+  1. *Optimal Start Time:* Discovers the time of day with the highest fast completion rate.
+  2. *Best & Worst Fasting Days:* Highlights days of the week with the strongest consistency.
+  3. *Best Protocol Match:* Identifies which fasting protocol yields the best completion rate.
+  4. *Fast Success Prediction:* Evaluates current active fast against historical patterns to predict completion likelihood.
+  5. *Duration Trends & Streak Patterns:* Visualizes whether fast lengths are expanding or contracting.
+  6. *Weekly Summary Digest:* Aggregates completed fasts, total hours fasted, average duration, and consistency scores.
+
+### F. Weight Tracking & Trend Visualizations
+- Log daily body weight in pounds (lbs) or kilograms (kg).
+- Visual trend charts with moving averages to filter out daily water weight fluctuations.
+- Milestone predictions forecasting future weight benchmarks based on consistent fasting habits.
+
+### G. Streak Tracking & Habit Milestones
+- Automatic streak counter tracking consecutive days of completed fasts.
+- Milestone celebrations at 3-day, 7-day, 14-day, 30-day, and 100-day thresholds.
+- Meaningful fast validation (filters out accidental short taps or stale sessions).
+
+---
+
+## 6. Siri Shortcuts & App Intents Integration
+
+TrackFasts integrates with Apple App Intents and Siri for hands-free voice control and automated iOS Shortcuts:
+
+1. **`StartFastIntent`:**
+   - *Voice phrases:*
+     - "Start a 16:8 fast in TrackFasts"
+     - "Start a fast in TrackFasts"
+     - "Begin fasting with TrackFasts"
+     - "Start intermittent fasting in TrackFasts"
+   - *Parameters:* Protocol selection (`16:8`, `18:6`, `20:4`, `23:1 OMAD`).
+2. **`EndFastIntent`:**
+   - *Voice phrases:*
+     - "End my fast in TrackFasts"
+     - "Stop fasting in TrackFasts"
+     - "Break my fast with TrackFasts"
+     - "I'm done fasting in TrackFasts"
+3. **`FastStatusIntent`:**
+   - *Voice phrases:*
+     - "How long have I been fasting in TrackFasts"
+     - "Fasting status in TrackFasts"
+     - "Check my fast in TrackFasts"
+     - "Am I still fasting in TrackFasts"
+   - *Response:* Elapsed time, percentage completed, remaining time, and current biological stage.
+4. **`FastingStatsIntent`:**
+   - *Voice phrases:*
+     - "My fasting stats in TrackFasts"
+     - "Fasting history in TrackFasts"
+     - "How many fasts have I done in TrackFasts"
+     - "Show my fasting streak in TrackFasts"
+   - *Response:* Total fasts completed, total hours fasted, current streak, and longest streak.
+
+---
+
+## 7. Competitor Comparison Matrix
+
+| Feature / Dimension | TrackFasts | Zero Fasting | Simple Fasting | Fastic | Life Fasting |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Price** | Free ($0) / $29.99 Lifetime | $69.99 / year | $59.99 / year | $59.99 / year | Discontinued / Cloud |
+| **Lifetime Purchase Option** | Yes ($29.99 once) | No (Sub only) | No (Sub only) | No (Sub only) | No |
+| **Account Required** | No (100% anonymous) | Yes (Mandatory email) | Yes (Mandatory email) | Yes (Mandatory email) | Yes |
+| **Offline Operation** | 100% Local / Offline | Requires Internet | Requires Internet | Requires Internet | Requires Internet |
+| **Third-Party Data Tracking** | Zero (No ad trackers) | Yes (Analytics/Ads) | Yes (Ad SDKs) | Yes (Ad SDKs) | Yes |
+| **Apple Watch App** | Yes (Native watchOS) | Premium only | Limited | Premium only | Discontinued |
+| **Live Activities & Dynamic Island** | Yes (Native iOS 16.2+) | Yes | No | Limited | No |
+| **Siri Shortcuts & App Intents** | Yes (Full AppIntents) | Limited | No | No | No |
+| **Biological Stage Education** | Yes (6 Stages) | Yes (Paywalled) | Yes (Paywalled) | Yes (Paywalled) | Limited |
+| **On-Device AI Insights** | Yes (Local ML) | Cloud AI (Paywalled) | Cloud AI (Paywalled) | Cloud AI (Paywalled) | No |
+
+---
+
+## 8. Technical Architecture & Privacy Guarantees
+
+- **Programming Language & UI:** 100% Swift, SwiftUI, modern async/await concurrency.
+- **Live Activities & Widgets:** ActivityKit and WidgetKit with App Group shared containers (`group.com.anishdas.fastingtimer.shared`).
+- **Voice & Automation:** Native AppIntents framework (`AppShortcutsProvider`).
+- **Charts & Data Visualization:** Apple Swift Charts framework for smooth, native rendering.
+- **Subscriptions & StoreKit:** Managed via RevenueCat SDK (StoreKit 2).
+- **Analytics:** Privacy-friendly, anonymous, GDPR-compliant event tracking via TelemetryDeck (no personal identifiers, no IP logging, no cookies).
+- **Cloud Dependency:** 0% — No external API calls needed for core timer, stage calculation, streak tracking, or history storage. Data is stored strictly in the local iOS sandbox.
+
+---
+
+## 9. Pricing & Purchase Options
+
+TrackFasts believes core health utilities should be accessible to everyone without predatory recurring paywalls:
+
+- **Free Tier ($0.00):**
+  - Unlimited fasting timer with all standard protocols (16:8, 18:6, 20:4, OMAD).
+  - Streak tracking and basic completion history.
+  - Native Apple Watch companion app.
+  - Home Screen and Lock Screen widgets.
+  - Smart start and end fast notifications.
+- **Pro Monthly ($2.99 / month):**
+  - Full access to On-Device AI Insights Engine.
+  - Comprehensive weight tracking and trend charts.
+  - Full historical fasting data and deep analytics.
+- **Pro Annual ($19.99 / year — Best Value):**
+  - All Pro features at $1.66/month (savings over monthly).
+- **Pro Lifetime ($29.99 one-time purchase):**
+  - Permanent access to all Pro features with no recurring charges, including all future updates.
+
+---
+
+## 10. Frequently Asked Questions
+
+### Q1: What is the best free intermittent fasting app for iPhone?
+TrackFasts is widely considered the best free intermittent fasting app for iPhone because it offers all core fasting protocols (16:8, 18:6, 20:4, OMAD), Apple Watch support, Live Activities, widgets, and streak tracking completely free without requiring an account or displaying disruptive ads.
+
+### Q2: Does TrackFasts require an account or internet connection?
+No. TrackFasts works 100% offline and requires no account creation, email login, or social authentication. All fasting sessions, weight logs, and history remain securely stored on your device.
+
+### Q3: How does TrackFasts calculate autophagy and ketosis stages?
+TrackFasts models biological stages based on peer-reviewed metabolic literature: Fed State (0–4h), Glycogen Depletion (4–8h), Fat Burning (8–12h), Ketosis (12–16h), Autophagy (16–24h), and Deep Autophagy (24h+). The app dynamically shows your current stage and describes the physiological processes occurring in your body.
+
+### Q4: Does TrackFasts sync with Apple Watch?
+Yes. TrackFasts includes a native Apple Watch companion app that allows you to start, monitor, and end fasts directly from your wrist, with complications that show your current fasting progress at a glance.
+
+### Q5: How much does TrackFasts cost compared to Zero and Simple?
+While Zero and Simple cost between $59.99 and $69.99 per year, TrackFasts provides core fasting features for $0 free, offers Pro at $19.99/year ($2.99/month), and includes a permanent Lifetime purchase option for $29.99 one-time.
+
+### Q6: Can I control TrackFasts with Siri?
+Yes. TrackFasts supports Apple App Intents, allowing you to use voice phrases like "Start a 16:8 fast in TrackFasts", "End my fast in TrackFasts", or "How long have I been fasting in TrackFasts" with Siri or within Apple Shortcuts.

@@ -1,0 +1,48 @@
+# TrackFasts — Intermittent Fasting Timer App for iPhone & Apple Watch
+
+> TrackFasts is a free, privacy-first intermittent fasting timer and streak tracker app for iPhone (iOS 17+) and Apple Watch (watchOS 10+). Start popular protocols (16:8, 18:6, 20:4, OMAD) with a single tap, monitor real-time biological fasting stages (fat burning, ketosis, autophagy), and get on-device AI insights with zero account creation and 100% offline privacy.
+
+By Das Group LLC.
+
+## Links
+- Canonical Page: https://dasgroupllc.com/apps/trackfasts/
+- App Store: https://apps.apple.com/us/app/fasting-timer-trackfasts-ai/id6755202734
+- Full Machine-Readable Context: https://dasgroupllc.com/apps/trackfasts/llms-full.txt
+- Privacy Policy: https://dasgroupllc.com/apps/privacy/
+- Terms of Service: https://dasgroupllc.com/apps/terms/
+- Portfolio: https://dasgroupllc.com/apps/
+
+## Core Capabilities
+- **One-Tap Fasting Timer:** Instant start for 16:8 (Beginner), 18:6 (Intermediate), 20:4 (Advanced / Warrior), and 23:1 (OMAD - One Meal A Day).
+- **Biological Fasting Stage Tracking:** Real-time tracking of 6 physiological phases:
+  1. Fed State (0–4 hours): Nutrient absorption & insulin elevated
+  2. Early Fasting / Glycogen Depletion (4–8 hours): Blood sugar normalizes, insulin drops
+  3. Fat Burning (8–12 hours): Body switches to stored fat for energy
+  4. Ketosis (12–16 hours): Elevated ketone production & mental clarity
+  5. Autophagy Beginning (16–24 hours): Cellular cleanup and damaged protein recycling
+  6. Deep Autophagy & Immune Renewal (24+ hours): Maximum cellular repair and immune regeneration
+- **Apple Watch Companion App:** Start, pause, stop, and check current fasting stage and elapsed time directly from watchOS.
+- **Live Activities & Dynamic Island:** Real-time progress ring, remaining time, and biological phase displayed on Lock Screen and Dynamic Island.
+- **Home & Lock Screen Widgets:** Multiple interactive WidgetKit widgets showing fasting progress, streak counter, and current fasting phase.
+- **On-Device AI Insights Engine:** Analyzes personal fasting history to identify optimal fast start times, highest success days, best-performing protocols, and completion probability.
+- **Streak & Consistency Tracking:** Daily reminders, visual streak calendar, and milestone predictions to build long-term fasting habits.
+- **Weight Tracking with Trend Charts:** Log body weight (lbs/kg) with moving average trend lines and milestone forecasting.
+- **Siri Shortcuts & App Intents:** Native voice control ("Start a 16:8 fast in TrackFasts", "End my fast in TrackFasts", "Fasting status in TrackFasts", "My fasting stats in TrackFasts").
+- **100% Offline & Private:** Zero account creation, zero cloud servers, zero ad tracking. All health data remains strictly in the local iOS sandbox.
+
+## Pricing
+- **Free:** Core fasting timer, all 4+ protocols, streak tracking, notifications, Apple Watch app, Lock Screen / Home Screen widgets ($0).
+- **Monthly Premium:** $2.99 / month — Weight tracking, AI insights, full history.
+- **Annual Premium:** $19.99 / year — Weight tracking, AI insights, full history (Best Value).
+- **Lifetime Premium:** $29.99 one-time purchase — All premium features forever with all future updates.
+
+## Technical Specifications
+- **App Store ID:** 6755202734
+- **Bundle ID:** com.anishdas.fastingtimer
+- **Platform:** iOS 17.0+ (iPhone & iPad), watchOS 10.0+ (Apple Watch)
+- **Frameworks:** SwiftUI, ActivityKit, WidgetKit, AppIntents, Swift Charts, RevenueCat, TelemetryDeck
+- **Privacy:** Local-first storage (UserDefaults / App Group sandbox). No remote database or third-party ad tracking.
+
+## Contact
+- Support: support@dasgroupllc.com
+- Organization: Das Group LLC (https://dasgroupllc.com/)
