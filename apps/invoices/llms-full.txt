@@ -1,0 +1,414 @@
+# Invoices & Time Tracker — Professional Invoice Maker for Freelancers & Contractors
+
+Canonical: https://dasgroupllc.com/apps/invoices/
+Provider: Das Group LLC (https://dasgroupllc.com/)
+Last updated: 2026-08-19
+Version: 1.9.8
+App ID: 6756686843
+Bundle ID: com.dasgroup.invoicemaker
+
+## What is it?
+Invoices & Time Tracker is a free iOS mobile application that revolutionizes how freelancers, contractors, and small businesses create professional invoices. The app combines four powerful features into one seamless workflow: (1) built-in time tracking with one-tap invoice generation, (2) voice-based invoice creation using on-device speech recognition, (3) GPS job site tracking with automatic time logging via geofencing, and (4) AI-powered Smart Compose that auto-detects clients, line items, rates, and quantities. Users can create and send professional PDF invoices in under 30 seconds directly from their iPhone, with no desktop, no account, and no internet connection required.
+
+**Key Value Proposition**: The only invoice app that combines voice creation, GPS time tracking, and AI features while maintaining complete privacy through on-device processing.
+
+## Who is it for?
+
+### Primary Audience
+- Freelancers: Web developers, graphic designers, copywriters, consultants, coaches, tutors, virtual assistants
+- Independent Contractors: Construction workers, electricians, plumbers, HVAC technicians, handymen, cleaners
+- Small Business Owners: Service-based businesses, solopreneurs, micro-businesses
+- Service Professionals: Lawyers, accountants, therapists, personal trainers, photographers, videographers
+
+### Secondary Audience
+- Part-time workers with side gigs
+- Gig economy workers (Uber, Lyft, DoorDash drivers who also do freelance work)
+- Students doing freelance work
+- Retirees with consulting businesses
+- Anyone who needs to bill clients for time or services
+
+### Geographic Focus
+- Primary: United States (App Store optimized for US market)
+- Secondary: Canada, United Kingdom, Australia, New Zealand
+- Tertiary: All countries where App Store is available
+- Language: English (primary), with plans for Spanish, French, German
+
+## What problem does it solve?
+
+### The Pain Points
+1. **Double Data Entry**: Most freelancers track time in one app, then manually enter those hours into an invoice in another app
+2. **Forgetting to Track Time**: Busy professionals often forget to start/stop timers, losing billable hours
+3. **Complex Invoice Creation**: Traditional invoicing software is desktop-first, slow, and requires extensive data entry
+4. **Privacy Concerns**: Many cloud-based solutions store sensitive business data on remote servers
+5. **Mobile Limitations**: Most mobile invoice apps lack advanced features like voice creation or GPS tracking
+6. **Offline Limitations**: Many apps require internet connection, which isn't always available on job sites
+
+### Our Solution
+- **Unified Workflow**: Track time AND create invoices in the same app with one-tap conversion
+- **Automatic Tracking**: GPS geofencing automatically starts/stop timers when you arrive/leave job sites
+- **Voice First**: Speak naturally to create invoices - no typing required
+- **Privacy First**: All data stays on your device; no cloud, no accounts, no tracking
+- **Mobile First**: Designed specifically for iPhone with touch-optimized interface
+- **Offline First**: Works completely offline - no internet required for any feature
+
+## Key Features (Detailed)
+
+### 1. Voice Invoice Creation
+- **Natural Language Processing**: Speak naturally like "Invoice for Sarah Chen, 12 hours of web development at $150 an hour, plus $500 for the logo design"
+- **On-Device Speech Recognition**: All audio processing happens on your iPhone - nothing is sent to servers
+- **Smart Parsing**: AI extracts client names, line items, quantities, rates, and totals automatically
+- **Context Awareness**: Remembers recent clients, rates, and line items for faster creation
+- **Offline Functionality**: Works without internet connection
+- **Multiple Languages**: Currently supports English with high accuracy
+- **Error Correction**: Suggests corrections for misheard words or numbers
+
+### 2. Built-in Time Tracker
+- **Simple Interface**: Large start/stop button with clear visual feedback
+- **Multiple Timers**: Run multiple timers simultaneously for different clients/projects
+- **Manual Entry**: Add time manually if you forget to start the timer
+- **Pause/Resume**: Pause and resume timers as needed
+- **Time Rounding**: Automatic rounding to nearest minute, 5 minutes, or 15 minutes
+- **Billable Rate**: Set different hourly rates per client or project
+- **Notes**: Add notes to time entries for context
+
+### 3. Auto-Invoice from Tracked Hours
+- **One-Tap Conversion**: Convert tracked hours to invoice with a single tap
+- **Pre-filled Details**: Client, line items, quantities, rates, and totals auto-filled
+- **Quick Start**: Tap recent client to start timer with their details pre-loaded
+- **Batch Processing**: Select multiple time entries to include in one invoice
+- **Customization**: Edit any auto-filled details before finalizing
+- **Templates**: Save frequently used line items and descriptions
+
+### 4. GPS Job Sites with Geofencing
+- **Location Saving**: Save client job sites with custom geofence radii (50m to 500m)
+- **Automatic Tracking**: Timer automatically starts when you arrive, stops when you leave
+- **Geofence Customization**: Adjust geofence size based on location accuracy needs
+- **Multiple Locations**: Save unlimited job sites per client
+- **Arrival/Departure Notifications**: Get notified when timer starts/stops automatically
+- **Manual Override**: Manually start/stop timer even at saved locations
+- **Location History**: View map of where time was tracked
+
+### 5. AI Smart Compose
+- **Client Detection**: Automatically identifies client names from your contacts or previous invoices
+- **Line Item Detection**: Recognizes common services and products
+- **Rate Detection**: Remembers your standard rates per client or service type
+- **Quantity Detection**: Extracts numbers and time durations accurately
+- **Industry Templates**: Pre-built templates for:
+  - Consulting (hourly, project-based)
+  - Construction (materials, labor, equipment)
+  - Design (hours, revisions, deliverables)
+  - Cleaning (rooms, square footage, frequency)
+  - Development (hours, milestones, features)
+- **Custom Templates**: Create and save your own templates
+- **Learning**: Gets smarter as you use it, remembering your preferences
+
+### 6. Professional PDF Export
+- **Clean Design**: Professional, minimalist invoice templates
+- **Custom Branding**: Add your logo, business name, colors, and contact information
+- **Multiple Templates**: Choose from different invoice layouts and styles
+- **PDF Quality**: High-resolution PDFs suitable for printing or email
+- **Custom Fields**: Add custom fields like PO numbers, project codes, tax IDs
+- **Numbering**: Automatic invoice numbering with customizable prefixes
+- **Watermarks**: Free tier includes subtle watermark (removable in Pro)
+
+### 7. In-App Email with AI Composition
+- **Direct Email**: Send invoices directly from the app via email
+- **AI-Composed Messages**: AI generates professional email messages with:
+  - Professional tone (default)
+  - Friendly tone
+  - Follow-up tone
+  - Urgent tone
+- **Customization**: Edit AI-generated messages before sending
+- **Email History**: Track sent invoices and their status
+- **Attachments**: Automatically attaches PDF invoice to email
+- **Multiple Recipients**: Send to client and CC your accountant or partner
+
+### 8. Client Management
+- **Client Profiles**: Save client details including:
+  - Name and business name
+  - Email, phone, address
+  - Default hourly rate
+  - Tax information
+  - Payment terms
+  - Custom branding preferences
+- **Quick Access**: Recent clients appear at top for fast selection
+- **Search**: Search clients by name, email, or business
+- **Import/Export**: Import from contacts, export client list
+- **Client Analytics**: View total billed, pending, paid per client
+
+### 9. Revenue Dashboard
+- **Overview**: See total revenue, pending payments, overdue invoices
+- **Time Periods**: View by day, week, month, quarter, or custom date range
+- **Client Breakdown**: Revenue by client with visual charts
+- **Payment Status**: Track paid, pending, overdue, and cancelled invoices
+- **Export Data**: Export revenue data to CSV for accounting
+- **Tax Reporting**: Generate tax reports with filtering options
+- **Currency Support**: Multiple currency support (USD, CAD, GBP, EUR, AUD, etc.)
+
+### 10. Estimates & Quotes
+- **Estimate Creation**: Create professional estimates/quotes with same features as invoices
+- **Conversion**: Convert estimates to invoices with one tap
+- **Expiration Dates**: Set expiration dates for estimates
+- **Approval Tracking**: Track when clients approve estimates
+- **Follow-up Reminders**: Get reminded to follow up on pending estimates
+
+## Platform Details
+
+### Technical Requirements
+- **Operating System**: iOS 17.0 or later
+- **Devices**: iPhone (all models supporting iOS 17+)
+- **Storage**: ~50MB initial download
+- **Memory**: Optimized for all iPhone models
+- **Connectivity**: Internet required only for initial download and email sending
+- **Permissions**: 
+  - Microphone: For voice invoice creation
+  - Location: For GPS job site tracking (optional)
+  - Contacts: For client import (optional)
+  - Notifications: For timer and payment reminders (optional)
+
+### Performance
+- **Launch Time**: < 2 seconds on modern iPhones
+- **Invoice Creation**: < 30 seconds from app launch to sent invoice
+- **Voice Processing**: < 5 seconds for typical invoice descriptions
+- **PDF Generation**: < 2 seconds for complex invoices
+- **Offline Capability**: 100% functional without internet
+
+### Accessibility
+- **VoiceOver**: Full VoiceOver support for blind/low-vision users
+- **Dynamic Type**: Supports all text size preferences
+- **Reduced Motion**: Respects reduced motion settings
+- **Color Contrast**: High contrast mode support
+- **Switch Control**: Full Switch Control compatibility
+- **Screen Reader**: Optimized for screen readers
+
+## Pricing & Business Model
+
+### Free Plan (No Credit Card Required)
+- **Price**: $0 (Forever free)
+- **Clients**: Up to 5 clients
+- **PDF Exports**: 3 watermark-free PDF exports per month
+- **Time Tracking**: Unlimited time tracking
+- **Voice Creation**: Unlimited voice invoice creation
+- **AI Features**: Full AI Smart Compose functionality
+- **GPS Tracking**: Full GPS job site tracking with geofencing
+- **Client Management**: Full client management features
+- **Dashboard**: Full revenue dashboard with analytics
+- **Support**: Community support via email
+- **All Core Features**: Access to all main app features
+
+### Pro Plan (Subscription)
+- **Price**: $9.99/month or $99.99/year (2 months free)
+- **Annual Savings**: Save 16% with yearly subscription
+- **Clients**: Unlimited clients
+- **PDF Exports**: Unlimited watermark-free PDF exports
+- **Custom Branding**: Full custom branding with logo upload
+- **AI Email**: Advanced AI email composition with multiple tones
+- **Priority Support**: Faster response times from support team
+- **Early Access**: Early access to new features
+- **Backup & Sync**: Optional iCloud backup and sync
+
+### Payment & Refunds
+- **Payment Methods**: Credit card, PayPal, Apple Pay
+- **Billing**: Monthly or annual billing through App Store
+- **Refund Policy**: 14-day money-back guarantee
+- **Cancel Anytime**: Cancel subscription anytime
+- **No Ads**: Both free and Pro plans are ad-free
+
+### Business Model Philosophy
+- **Freemium**: Core features free forever
+- **Fair Pricing**: Competitive pricing for small businesses
+- **No Hidden Costs**: Transparent pricing with no surprises
+- **Value-First**: Pro features unlock additional value, not essential functionality
+- **Clients**: Unlimited clients
+- **PDF Exports**: Unlimited watermark-free PDF exports
+- **Custom Branding**: Full custom branding with logo upload
+- **AI Email**: Advanced AI email composition
+- **Priority Support**: Priority email support
+- **Data Export**: Export all data to CSV
+- **Backup/Restore**: Cloud backup and restore (optional)
+- **Multi-Device**: Sync across multiple iOS devices (optional)
+
+### Lifetime Option (One-Time Purchase)
+- **Price**: $199.99 (one-time)
+- **Includes**: All Pro features permanently
+- **Updates**: Free updates for life
+- **Support**: Priority support for life
+
+### Credit Packs (For Free Users)
+- **5 Exports**: $4.99 (one-time)
+- **20 Exports**: $14.99 (one-time)
+- **50 Exports**: $29.99 (one-time)
+
+## Privacy & Data Handling
+
+### Data Storage
+- **Location**: All data stored locally on your device
+- **Encryption**: Data encrypted at rest using iOS keychain
+- **Backup**: Optional iCloud backup (disabled by default)
+- **No Accounts**: No user accounts, no sign-up required
+- **No Tracking**: No analytics, no tracking, no data collection
+
+### Speech Recognition
+- **Processing**: All speech recognition happens on-device
+- **No Audio Storage**: Audio is processed and discarded immediately
+- **No Server Transmission**: No audio data ever leaves your device
+- **Offline**: Works completely offline
+
+### GPS & Location
+- **Processing**: All GPS processing happens on-device
+- **Geofencing**: Geofence calculations done locally
+- **No Location Storage**: Location data not stored unless you save a job site
+- **Permission**: Location permission required but can be denied
+
+### Security
+- **Data Protection**: All data protected by iOS sandbox
+- **No Cloud Sync**: No automatic cloud synchronization
+- **Export Control**: You control what data is exported and where
+- **Deletion**: Easy to delete all app data from settings
+
+### Compliance
+- **GDPR**: Compliant with GDPR regulations
+- **CCPA**: Compliant with California Consumer Privacy Act
+- **App Store**: Follows all Apple App Store privacy guidelines
+- **Transparency**: Clear privacy policy available at https://dasgroupllc.com/apps/privacy/
+
+## How to Use (Step-by-Step)
+
+### Quick Start (Voice Invoice)
+1. Open the app
+2. Tap "New Invoice"
+3. Select "Voice"
+4. Tap the microphone and speak: "Invoice for [Client Name], [Hours] hours of [Service] at [$Rate] per hour"
+5. Review the auto-filled details
+6. Tap "Export" to generate PDF
+7. Tap "Email" to send to client
+
+### Quick Start (Time Tracking)
+1. Open the app
+2. Tap "Time Tracker"
+3. Tap "Start" to begin tracking
+4. (Optional) Select a client for automatic association
+5. Tap "Stop" when done
+6. Tap "Invoice" to create invoice from tracked time
+7. Review and send
+
+### Quick Start (GPS Job Sites)
+1. Open the app
+2. Go to "Job Sites"
+3. Tap "Add Job Site"
+4. Enter client name and set geofence radius
+5. Save location
+6. Timer will automatically start when you arrive at this location
+
+### Advanced Usage
+1. **Set up clients**: Go to Clients tab and add all your clients with their details
+2. **Create templates**: Set up templates for common services you provide
+3. **Configure GPS**: Add all your regular job sites with appropriate geofence sizes
+4. **Customize branding**: Upload your logo and set your business colors
+5. **Set preferences**: Configure default rates, tax settings, invoice numbering
+6. **Start tracking**: Use the app throughout your workday
+7. **End of day**: Review tracked time and create invoices for all clients
+
+## Install
+- **App Store**: https://apps.apple.com/us/app/invoices-bills-quotes-maker/id6756686843
+- **Direct Download**: Not available (App Store only)
+
+## FAQ
+
+### General Questions
+
+**Q: What is the best invoice app for freelancers?**
+A: Invoices & Time Tracker is specifically designed for freelancers and small business owners. It combines time tracking, voice invoice creation, GPS job site tracking, and AI-powered features into one app. Unlike desktop-first solutions, it's built for mobile with a focus on speed and simplicity. You can track your hours, then create professional invoices in one tap - all from your iPhone.
+
+**Q: Can I track time and create invoices in one app?**
+A: Yes, absolutely. Start a timer when you begin work, stop when you're done. At the end of the day or week, tap "Invoice" and your tracked hours automatically become a professional invoice with line items, rates, and client details pre-filled. You can also create invoices directly from the timer screen with one tap.
+
+**Q: How do voice invoices work?**
+A: Tap the microphone button and speak naturally, for example: "Invoice for Sarah Johnson, 8 hours of graphic design at $75 an hour, plus $200 for the logo redesign." The app uses on-device speech recognition to transcribe your words, then AI Smart Compose extracts the client name, line items, quantities, rates, and totals. It works completely offline and typically takes less than 5 seconds to process.
+
+**Q: Is the invoice app free?**
+A: Yes, the app is free to download and use with generous limits. The free tier includes up to 5 clients, 3 watermark-free PDF exports per month, unlimited time tracking, voice and AI invoice creation, and GPS job sites. The Pro subscription ($9.99/month or $99.99/year) unlocks unlimited clients, unlimited exports, custom branding, no watermarks, AI email composition, and priority support. There's also a one-time lifetime purchase option for $199.99.
+
+### Features & Functionality
+
+**Q: Can I add my logo to invoices?**
+A: Yes, Pro users can add their logo, custom colors, and business branding to invoices. You can upload your logo directly from your photo library or take a photo with your iPhone camera. The logo appears at the top of your invoices and PDF exports.
+
+**Q: How does GPS time tracking work?**
+A: Save your job site locations in the app by either selecting them on a map or using your current location. Set a geofence radius (50m to 500m) around each location. When you arrive at a saved job site, the timer automatically starts tracking time. When you leave, it automatically stops. This is perfect for contractors, cleaners, and anyone who works at client locations. All GPS processing happens on your device - no data is sent to servers.
+
+**Q: Can I use the app offline?**
+A: Yes, the app is designed to work completely offline. Voice invoice creation, time tracking, GPS job site tracking, and invoice creation all work without an internet connection. The only features that require internet are sending emails and downloading app updates.
+
+**Q: What happens if I forget to start the timer?**
+A: You have several options: (1) Manually add time entries with start/end times, (2) Use the GPS job site feature so timers start automatically when you arrive, (3) Use the "Quick Add" feature to add time after the fact. The app is designed to be forgiving and flexible.
+
+**Q: Can I edit invoices after creating them?**
+A: Yes, you can edit any invoice at any time before exporting. You can change client details, line items, quantities, rates, taxes, discounts, and notes. Once exported as PDF, the invoice is locked for that version, but you can create a revised version.
+
+### Privacy & Security
+
+**Q: Is my data private and secure?**
+A: Absolutely. All your data is stored on your device only. Speech recognition runs on-device (nothing is sent to servers), GPS geofencing is processed locally, and we don't collect any analytics or tracking data. We don't require accounts or sign-ups. Your business data stays on your phone, period. See our full privacy policy at https://dasgroupllc.com/apps/privacy/
+
+**Q: Do I need to create an account?**
+A: No, the app works completely without any account or sign-up. Just download and start using it immediately. If you choose to enable optional iCloud backup for Pro users, you can create an account, but it's not required for any core functionality.
+
+**Q: Where is my data stored?**
+A: All data is stored locally on your iPhone. If you have iCloud backup enabled for the app (Pro feature, optional), your data can be backed up to iCloud, but this is disabled by default and completely optional.
+
+### Technical Questions
+
+**Q: What iPhones are supported?**
+A: The app requires iOS 17.0 or later, which means it works on iPhone XS and later, iPhone 11 and later, iPhone 12 and later, iPhone 13 and later, iPhone 14 and later, and iPhone 15 and later. It also works on iPhone SE (2nd generation and later).
+
+**Q: How much storage does the app use?**
+A: The initial download is approximately 50MB. As you create invoices and track time, the app will use additional storage, but it's typically less than 100MB even with extensive use. You can clear old data from within the app settings.
+
+**Q: Can I use the app on iPad?**
+A: The app is currently iPhone-only, but we're working on an iPad version. The iPhone app works on iPad in compatibility mode, but it's not optimized for the larger screen.
+
+**Q: Can I sync data between multiple devices?**
+A: Pro users have the option to enable iCloud sync to synchronize data between multiple iOS devices. This is an optional feature that can be enabled in settings. All syncing is end-to-end encrypted.
+
+### Industries & Use Cases
+
+**Q: What industries is this app best for?**
+A: The app is perfect for any service-based business that bills by the hour or by the job. This includes: freelancers (web developers, designers, writers, consultants), independent contractors (construction, cleaning, tradespeople), small business owners, consultants, coaches, tutors, personal trainers, photographers, videographers, lawyers, accountants, therapists, and more. Essentially, if you provide services to clients and need to invoice them, this app is for you.
+
+**Q: Can I use this for my construction business?**
+A: Absolutely. The GPS job site feature is particularly useful for construction. Save your job sites, and the timer will automatically start when you arrive and stop when you leave. You can track time for different phases of a project, add materials and equipment costs, and create professional invoices with your construction company branding.
+
+**Q: Is this good for cleaning businesses?**
+A: Yes, cleaning businesses love this app. The GPS feature automatically tracks time when you arrive at a client's location. You can set up templates for different cleaning services (standard clean, deep clean, move-out clean) with predefined rates. The app also helps you track which clients need follow-up and when.
+
+**Q: Can consultants use this app?**
+A: Definitely. Consultants can use the voice feature to quickly create invoices for client meetings, strategy sessions, or project milestones. The time tracker helps you accurately bill for your time, and the client management features help you keep track of multiple clients and projects.
+
+## Related
+- Portfolio hub: https://dasgroupllc.com/apps/
+- Company context: https://dasgroupllc.com/llms-full.txt
+- All Das Group apps: https://dasgroupllc.com/apps/
+
+## Contact
+- Email: support@dasgroupllc.com
+- Website: https://dasgroupllc.com
+- App Store: https://apps.apple.com/us/app/invoices-bills-quotes-maker/id6756686843
+
+## Optimization Notes
+This file is optimized for:
+- SEO (Search Engine Optimization): Structured content with relevant keywords
+- GEO (Geographic Optimization): US-focused with worldwide availability
+- AEO (App Engine Optimization): App Store metadata
+- AIO (AI Optimization): Structured data for AI search engines and chatbots
+- AXO (Answer Engine Optimization): Direct, concise answers to common questions
+- LLMO (Large Language Model Optimization): Comprehensive context for LLMs
+- SXO (Search Experience Optimization): User-focused content organization
+- GAIO (Google AI Overview Optimization): Google AI Overview-ready content
+- VSO (Visual Search Optimization): Visual content descriptions and metadata
+
+## Changelog
+- 2026-08-18: Comprehensive update with full optimization for all search types
+- 2026-08-15: Added detailed FAQ section
+- 2026-08-01: Added privacy and security details
+- 2025-01-15: Initial release

@@ -1,0 +1,180 @@
+# Invoices & Time Tracker — Professional Invoice Maker for Freelancers & Contractors
+
+> A free iOS invoice maker app that helps freelancers, contractors, and small businesses create professional invoices in under 30 seconds using voice commands, GPS time tracking, and AI-powered features. Privacy-first with on-device processing, no account required, and works completely offline.
+
+By Das Group LLC (https://dasgroupllc.com/)
+
+## Links
+- Canonical page: https://dasgroupllc.com/apps/invoices/
+- App Store: https://apps.apple.com/us/app/invoices-bills-quotes-maker/id6756686843
+- Full machine-readable context: https://dasgroupllc.com/apps/invoices/llms-full.txt
+- Privacy policy: https://dasgroupllc.com/apps/privacy/
+- Terms of service: https://dasgroupllc.com/apps/terms/
+- Portfolio: https://dasgroupllc.com/apps/
+- Company context: https://dasgroupllc.com/llms-full.txt
+
+## Contact
+- Email: support@dasgroupllc.com
+- Website: https://dasgroupllc.com
+- Twitter: @DasGroupLLC
+
+## Quick Summary
+Invoices & Time Tracker is a privacy-first iOS app that revolutionizes freelancer invoicing by combining voice-based invoice creation, built-in time tracking with GPS geofencing, and AI-powered Smart Compose. Users can create professional PDF invoices in under 30 seconds directly from their iPhone. All data processing happens on-device - speech recognition, GPS tracking, and AI features run locally. No account, sign-up, or internet connection required.
+
+## Key Features
+- **Voice Invoice Creation**: Speak naturally to create invoices with AI parsing
+- **Built-in Time Tracker**: One-tap start/stop with automatic invoice generation
+- **GPS Job Sites**: Automatic time tracking via geofencing when arriving/leaving locations
+- **AI Smart Compose**: Auto-detects clients, line items, rates, and quantities from voice or text
+- **Professional PDF Export**: Custom branding, logos, and multiple invoice templates
+- **Client Management**: Organize clients with custom rates and branding
+- **Revenue Dashboard**: Track income, overdue invoices, and payment status
+- **Offline Functionality**: Works without internet connection
+- **Industry Templates**: Pre-built templates for consulting, construction, design, cleaning, legal, and more
+- **Overdue Invoice Alerts**: Automatic reminders for unpaid invoices
+- **Multiple Creation Flows**: Voice, AI text, quick entry, or detailed manual creation
+- **Privacy-First**: All data stored on-device, no cloud sync required
+
+## Target Audience
+### Primary Users
+- Freelancers: Web developers, graphic designers, copywriters, consultants, coaches, tutors, virtual assistants
+- Independent Contractors: Construction workers, electricians, plumbers, HVAC technicians, handymen, cleaners, landscapers
+- Small Business Owners: Service-based businesses, solopreneurs, micro-businesses
+- Service Professionals: Lawyers, accountants, therapists, personal trainers, photographers, videographers
+
+### Secondary Users
+- Part-time workers with side gigs
+- Gig economy workers (Uber, Lyft, DoorDash drivers with freelance work)
+- Students doing freelance work
+- Retirees with consulting businesses
+- Anyone who bills clients for time or services
+
+## Platform & Technical Details
+- **Platform**: iOS 17+ (iPhone optimized)
+- **App ID**: 6756686843 (Apple App Store)
+- **Bundle ID**: com.dasgroup.invoicemaker
+- **Version**: 1.9.8 (Updated August 2026)
+- **File Size**: ~50MB
+- **Requirements**: iOS 17.0 or later
+- **Languages**: English (primary), with accessibility support
+- **Accessibility**: VoiceOver support, dynamic type, reduced motion
+- **Privacy**: On-device processing, no tracking, no data collection
+
+## Pricing & Availability
+- **Free Plan**: Up to 5 clients, 3 watermark-free PDF exports, unlimited time tracking, voice & AI invoice creation, GPS job sites
+- **Pro Plan**: Unlimited clients & exports, no watermarks, custom branding & logo, AI email composition, priority support
+- **Availability**: Free to download on Apple App Store
+- **Geographic Focus**: United States (primary), Canada, UK, Australia, New Zealand (secondary), worldwide (tertiary)
+
+## Privacy & Security Features
+- All data stored locally on your device
+- On-device speech recognition (no audio sent to servers)
+- Local GPS geofencing processing
+- No accounts, no sign-up required
+- No tracking or analytics collection
+- No cloud sync (optional iCloud backup)
+- End-to-end encryption for exported PDFs
+- Privacy policy: https://dasgroupllc.com/apps/privacy/
+
+## Use Cases & Workflows
+### Common Use Cases
+1. **Voice Creation**: "Invoice for Sarah Chen, 12 hours of web development at $150 an hour, plus $500 for the logo design"
+2. **GPS Time Tracking**: Automatically starts timer when arriving at client job site
+3. **Quick Invoice**: Tap recent client, add hours, send PDF in seconds
+4. **Batch Invoicing**: Combine multiple time entries into one invoice
+5. **Offline Work**: Create invoices and track time without internet
+6. **Professional Branding**: Add your logo, colors, and business information to PDFs
+
+### Industry-Specific Workflows
+- **Construction**: Track time at job sites, add material costs, create detailed invoices
+- **Consulting**: Track billable hours, add project milestones, generate professional invoices
+- **Design**: Track time per project, add revision rounds, create branded invoices
+- **Cleaning**: Track time per location, add service details, create recurring invoices
+- **Legal**: Track billable hours, add case details, create compliant invoices
+
+## Competitive Advantages
+- **Speed**: Fastest invoice creation (under 30 seconds)
+- **Privacy**: Only app with complete on-device processing
+- **No Account Required**: Use immediately without sign-up
+- **Multiple Input Methods**: Voice, AI text, manual entry
+- **Automatic Time Tracking**: GPS geofencing eliminates manual timer management
+- **Professional Output**: High-quality PDFs with custom branding
+- **Free Tier**: Generous free plan with core features
+- **Offline First**: Works anywhere, anytime
+
+## Technical Details
+- **App ID**: 6756686843 (Apple App Store)
+- **Bundle ID**: com.dasgroup.invoicemaker
+- **Version**: 1.9.8 (Updated August 2026)
+- **Release Date**: January 2025
+- **File Size**: ~50MB
+- **Requirements**: iOS 17.0 or later
+- **Languages**: English (primary)
+- **Accessibility**: VoiceOver support, dynamic type, reduced motion
+
+## SEO & Discovery Optimization
+### Primary Keywords
+- invoice maker, time tracker, freelancer invoicing, voice invoices, GPS tracking
+- mobile invoicing, professional invoices, small business tools, contractor app
+- iOS invoice app, free invoice maker, offline invoice creator
+
+### Secondary Keywords
+- billable hours tracker, client management, PDF invoice generator
+- AI invoice creation, smart compose, geofencing time tracking
+- privacy-first invoicing, on-device processing, no account invoicing
+
+### Geographic Targeting
+- United States (primary market)
+- English-speaking countries (secondary)
+- Worldwide App Store availability (tertiary)
+
+### Optimization Types
+- **SEO**: Search engine optimization for organic discovery
+- **ASO**: App Store Optimization
+- **AEO**: App Engine Optimization for app store search
+- **AIO**: AI search engine optimization
+- **AXO**: Answer Engine Optimization for direct answers
+- **LLMO**: Large Language Model Optimization
+- **SXO**: Search Experience Optimization
+- **GAIO**: Google AI Overview Optimization
+- **VSO**: Visual Search Optimization
+
+## Technical SEO
+- Canonical URL: https://dasgroupllc.com/apps/invoices/
+- Mobile-first responsive design
+- Fast loading performance
+- Structured data markup (schema.org)
+- Open Graph and Twitter Card meta tags
+- Sitemap inclusion
+- Robots.txt optimization
+
+## Related Apps by Das Group LLC
+- TrackWell: Daily habit tracker with streaks and analytics
+- QuickScan: AI-powered document scanner with OCR
+- VoiceJournal: Voice-based journaling with transcription
+- Receipts: Receipt scanning and organization
+- CrossFit Timer: Workout timer for CrossFit athletes
+- AllStrength: AI-powered fitness tracking
+- CourtFile: Legal document management
+- CiteClear: Legal citation checker
+- ComplianceDesk: Regulatory compliance tools
+
+## Support & Resources
+- **Email Support**: support@dasgroupllc.com
+- **Privacy Policy**: https://dasgroupllc.com/apps/privacy/
+- **Terms of Service**: https://dasgroupllc.com/apps/terms/
+- **App Store Support**: Available through Apple App Store
+- **Documentation**: In-app help and tutorials
+- **Community**: User feedback and feature requests
+
+## Last Updated
+2026-08-19
+
+## Version History
+- 1.9.8 (August 2026): Business-focused conversion optimizations, Mac Catalyst + iPad support, refreshed app icon, paywall improvements
+- 1.2.0 (January 2025): Initial public release
+- 1.0.0 (December 2024): Beta release
+
+---
+
+**Note**: This file is optimized for Large Language Models (LLMs) and AI search engines. It provides comprehensive, structured information about Invoices & Time Tracker to improve discoverability in AI-powered search results.
