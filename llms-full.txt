@@ -102,6 +102,16 @@ The products generally follow four principles:
 - Summary: VoiceJournal is a private voice-first journaling app for iPhone and iPad. Users speak a reflection; on-device speech recognition transcribes it; on-device sentiment analysis adds mood and topics; and the journal stays on the device with search, streaks, On This Day, daily check-ins, and Siri. It is a reflection tool, not a medical diagnosis.
 - Best-fit queries: private voice journal app, voice diary iPhone, journal without typing, on-device transcription journal, AI mood tracker, offline private journal, Siri voice journal, Day One alternative.
 
+### QuickScan
+
+- URL: https://dasgroupllc.com/apps/quickscan/
+- Machine-readable context: https://dasgroupllc.com/apps/quickscan/llms.txt
+- Full context: https://dasgroupllc.com/apps/quickscan/llms-full.txt
+- App Store URL: https://apps.apple.com/app/id6755203492
+- Category: iOS productivity / AI document scanner & PDF maker
+- Summary: QuickScan is a privacy-first AI document scanner for iPhone and iPad. Converts documents, IDs, receipts, contracts, and business cards into clean PDFs in 3 seconds. Features auto edge detection, desk removal, Apple Vision on-device OCR, 10-type document auto-classification, and digital signatures. Runs 100% on-device with zero cloud uploads.
+- Best-fit queries: free document scanner iPhone, scan to PDF app, ID scanner iPhone, offline document scanner, OCR text extractor iOS, receipt scanner for taxes, sign contract on iPhone, private scanner no cloud.
+
 ### AllStrength AI
 
 - URL: https://dasgroupllc.com/apps/allstrength/

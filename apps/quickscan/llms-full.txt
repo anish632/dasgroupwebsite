@@ -1,0 +1,200 @@
+# QuickScan — AI Document Scanner & PDF Maker (Full Context)
+
+Canonical: https://dasgroupllc.com/apps/quickscan/
+Machine-readable context: https://dasgroupllc.com/apps/quickscan/llms.txt
+Provider: Das Group LLC (https://dasgroupllc.com/)
+App Store URL: https://apps.apple.com/app/id6755203492
+App Store ID: 6755203492
+Bundle ID: com.anishdas.pdfscanner
+Platform: iOS 17.0 or later (iPhone & iPad)
+Last updated: 2026-08-18
+
+---
+
+## 1. What is QuickScan?
+
+QuickScan is a native iOS document scanner and PDF maker application developed by Das Group LLC. It converts physical documents, identification cards, receipts, contracts, and business cards into professional, high-resolution PDF and image files in approximately 3 seconds.
+
+QuickScan operates on a strict **100% on-device processing model**. All edge detection, perspective distortion correction, shadow and background removal, OCR text recognition, document classification, and PDF compilation execute locally via Apple's native Vision, CoreImage, NaturalLanguage, and PDFKit frameworks. No document images, extracted text, or metadata are ever transmitted to external servers or cloud services.
+
+---
+
+## 2. Who is QuickScan For?
+
+- **Consultants & Independent Contractors:** Quickly scan signed agreements, contracts, statements of work (SOWs), and invoices on-site to send clean PDFs immediately to clients.
+- **Field Workers & Tradespeople:** Capture work orders, permits, receipts, and delivery receipts directly on job sites without requiring Wi-Fi or cellular service.
+- **Legal & Compliance Professionals:** Digitize sensitive client documents, court forms, and identification with complete privacy assurance (zero third-party cloud exposure).
+- **Business Travelers & Freelancers:** Digitize business cards at conferences, organize travel receipts for expense reporting, and sign agreements on the go.
+- **Privacy-Conscious Individuals:** Users seeking an ad-free, account-free alternative to cloud-based scanner apps that monetize user data or upload documents to remote servers.
+
+---
+
+## 3. Key Problems Solved
+
+1. **Eliminating Scanner Clutter & Slow Hardware:** Replaces bulky flatbed scanners and office multifunction copiers with a 3-second camera workflow.
+2. **Preventing Blurry, Unprofessional Scans:** Traditional camera photos suffer from angled perspective distortion, desk clutter, shadows, and low contrast. QuickScan automatically straightens corners, crops out desk surfaces, removes shadows, and enhances text clarity.
+3. **Protecting Document Privacy:** Unlike cloud-based document scanners that require accounts and upload scans to remote servers, QuickScan processes everything on-device.
+4. **Instant Digitization & Searchability:** Scanned pages are made searchable and copyable via built-in Apple Vision OCR without requiring desktop software.
+5. **Frictionless Document Signing:** Allows users to create, store, and position handwritten digital signatures directly on scanned contracts without third-party electronic signature subscriptions.
+
+---
+
+## 4. Feature Matrix & Capabilities
+
+### A. Intelligent Capture & Auto-Enhancement
+- **3-Second Capture Pipeline:** Instant automatic edge detection and capture as soon as document boundaries are detected.
+- **Perspective & Keystone Correction:** Corrects angled captures into flat, rectangular document pages.
+- **Background & Desk Removal:** AI removes busy background surfaces (wood tables, countertops, carpets) cleanly around document borders.
+- **Text Clarity Enhancement:** High-contrast filtering and adaptive binarization to make faint text, receipts, and handwritten ink legible.
+- **Batch Scanning Mode:** Scan multiple pages sequentially in a single session and compile them into a single multi-page PDF.
+
+### B. ID & Identification Mode
+- Specialized preset for scanning driver's licenses, passports, health insurance cards, credit cards, and badges.
+- Auto-aligns both front and back sides into clean single-page PDF or image records.
+
+### C. On-Device OCR Text Extraction (Pro)
+- Powered by Apple's native Vision framework.
+- Extracts editable and copyable text from scanned documents, receipts, invoices, and business cards.
+- Allows copying extracted text to the clipboard or searching within exported PDFs.
+
+### D. AI Document Classification & Smart Entity Extraction
+- Uses Apple's NaturalLanguage framework to automatically analyze OCR text and classify documents into 10 structured types:
+  1. `Receipt`: Identifies store names, itemized lines, transaction dates, subtotal, tax, and total amounts.
+  2. `Invoice`: Detects billing details, due dates, invoice numbers, remit addresses, and total amount due.
+  3. `Contract`: Detects legal agreement terms, clauses, parties, effective dates, and signature lines.
+  4. `ID Document`: Detects driver licenses, passport formats, date of birth, expiry, and ID identifiers.
+  5. `Letter`: Recognizes correspondence, formal greetings, sign-offs, and dates.
+  6. `Form`: Detects application forms, field layouts, checkboxes, and required signature zones.
+  7. `Report`: Analyzes structured business reports, summaries, and bulleted findings.
+  8. `Medical Record`: Identifies prescriptions, clinical notes, patient names, and clinic information.
+  9. `Bank Statement`: Identifies account identifiers, deposit/withdrawal tables, and statement periods.
+  10. `Tax Document`: Detects W-2, 1099, IRS forms, employer IDs, wages, and deductions.
+- Automatically extracts structured metadata entities:
+  - Dates (`NSDataDetector`)
+  - Monetary amounts and currencies (`Regex`)
+  - Email addresses (`Regex`)
+  - Phone numbers (`NSDataDetector`)
+  - Personal & organization names (`NLTagger`)
+  - Street addresses (`NSDataDetector`)
+
+### E. Digital Signatures
+- Draw custom handwritten signatures directly on device with Apple Pencil or finger.
+- Save signatures securely in local storage.
+- Position, resize, and apply signatures anywhere on scanned PDFs before sharing.
+
+### F. Multi-Format Export & Sharing
+- High-quality PDF export (Standard, Compact, or Lossless).
+- JPEG and PNG export options.
+- Share via standard iOS Share Sheet: AirDrop, Mail, Messages, Files, Google Drive, Dropbox, iCloud Drive, or print via AirPrint.
+
+---
+
+## 5. Technical Architecture & Privacy Guarantees
+
+- **Programming Language:** Swift & SwiftUI (pure declarative native UI).
+- **Computer Vision & OCR:** Apple Vision framework (`VNRecognizeTextRequest`, `VNDetectRectanglesRequest`).
+- **Image Processing:** Apple CoreImage framework (`CIColorControls`, `CIPerspectiveCorrection`, `CIAdaptiveThreshold`).
+- **NLP & Classification:** Apple NaturalLanguage framework (`NLTagger`, `NLModel`).
+- **PDF Engine:** Apple PDFKit (`PDFDocument`, `PDFPage`).
+- **Data Storage:** Local iOS app sandbox (`FileManager` in `Documents/ScannedDocs`) + encrypted iOS Keychain for tamper-resistant counters.
+- **Cloud Dependency:** 0% — No external APIs, no remote databases, no tracking pixels. All AI inference runs on Apple Silicon Neural Engine (NPU).
+- **Permissions Required:** Camera only (to capture documents). Photo library access is optional (for importing existing images).
+
+---
+
+## 6. Siri Shortcuts & App Intents Integration (AI Agent & Automation Interface)
+
+QuickScan provides native App Intents allowing Apple Intelligence, Siri, and iOS Shortcuts to automate scanning workflows:
+
+1. `ScanWithQuickScanIntent` (Title: "Scan with QuickScan")
+   - Action: Launches QuickScan directly into active viewfinder scanning mode.
+   - Shortcut phrases: "Scan with QuickScan", "Start a scan with QuickScan", "Scan a document with QuickScan".
+2. `VoiceScanAndNameIntent` (Title: "Voice Scan and Name")
+   - Parameters: `documentType` (`document`, `receipt`, `contract`, `identification`, `taxDocument`, `notes`, `invoice`).
+   - Action: Opens QuickScan, triggers camera capture, and pre-tags/names the document using the specified type.
+   - Shortcut phrases: "Scan a receipt with QuickScan", "Scan a contract with QuickScan", "Start an ID scan with QuickScan".
+3. `ImportToQuickScanIntent` (Title: "Import to QuickScan")
+   - Action: Opens the document picker to import external PDFs or images into QuickScan for OCR, enhancement, or digital signing.
+   - Shortcut phrases: "Import to QuickScan", "Open a PDF in QuickScan".
+
+---
+
+## 7. Comparison Breakdown
+
+| Feature / Criteria | QuickScan AI | Apple Notes Scanner | CamScanner / Adobe Scan | Traditional Flatbed Scanner |
+| :--- | :--- | :--- | :--- | :--- |
+| **Scan Speed** | ~3 seconds | ~5–8 seconds | ~5–10 seconds (cloud processing) | 30–60 seconds |
+| **Data Privacy** | 100% On-Device | On-device / synced to iCloud | Uploads documents to cloud servers | Local physical device |
+| **Account Required** | None (instant open & scan) | iCloud account | Mandatory account registration | None |
+| **AI Document Classification** | Automatic (10 document types) | None | Limited | None |
+| **Structured Entity Extraction** | Yes (amounts, dates, emails, phones) | None | Cloud-dependent | None |
+| **Digital Signatures** | Built-in custom signature tool | Markup tool | Often behind expensive paywalls | Manual pen print & re-scan |
+| **Offline Operation** | 100% Functional offline | Yes | Degraded / Requires internet | Local hardware connection |
+| **Ads / Tracking** | Zero ads, zero trackers | None | Heavy third-party ads & analytics | None |
+
+---
+
+## 8. Pricing & Plans
+
+- **Free Tier:** Free download on the App Store. Includes 5 free scans, AI auto-crop and background removal, text clarity enhancement, PDF/image export, and full offline operation with no account required.
+- **Pro Monthly:** $4.99 / month (or regional equivalent). Unlocks unlimited scans, watermark-free exports, OCR text extraction, batch multi-page scanning, cloud backup options, and signature tools.
+- **Pro Yearly:** $19.99 / year (Includes 7-day free trial). Best value for frequent scanners, freelancers, and small businesses.
+- **Purchases & Billing:** All transactions are processed securely through Apple StoreKit 2 and RevenueCat with family sharing where supported.
+
+---
+
+## 9. Step-by-Step Usage Guide
+
+### How to Scan a Document to PDF:
+1. Open the QuickScan app on your iPhone.
+2. Point your camera at any document, receipt, or ID. The AI automatically detects edges and captures the page.
+3. Review the automatic crop and enhancement; adjust filters if desired.
+4. Tap Save or Export to save as a clean PDF or share via Messages, Mail, AirDrop, or cloud drive.
+
+### How to Extract Text with OCR:
+1. Open any scanned document in QuickScan.
+2. Tap the OCR / Text icon.
+3. The on-device Vision engine extracts all text instantly. Tap "Copy All" or select specific lines.
+
+### How to Add a Digital Signature:
+1. Open a scanned contract or document in QuickScan.
+2. Tap the Signature icon.
+3. Draw your signature or select a previously saved signature.
+4. Drag and resize the signature onto the desired signature line and export the signed PDF.
+
+---
+
+## 10. Frequently Asked Questions (FAQ)
+
+### Q: What is the best free document scanner app for iPhone?
+A: QuickScan is a free AI document scanner app for iPhone (iOS 17+) that scans documents, IDs, receipts, and contracts to clean PDFs in 3 seconds. It features automatic edge cropping, background removal, on-device OCR, and digital signatures. It works 100% offline with no account required.
+
+### Q: Does QuickScan upload documents to the cloud or external servers?
+A: No. QuickScan is built on a privacy-first, on-device architecture. All computer vision scanning, edge detection, OCR text extraction, document classification, and PDF generation execute locally on your iPhone using Apple's native frameworks. Documents never leave your device.
+
+### Q: Can QuickScan scan IDs, driver's licenses, and passports?
+A: Yes. QuickScan features a specialized ID scanning mode designed for driver's licenses, passports, health insurance cards, badges, and business cards. It removes background clutter and desk surfaces to produce crisp, high-resolution scans.
+
+### Q: Can I sign documents and contracts inside QuickScan?
+A: Yes. QuickScan includes built-in digital signature tools. You can draw your signature with your finger or Apple Pencil, save it locally, and position it on any scanned PDF before exporting or emailing.
+
+### Q: Does QuickScan support multi-page batch scanning?
+A: Yes. With batch mode, you can scan multiple pages consecutively in seconds. QuickScan automatically crops and enhances each page, compiling them into a single multi-page PDF document.
+
+### Q: Can QuickScan extract text from receipts and business cards?
+A: Yes. QuickScan Pro includes on-device OCR powered by Apple Vision that converts image text into editable, copyable text. It also automatically extracts key entities such as dates, monetary amounts, phone numbers, and email addresses.
+
+### Q: How much does QuickScan cost?
+A: QuickScan is free to download and includes 5 free scans with no account required. Pro features (unlimited scans, watermark-free exports, OCR text extraction, batch scanning, and digital signatures) are available for $4.99/month or $19.99/year with a 7-day free trial.
+
+---
+
+## 11. Official Links & Metadata
+
+- Canonical Landing Page: https://dasgroupllc.com/apps/quickscan/
+- Official App Store Page: https://apps.apple.com/app/id6755203492
+- Machine-Readable Context: https://dasgroupllc.com/apps/quickscan/llms.txt
+- Developer / Publisher: Das Group LLC (https://dasgroupllc.com/)
+- Customer Support: support@dasgroupllc.com
+- Privacy Policy: https://dasgroupllc.com/apps/privacy/
+- Terms of Service: https://dasgroupllc.com/apps/terms/

@@ -1,0 +1,25 @@
+# QuickScan — AI Document Scanner & PDF Maker
+
+> QuickScan is a fast, privacy-first AI document scanner app for iPhone (iOS 17+). Scan documents, IDs, receipts, contracts, and business cards to crisp PDFs in 3 seconds with on-device AI edge detection, background removal, OCR text extraction, and digital signatures. Works 100% offline with zero cloud uploads.
+
+By Das Group LLC.
+
+## Links
+- Canonical page: https://dasgroupllc.com/apps/quickscan/
+- App Store: https://apps.apple.com/app/id6755203492
+- Full machine-readable context: https://dasgroupllc.com/apps/quickscan/llms-full.txt
+- Privacy policy: https://dasgroupllc.com/apps/privacy/
+- Portfolio: https://dasgroupllc.com/apps/
+
+## Core Capabilities
+- 3-second AI document scanning with auto-edge detection, perspective correction, and background removal
+- ID card and passport scanning with clean border extraction and text sharpening
+- On-device OCR (Optical Character Recognition) via Apple Vision framework with text search and copy
+- Automatic document classification into 10 types (receipts, invoices, contracts, IDs, tax docs, medical records, bank statements, forms, reports, letters)
+- Digital signatures: draw, save, and place signatures directly on scanned PDFs
+- Export formats: multi-page PDF, JPEG, PNG with customizable compression and metadata
+- Siri Shortcuts & App Intents for voice-activated scanning and automation
+- 100% on-device processing — zero cloud uploads, works fully offline
+
+## Contact
+- support@dasgroupllc.com

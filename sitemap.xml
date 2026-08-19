@@ -140,9 +140,15 @@
   </url>
   <url>
     <loc>https://dasgroupllc.com/apps/quickscan/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dasgroupllc.com/apps/quickscan/llms.txt</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://dasgroupllc.com/apps/receipts/</loc>
