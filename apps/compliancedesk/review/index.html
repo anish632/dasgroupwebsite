@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Compliance Desk — Reviewer materials</title><style>body{font:18px/1.6 system-ui,sans-serif;color:#123456;background:#eff5f5;margin:0}main{max-width:900px;margin:48px auto;padding:32px;background:white;border-radius:16px}a{color:#136b70}h1,h2{line-height:1.2}li{margin:18px 0}video{width:100%;max-height:650px;background:#111;border-radius:8px}.note{padding:16px;background:#eff5f5}code{font-size:.9em}footer{margin-top:32px;font-size:14px}</style></head>
+<body><main><p>APPS-52834 / REVIEW MATERIALS</p><h1>Compliance Desk</h1>
+<h2>Three test designs</h2>
+<p>Download each PDF and import it into Canva as a new design. The source files contain separate text and vector rectangles, not flattened screenshots. Confirm that text can be selected and edited after import, then open Compliance Desk and scan the current page.</p>
+<ol>
+<li><a href="01-clean-baseline.pdf">Clean baseline</a> — With default rules, the source fixture produces no issues. This is a scanner baseline, not a compliance certification.</li>
+<li><a href="02-financial-claims.pdf">Financial claims</a> — Includes guaranteed returns, no-risk wording, implied regulatory approval, projected and backtested returns, and an insurance claim. Expect multiple review flags and missing-disclosure warnings. Add <code>Past performance is not a guarantee</code> and rescan to test the performance-disclosure signal; other claim flags should remain.</li>
+<li><a href="03-safe-fixes.pdf">Safe fixes</a> — Includes a double space in <code>Plan  your next</code> and orange rectangles. Under Rules → Brand, add <code>#123456</code>, <code>#187C80</code>, <code>#FFFFFF</code>, and <code>#EFF5F5</code> as approved colors. Scan, apply the spacing and off-brand color fixes, then scan again. If PDF import normalizes the double space, re-enter it in the headline before scanning.</li>
+</ol>
+<p class="note">The source fixtures were checked against the current local rule engine. Import behavior and execution inside Canva have not yet been verified. All sample branding and copy are fictional and intended only for app testing.</p>
+<h2>Walkthrough video</h2>
+<video controls preload="metadata" playsinline><source src="walkthrough.mp4" type="video/mp4"></video>
+<p><a href="walkthrough.mp4">Open or download the MP4</a> · <a href="../walkthrough.mov">Original MOV</a></p>
+<p>This is the existing 38-second walkthrough, repackaged as an MP4 for browser playback. It shows the earlier Preflight name and interface; it is not a new recording of the current Compliance Desk financial-claim checks.</p>
+<footer>Das Group LLC · Reviewer package prepared September 11, 2026</footer></main></body></html>

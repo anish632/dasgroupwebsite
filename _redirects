@@ -1,3 +1,6 @@
+https://compliancedesk.dasgroupllc.com/apps/assets/* /apps/assets/:splat 200!
+https://compliancedesk.dasgroupllc.com/ /apps/compliancedesk/ 200!
+https://compliancedesk.dasgroupllc.com/* /apps/compliancedesk/:splat 200!
 /apps/ground-truth/mcp https://ground-truth-mcp.anishdasmail.workers.dev/mcp 200!
 /apps/ground-truth/mcp/* https://ground-truth-mcp.anishdasmail.workers.dev/mcp/:splat 200!
 /resolveai /apps/resolveai-shopify/ 301
